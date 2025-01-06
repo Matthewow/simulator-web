@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@googlemaps/three':
+        specifier: ^4.0.13
+        version: 4.0.13(three@0.172.0)
       '@react-three/fiber':
         specifier: ^8.17.10
         version: 8.17.10(@types/react@19.0.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(three@0.172.0)
@@ -45,6 +48,11 @@ packages:
   '@babel/runtime@7.26.0':
     resolution: {integrity: sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==}
     engines: {node: '>=6.9.0'}
+
+  '@googlemaps/three@4.0.13':
+    resolution: {integrity: sha512-JrwsIYZKlSgKTb6YQjOpJUd8JiB9rt3bKxHhHQTDvLDRtOBcw31KeUW602bJj3v6XqaHghfaKSXbKkRrv9yDMw==}
+    peerDependencies:
+      three: '*'
 
   '@module-federation/runtime-tools@0.5.1':
     resolution: {integrity: sha512-nfBedkoZ3/SWyO0hnmaxuz0R0iGPSikHZOAZ0N/dVSQaIzlffUo35B5nlC2wgWIc0JdMZfkwkjZRrnuuDIJbzg==}
@@ -305,6 +313,10 @@ snapshots:
   '@babel/runtime@7.26.0':
     dependencies:
       regenerator-runtime: 0.14.1
+
+  '@googlemaps/three@4.0.13(three@0.172.0)':
+    dependencies:
+      three: 0.172.0
 
   '@module-federation/runtime-tools@0.5.1':
     dependencies:
