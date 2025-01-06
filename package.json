@@ -8,8 +8,11 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.17.10",
+    "@types/three": "^0.171.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "three": "^0.172.0"
   },
   "devDependencies": {
     "@rsbuild/core": "^1.1.8",
