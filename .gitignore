@@ -11,3 +11,4 @@ dist/
 .vscode/*
 !.vscode/extensions.json
 .idea
+src/features/config.ts
