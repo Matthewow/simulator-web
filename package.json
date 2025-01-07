@@ -16,6 +16,7 @@
     "three": "^0.172.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@rsbuild/core": "^1.1.8",
     "@rsbuild/plugin-react": "^1.0.7",
     "@types/google.maps": "^3.58.1",
