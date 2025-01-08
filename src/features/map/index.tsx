@@ -15,8 +15,8 @@ const MapProvider = () => {
 	const mapConfig = useMemo<google.maps.MapOptions>(() => {
 		return {
 			center: {
-				lng: -122.343787,
-				lat: 47.607465,
+				lng: 114.177216,
+				lat: 22.302711,
 			},
 			mapId: SECRET.map.mapId,
 			zoom: 15,
@@ -57,7 +57,7 @@ const MapProvider = () => {
 
 			const pos = overlay.latLngAltitudeToVector3(mapConfig.center);
 			box.position.copy(pos);
-			box.position.z = 25;
+			box.position.z = 400;
 
 			scene.add(box);
 			scene.add(new AxesHelper(WORLD_SIZE));
