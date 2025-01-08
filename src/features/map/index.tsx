@@ -1,7 +1,14 @@
 import { useEffect, useRef, useMemo } from "react";
-import { ThreeJSOverlayView } from "@googlemaps/three";
+import { ThreeJSOverlayView, WORLD_SIZE } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
-import { BoxGeometry, MathUtils, Mesh, MeshMatcapMaterial } from "three";
+import {
+	AxesHelper,
+	BoxGeometry,
+	MathUtils,
+	Mesh,
+	MeshMatcapMaterial,
+	Scene,
+} from "three";
 import GLOBAL_CONFIG from "../config.json";
 
 const MapProvider = () => {
@@ -20,42 +27,47 @@ const MapProvider = () => {
 	}, []);
 
 	useEffect(() => {
-		new Loader({
-			apiKey: GLOBAL_CONFIG.map.apiKey,
-			version: "beta",
-			libraries: [],
-		})
-			.importLibrary("maps")
-			.then(() => {
-				if (!mapElementRef.current || !mapConfig.center) return;
+		const prepareMap = async () => {
+			if (!mapElementRef.current || !mapConfig.center) return;
 
-				const map = new google.maps.Map(mapElementRef.current, mapConfig);
-				const overlay = new ThreeJSOverlayView({ map });
+			const loader = new Loader({
+				apiKey: GLOBAL_CONFIG.map.apiKey,
+				version: "beta",
+				libraries: [],
+			});
 
-				const box = new Mesh(
-					new BoxGeometry(100, 200, 500),
-					new MeshMatcapMaterial(),
-				);
+			const googleApi = await loader.load();
 
-				// set position at center of map
-				const pos = overlay.latLngAltitudeToVector3(mapConfig.center);
-				box.position.copy(pos);
+			const scene = new Scene();
 
-				// set position vertically
-				box.position.z = 25;
+			const map = new googleApi.maps.Map(mapElementRef.current, mapConfig);
+			const overlay = new ThreeJSOverlayView({
+				map,
+				scene,
+				animationMode: "always",
+			});
 
-				// add box mesh to the scene
-				overlay.scene.add(box);
+			const box = new Mesh(
+				new BoxGeometry(100, 200, 500),
+				new MeshMatcapMaterial(),
+			);
 
-				// rotate the box using requestAnimationFrame
-				const animate = () => {
-					box.rotateZ(MathUtils.degToRad(0.1));
+			const pos = overlay.latLngAltitudeToVector3(mapConfig.center);
+			box.position.copy(pos);
+			box.position.z = 25;
 
-					requestAnimationFrame(animate);
-				};
+			scene.add(box);
+			scene.add(new AxesHelper(WORLD_SIZE));
+
+			const animate = () => {
+				box.rotateX(Math.PI / 360);
 
 				requestAnimationFrame(animate);
-			});
+			};
+			requestAnimationFrame(animate);
+		};
+
+		prepareMap();
 	}, [mapConfig]);
 	return <div id="map" ref={mapElementRef} />;
 };
