@@ -4,7 +4,6 @@ import { Loader } from "@googlemaps/js-api-loader";
 import {
 	AxesHelper,
 	BoxGeometry,
-	MathUtils,
 	Mesh,
 	MeshMatcapMaterial,
 	Scene,
@@ -23,6 +22,10 @@ const MapProvider = () => {
 			zoom: 15,
 			heading: 45,
 			tilt: 67,
+			clickableIcons: false,
+			disableDefaultUI: true,
+			colorScheme: "DARK",
+			keyboardShortcuts: false,
 		};
 	}, []);
 
