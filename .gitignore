@@ -13,4 +13,4 @@ dist/
 .idea
 
 # Private env
-env.json
+env/screct.local.json

@@ -8,7 +8,7 @@ import {
 	MeshMatcapMaterial,
 	Scene,
 } from "three";
-import GLOBAL_CONFIG from "../config.json";
+import SECRET from "../secret.json";
 
 const MapProvider = () => {
 	const mapElementRef = useRef<HTMLDivElement | null>(null);
@@ -18,7 +18,7 @@ const MapProvider = () => {
 				lng: -122.343787,
 				lat: 47.607465,
 			},
-			mapId: GLOBAL_CONFIG.map.mapId,
+			mapId: SECRET.map.mapId,
 			zoom: 15,
 			heading: 45,
 			tilt: 67,
@@ -34,7 +34,7 @@ const MapProvider = () => {
 			if (!mapElementRef.current || !mapConfig.center) return;
 
 			const loader = new Loader({
-				apiKey: GLOBAL_CONFIG.map.apiKey,
+				apiKey: SECRET.map.apiKey,
 				version: "beta",
 				libraries: [],
 			});
