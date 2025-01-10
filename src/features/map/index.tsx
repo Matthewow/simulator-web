@@ -39,11 +39,11 @@ const MapProvider = () => {
 				libraries: [],
 			});
 
-			const googleApi = await loader.load();
+			await loader.importLibrary("core");
 
 			const scene = new Scene();
 
-			const map = new googleApi.maps.Map(mapElementRef.current, mapConfig);
+			const map = new google.maps.Map(mapElementRef.current, mapConfig);
 			const overlay = new ThreeJSOverlayView({
 				map,
 				scene,
