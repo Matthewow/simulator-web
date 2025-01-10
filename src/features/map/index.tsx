@@ -1,13 +1,7 @@
 import { useEffect, useRef, useMemo } from "react";
-import { ThreeJSOverlayView, WORLD_SIZE } from "@googlemaps/three";
+import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
-import {
-	AxesHelper,
-	BoxGeometry,
-	Mesh,
-	MeshMatcapMaterial,
-	Scene,
-} from "three";
+import { BoxGeometry, Mesh, MeshMatcapMaterial, Scene } from "three";
 import SECRET from "../secret.json";
 
 const MapProvider = () => {
@@ -24,7 +18,6 @@ const MapProvider = () => {
 			tilt: 67,
 			clickableIcons: false,
 			disableDefaultUI: true,
-			colorScheme: "DARK",
 			keyboardShortcuts: false,
 		};
 	}, []);
@@ -60,7 +53,6 @@ const MapProvider = () => {
 			box.position.z = 400;
 
 			scene.add(box);
-			scene.add(new AxesHelper(WORLD_SIZE));
 
 			const animate = () => {
 				box.rotateX(Math.PI / 360);
@@ -72,7 +64,7 @@ const MapProvider = () => {
 
 		prepareMap();
 	}, [mapConfig]);
-	return <div id="map" ref={mapElementRef} />;
+	return <div id="map" className="map" ref={mapElementRef} />;
 };
 
 export default MapProvider;
