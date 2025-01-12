@@ -1,12 +1,12 @@
 import {
 	Button,
 	Menu,
-	MenuButton,
 	MenuItem,
 	MenuList,
 	MenuPopover,
 	MenuTrigger,
 } from "@fluentui/react-components";
+import { Map24Regular } from "@fluentui/react-icons";
 import { useCallback, useEffect, useRef } from "react";
 
 const TopBar = () => {
@@ -42,7 +42,7 @@ const TopBar = () => {
 	return (
 		<div
 			style={{
-				flexBasis: "2.5rem",
+				flexBasis: "3rem",
 				flexGrow: 0,
 				display: "flex",
 				alignItems: "center",
@@ -51,9 +51,11 @@ const TopBar = () => {
 		>
 			{/* Place input element here to trigger file reader and corresponding functions */}
 			<input type="file" style={{ display: "none" }} ref={fileInputRef} />
+
+			<Map24Regular style={{ margin: "0rem 1rem" }} />
 			<Menu positioning={{ autoSize: true }}>
 				<MenuTrigger disableButtonEnhancement>
-					<Button appearance="subtle">File</Button>
+					<Button appearance="outline">File</Button>
 				</MenuTrigger>
 
 				<MenuPopover>

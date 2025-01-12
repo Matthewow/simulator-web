@@ -9,6 +9,7 @@
 	},
 	"dependencies": {
 		"@fluentui/react-components": "^9.57.0",
+		"@fluentui/react-icons": "^2.0.270",
 		"@googlemaps/js-api-loader": "^1.16.8",
 		"@googlemaps/three": "^4.0.13",
 		"@react-three/fiber": "^8.17.10",
