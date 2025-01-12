@@ -64,7 +64,7 @@ const MapProvider = () => {
 
 		prepareMap();
 	}, [mapConfig]);
-	return <div id="map" className="map" ref={mapElementRef} />;
+	return <div id="map" style={{ flex: 1 }} ref={mapElementRef} />;
 };
 
 export default MapProvider;
