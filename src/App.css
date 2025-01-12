@@ -5,15 +5,10 @@ body {
 	background-image: linear-gradient(to bottom, #020917, #101725);
 }
 
-.content {
+#content {
 	display: flex;
 	height: 100vh;
-	line-height: 1.1;
 	text-align: center;
-	flex-direction: column;
 	justify-content: center;
-}
-
-.content div {
-	height: 100%;
+	flex-direction: column;
 }

@@ -1,9 +1,11 @@
 import "./App.css";
 import MapProvider from "./features/map";
+import TopBar from "./features/ui/top_bar";
 
 const App = () => {
 	return (
-		<div className="content">
+		<div id="content">
+			<TopBar />
 			<MapProvider />
 		</div>
 	);
