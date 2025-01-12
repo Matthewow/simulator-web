@@ -8,11 +8,12 @@
 		"preview": "npx gulp && rsbuild preview"
 	},
 	"dependencies": {
+		"@fluentui/react-components": "^9.57.0",
 		"@googlemaps/js-api-loader": "^1.16.8",
 		"@googlemaps/three": "^4.0.13",
 		"@react-three/fiber": "^8.17.10",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
 		"three": "^0.172.0"
 	},
 	"devDependencies": {
@@ -20,8 +21,8 @@
 		"@rsbuild/core": "^1.1.8",
 		"@rsbuild/plugin-react": "^1.0.7",
 		"@types/google.maps": "^3.58.1",
-		"@types/react": "^19.0.0",
-		"@types/react-dom": "^19.0.0",
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0",
 		"@types/three": "^0.171.0",
 		"gulp": "^5.0.0",
 		"gulp-rename": "^2.0.0",
