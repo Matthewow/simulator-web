@@ -15,7 +15,7 @@ const DataInput = forwardRef<DataInputHandle, unknown>((_props, ref) => {
 		},
 	}));
 
-	const setDataStatus = useAppstore((state) => state.setDataStatus);
+	const { setDataStatus, setDataset } = useAppstore((state) => state);
 
 	//Mount event handler for file upload
 	useEffect(() => {
@@ -27,8 +27,8 @@ const DataInput = forwardRef<DataInputHandle, unknown>((_props, ref) => {
 					try {
 						setDataStatus("Loading");
 						const rawData = await readFileAsync(file);
-						console.log(parseDataSet(rawData));
-						setDataStatus("Ready");
+						const dataset = parseDataSet(rawData);
+						setDataset(dataset);
 					} catch (e) {
 						console.error(e);
 					}
@@ -40,7 +40,7 @@ const DataInput = forwardRef<DataInputHandle, unknown>((_props, ref) => {
 		} else {
 			console.error("The file input element is unexpectedly missing.");
 		}
-	}, [setDataStatus]);
+	}, [setDataStatus, setDataset]);
 
 	//Place input element here to trigger file reader and corresponding functions
 	return <input type="file" style={{ display: "none" }} ref={fileInputRef} />;
