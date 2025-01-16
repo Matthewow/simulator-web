@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import { readFileAsync } from "./utils";
 import { useAppstore } from "../../store";
+import { parseDataSet } from "../../lib/dataset";
 
 export type DataInputHandle = {
 	triggerUploadDialog: () => void;
@@ -26,8 +27,8 @@ const DataInput = forwardRef<DataInputHandle, unknown>((_props, ref) => {
 					try {
 						setDataStatus("Loading");
 						const rawData = await readFileAsync(file);
+						console.log(parseDataSet(rawData));
 						setDataStatus("Ready");
-						console.log(rawData);
 					} catch (e) {
 						console.error(e);
 					}
