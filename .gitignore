@@ -13,4 +13,7 @@ dist/
 .idea
 
 # Private env
-env/screct.local.json
+env/*
+
+# Private dataset
+dataset/*
