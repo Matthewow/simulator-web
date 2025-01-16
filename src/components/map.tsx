@@ -2,7 +2,7 @@ import { useEffect, useRef, useMemo } from "react";
 import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
 import { BoxGeometry, Mesh, MeshMatcapMaterial, Scene } from "three";
-import SECRET from "../secret.json";
+import SECRET from "../assets/secret.json";
 
 const MapProvider = () => {
 	const mapElementRef = useRef<HTMLDivElement | null>(null);

@@ -5,7 +5,7 @@ const rename = require('gulp-rename');
 gulp.task('move-env',  ()=> {
     return gulp.src('./env/screct.local.json')
         .pipe(rename('secret.json'))  // Rename the file to config.json
-        .pipe(gulp.dest('./src/features/'));  // Move to the destination
+        .pipe(gulp.dest('./src/assets/'));  // Move to the destination
 });
 
 // Define the default task

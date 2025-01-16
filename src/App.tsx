@@ -1,6 +1,6 @@
 import "./App.css";
-import MapProvider from "./features/map";
-import TopBar from "./features/ui/top_bar";
+import MapProvider from "./components/map";
+import TopBar from "./components/top_bar";
 
 const App = () => {
 	return (
