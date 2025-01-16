@@ -1,4 +1,4 @@
-import { isNumber } from "./utils";
+import { isNumber, isValidNumber } from "./utils";
 
 export type VehicleType = "Taxi";
 export type GeoPosition = { lat: number; lng: number };
@@ -23,7 +23,10 @@ export class Vehicle {
 	}
 }
 
-export type Dataset = Map<number, Vehicle>;
+export type Dataset = {
+	idRouteMap: Map<number, Vehicle>;
+	sequence: Array<number>;
+};
 export const parseDataSet = (raw: string) => {
 	const lines = raw.split(/\r\n|\r|\n/);
 
@@ -41,7 +44,7 @@ export const parseDataSet = (raw: string) => {
 	const statusIndex = definitions.get("status");
 	const timeStampIndex = definitions.get("time");
 
-	const dataset: Dataset = new Map();
+	const dataset: Dataset = { idRouteMap: new Map(), sequence: [] };
 	if (
 		isNumber(idIndex) &&
 		isNumber(typeIndex) &&
@@ -51,6 +54,7 @@ export const parseDataSet = (raw: string) => {
 		isNumber(timeStampIndex)
 	) {
 		try {
+			const idRotueMap = dataset.idRouteMap;
 			for (const line of lines) {
 				const attributes = line.split(",");
 
@@ -63,13 +67,26 @@ export const parseDataSet = (raw: string) => {
 				const timestamp = Number.parseInt(attributes?.[timeStampIndex]);
 				const status = attributes?.[statusIndex] as VehicleStatus;
 
-				if (!dataset.has(id)) {
-					dataset.set(id, new Vehicle(id, type));
-				}
+				// Create vehecle or append route if id is valid
+				if (isValidNumber(id)) {
+					if (!idRotueMap.has(id)) {
+						idRotueMap.set(id, new Vehicle(id, type));
+					}
 
-				const snapshot: VehicleSnapshot = { pos, status };
-				dataset.get(id)?.appendRoute(timestamp, snapshot);
+					const snapshot: VehicleSnapshot = { pos, status };
+					idRotueMap.get(id)?.appendRoute(timestamp, snapshot);
+				}
 			}
+
+			dataset.sequence = Array.from(
+				new Set(
+					Array.from(dataset.idRouteMap, ([_, vehecle]) =>
+						Array.from(vehecle.route.keys()),
+					).flat(),
+				),
+			).sort() as Array<number>;
+
+			console.log(dataset);
 		} catch (e) {
 			//In case of parsing error
 			console.error(e);

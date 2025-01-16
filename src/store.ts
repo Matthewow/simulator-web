@@ -13,6 +13,6 @@ type AppState = {
 export const useAppstore = create<AppState>()((set) => ({
 	dataStatus: "Idle",
 	setDataStatus: (status) => set({ dataStatus: status }),
-	dataset: new Map(),
+	dataset: { idRouteMap: new Map(), sequence: [] },
 	setDataset: (dataset) => set({ dataset, dataStatus: "Ready" }),
 }));

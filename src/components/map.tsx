@@ -1,8 +1,9 @@
 import { useEffect, useRef, useMemo } from "react";
 import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
-import { BoxGeometry, Mesh, MeshMatcapMaterial, Scene } from "three";
+import { Scene } from "three";
 import SECRET from "../assets/secret.json";
+import { useAppstore } from "../store";
 
 const MapProvider = () => {
 	const mapElementRef = useRef<HTMLDivElement | null>(null);
@@ -22,6 +23,11 @@ const MapProvider = () => {
 		};
 	}, []);
 
+	const mapOverlayRef = useRef<ThreeJSOverlayView | null>(null);
+
+	const dataset = useAppstore((state) => state.dataset);
+
+	// init google map and delegate scene to google map
 	useEffect(() => {
 		const prepareMap = async () => {
 			if (!mapElementRef.current || !mapConfig.center) return;
@@ -43,27 +49,38 @@ const MapProvider = () => {
 				animationMode: "always",
 			});
 
-			const box = new Mesh(
-				new BoxGeometry(100, 200, 500),
-				new MeshMatcapMaterial(),
-			);
+			mapOverlayRef.current = overlay;
 
-			const pos = overlay.latLngAltitudeToVector3(mapConfig.center);
-			box.position.copy(pos);
-			box.position.z = 400;
+			// const box = new Mesh(
+			// 	new BoxGeometry(100, 200, 500),
+			// 	new MeshMatcapMaterial(),
+			// );
 
-			scene.add(box);
+			// const pos = overlay.latLngAltitudeToVector3(mapConfig.center);
+			// box.position.copy(pos);
+			// box.position.z = 400;
 
-			const animate = () => {
-				box.rotateX(Math.PI / 360);
+			// scene.add(box);
 
-				requestAnimationFrame(animate);
-			};
-			requestAnimationFrame(animate);
+			// const animate = () => {
+			// 	box.rotateX(Math.PI / 360);
+
+			// 	requestAnimationFrame(animate);
+			// };
+			// requestAnimationFrame(animate);
 		};
 
 		prepareMap();
 	}, [mapConfig]);
+
+	//render dataset once it is ready
+	useEffect(() => {
+		if (dataset.idRouteMap.size === 0 && dataset.sequence.length === 0) return;
+
+		const animate = (time: number) => {};
+		requestAnimationFrame(animate);
+	}, [dataset]);
+
 	return <div id="map" style={{ flex: 1 }} ref={mapElementRef} />;
 };
 
