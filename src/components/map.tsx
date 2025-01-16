@@ -1,9 +1,16 @@
 import { useEffect, useRef, useMemo } from "react";
 import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
-import { Scene } from "three";
+import {
+	BoxGeometry,
+	Mesh,
+	MeshMatcapMaterial,
+	Scene,
+	type Vector3,
+} from "three";
 import SECRET from "../assets/secret.json";
 import { useAppstore } from "../store";
+import type { GeoPosition } from "../lib/dataset";
 
 const MapProvider = () => {
 	const mapElementRef = useRef<HTMLDivElement | null>(null);
@@ -44,30 +51,14 @@ const MapProvider = () => {
 
 			const map = new google.maps.Map(mapElementRef.current, mapConfig);
 			const overlay = new ThreeJSOverlayView({
+				anchor: mapConfig.center,
+				upAxis: "Y",
 				map,
 				scene,
 				animationMode: "always",
 			});
 
 			mapOverlayRef.current = overlay;
-
-			// const box = new Mesh(
-			// 	new BoxGeometry(100, 200, 500),
-			// 	new MeshMatcapMaterial(),
-			// );
-
-			// const pos = overlay.latLngAltitudeToVector3(mapConfig.center);
-			// box.position.copy(pos);
-			// box.position.z = 400;
-
-			// scene.add(box);
-
-			// const animate = () => {
-			// 	box.rotateX(Math.PI / 360);
-
-			// 	requestAnimationFrame(animate);
-			// };
-			// requestAnimationFrame(animate);
 		};
 
 		prepareMap();
@@ -77,7 +68,35 @@ const MapProvider = () => {
 	useEffect(() => {
 		if (dataset.idRouteMap.size === 0 && dataset.sequence.length === 0) return;
 
-		const animate = (time: number) => {};
+		const overlay = mapOverlayRef.current as ThreeJSOverlayView;
+		const scene = overlay.scene as Scene;
+
+		const currentTimeStamp = dataset.sequence?.[0];
+
+		const markerTemplate = new Mesh(
+			new BoxGeometry(10, 10, 10),
+			new MeshMatcapMaterial(),
+		);
+
+		for (const [_id, vehicle] of dataset.idRouteMap) {
+			if (vehicle.route.has(currentTimeStamp)) {
+				const marker = markerTemplate.clone();
+
+				const geoPosition = vehicle.route.get(currentTimeStamp)
+					?.pos as GeoPosition;
+				const glPosition = overlay.latLngAltitudeToVector3(
+					geoPosition,
+				) as Vector3;
+				marker.position.copy(glPosition);
+
+				scene.add(marker);
+			}
+		}
+
+		const animate = (time: number) => {
+			console.log(time);
+			requestAnimationFrame(animate);
+		};
 		requestAnimationFrame(animate);
 	}, [dataset]);
 
