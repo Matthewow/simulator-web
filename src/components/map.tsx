@@ -77,9 +77,21 @@ const MapProvider = () => {
 
 		const currentTimeStamp = dataset.sequence?.[0];
 
-		const vertices = new Float32Array([0.5, 0, 0, -0.5, 0, 0, 0, 0, 0.85]);
+		const vertices = new Float32Array([
+			0, 0,  0.75, 
+			1.0, 0,  1.0, 
+			0, 0,  -1.0, 
+			-1.0, 0,  1.0, 
+			
+		]);
+
+		const indices = [
+			0, 1, 2,
+			0, 2, 3
+		];
 		const geometry = new BufferGeometry();
 		geometry.setAttribute("position", new BufferAttribute(vertices, 3));
+		geometry.setIndex( indices );
 
 		const material = new MeshBasicMaterial({ color: 0x0000ff });
 		const markerTemplate = new Mesh(geometry, material);
@@ -100,7 +112,7 @@ const MapProvider = () => {
 		}
 
 		const animate = (time: number) => {
-			console.log(time);
+			//console.log(time);
 			requestAnimationFrame(animate);
 		};
 		requestAnimationFrame(animate);
