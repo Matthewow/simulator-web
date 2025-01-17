@@ -4,13 +4,17 @@ import { Loader } from "@googlemaps/js-api-loader";
 import {
 	BoxGeometry,
 	Mesh,
+	MeshBasicMaterial,
 	MeshMatcapMaterial,
+	BufferGeometry,
+	BufferAttribute,
 	Scene,
 	type Vector3,
 } from "three";
 import SECRET from "../assets/secret.json";
 import { useAppstore } from "../store";
 import type { GeoPosition } from "../lib/dataset";
+import { color } from "three/tsl";
 
 const MapProvider = () => {
 	const mapElementRef = useRef<HTMLDivElement | null>(null);
@@ -22,8 +26,8 @@ const MapProvider = () => {
 			},
 			mapId: SECRET.map.mapId,
 			zoom: 15,
-			heading: 45,
-			tilt: 67,
+			heading: 0,
+			tilt: 45,
 			clickableIcons: false,
 			disableDefaultUI: true,
 			keyboardShortcuts: false,
@@ -73,10 +77,13 @@ const MapProvider = () => {
 
 		const currentTimeStamp = dataset.sequence?.[0];
 
-		const markerTemplate = new Mesh(
-			new BoxGeometry(10, 10, 10),
-			new MeshMatcapMaterial(),
-		);
+		const vertices = new Float32Array([0.5, 0, 0, -0.5, 0, 0, 0, 0, 0.85]);
+		const geometry = new BufferGeometry();
+		geometry.setAttribute("position", new BufferAttribute(vertices, 3));
+
+		const material = new MeshBasicMaterial({ color: 0x0000ff });
+		const markerTemplate = new Mesh(geometry, material);
+		markerTemplate.scale.set(15, 15, 15);
 
 		for (const [_id, vehicle] of dataset.idRouteMap) {
 			if (vehicle.route.has(currentTimeStamp)) {
@@ -88,7 +95,6 @@ const MapProvider = () => {
 					geoPosition,
 				) as Vector3;
 				marker.position.copy(glPosition);
-
 				scene.add(marker);
 			}
 		}
