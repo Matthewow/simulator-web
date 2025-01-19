@@ -7,7 +7,7 @@ import {
 	BufferGeometry,
 	BufferAttribute,
 	Scene,
-	type Vector3,
+	Vector3,
 } from "three";
 import SECRET from "../assets/secret.json";
 import { useAppstore } from "../store";
@@ -47,6 +47,7 @@ const MapProvider = () => {
 			});
 
 			await loader.importLibrary("core");
+			await loader.importLibrary("geometry");
 
 			const scene = new Scene();
 
@@ -72,9 +73,8 @@ const MapProvider = () => {
 		const overlay = mapOverlayRef.current as ThreeJSOverlayView;
 		const scene = overlay.scene as Scene;
 
-		let curTimeIndex = 0;
 		let initTimeInMili: number | null = null;
-		const currentTimeStamp = dataset.sequence?.[curTimeIndex];
+		const initTimestamp = dataset.sequence?.[0];
 
 		const vertices = new Float32Array([
 			0, 0, 0.75, 1.0, 0, 1.0, 0, 0, -1.0, -1.0, 0, 1.0,
@@ -90,61 +90,94 @@ const MapProvider = () => {
 		markerTemplate.scale.set(15, 15, 15);
 
 		for (const [_id, vehicle] of dataset.idRouteMap) {
-			if (vehicle.route.has(currentTimeStamp)) {
+			if (vehicle.route.has(initTimestamp)) {
 				const marker = markerTemplate.clone();
 
-				const geoPosition = vehicle.route.get(currentTimeStamp)
+				const geoPosition = vehicle.route.get(initTimestamp)
 					?.pos as GeoPosition;
 				const glPosition = overlay.latLngAltitudeToVector3(
 					geoPosition,
 				) as Vector3;
 				marker.position.copy(glPosition);
+
+				const nextTimeIndex = 1;
+				const nextTimestamp = dataset.sequence?.[nextTimeIndex];
+				const nextGeoPosition = vehicle.route.get(nextTimestamp)?.pos;
+				if (initTimestamp && nextTimestamp && nextGeoPosition) {
+					const heading = google.maps.geometry.spherical.computeHeading(
+						geoPosition,
+						nextGeoPosition,
+					);
+
+					marker.rotation.y = -(heading / 180) * Math.PI;
+				}
+
 				scene.add(marker);
 				vehicle.marker = marker;
 			}
 		}
 
-		let shouldCalcFrameDiff = false;
-		let lastTimeInMili = 0;
+		let lastTime: number | null = null;
 		const animate = (time: number) => {
-			//Calculate frame diff
-			if (shouldCalcFrameDiff) {
-				shouldCalcFrameDiff = false;
-				console.log(`key frame diff = ${time - lastTimeInMili}`);
+			if (lastTime) {
+				console.log(`Frame diff is ${time - lastTime}`);
+				lastTime = time;
 			}
-
-			//Record Init time
 			if (!initTimeInMili) {
+				//Record Init time
 				initTimeInMili = time;
+				lastTime = time;
+			}
+			const rebasedTime = time - initTimeInMili;
 
-				shouldCalcFrameDiff = true;
-				lastTimeInMili = time;
+			const curTimeIndex = Math.floor(rebasedTime / 5000);
+			const nextTimeIndex = curTimeIndex + 1;
+
+			const curTimestamp = dataset.sequence?.[curTimeIndex];
+			const nextTimestamp = dataset.sequence?.[nextTimeIndex];
+			if (!curTimeIndex && !nextTimeIndex) {
+				console.log("Run out of data");
+				return;
 			}
 
-			const newTimeIndex = Math.floor((time - initTimeInMili) / 5000);
-			if (
-				newTimeIndex > curTimeIndex &&
-				newTimeIndex < dataset.sequence?.length
-			) {
-				shouldCalcFrameDiff = true;
-				lastTimeInMili = time;
+			for (const [_id, vehicle] of dataset.idRouteMap) {
+				const route = vehicle.route;
 
-				curTimeIndex = newTimeIndex;
-				const currentTimeStamp = dataset.sequence?.[curTimeIndex];
+				const curGeoPosition = route.get(curTimestamp)?.pos;
+				const nextGeoPosition = route.get(nextTimestamp)?.pos;
 
-				for (const [_id, vehicle] of dataset.idRouteMap) {
-					if (vehicle.route.has(currentTimeStamp)) {
-						const marker = vehicle.marker;
+				if (curGeoPosition && nextGeoPosition) {
+					const curGlPosition = overlay.latLngAltitudeToVector3(curGeoPosition);
+					const nextGlPosition =
+						overlay.latLngAltitudeToVector3(nextGeoPosition);
 
-						const geoPosition = vehicle.route.get(currentTimeStamp)
-							?.pos as GeoPosition;
-						const glPosition = overlay.latLngAltitudeToVector3(
-							geoPosition,
-						) as Vector3;
-						marker?.position.copy(glPosition);
+					const diff = {
+						x: nextGlPosition.x - curGlPosition.x,
+						z: nextGlPosition.z - curGlPosition.z,
+					};
+
+					const simulatedGlPosition = new Vector3(
+						curGlPosition.x + (diff.x * (rebasedTime % 5000)) / 5000,
+						curGlPosition.y,
+						curGlPosition.z + (diff.z * (rebasedTime % 5000)) / 5000,
+					);
+
+					vehicle.marker?.position.copy(simulatedGlPosition);
+
+					if (
+						curGeoPosition.lat !== nextGeoPosition.lat &&
+						curGeoPosition.lng !== nextGeoPosition.lng
+					) {
+						const heading = google.maps.geometry.spherical.computeHeading(
+							curGeoPosition,
+							nextGeoPosition,
+						);
+
+						(vehicle.marker as Mesh).rotation.y = -(heading / 180) * Math.PI;
 					}
 				}
 			}
+
 			requestAnimationFrame(animate);
 		};
 		requestAnimationFrame(animate);
