@@ -93,18 +93,12 @@ const MapProvider = () => {
 			if (vehicle.route.has(currentTimeStamp)) {
 				const marker = markerTemplate.clone();
 
-				const vehicleSnapshot = vehicle.route.get(currentTimeStamp);
 				const geoPosition = vehicle.route.get(currentTimeStamp)
 					?.pos as GeoPosition;
 				const glPosition = overlay.latLngAltitudeToVector3(
 					geoPosition,
 				) as Vector3;
 				marker.position.copy(glPosition);
-
-				if (vehicleSnapshot?.angle) {
-					marker.rotateY(vehicleSnapshot?.angle);
-				}
-
 				scene.add(marker);
 				vehicle.marker = marker;
 			}
@@ -142,17 +136,12 @@ const MapProvider = () => {
 					if (vehicle.route.has(currentTimeStamp)) {
 						const marker = vehicle.marker;
 
-						const vehicleSnapshot = vehicle.route.get(currentTimeStamp);
 						const geoPosition = vehicle.route.get(currentTimeStamp)
 							?.pos as GeoPosition;
 						const glPosition = overlay.latLngAltitudeToVector3(
 							geoPosition,
 						) as Vector3;
 						marker?.position.copy(glPosition);
-
-						if (vehicleSnapshot?.angle) {
-							marker?.rotateY(vehicleSnapshot?.angle);
-						}
 					}
 				}
 			}

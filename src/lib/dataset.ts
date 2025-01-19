@@ -1,5 +1,5 @@
 import type { Mesh } from "three";
-import { calculateDirectionAngle, isNumber, isValidNumber } from "./utils";
+import { isNumber, isValidNumber } from "./utils";
 
 export type VehicleType = "Taxi";
 export type GeoPosition = { lat: number; lng: number };
@@ -7,7 +7,6 @@ export type VehicleStatus = "EMPTY";
 export type VehicleSnapshot = {
 	pos: GeoPosition;
 	status: VehicleStatus;
-	angle: number | null;
 };
 export type VehicleRoute = Map<number, VehicleSnapshot>;
 
@@ -81,7 +80,7 @@ export const parseDataSet = (raw: string) => {
 						idRotueMap.set(id, new Vehicle(id, type));
 					}
 
-					const snapshot: VehicleSnapshot = { pos, status, angle: null };
+					const snapshot: VehicleSnapshot = { pos, status };
 					idRotueMap.get(id)?.appendRoute(timestamp, snapshot);
 				}
 			}
@@ -95,23 +94,6 @@ export const parseDataSet = (raw: string) => {
 			).sort() as Array<number>;
 
 			dataset.sequence = sequence;
-
-			for (const [_id, vehicle] of idRotueMap) {
-				const route = vehicle.route;
-				for (let i = 0; i < sequence.length - 1; i++) {
-					const curTimestamp = sequence[i];
-					const nextTimestamp = sequence[i + 1];
-
-					const curSnapshot = route.get(curTimestamp);
-					const curPos = curSnapshot?.pos;
-					const nextPos = route.get(nextTimestamp)?.pos;
-
-					if (curSnapshot && nextPos && curPos) {
-						const curAngle = calculateDirectionAngle(nextPos, curPos);
-						curSnapshot.angle = curAngle;
-					}
-				}
-			}
 		} catch (e) {
 			//In case of parsing error
 			console.error(e);
