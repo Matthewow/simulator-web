@@ -2,10 +2,8 @@ import { useEffect, useRef, useMemo } from "react";
 import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
 import {
-	BoxGeometry,
 	Mesh,
 	MeshBasicMaterial,
-	MeshMatcapMaterial,
 	BufferGeometry,
 	BufferAttribute,
 	Scene,
@@ -14,7 +12,6 @@ import {
 import SECRET from "../assets/secret.json";
 import { useAppstore } from "../store";
 import type { GeoPosition } from "../lib/dataset";
-import { color } from "three/tsl";
 
 const MapProvider = () => {
 	const mapElementRef = useRef<HTMLDivElement | null>(null);
@@ -78,20 +75,13 @@ const MapProvider = () => {
 		const currentTimeStamp = dataset.sequence?.[0];
 
 		const vertices = new Float32Array([
-			0, 0,  0.75, 
-			1.0, 0,  1.0, 
-			0, 0,  -1.0, 
-			-1.0, 0,  1.0, 
-			
+			0, 0, 0.75, 1.0, 0, 1.0, 0, 0, -1.0, -1.0, 0, 1.0,
 		]);
 
-		const indices = [
-			0, 1, 2,
-			0, 2, 3
-		];
+		const indices = [0, 1, 2, 0, 2, 3];
 		const geometry = new BufferGeometry();
 		geometry.setAttribute("position", new BufferAttribute(vertices, 3));
-		geometry.setIndex( indices );
+		geometry.setIndex(indices);
 
 		const material = new MeshBasicMaterial({ color: 0x0000ff });
 		const markerTemplate = new Mesh(geometry, material);
@@ -111,7 +101,7 @@ const MapProvider = () => {
 			}
 		}
 
-		const animate = (time: number) => {
+		const animate = (_time: number) => {
 			//console.log(time);
 			requestAnimationFrame(animate);
 		};
