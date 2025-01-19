@@ -72,7 +72,9 @@ const MapProvider = () => {
 		const overlay = mapOverlayRef.current as ThreeJSOverlayView;
 		const scene = overlay.scene as Scene;
 
-		const currentTimeStamp = dataset.sequence?.[0];
+		let curTimeIndex = 0;
+		let initTimeInMili: number | null = null;
+		const currentTimeStamp = dataset.sequence?.[curTimeIndex];
 
 		const vertices = new Float32Array([
 			0, 0, 0.75, 1.0, 0, 1.0, 0, 0, -1.0, -1.0, 0, 1.0,
@@ -104,11 +106,56 @@ const MapProvider = () => {
 				}
 
 				scene.add(marker);
+				vehicle.marker = marker;
 			}
 		}
 
-		const animate = (_time: number) => {
-			//console.log(time);
+		let shouldCalcFrameDiff = false;
+		let lastTimeInMili = 0;
+		const animate = (time: number) => {
+			//Calculate frame diff
+			if (shouldCalcFrameDiff) {
+				shouldCalcFrameDiff = false;
+				console.log(`key frame diff = ${time - lastTimeInMili}`);
+			}
+
+			//Record Init time
+			if (!initTimeInMili) {
+				initTimeInMili = time;
+
+				shouldCalcFrameDiff = true;
+				lastTimeInMili = time;
+			}
+
+			const newTimeIndex = Math.floor((time - initTimeInMili) / 5000);
+			if (
+				newTimeIndex > curTimeIndex &&
+				newTimeIndex < dataset.sequence?.length
+			) {
+				shouldCalcFrameDiff = true;
+				lastTimeInMili = time;
+
+				curTimeIndex = newTimeIndex;
+				const currentTimeStamp = dataset.sequence?.[curTimeIndex];
+
+				for (const [_id, vehicle] of dataset.idRouteMap) {
+					if (vehicle.route.has(currentTimeStamp)) {
+						const marker = vehicle.marker;
+
+						const vehicleSnapshot = vehicle.route.get(currentTimeStamp);
+						const geoPosition = vehicle.route.get(currentTimeStamp)
+							?.pos as GeoPosition;
+						const glPosition = overlay.latLngAltitudeToVector3(
+							geoPosition,
+						) as Vector3;
+						marker?.position.copy(glPosition);
+
+						if (vehicleSnapshot?.angle) {
+							marker?.rotateY(vehicleSnapshot?.angle);
+						}
+					}
+				}
+			}
 			requestAnimationFrame(animate);
 		};
 		requestAnimationFrame(animate);

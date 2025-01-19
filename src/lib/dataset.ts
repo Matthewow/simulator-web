@@ -1,3 +1,4 @@
+import type { Mesh } from "three";
 import { calculateDirectionAngle, isNumber, isValidNumber } from "./utils";
 
 export type VehicleType = "Taxi";
@@ -15,11 +16,13 @@ export class Vehicle {
 
 	readonly vtype: VehicleType;
 	route: VehicleRoute;
+	marker: Mesh | null;
 
 	constructor(id: number, type: VehicleType) {
 		this.id = id;
 		this.vtype = type;
 		this.route = new Map();
+		this.marker = null;
 	}
 
 	appendRoute(timestamp: number, snapshot: VehicleSnapshot) {
