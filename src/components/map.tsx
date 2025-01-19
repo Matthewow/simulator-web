@@ -135,7 +135,7 @@ const MapProvider = () => {
 
 			const curTimestamp = dataset.sequence?.[curTimeIndex];
 			const nextTimestamp = dataset.sequence?.[nextTimeIndex];
-			if (!curTimeIndex && !nextTimeIndex) {
+			if (!curTimestamp && !nextTimestamp) {
 				console.log("Run out of data");
 				return;
 			}
