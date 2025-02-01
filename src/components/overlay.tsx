@@ -5,18 +5,7 @@ const Overlay = () => {
 	const dataStatus = useAppstore((state) => state.dataStatus);
 
 	return dataStatus === "Loading" ? (
-		<div
-			style={{
-				position: "absolute",
-				width: "100%",
-				height: "100%",
-				background: "rgba(0,0,0,0.8)",
-				zIndex: 3,
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-			}}
-		>
+		<div className="flex absolute w-full h-full bg-black bg-op-80 z-3 items-center justify-center">
 			<Spinner size="large" />
 		</div>
 	) : (

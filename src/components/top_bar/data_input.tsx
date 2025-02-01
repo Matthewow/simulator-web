@@ -43,7 +43,7 @@ const DataInput = forwardRef<DataInputHandle, unknown>((_props, ref) => {
 	}, [setDataStatus, setDataset]);
 
 	//Place input element here to trigger file reader and corresponding functions
-	return <input type="file" style={{ display: "none" }} ref={fileInputRef} />;
+	return <input type="file" className="hidden" ref={fileInputRef} />;
 });
 
 export default DataInput;

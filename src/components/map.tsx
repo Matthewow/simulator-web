@@ -183,7 +183,7 @@ const MapProvider = () => {
 		requestAnimationFrame(animate);
 	}, [dataset]);
 
-	return <div id="map" style={{ flex: 1 }} ref={mapElementRef} />;
+	return <div id="map" className="flex-1" ref={mapElementRef} />;
 };
 
 export default MapProvider;

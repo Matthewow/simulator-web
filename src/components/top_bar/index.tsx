@@ -17,17 +17,9 @@ const TopBar = () => {
 		dataInputRef.current?.triggerUploadDialog();
 	}, []);
 	return (
-		<div
-			style={{
-				flexBasis: "3rem",
-				flexGrow: 0,
-				display: "flex",
-				alignItems: "center",
-				zIndex: 2,
-			}}
-		>
+		<div className="flex flex-basis-[3rem] flex-grow-0 items-center z-2">
 			<DataInput ref={dataInputRef} />
-			<Map24Regular style={{ margin: "0rem 1rem" }} />
+			<Map24Regular className="mx-[1rem] my-0" />
 			<Menu positioning={{ autoSize: true }}>
 				<MenuTrigger disableButtonEnhancement>
 					<Button appearance="outline">File</Button>
