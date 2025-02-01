@@ -4,6 +4,7 @@ import { UnoCSSRspackPlugin } from "@unocss/webpack/rspack";
 
 export default defineConfig({
 	plugins: [pluginReact()],
+	html: { template: "./static/template.html" },
 	tools: {
 		rspack: {
 			plugins: [UnoCSSRspackPlugin()],
