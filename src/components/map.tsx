@@ -1,18 +1,9 @@
 import { useEffect, useRef, useMemo } from "react";
 import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
-import {
-	Mesh,
-	MeshBasicMaterial,
-	BufferGeometry,
-	BufferAttribute,
-	Scene,
-	type Vector3,
-	Clock,
-} from "three";
+import { Scene, Clock } from "three";
 import SECRET from "../assets/secret.json";
 import { useAppstore } from "../store";
-import type { GeoPosition } from "../lib/dataset";
 import { createMarkerMesh } from "../lib/marker";
 
 const MapProvider = () => {
