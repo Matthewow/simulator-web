@@ -76,10 +76,14 @@ const MapProvider = () => {
 			}
 		}
 
+		let lastTime = 0;
 		const timer = new Clock();
 		const animate = () => {
 			const requestedTime = timer.getElapsedTime();
-			console.log(requestedTime);
+
+			console.log(requestedTime - lastTime);
+			lastTime = requestedTime;
+
 			for (const [_id, vehicle] of dataset.idRouteMap) {
 				vehicle.updateMarker(requestedTime, overlay);
 			}
