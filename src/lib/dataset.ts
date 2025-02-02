@@ -1,5 +1,6 @@
-import type { Mesh } from "three";
+import { Vector3, type Mesh } from "three";
 import { isNumber, isValidNumber } from "./utils";
+import type { ThreeJSOverlayView } from "@googlemaps/three";
 
 export type VehicleType = "Taxi";
 export type GeoPosition = { lat: number; lng: number };
@@ -15,17 +16,66 @@ export class Vehicle {
 
 	readonly vtype: VehicleType;
 	route: VehicleRoute;
+	sequence: Array<number>;
 	marker: Mesh | null;
 
-	constructor(id: number, type: VehicleType) {
+	constructor(id: number, type: VehicleType, sequence: number[]) {
 		this.id = id;
 		this.vtype = type;
 		this.route = new Map();
+		this.sequence = sequence;
 		this.marker = null;
 	}
 
 	appendRoute(timestamp: number, snapshot: VehicleSnapshot) {
 		this.route.set(timestamp, snapshot);
+	}
+
+	updateMarker(timeInSecond: number, overlay: ThreeJSOverlayView) {
+		const currentTimeIndex = Math.min(
+			Math.floor(timeInSecond / 5),
+			this.sequence.length - 1,
+		);
+		const nextTimeIndex = Math.min(
+			currentTimeIndex + 1,
+			this.sequence.length - 1,
+		);
+
+		const currentTime = this.sequence[currentTimeIndex];
+		const curGeoPosition = this.route.get(currentTime)?.pos;
+
+		const nextTime = this.sequence[nextTimeIndex];
+		const nextGeoPosition = this.route.get(nextTime)?.pos;
+
+		if (curGeoPosition && nextGeoPosition) {
+			const curGlPosition = overlay.latLngAltitudeToVector3(curGeoPosition);
+			const nextGlPosition = overlay.latLngAltitudeToVector3(nextGeoPosition);
+
+			const diff = {
+				x: nextGlPosition.x - curGlPosition.x,
+				z: nextGlPosition.z - curGlPosition.z,
+			};
+
+			const simulatedGlPosition = new Vector3(
+				curGlPosition.x + (diff.x * (timeInSecond % 5)) / 5,
+				curGlPosition.y,
+				curGlPosition.z + (diff.z * (timeInSecond % 5)) / 5,
+			);
+
+			this.marker?.position.copy(simulatedGlPosition);
+
+			if (
+				curGeoPosition.lat !== nextGeoPosition.lat &&
+				curGeoPosition.lng !== nextGeoPosition.lng
+			) {
+				const heading = google.maps.geometry.spherical.computeHeading(
+					curGeoPosition,
+					nextGeoPosition,
+				);
+
+				(this.marker as Mesh).rotation.y = -(heading / 180) * Math.PI;
+			}
+		}
 	}
 }
 
@@ -52,6 +102,7 @@ export const parseDataSet = (raw: string) => {
 	const timeStampIndex = definitions.get("time");
 
 	const dataset: Dataset = { idRouteMap: new Map(), sequence: [] };
+
 	if (
 		isNumber(idIndex) &&
 		isNumber(typeIndex) &&
@@ -62,6 +113,8 @@ export const parseDataSet = (raw: string) => {
 	) {
 		try {
 			const idRotueMap = dataset.idRouteMap;
+			const sequence = [] as number[];
+
 			for (const line of lines) {
 				const attributes = line.split(",");
 
@@ -77,7 +130,7 @@ export const parseDataSet = (raw: string) => {
 				// Create vehicle or append route if id is valid
 				if (isValidNumber(id)) {
 					if (!idRotueMap.has(id)) {
-						idRotueMap.set(id, new Vehicle(id, type));
+						idRotueMap.set(id, new Vehicle(id, type, sequence));
 					}
 
 					const snapshot: VehicleSnapshot = { pos, status };
@@ -85,13 +138,15 @@ export const parseDataSet = (raw: string) => {
 				}
 			}
 
-			const sequence = Array.from(
+			const shareSequence = Array.from(
 				new Set(
 					Array.from(dataset.idRouteMap, ([_, vehicle]) =>
 						Array.from(vehicle.route.keys()),
 					).flat(),
 				),
 			).sort() as Array<number>;
+
+			sequence.push(...shareSequence);
 
 			dataset.sequence = sequence;
 		} catch (e) {
