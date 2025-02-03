@@ -15,7 +15,7 @@ const DEFAULT_MARKER_MESH = (() => {
 	geometry.setAttribute("position", new BufferAttribute(vertices, 3));
 	geometry.setIndex(indices);
 
-	const material = new MeshBasicMaterial({ color: 0x0000ff });
+	const material = new MeshBasicMaterial({ color: 0xaaaaaa });
 	const markerTemplate = new Mesh(geometry, material);
 	markerTemplate.scale.set(15, 15, 15);
 
