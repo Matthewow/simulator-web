@@ -17,7 +17,7 @@ const DEFAULT_MARKER_MESH = (() => {
 
 	const material = new MeshBasicMaterial({ color: 0xaaaaaa });
 	const markerTemplate = new Mesh(geometry, material);
-	markerTemplate.scale.set(15, 15, 15);
+	markerTemplate.scale.set(10, 10, 10);
 
 	return markerTemplate;
 })();
