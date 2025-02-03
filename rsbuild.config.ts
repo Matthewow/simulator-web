@@ -3,6 +3,9 @@ import { pluginReact } from "@rsbuild/plugin-react";
 import { UnoCSSRspackPlugin } from "@unocss/webpack/rspack";
 
 export default defineConfig({
+	dev: {
+		hmr: false,
+	},
 	plugins: [pluginReact()],
 	html: { template: "./static/template.html" },
 	tools: {
