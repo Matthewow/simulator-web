@@ -1,6 +1,7 @@
 import { Vector3, type Mesh } from "three";
 import { isNumber, isValidNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
+import { createMarkerMesh } from "./marker";
 
 export type VehicleType = "Taxi";
 export type GeoPosition = { lat: number; lng: number };
@@ -17,14 +18,14 @@ export class Vehicle {
 	readonly vtype: VehicleType;
 	route: VehicleRoute;
 	sequence: Array<number>;
-	marker: Mesh | null;
+	marker: Mesh;
 
-	constructor(id: number, type: VehicleType, sequence: number[]) {
+	constructor(id: number, type: VehicleType, sequence: number[], marker: Mesh) {
 		this.id = id;
 		this.vtype = type;
 		this.route = new Map();
 		this.sequence = sequence;
-		this.marker = null;
+		this.marker = marker;
 	}
 
 	appendRoute(timestamp: number, snapshot: VehicleSnapshot) {
@@ -130,7 +131,10 @@ export const parseDataSet = (raw: string) => {
 				// Create vehicle or append route if id is valid
 				if (isValidNumber(id)) {
 					if (!idRotueMap.has(id)) {
-						idRotueMap.set(id, new Vehicle(id, type, sequence));
+						idRotueMap.set(
+							id,
+							new Vehicle(id, type, sequence, createMarkerMesh()),
+						);
 					}
 
 					const snapshot: VehicleSnapshot = { pos, status };

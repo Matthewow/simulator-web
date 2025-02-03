@@ -4,7 +4,6 @@ import { Loader } from "@googlemaps/js-api-loader";
 import { Scene, Clock } from "three";
 import SECRET from "../assets/secret.json";
 import { useAppstore } from "../store";
-import { createMarkerMesh } from "../lib/marker";
 
 const MapProvider = () => {
 	const mapElementRef = useRef<HTMLDivElement | null>(null);
@@ -70,9 +69,7 @@ const MapProvider = () => {
 
 		for (const [_id, vehicle] of dataset.idRouteMap) {
 			if (vehicle.route.has(initTimestamp)) {
-				const marker = createMarkerMesh();
-				scene.add(marker);
-				vehicle.marker = marker;
+				scene.add(vehicle.marker);
 			}
 		}
 
