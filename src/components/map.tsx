@@ -91,7 +91,7 @@ const MapProvider = () => {
 		animate();
 	}, [dataset]);
 
-	return <div id="map" className="flex-1" ref={mapElementRef} />;
+	return <div id="map" className="w-full h-full" ref={mapElementRef} />;
 };
 
 export default MapProvider;

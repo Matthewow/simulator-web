@@ -6,8 +6,12 @@ const App = () => {
 	return (
 		<div className="flex h-100vh justify-center flex-col">
 			<Overlay />
-			<TopBar />
-			<MapProvider />
+			<div className="flex flex-basis-[3rem] flex-grow-0 items-center z-2">
+				<TopBar />
+			</div>
+			<div className="flex-1">
+				<MapProvider />
+			</div>
 		</div>
 	);
 };

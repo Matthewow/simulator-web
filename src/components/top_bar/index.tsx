@@ -17,7 +17,7 @@ const TopBar = () => {
 		dataInputRef.current?.triggerUploadDialog();
 	}, []);
 	return (
-		<div className="flex flex-basis-[3rem] flex-grow-0 items-center z-2">
+		<>
 			<DataInput ref={dataInputRef} />
 			<Map24Regular className="mx-[1rem] my-0" />
 			<Menu positioning={{ autoSize: true }}>
@@ -31,7 +31,7 @@ const TopBar = () => {
 					</MenuList>
 				</MenuPopover>
 			</Menu>
-		</div>
+		</>
 	);
 };
 
