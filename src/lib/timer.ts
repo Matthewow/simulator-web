@@ -23,6 +23,10 @@ class TimelineTimer {
 
 		return this.elapsedTime;
 	}
+
+	reset() {
+		this.elapsedTime = 0;
+	}
 }
 
 export default TimelineTimer;

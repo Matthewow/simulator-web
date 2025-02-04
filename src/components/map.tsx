@@ -70,16 +70,17 @@ const MapProvider = (props: MapProviderProps) => {
 	//render dataset once it is ready
 	useEffect(() => {
 		if (dataset.idRouteMap.size === 0 && dataset.sequence.length === 0) return;
-
 		const overlay = mapOverlayRef.current as ThreeJSOverlayView;
 		const scene = overlay.scene as Scene;
 
-		const initTimestamp = dataset.sequence?.[0];
+		while (scene.children.length) {
+			scene.remove(scene.children[0]);
+		}
+
+		timerRef.current.reset();
 
 		for (const [_id, vehicle] of dataset.idRouteMap) {
-			if (vehicle.route.has(initTimestamp)) {
-				scene.add(vehicle.marker);
-			}
+			scene.add(vehicle.marker);
 		}
 
 		let lastTime = 0;
