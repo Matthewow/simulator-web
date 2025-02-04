@@ -13,7 +13,7 @@ const App = () => {
 				<TopBar />
 			</div>
 			<div className="flex-1">
-				<MapProvider dataset={dataset} key={JSON.stringify(dataset.idRouteMap)} />
+				<MapProvider dataset={dataset} />
 			</div>
 			<div className="flex-basis-[15rem]">
 				<Timeline />
