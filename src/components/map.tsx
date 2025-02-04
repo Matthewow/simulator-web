@@ -3,10 +3,16 @@ import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
 import { Scene, Clock } from "three";
 import SECRET from "../assets/secret.json";
-import { useAppstore } from "../store";
 import { listenNamedEvent } from "../lib/event";
+import type { Dataset } from "../lib/dataset";
 
-const MapProvider = () => {
+type MapProviderProps = {
+	dataset: Dataset;
+};
+
+const MapProvider = (props: MapProviderProps) => {
+	const { dataset } = props;
+
 	const mapElementRef = useRef<HTMLDivElement | null>(null);
 	const mapConfig = useMemo<google.maps.MapOptions>(() => {
 		return {
@@ -25,8 +31,6 @@ const MapProvider = () => {
 	}, []);
 
 	const mapOverlayRef = useRef<ThreeJSOverlayView | null>(null);
-
-	const dataset = useAppstore((state) => state.dataset);
 
 	// init google map and delegate scene to google map
 	useEffect(() => {
