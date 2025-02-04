@@ -1,5 +1,6 @@
 import MapProvider from "./components/map";
 import Overlay from "./components/overlay";
+import Timeline from "./components/timeline";
 import TopBar from "./components/top_bar";
 
 const App = () => {
@@ -11,6 +12,9 @@ const App = () => {
 			</div>
 			<div className="flex-1">
 				<MapProvider />
+			</div>
+			<div className="flex-basis-[15rem]">
+				<Timeline />
 			</div>
 		</div>
 	);

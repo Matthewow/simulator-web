@@ -4,6 +4,7 @@ import { Loader } from "@googlemaps/js-api-loader";
 import { Scene, Clock } from "three";
 import SECRET from "../assets/secret.json";
 import { useAppstore } from "../store";
+import { listenNamedEvent } from "../lib/event";
 
 const MapProvider = () => {
 	const mapElementRef = useRef<HTMLDivElement | null>(null);
@@ -90,6 +91,13 @@ const MapProvider = () => {
 
 		animate();
 	}, [dataset]);
+
+	//Listen to play status change
+	useEffect(() => {
+		listenNamedEvent("play_status_changed", (e) => {
+			console.log(e);
+		});
+	}, []);
 
 	return <div id="map" className="w-full h-full" ref={mapElementRef} />;
 };
