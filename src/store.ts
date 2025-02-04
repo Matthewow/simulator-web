@@ -3,7 +3,7 @@ import type { Dataset } from "./lib/dataset";
 import { dispatchNamedEvent } from "./lib/event";
 
 type DataStatus = "Idle" | "Loading" | "Ready";
-type PlayStatus = "Pause" | "Play" | "FastForward";
+export type PlayStatus = "Pause" | "Play" | "FastForward" | null;
 
 type AppState = {
 	dataStatus: DataStatus;
@@ -19,9 +19,10 @@ export const useAppstore = create<AppState>()((set) => ({
 	dataStatus: "Idle",
 	setDataStatus: (status) => set({ dataStatus: status }),
 	dataset: { idRouteMap: new Map(), sequence: [] },
-	setDataset: (dataset) => set({ dataset, dataStatus: "Ready" }),
+	setDataset: (dataset) =>
+		set({ dataset, dataStatus: "Ready", playStatus: "Play" }),
 
-	playStatus: "Play",
+	playStatus: null,
 	setPlayStatus: (playStatus) => {
 		dispatchNamedEvent("play_status_changed", playStatus);
 		set({ playStatus });
