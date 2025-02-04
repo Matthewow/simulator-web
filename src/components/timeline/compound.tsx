@@ -9,7 +9,7 @@ const CompoundButton = () => {
 	const { playStatus, setPlayStatus } = useAppstore((state) => state);
 
 	return (
-		<div className="flex flex-row w-[5rem] h-[1.5rem] items-center border-solid border-[0.6px] rounded-[4px] border-gray-500 overflow-hidden">
+		<div className="flex flex-row w-[7rem] h-[1.5rem] items-center border-solid border-[0.6px] rounded-[4px] border-gray-500 overflow-hidden">
 			{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 			<div
 				onClick={() => {
