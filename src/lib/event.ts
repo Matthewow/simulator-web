@@ -5,9 +5,9 @@ export const dispatchNamedEvent = <T>(eventName: string, data: T) => {
 
 export const listenNamedEvent = (
 	eventName: string,
-	callback: (e: Event) => void,
+	callback: (e: CustomEvent) => void,
 ) => {
 	document.addEventListener(eventName, (e) => {
-		callback(e);
+		callback(e as CustomEvent);
 	});
 };

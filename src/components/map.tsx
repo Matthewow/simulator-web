@@ -1,10 +1,12 @@
 import { useEffect, useRef, useMemo } from "react";
 import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
-import { Scene, Clock } from "three";
+import { Scene } from "three";
 import SECRET from "../assets/secret.json";
 import { listenNamedEvent } from "../lib/event";
 import type { Dataset } from "../lib/dataset";
+import TimelineTimer from "../lib/timer";
+import type { PlayStatus } from "../store";
 
 type MapProviderProps = {
 	dataset: Dataset;
@@ -31,6 +33,8 @@ const MapProvider = (props: MapProviderProps) => {
 	}, []);
 
 	const mapOverlayRef = useRef<ThreeJSOverlayView | null>(null);
+
+	const timerRef = useRef(new TimelineTimer());
 
 	// init google map and delegate scene to google map
 	useEffect(() => {
@@ -79,9 +83,8 @@ const MapProvider = (props: MapProviderProps) => {
 		}
 
 		let lastTime = 0;
-		const timer = new Clock();
 		const animate = () => {
-			const requestedTime = timer.getElapsedTime();
+			const requestedTime = timerRef.current.getElapsedTime();
 
 			console.log(requestedTime - lastTime);
 			lastTime = requestedTime;
@@ -99,7 +102,16 @@ const MapProvider = (props: MapProviderProps) => {
 	//Listen to play status change
 	useEffect(() => {
 		listenNamedEvent("play_status_changed", (e) => {
-			console.log(e);
+			switch (e?.detail as PlayStatus) {
+				case "FastForward":
+					timerRef.current.timeScale = 5;
+					break;
+				case "Play":
+					timerRef.current.timeScale = 1;
+					break;
+				case "Pause":
+					timerRef.current.timeScale = 0;
+			}
 		});
 	}, []);
 
