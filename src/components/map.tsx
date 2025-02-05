@@ -1,7 +1,7 @@
 import { useEffect, useRef, useMemo } from "react";
 import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
-import { Scene } from "three";
+import { Mesh, Scene } from "three";
 import SECRET from "../assets/secret.json";
 import { listenNamedEvent } from "../lib/event";
 import type { Dataset } from "../lib/dataset";
@@ -73,8 +73,11 @@ const MapProvider = (props: MapProviderProps) => {
 		const overlay = mapOverlayRef.current as ThreeJSOverlayView;
 		const scene = overlay.scene as Scene;
 
-		while (scene.children.length) {
-			scene.remove(scene.children[0]);
+		const meshes = scene.children.filter((child) => child instanceof Mesh);
+		for (const mesh of meshes) {
+			scene.remove(mesh);
+			mesh.material.dispose();
+			mesh.geometry.dispose();
 		}
 
 		timerRef.current.reset();
