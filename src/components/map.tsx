@@ -4,16 +4,11 @@ import { Loader } from "@googlemaps/js-api-loader";
 import { Mesh, Scene } from "three";
 import SECRET from "../assets/secret.json";
 import { listenNamedEvent } from "../lib/event";
-import type { Dataset } from "../lib/dataset";
 import TimelineTimer from "../lib/timer";
-import type { PlayStatus } from "../store";
+import { useAppstore, type PlayStatus } from "../store";
 
-type MapProviderProps = {
-	dataset: Dataset;
-};
-
-const MapProvider = (props: MapProviderProps) => {
-	const { dataset } = props;
+const MapProvider = () => {
+	const dataset = useAppstore((state) => state.dataset);
 
 	const mapElementRef = useRef<HTMLDivElement | null>(null);
 	const mapConfig = useMemo<google.maps.MapOptions>(() => {
