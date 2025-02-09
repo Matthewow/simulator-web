@@ -42,6 +42,7 @@ const Scale = () => {
 const Pointer = () => {
 	let sequence = useAppstore((state) => state.dataset.sequence);
 	sequence = sequence.map((second) => second - sequence[0]);
+	sequence.pop();
 
 	const updateHandler = useRef<number>(0);
 	const pointerEleRef = useRef<HTMLDivElement | null>(null);
