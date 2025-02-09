@@ -23,7 +23,7 @@ const MAP_CONFIG = {
 };
 
 let mapOverlay: ThreeJSOverlayView | null = null;
-const timer = new TimelineTimer();
+export const timer = new TimelineTimer();
 
 listenNamedEvent("init_google_map", async () => {
 	const mapElement = document.getElementById("map");
@@ -77,12 +77,8 @@ listenNamedEvent("render_dataset", (e) => {
 		scene.add(vehicle.marker);
 	}
 
-	let lastTime = 0;
 	const animate = () => {
 		const requestedTime = timer.getElapsedTime();
-
-		console.log(requestedTime - lastTime);
-		lastTime = requestedTime;
 
 		for (const [_id, vehicle] of dataset.idRouteMap) {
 			vehicle.updateMarker(requestedTime, overlay);
