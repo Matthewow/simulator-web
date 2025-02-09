@@ -1,5 +1,5 @@
 import { Spinner } from "@fluentui/react-components";
-import { useAppstore } from "../store";
+import { useAppstore } from "@/store";
 
 const Overlay = () => {
 	const dataStatus = useAppstore((state) => state.dataStatus);

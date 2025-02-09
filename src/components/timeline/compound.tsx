@@ -3,7 +3,7 @@ import {
 	Play20Regular,
 	FlashPlay20Regular,
 } from "@fluentui/react-icons";
-import { type PlayStatus, useAppstore } from "../../store";
+import { type PlayStatus, useAppstore } from "@/store";
 import { useCallback } from "react";
 
 const CompoundButton = () => {

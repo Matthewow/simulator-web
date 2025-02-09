@@ -1,3 +1,5 @@
+import "@lib/render";
+
 import MapProvider from "./components/map";
 import Overlay from "./components/overlay";
 import Timeline from "./components/timeline";

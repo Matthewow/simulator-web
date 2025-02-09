@@ -19,8 +19,10 @@ export const useAppstore = create<AppState>()((set) => ({
 	dataStatus: "Idle",
 	setDataStatus: (status) => set({ dataStatus: status }),
 	dataset: { idRouteMap: new Map(), sequence: [] },
-	setDataset: (dataset) =>
-		set({ dataset, dataStatus: "Ready", playStatus: "Play" }),
+	setDataset: (dataset) => {
+		dispatchNamedEvent("render_dataset", dataset);
+		set({ dataset, dataStatus: "Ready", playStatus: "Play" });
+	},
 
 	playStatus: null,
 	setPlayStatus: (playStatus) => {

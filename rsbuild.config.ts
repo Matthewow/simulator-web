@@ -13,4 +13,10 @@ export default defineConfig({
 			plugins: [UnoCSSRspackPlugin()],
 		},
 	},
+	resolve: {
+		alias: {
+			"@": "./src/",
+			"@lib": "./src/lib",
+		},
+	},
 });

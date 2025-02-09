@@ -1,4 +1,4 @@
-export const dispatchNamedEvent = <T>(eventName: string, data: T) => {
+export const dispatchNamedEvent = <T>(eventName: string, data?: T) => {
 	const targetEvent = new CustomEvent(eventName, { detail: data });
 	document.dispatchEvent(targetEvent);
 };
