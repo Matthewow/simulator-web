@@ -38,7 +38,7 @@ const Scale = memo((props: ScaleProps) => {
 		const durationCounts = durations.map((duration) => seconds / duration);
 
 		const tweakShowIndicators = durationCounts.map(
-			(count) => width / count > 4,
+			(count) => width / count > 8,
 		);
 
 		while (tweakShowIndicators.filter((value) => value).length > 2) {
