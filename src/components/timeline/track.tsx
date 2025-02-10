@@ -1,6 +1,6 @@
 import { useAppstore } from "@/store";
 import { timer } from "@lib/render";
-import { useEffect, useRef } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 
 const _formatTime = (seconds: number) => {
 	const hours = Math.floor(seconds / 3600);
@@ -14,30 +14,70 @@ const _formatTime = (seconds: number) => {
 	return `${hours ? `${formattedHours}:` : ""}${formattedMinutes}:${formattedSeconds}`;
 };
 
-const Scale = () => {
+type ScaleProps = {
+	durations: number[];
+	indicatorClassNames: string[];
+};
+
+const Scale = memo((props: ScaleProps) => {
+	const { durations, indicatorClassNames } = props;
+
 	let sequence = useAppstore((state) => state.dataset.sequence);
 	sequence = sequence.map((second) => second - sequence[0]);
+	const seconds = sequence[sequence.length - 1];
+
+	const containerRef = useRef<HTMLDivElement | null>(null);
+	const [shouldShowIndicator, setShouldShowIndicator] = useState<boolean[]>([]);
+	const shouldScaleShow = shouldShowIndicator.length > 0;
+
+	useEffect(() => {
+		const { width } = (
+			containerRef.current as HTMLDivElement
+		).getBoundingClientRect();
+
+		const durationCounts = durations.map((duration) => seconds / duration);
+
+		const tweakShowIndicators = durationCounts.map(
+			(count) => width / count > 4,
+		);
+
+		while (tweakShowIndicators.filter((value) => value).length > 2) {
+			const disableIndex = tweakShowIndicators.findIndex((value) => value);
+			tweakShowIndicators[disableIndex] = false;
+		}
+
+		setShouldShowIndicator(tweakShowIndicators);
+	}, [durations, seconds]);
 
 	return (
-		<div className="absolute w-full flex flex-row justify-between">
-			{sequence.map((second) => {
-				return (
-					<div className="flex justify-between flex-1 relative" key={second}>
-						<div className="absolute left-[4px] text-[0.75rem] leading-[0.75rem] text-gray-2">
-							{_formatTime(second)}
-						</div>
-						<div className="h-[8px] w-[2px] bg-gray-6" />
-						<div className="h-[4px] w-[1px] bg-gray-6" />
-						<div className="h-[4px] w-[1px] bg-gray-6" />
-						<div className="h-[4px] w-[1px] bg-gray-6" />
-						<div className="h-[4px] w-[1px] bg-gray-6" />
-						<div className="h-[4px] w-[1px] bg-gray-6 invisible" />
-					</div>
-				);
-			})}
+		<div
+			ref={containerRef}
+			className="absolute w-full flex flex-row justify-between h-full"
+		>
+			{shouldScaleShow &&
+				Array.from({ length: seconds }).map((_, index) => {
+					const availableDurations = durations.filter(
+						(_, index) => shouldShowIndicator[index],
+					);
+
+					const durationIndex = availableDurations.findIndex(
+						(duration) => index % duration === 0,
+					);
+
+					const shouldShow = durationIndex >= 0;
+					const className = indicatorClassNames[durationIndex] ?? "";
+
+					return (
+						<div
+							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+							key={index}
+							className={`${className} ${shouldShow ? "" : "hidden"}`}
+						/>
+					);
+				})}
 		</div>
 	);
-};
+});
 
 const Pointer = () => {
 	let sequence = useAppstore((state) => state.dataset.sequence);
@@ -77,7 +117,14 @@ const TimeTrack = () => {
 	const playStatus = useAppstore((state) => state.playStatus);
 	return (
 		<div className="flex flex-1 flex-col mx-[2rem] relative">
-			<Scale />
+			<Scale
+				durations={[3600, 720, 60, 10, 1]}
+				indicatorClassNames={[
+					"w-[2px] h-[8px] bg-gray-4",
+					"w-[2px] h-[4px] bg-gray-6",
+				]}
+			/>
+
 			{playStatus && <Pointer />}
 		</div>
 	);
