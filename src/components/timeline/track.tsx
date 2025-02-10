@@ -72,7 +72,7 @@ const Scale = memo((props: ScaleProps) => {
 							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 							<div key={index} className={`${className} relative`}>
 								{durationIndex === 0 && (
-									<div className="absolute text-[11px] top-0 left-[6px] leading-none z-1 text-gray-5 bg-black bg-opacity-50">
+									<div className="absolute text-[11px] top-0 left-[6px] leading-none z-1 text-gray-4 bg-black bg-opacity-50 select-none">
 										{_formatTime(index)}
 									</div>
 								)}
@@ -125,7 +125,7 @@ const TimeTrack = () => {
 			<Scale
 				durations={[3600, 720, 60, 10, 1]}
 				indicatorClassNames={[
-					"w-[2px] h-[10px] bg-gray-5",
+					"w-[2px] h-[10px] bg-gray-4",
 					"w-[2px] h-[6px] bg-gray-7",
 				]}
 			/>
