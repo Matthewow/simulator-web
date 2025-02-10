@@ -68,11 +68,13 @@ const Scale = memo((props: ScaleProps) => {
 					const className = indicatorClassNames[durationIndex] ?? "";
 
 					return (
-						<div
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							key={index}
-							className={`${className} ${shouldShow ? "" : "hidden"}`}
-						/>
+						shouldShow && (
+							<div
+								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+								key={index}
+								className={`${className}`}
+							/>
+						)
 					);
 				})}
 		</div>
