@@ -72,7 +72,7 @@ const Scale = memo((props: ScaleProps) => {
 							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 							<div key={index} className={`${className} relative`}>
 								{durationIndex === 0 && (
-									<div className="absolute text-[11px] top-0 left-[6px] leading-none z-1 text-gray-4 bg-black bg-opacity-50 select-none">
+									<div className="absolute text-[11px] top-0 left-[6px] leading-none z-1 text-gray-4 bg-black bg-opacity-50">
 										{_formatTime(index)}
 									</div>
 								)}
