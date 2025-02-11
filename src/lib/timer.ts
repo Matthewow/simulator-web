@@ -27,6 +27,10 @@ class TimelineTimer {
 	reset() {
 		this.elapsedTime = 0;
 	}
+
+	setTime(seconds: number) {
+		this.elapsedTime = seconds;
+	}
 }
 
 export default TimelineTimer;

@@ -87,20 +87,23 @@ const Scale = memo((props: ScaleProps) => {
 const Pointer = () => {
 	let sequence = useAppstore((state) => state.dataset.sequence);
 	sequence = sequence.map((second) => second - sequence[0]);
-	sequence.pop();
 
 	const updateHandler = useRef<number>(0);
 	const pointerEleRef = useRef<HTMLDivElement | null>(null);
 
+	const isDraggedRef = useRef(false);
+
 	useEffect(() => {
 		const update = () => {
-			const second = timer.getElapsedTime();
-			const progress = Math.min(
-				(second / sequence[sequence.length - 1]) * 100,
-				100,
-			);
+			if (!isDraggedRef.current) {
+				const second = timer.getElapsedTime();
+				const progress = Math.min(
+					(second / sequence[sequence.length - 1]) * 100,
+					100,
+				);
 
-			(pointerEleRef.current as HTMLDivElement).style.left = `${progress}%`;
+				(pointerEleRef.current as HTMLDivElement).style.left = `${progress}%`;
+			}
 			updateHandler.current = requestAnimationFrame(update);
 		};
 
@@ -110,18 +113,78 @@ const Pointer = () => {
 			cancelAnimationFrame(updateHandler.current);
 		};
 	}, [sequence]);
+
+	useEffect(() => {
+		const getProgressByMousePositionX = (x: number) => {
+			const containerEle = document.getElementById("time-track");
+			const containerRect = containerEle?.getBoundingClientRect() as DOMRect;
+
+			const containerWidth = containerRect.width;
+			const cursorRelativeX = Math.min(
+				Math.max(0, x - containerRect.left),
+				containerWidth,
+			);
+
+			return (cursorRelativeX / containerWidth) * 100;
+		};
+
+		const mouseMoveHandler = (e: MouseEvent) => {
+			if (isDraggedRef.current) {
+				(pointerEleRef.current as HTMLDivElement).style.left =
+					`${getProgressByMousePositionX(e.clientX)}%`;
+			}
+		};
+		document.onmousemove = mouseMoveHandler;
+
+		const mouseUpHandler = (e: MouseEvent) => {
+			if (isDraggedRef.current) {
+				isDraggedRef.current = false;
+
+				timer.setTime(
+					(sequence[sequence.length - 1] *
+						getProgressByMousePositionX(e.clientX)) /
+						100,
+				);
+			}
+		};
+		document.onmouseup = mouseUpHandler;
+
+		const mouseDownHandler = (e: MouseEvent) => {
+			const rect = (
+				pointerEleRef.current as HTMLDivElement
+			).getBoundingClientRect();
+
+			const isInside =
+				e.clientX >= rect.left - 10 &&
+				e.clientX <= rect.right + 10 &&
+				e.clientY >= rect.top &&
+				e.clientY <= rect.bottom;
+
+			if (isInside) isDraggedRef.current = true;
+		};
+		document.onmousedown = mouseDownHandler;
+
+		return () => {
+			document.removeEventListener("mousemove", mouseMoveHandler);
+			document.removeEventListener("mousedown", mouseDownHandler);
+			document.removeEventListener("mouseup", mouseUpHandler);
+		};
+	}, [sequence]);
+
 	return (
 		<div
 			ref={pointerEleRef}
-			className="absolute h-full w-[4px] bg-white left-[100px]"
+			className="absolute h-full w-[4px] bg-gray-3 left-[100px] hover:bg-gray-1"
 		/>
 	);
 };
 
 const TimeTrack = () => {
-	const playStatus = useAppstore((state) => state.playStatus);
 	return (
-		<div className="flex flex-1 flex-col mx-[2rem] relative">
+		<div
+			id="time-track"
+			className="flex flex-1 flex-col mx-[2rem] relative select-none"
+		>
 			<Scale
 				durations={[3600, 720, 60, 10, 1]}
 				indicatorClassNames={[
@@ -129,8 +192,7 @@ const TimeTrack = () => {
 					"w-[2px] h-[6px] bg-gray-7",
 				]}
 			/>
-
-			{playStatus && <Pointer />}
+			<Pointer />
 		</div>
 	);
 };
