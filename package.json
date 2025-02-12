@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "npx gulp && rsbuild dev --open",
 		"build": "npx gulp && rsbuild build",
-		"preview": "npx gulp && rsbuild preview"
+		"preview": "npx gulp && rsbuild preview",
+		"deploy": "npx vercel --prod"
 	},
 	"dependencies": {
 		"@fluentui/react-components": "^9.57.0",
