@@ -5,7 +5,7 @@ import {
 	MeshBasicMaterial,
 } from "three";
 
-const DEFAULT_MARKER_MESH = (() => {
+const DEFAULT_GEOMETRY = (() => {
 	const vertices = new Float32Array([
 		0, 0, 0.75, 1.0, 0, 1.0, 0, 0, -1.0, -1.0, 0, 1.0,
 	]);
@@ -15,11 +15,14 @@ const DEFAULT_MARKER_MESH = (() => {
 	geometry.setAttribute("position", new BufferAttribute(vertices, 3));
 	geometry.setIndex(indices);
 
-	const material = new MeshBasicMaterial({ color: 0x000000 });
-	const markerTemplate = new Mesh(geometry, material);
-	markerTemplate.scale.set(10, 10, 10);
-
-	return markerTemplate;
+	return geometry;
 })();
 
-export const createMarkerMesh = () => DEFAULT_MARKER_MESH.clone();
+const DEFAULT_MATERIAL = new MeshBasicMaterial({ color: 0x000000 });
+
+export const createMarkerMesh = () => {
+	const markerMesh = new Mesh(DEFAULT_GEOMETRY, DEFAULT_MATERIAL);
+	markerMesh.scale.set(10, 10, 10);
+
+	return markerMesh;
+};
