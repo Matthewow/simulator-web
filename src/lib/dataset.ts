@@ -3,20 +3,28 @@ import { isNumber, isValidNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
 import { createMarkerMesh } from "./marker";
 
-export type VehicleType = "Taxi";
 export type GeoPosition = { lat: number; lng: number };
-export type VehicleStatus = "EMPTY";
-export type VehicleSnapshot = {
+export type Status = "EMPTY" | "OFFLINE";
+export type Snapshot = {
 	pos: GeoPosition;
-	status: VehicleStatus;
+	status: Status;
 };
-export type VehicleRoute = Map<number, VehicleSnapshot>;
+export type Route = Map<number, Snapshot>;
 
-export class Vehicle {
+export interface Transportation {
+	appendRoute(timestamp: number, snapshot: Snapshot): void;
+	updateMarker(timeInSecond: number, overlay: ThreeJSOverlayView): void;
+
+	readonly route: Route;
+}
+
+export type VehicleType = "Taxi" | "Private Car";
+export class Vehicle implements Transportation {
 	readonly id: number;
 
 	readonly vtype: VehicleType;
-	route: VehicleRoute;
+	readonly route: Route;
+
 	sequence: Array<number>;
 	marker: Mesh;
 
@@ -28,7 +36,7 @@ export class Vehicle {
 		this.marker = marker;
 	}
 
-	appendRoute(timestamp: number, snapshot: VehicleSnapshot) {
+	appendRoute(timestamp: number, snapshot: Snapshot) {
 		this.route.set(timestamp, snapshot);
 	}
 
@@ -81,7 +89,7 @@ export class Vehicle {
 }
 
 export type Dataset = {
-	idRouteMap: Map<number, Vehicle>;
+	idRouteMap: Map<number, Transportation>;
 	sequence: Array<number>;
 };
 
@@ -126,7 +134,7 @@ export const parseDataSet = (raw: string) => {
 					lng: Number.parseFloat(attributes?.[posIndex?.[1]]),
 				};
 				const timestamp = Number.parseInt(attributes?.[timeStampIndex]);
-				const status = attributes?.[statusIndex] as VehicleStatus;
+				const status = attributes?.[statusIndex] as Status;
 
 				// Create vehicle or append route if id is valid
 				if (isValidNumber(id)) {
@@ -137,7 +145,7 @@ export const parseDataSet = (raw: string) => {
 						);
 					}
 
-					const snapshot: VehicleSnapshot = { pos, status };
+					const snapshot: Snapshot = { pos, status };
 					idRotueMap.get(id)?.appendRoute(timestamp, snapshot);
 				}
 			}
