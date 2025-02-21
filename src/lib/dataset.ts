@@ -204,9 +204,9 @@ export const parseDataSet = (raw: string) => {
 	const typeIndex = definitions.get("vehicle_type");
 	const trainIdIndex = definitions.get("Train ID");
 
-	if (typeIndex) {
+	if (isNumber(typeIndex)) {
 		return parseVehicles(lines, definitions);
-	} else if (trainIdIndex) {
+	} else if (isNumber(trainIdIndex)) {
 		return parseSubways(lines, definitions);
 	}
 
