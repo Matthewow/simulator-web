@@ -15,7 +15,8 @@ export interface Transportation {
 	appendRoute(timestamp: number, snapshot: Snapshot): void;
 	updateMarker(timeInSecond: number, overlay: ThreeJSOverlayView): void;
 
-	readonly route: Route;
+	route: Route;
+	marker: Mesh;
 }
 
 export type VehicleType = "Taxi" | "Private Car";
@@ -90,14 +91,21 @@ export class Vehicle implements Transportation {
 }
 
 export type SubwayStatus = "BOARDING" | "RUNNING";
+export type SubwayRecord = { timestamp: number; status: SubwayStatus };
+export type SubwaySnapshot = {
+	timestamp: number;
+	pos: GeoPosition;
+	startPos: GeoPosition;
+	endPos: GeoPosition;
+};
 export class Subway implements Transportation {
-	readonly id: string;
+	readonly id: number;
 	readonly route: Route;
 	readonly sequence: Array<number>;
 	readonly marker: Mesh;
 	readonly lineCode: string;
 
-	constructor(id: string, lineCode: string, sequence: number[], marker: Mesh) {
+	constructor(id: number, lineCode: string, sequence: number[], marker: Mesh) {
 		this.id = id;
 		this.route = new Map();
 		this.sequence = sequence;
@@ -231,14 +239,21 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 };
 
 const parseSubways = (lines: string[], definitions: Map<string, number>) => {
-	const dataset: Dataset = { idRouteMap: new Map(), sequence: [] };
+	const dataset: Dataset = {
+		idRouteMap: new Map<number, Subway>(),
+		sequence: [],
+	};
 
 	const idIndex = definitions.get("Train ID");
 	const lineCodeIndex = definitions.get("Line Code");
 
-	const posIndex = [
+	const currentStattionIndex = [
 		definitions.get("Current Station Lat"),
 		definitions.get("Current Station Lng"),
+	];
+	const nextStattionIndex = [
+		definitions.get("Next Station Lat"),
+		definitions.get("Next Station Lng"),
 	];
 	const statusIndex = definitions.get("Current Status");
 	const timestampIndex = definitions.get("Timestamp");
@@ -246,8 +261,10 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 	if (
 		isNumber(idIndex) &&
 		isNumber(lineCodeIndex) &&
-		isNumber(posIndex?.[0]) &&
-		isNumber(posIndex?.[1]) &&
+		isNumber(currentStattionIndex?.[0]) &&
+		isNumber(currentStattionIndex?.[1]) &&
+		isNumber(nextStattionIndex?.[0]) &&
+		isNumber(nextStattionIndex?.[1]) &&
 		isNumber(statusIndex) &&
 		isNumber(timestampIndex)
 	) {
@@ -260,12 +277,19 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 
 				const id = Number.parseInt(attributes?.[idIndex]);
 				const lineCode = attributes?.[lineCodeIndex];
-				const pos = {
-					lat: Number.parseFloat(attributes?.[posIndex?.[0]]),
-					lng: Number.parseFloat(attributes?.[posIndex?.[1]]),
-				};
+
 				const timestamp = Number.parseInt(attributes?.[timestampIndex]);
 				const status = attributes?.[statusIndex] as VehicleStatus;
+
+				const startPos = {
+					lat: Number.parseFloat(attributes?.[currentStattionIndex?.[0]]),
+					lng: Number.parseFloat(attributes?.[currentStattionIndex?.[1]]),
+				};
+				const endPos = {
+					lat: Number.parseFloat(attributes?.[nextStattionIndex?.[0]]),
+					lng: Number.parseFloat(attributes?.[nextStattionIndex?.[1]]),
+				};
+				const pos = status === "BOARDING" ? startPos : endPos;
 
 				// Create vehicle or append route if id is valid
 				if (isValidNumber(id)) {
@@ -276,7 +300,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 						);
 					}
 
-					const snapshot: Snapshot = { pos, status };
+					const snapshot = { pos, status, startPos, endPos };
 					idRotueMap.get(id)?.appendRoute(timestamp, snapshot);
 				}
 			}
@@ -287,11 +311,71 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 						Array.from(vehicle.route.keys()),
 					).flat(),
 				),
-			).sort() as Array<number>;
+			).sort((r, l) => {
+				return r - l;
+			}) as Array<number>;
 
 			sequence.push(...shareSequence);
 
 			dataset.sequence = sequence;
+
+			for (const subway of idRotueMap.values()) {
+				const statusPeriod: Array<SubwayRecord> = [];
+				for (const [timestamp, snapshot] of subway.route.entries()) {
+					if (statusPeriod.length === 0) {
+						statusPeriod.push({
+							timestamp,
+							status: snapshot.status as SubwayStatus,
+						});
+						continue;
+					}
+
+					if (
+						snapshot.status !== statusPeriod[statusPeriod.length - 1].status
+					) {
+						statusPeriod.push({
+							timestamp,
+							status: snapshot.status as SubwayStatus,
+						});
+					} else {
+						statusPeriod[statusPeriod.length - 1] = {
+							timestamp,
+							status: snapshot.status as SubwayStatus,
+						};
+					}
+				}
+				statusPeriod;
+
+				for (const [timestamp, snapshot] of subway.route.entries()) {
+					const tripStartIndex = statusPeriod.findIndex(
+						(record) => record.timestamp < timestamp,
+					);
+					if (
+						tripStartIndex === -1 ||
+						tripStartIndex === statusPeriod.length - 1
+					) {
+						continue;
+					}
+
+					const { timestamp: startTimestamp } = statusPeriod[tripStartIndex];
+
+					const tripEndIndex = tripStartIndex + 1;
+					const { timestamp: endTimestamp, status: endStatus } =
+						statusPeriod[tripEndIndex];
+
+					if (endStatus === "RUNNING") {
+						const subwaySnapshot = snapshot as unknown as SubwaySnapshot;
+						const { startPos, endPos } = subwaySnapshot;
+						const duration = endTimestamp - startTimestamp;
+						const timeRatio = (timestamp - startTimestamp) / duration;
+
+						subwaySnapshot.pos = {
+							lat: startPos.lat + (endPos.lat - startPos.lat) * timeRatio,
+							lng: startPos.lng + (endPos.lng - startPos.lng) * timeRatio,
+						};
+					}
+				}
+			}
 		} catch (e) {
 			//In case of parsing error
 			console.error(e);
@@ -299,7 +383,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 	} else {
 		console.warn("Missing subways' attributes, bypass following processes.");
 	}
-
+	console.log(dataset);
 	return dataset;
 };
 
