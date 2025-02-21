@@ -4,10 +4,10 @@ import type { ThreeJSOverlayView } from "@googlemaps/three";
 import { createMarkerMesh } from "./marker";
 
 export type GeoPosition = { lat: number; lng: number };
-export type Status = "EMPTY" | "OFFLINE";
+
 export type Snapshot = {
 	pos: GeoPosition;
-	status: Status;
+	status: VehicleStatus | SubwayStatus;
 };
 export type Route = Map<number, Snapshot>;
 
@@ -19,6 +19,7 @@ export interface Transportation {
 }
 
 export type VehicleType = "Taxi" | "Private Car";
+export type VehicleStatus = "EMPTY" | "OFFLINE" | "BOARDING";
 export class Vehicle implements Transportation {
 	readonly id: number;
 
@@ -88,29 +89,41 @@ export class Vehicle implements Transportation {
 	}
 }
 
+export type SubwayStatus = "BOARDING" | "RUNNING";
+export class Subway implements Transportation {
+	readonly id: string;
+	readonly route: Route;
+	readonly sequence: Array<number>;
+	readonly marker: Mesh;
+
+	constructor(id: string, marker: Mesh) {
+		this.id = id;
+		this.route = new Map();
+		this.marker = marker;
+		this.sequence = [];
+	}
+
+	appendRoute(timestamp: number, snapshot: Snapshot): void {
+		throw new Error("Method not implemented.");
+	}
+	updateMarker(timeInSecond: number, overlay: ThreeJSOverlayView): void {
+		throw new Error("Method not implemented.");
+	}
+}
+
 export type Dataset = {
 	idRouteMap: Map<number, Transportation>;
 	sequence: Array<number>;
 };
 
-export const parseDataSet = (raw: string) => {
-	const lines = raw.split(/\r\n|\r|\n/);
-
-	const definitions = new Map<string, number>();
-	lines
-		?.shift()
-		?.split(",")
-		.forEach((value, index) => {
-			definitions.set(value, index);
-		});
+const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
+	const dataset: Dataset = { idRouteMap: new Map(), sequence: [] };
 
 	const idIndex = definitions.get("vehicle_id");
 	const typeIndex = definitions.get("vehicle_type");
 	const posIndex = [definitions.get("lat"), definitions.get("lng")];
 	const statusIndex = definitions.get("status");
 	const timeStampIndex = definitions.get("time");
-
-	const dataset: Dataset = { idRouteMap: new Map(), sequence: [] };
 
 	if (
 		isNumber(idIndex) &&
@@ -134,7 +147,7 @@ export const parseDataSet = (raw: string) => {
 					lng: Number.parseFloat(attributes?.[posIndex?.[1]]),
 				};
 				const timestamp = Number.parseInt(attributes?.[timeStampIndex]);
-				const status = attributes?.[statusIndex] as Status;
+				const status = attributes?.[statusIndex] as VehicleStatus;
 
 				// Create vehicle or append route if id is valid
 				if (isValidNumber(id)) {
@@ -168,5 +181,34 @@ export const parseDataSet = (raw: string) => {
 	} else {
 		console.warn("Missing dataset's attributes, bypass following processes.");
 	}
+
 	return dataset;
+};
+
+const parseSubways = (lines: string[], definitions: Map<string, number>) => {
+	const dataset: Dataset = { idRouteMap: new Map(), sequence: [] };
+	return dataset;
+};
+
+export const parseDataSet = (raw: string) => {
+	const lines = raw.split(/\r\n|\r|\n/);
+
+	const definitions = new Map<string, number>();
+	lines
+		?.shift()
+		?.split(",")
+		.forEach((value, index) => {
+			definitions.set(value, index);
+		});
+
+	const typeIndex = definitions.get("vehicle_type");
+	const trainIdIndex = definitions.get("Train ID");
+
+	if (typeIndex) {
+		return parseVehicles(lines, definitions);
+	} else if (trainIdIndex) {
+		return parseSubways(lines, definitions);
+	}
+
+	throw new Error("Unknown data format");
 };
