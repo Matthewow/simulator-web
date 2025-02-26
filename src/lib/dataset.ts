@@ -2,8 +2,7 @@ import { Vector3, type Mesh } from "three";
 import { isNumber, isValidNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
 import { createMarkerMesh } from "./marker";
-
-export type GeoPosition = { lat: number; lng: number };
+import type { GeoPosition } from "./types";
 
 export type Snapshot = {
 	pos: GeoPosition;
