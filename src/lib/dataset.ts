@@ -1,7 +1,7 @@
 import { Vector3, type Mesh } from "three";
 import { isNumber, isValidNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
-import { createMarkerMesh } from "./marker";
+import { createSquareMesh, createArrowMesh } from "./marker";
 import type { GeoPosition } from "./types";
 
 export type Snapshot = {
@@ -206,7 +206,7 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 					if (!idRotueMap.has(id)) {
 						idRotueMap.set(
 							id,
-							new Vehicle(id, type, sequence, createMarkerMesh()),
+							new Vehicle(id, type, sequence, createArrowMesh()),
 						);
 					}
 
@@ -295,7 +295,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 					if (!idRotueMap.has(id)) {
 						idRotueMap.set(
 							id,
-							new Subway(id, lineCode, sequence, createMarkerMesh()),
+							new Subway(id, lineCode, sequence, createArrowMesh()),
 						);
 					}
 

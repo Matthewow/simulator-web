@@ -5,7 +5,7 @@ import {
 	MeshBasicMaterial,
 } from "three";
 
-const DEFAULT_GEOMETRY = (() => {
+const ARROW_GEOMETRY = (() => {
 	const vertices = new Float32Array([
 		0, 0, 0.75, 1.0, 0, 1.0, 0, 0, -1.0, -1.0, 0, 1.0,
 	]);
@@ -20,8 +20,26 @@ const DEFAULT_GEOMETRY = (() => {
 
 const DEFAULT_MATERIAL = new MeshBasicMaterial({ color: 0x000000 });
 
-export const createMarkerMesh = () => {
-	const markerMesh = new Mesh(DEFAULT_GEOMETRY, DEFAULT_MATERIAL);
+export const createArrowMesh = () => {
+	const markerMesh = new Mesh(ARROW_GEOMETRY, DEFAULT_MATERIAL);
+	markerMesh.scale.set(10, 10, 10);
+
+	return markerMesh;
+};
+
+const SQUARE_GEOMETRY = (() => {
+	const vertices = new Float32Array([1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1]);
+
+	const indices = [0, 2, 1, 0, 3, 2];
+	const geometry = new BufferGeometry();
+	geometry.setAttribute("position", new BufferAttribute(vertices, 3));
+	geometry.setIndex(indices);
+
+	return geometry;
+})();
+
+export const createSquareMesh = () => {
+	const markerMesh = new Mesh(SQUARE_GEOMETRY, DEFAULT_MATERIAL);
 	markerMesh.scale.set(10, 10, 10);
 
 	return markerMesh;
