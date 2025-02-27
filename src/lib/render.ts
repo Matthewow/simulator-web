@@ -7,6 +7,7 @@ import type { Dataset } from "./dataset";
 import TimelineTimer from "./timer";
 import { listenNamedEvent } from "./event";
 import type { PlayStatus } from "@/store";
+import { appendRailwayLayer } from "./railway";
 
 const MAP_CONFIG = {
 	center: {
@@ -72,6 +73,8 @@ listenNamedEvent("render_dataset", (e) => {
 	}
 
 	timer.reset();
+
+	appendRailwayLayer(overlay);
 
 	for (const [_id, vehicle] of dataset.idRouteMap) {
 		scene.add(vehicle.marker);

@@ -1,6 +1,7 @@
 import {
 	BufferAttribute,
 	BufferGeometry,
+	CircleGeometry,
 	Mesh,
 	MeshBasicMaterial,
 } from "three";
@@ -40,7 +41,13 @@ const SQUARE_GEOMETRY = (() => {
 
 export const createSquareMesh = () => {
 	const markerMesh = new Mesh(SQUARE_GEOMETRY, DEFAULT_MATERIAL);
-	markerMesh.scale.set(10, 10, 10);
+	markerMesh.scale.set(20, 20, 20);
+
+	return markerMesh;
+};
+
+export const createCircleMesh = () => {
+	const markerMesh = new Mesh(new CircleGeometry(20, 32), DEFAULT_MATERIAL);
 
 	return markerMesh;
 };

@@ -3,7 +3,6 @@ import Overlay from "./components/overlay";
 import Timeline from "./components/timeline";
 import TopBar from "./components/top_bar";
 import { useAppstore } from "./store";
-import "./lib/railway";
 
 const App = () => {
 	const dataStatus = useAppstore((state) => state.dataStatus);
