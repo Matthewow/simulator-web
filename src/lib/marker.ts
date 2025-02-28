@@ -36,6 +36,7 @@ const SQUARE_GEOMETRY = (() => {
 	geometry.setAttribute("position", new BufferAttribute(vertices, 3));
 	geometry.setIndex(indices);
 
+
 	return geometry;
 })();
 
@@ -48,6 +49,7 @@ export const createSquareMesh = () => {
 
 export const createCircleMesh = () => {
 	const markerMesh = new Mesh(new CircleGeometry(20, 32), DEFAULT_MATERIAL);
+	markerMesh.rotation.x = -Math.PI / 2;
 
 	return markerMesh;
 };
