@@ -111,7 +111,7 @@ const generateSVGGroup = (data: SVGResult) => {
 			);
 
 			geometry.rotateX(Math.PI / 2);
-			geometry.scale(0.1, 0.1, 0.1);
+			geometry.scale(0.05, 0.05, 0.05);
 
 			return geometry;
 		});
