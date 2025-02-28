@@ -25,7 +25,7 @@ export const MARKER_COLOR_MAP = {
 	EMPTY: "#000000",
 	OFFLINE: "#999999",
 	RUNNING: "#009900",
-	PICKUP: "#999900",
+	PICKUP: "#ffff00",
 } as {
 	[key in VehicleStatus | SubwayStatus]: string;
 };
