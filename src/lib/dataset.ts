@@ -420,8 +420,9 @@ export const loadDataSet = async () => {
 	const datasets = raws.map(parseDataSet);
 	for (const dataset of datasets) {
 		const sequence = dataset.sequence;
+		const startPoint = sequence[0];
 		for (let i = 0; i < sequence.length; i++) {
-			sequence[i] = sequence[i] - sequence[0];
+			sequence[i] = sequence[i] - startPoint;
 		}
 
 		const idInstanceMap = dataset.idRouteMap;
@@ -429,7 +430,7 @@ export const loadDataSet = async () => {
 			const alignedMap = new Map();
 			const route = instance.route;
 			for (const [timestamp, instance] of route) {
-				alignedMap.set(timestamp - sequence[0], instance);
+				alignedMap.set(timestamp - startPoint, instance);
 			}
 			instance.route = alignedMap;
 		}
