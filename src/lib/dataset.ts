@@ -11,10 +11,7 @@ export type Snapshot = {
 export type Route = Map<number, Snapshot>;
 
 export interface Transportation {
-	appendRoute(timestamp: number, snapshot: Snapshot): void;
 	updateMarker(timeInSecond: number, overlay: ThreeJSOverlayView): void;
-
-	route: Route;
 	marker: Mesh;
 }
 
@@ -186,7 +183,7 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 		isNumber(timeStampIndex)
 	) {
 		try {
-			const idRotueMap = dataset.idRouteMap;
+			const idVehicleMap = dataset.idRouteMap as Map<number, Vehicle>;
 			const sequence = [] as number[];
 
 			for (const line of lines) {
@@ -203,21 +200,21 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 
 				// Create vehicle or append route if id is valid
 				if (isValidNumber(id)) {
-					if (!idRotueMap.has(id)) {
-						idRotueMap.set(
+					if (!idVehicleMap.has(id)) {
+						idVehicleMap.set(
 							id,
 							new Vehicle(id, type, sequence, createArrowMesh()),
 						);
 					}
 
 					const snapshot: Snapshot = { pos, status };
-					idRotueMap.get(id)?.appendRoute(timestamp, snapshot);
+					idVehicleMap.get(id)?.appendRoute(timestamp, snapshot);
 				}
 			}
 
 			const shareSequence = Array.from(
 				new Set(
-					Array.from(dataset.idRouteMap, ([_, vehicle]) =>
+					Array.from(idVehicleMap, ([_, vehicle]) =>
 						Array.from(vehicle.route.keys()),
 					).flat(),
 				),
@@ -246,11 +243,11 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 	const idIndex = definitions.get("Train ID");
 	const lineCodeIndex = definitions.get("Line Code");
 
-	const currentStattionIndex = [
+	const currentStationIndex = [
 		definitions.get("Current Station Lat"),
 		definitions.get("Current Station Lng"),
 	];
-	const nextStattionIndex = [
+	const nextStationIndex = [
 		definitions.get("Next Station Lat"),
 		definitions.get("Next Station Lng"),
 	];
@@ -260,15 +257,15 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 	if (
 		isNumber(idIndex) &&
 		isNumber(lineCodeIndex) &&
-		isNumber(currentStattionIndex?.[0]) &&
-		isNumber(currentStattionIndex?.[1]) &&
-		isNumber(nextStattionIndex?.[0]) &&
-		isNumber(nextStattionIndex?.[1]) &&
+		isNumber(currentStationIndex?.[0]) &&
+		isNumber(currentStationIndex?.[1]) &&
+		isNumber(nextStationIndex?.[0]) &&
+		isNumber(nextStationIndex?.[1]) &&
 		isNumber(statusIndex) &&
 		isNumber(timestampIndex)
 	) {
 		try {
-			const idRotueMap = dataset.idRouteMap;
+			const idSubwayMap = dataset.idRouteMap;
 			const sequence = [] as number[];
 
 			for (const line of lines) {
@@ -281,36 +278,36 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 				const status = attributes?.[statusIndex] as VehicleStatus;
 
 				const startPos = {
-					lat: Number.parseFloat(attributes?.[currentStattionIndex?.[0]]),
-					lng: Number.parseFloat(attributes?.[currentStattionIndex?.[1]]),
+					lat: Number.parseFloat(attributes?.[currentStationIndex?.[0]]),
+					lng: Number.parseFloat(attributes?.[currentStationIndex?.[1]]),
 				};
 				const endPos = {
-					lat: Number.parseFloat(attributes?.[nextStattionIndex?.[0]]),
-					lng: Number.parseFloat(attributes?.[nextStattionIndex?.[1]]),
+					lat: Number.parseFloat(attributes?.[nextStationIndex?.[0]]),
+					lng: Number.parseFloat(attributes?.[nextStationIndex?.[1]]),
 				};
 				const pos = status === "BOARDING" ? startPos : endPos;
 
 				// Create vehicle or append route if id is valid
 				if (isValidNumber(id)) {
-					if (!idRotueMap.has(id)) {
-						idRotueMap.set(
+					if (!idSubwayMap.has(id)) {
+						idSubwayMap.set(
 							id,
 							new Subway(id, lineCode, sequence, createArrowMesh()),
 						);
 					}
 
 					const snapshot = { pos, status, startPos, endPos };
-					idRotueMap.get(id)?.appendRoute(timestamp, snapshot);
+					idSubwayMap.get(id)?.appendRoute(timestamp, snapshot);
 				}
 			}
 
 			const shareSequence = Array.from(
-				new Set(
+				new Set<number>(
 					Array.from(dataset.idRouteMap, ([_, vehicle]) =>
-						Array.from(vehicle.route.keys()),
+						Array.from(vehicle.route.keys()) as number[],
 					).flat(),
 				),
-			).sort((r, l) => {
+			).sort((r: number, l: number) => {
 				return r - l;
 			}) as Array<number>;
 
@@ -318,7 +315,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 
 			dataset.sequence = sequence;
 
-			for (const subway of idRotueMap.values()) {
+			for (const subway of idSubwayMap.values()) {
 				const statusPeriod: Array<SubwayRecord> = [];
 				for (const [timestamp, snapshot] of subway.route.entries()) {
 					if (statusPeriod.length === 0) {
