@@ -6,6 +6,9 @@ export default defineConfig({
 	dev: {
 		hmr: false,
 	},
+	server: {
+		publicDir: { name: "public" },
+	},
 	plugins: [pluginReact()],
 	html: { template: "./static/template.html" },
 	tools: {

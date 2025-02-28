@@ -1,10 +1,16 @@
 import {
+	type Box3,
 	BufferAttribute,
 	BufferGeometry,
 	CircleGeometry,
+	Color,
+	DoubleSide,
+	Group,
 	Mesh,
 	MeshBasicMaterial,
+	ShapeGeometry,
 } from "three";
+import { SVGLoader } from "three/examples/jsm/Addons.js";
 
 const ARROW_GEOMETRY = (() => {
 	const vertices = new Float32Array([
@@ -36,7 +42,6 @@ const SQUARE_GEOMETRY = (() => {
 	geometry.setAttribute("position", new BufferAttribute(vertices, 3));
 	geometry.setIndex(indices);
 
-
 	return geometry;
 })();
 
@@ -52,4 +57,40 @@ export const createCircleMesh = () => {
 	markerMesh.rotation.x = -Math.PI / 2;
 
 	return markerMesh;
+};
+
+let DEFAULT_METRO_GROUP: Group | null = null;
+const loader = new SVGLoader();
+loader.load("/subway.svg", (data) => {
+	const group = new Group();
+
+	const paths = data.paths;
+	const material = new MeshBasicMaterial({
+		color: new Color(0x000000),
+		side: DoubleSide,
+		depthWrite: false,
+	});
+
+	for (const path of paths) {
+		const shapes = SVGLoader.createShapes(path);
+		for (const shape of shapes) {
+			const geometry = new ShapeGeometry(shape);
+			geometry.computeBoundingBox();
+			geometry.translate(
+				-(geometry.boundingBox as Box3).max.x * 0.5,
+				-(geometry.boundingBox as Box3).max.y * 0.5,
+				-(geometry.boundingBox as Box3).max.z * 0.5,
+			);
+
+			const mesh = new Mesh(geometry, material);
+			mesh.rotateX(Math.PI / 2);
+			group.add(mesh);
+		}
+	}
+
+	group.scale.set(0.1, 0.1, 0.1);
+	DEFAULT_METRO_GROUP = group;
+});
+export const createSubwayMesh = () => {
+	return DEFAULT_METRO_GROUP?.clone();
 };

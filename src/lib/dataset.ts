@@ -1,7 +1,7 @@
-import { Vector3, type Mesh } from "three";
+import { type Group, Vector3, type Mesh, type Object3D } from "three";
 import { isNumber, isValidNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
-import { createArrowMesh } from "./marker";
+import { createArrowMesh, createSubwayMesh } from "./marker";
 import type { GeoPosition } from "./types";
 import { MTR_STATION_MAP } from "./railway";
 
@@ -13,7 +13,7 @@ export type Route = Map<number, VehicleSnapshot | SubwaySnapshot>;
 
 export interface Transportation {
 	updateMarker(timeInSecond: number, overlay: ThreeJSOverlayView): void;
-	marker: Mesh;
+	marker: Object3D;
 }
 
 export type VehicleType = "Taxi" | "Private Car";
@@ -102,10 +102,10 @@ export class Subway implements Transportation {
 	readonly id: number;
 	readonly route: SubwayRoute;
 	readonly sequence: Array<number>;
-	readonly marker: Mesh;
+	readonly marker: Group;
 	readonly lineCode: string;
 
-	constructor(id: number, lineCode: string, sequence: number[], marker: Mesh) {
+	constructor(id: number, lineCode: string, sequence: number[], marker: Group) {
 		this.id = id;
 		this.route = new Map();
 		this.sequence = sequence;
@@ -166,7 +166,7 @@ export class Subway implements Transportation {
 				endPosition,
 			);
 
-			(this.marker as Mesh).rotation.y = -(heading / 180) * Math.PI;
+			(this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
 		} else if (status === "BOARDING" && endPosition) {
 			const endGlPosition = overlay.latLngAltitudeToVector3(endPosition);
 			this.marker?.position.copy(endGlPosition);
@@ -305,7 +305,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 					if (!idSubwayMap.has(id)) {
 						idSubwayMap.set(
 							id,
-							new Subway(id, lineCode, sequence, createArrowMesh()),
+							new Subway(id, lineCode, sequence, createSubwayMesh() as Group),
 						);
 					}
 
