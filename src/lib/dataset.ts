@@ -19,6 +19,8 @@ export type Route = Map<number, VehicleSnapshot | SubwaySnapshot>;
 export interface Transportation {
 	updateMarker(timeInSecond: number, overlay: ThreeJSOverlayView): void;
 	marker: Object3D;
+
+	route: VehicleRoute | SubwayRoute;
 }
 
 export type VehicleType = "Taxi" | "Private Car";
@@ -144,8 +146,9 @@ export class Subway implements Transportation {
 		const endTime = snapshot?.endTime;
 
 		status && setGroupMaterialColorByStatus(this.marker, status);
-
-		if (
+		if (status === "RUNNING" && currentTimeIndex === this.sequence.length - 1) {
+			//Do nothing
+		} else if (
 			status === "RUNNING" &&
 			startPosition &&
 			endPosition &&
@@ -415,5 +418,21 @@ export const loadDataSet = async () => {
 	const raws = await Promise.all(res.map((res) => res.text()));
 
 	const datasets = raws.map(parseDataSet);
+	for (const dataset of datasets) {
+		const sequence = dataset.sequence;
+		for (let i = 0; i < sequence.length; i++) {
+			sequence[i] = sequence[i] - sequence[0];
+		}
+
+		const idInstanceMap = dataset.idRouteMap;
+		for (const [_, instance] of idInstanceMap) {
+			const alignedMap = new Map();
+			const route = instance.route;
+			for (const [timestamp, instance] of route) {
+				alignedMap.set(timestamp - sequence[0], instance);
+			}
+			instance.route = alignedMap;
+		}
+	}
 	return mergeDataSet(datasets[0], datasets[1]);
 };
