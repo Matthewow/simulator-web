@@ -122,7 +122,7 @@ const generateSVGGroup = (data: SVGResult) => {
 	return geometries;
 };
 
-const prepareSVGs = async () => {
+export const prepareSVGs = async () => {
 	const loader = new SVGLoader();
 	loader.load("/subway.svg", (data) => {
 		DEFAULT_SUBWAY_GEOMETRIRS = generateSVGGroup(data);
@@ -136,5 +136,3 @@ const prepareSVGs = async () => {
 		DEFAULT_TAXI_GEOMETRIRS = generateSVGGroup(data);
 	});
 };
-
-prepareSVGs();

@@ -26,7 +26,7 @@ const MAP_CONFIG = {
 let mapOverlay: ThreeJSOverlayView | null = null;
 export const timer = new TimelineTimer();
 
-listenNamedEvent("init_google_map", async () => {
+export const initGoogleMap = async () => {
 	const mapElement = document.getElementById("map");
 	if (!mapElement) return;
 
@@ -51,7 +51,7 @@ listenNamedEvent("init_google_map", async () => {
 	});
 
 	mapOverlay = overlay;
-});
+};
 
 listenNamedEvent("render_dataset", (e) => {
 	const dataset = e?.detail as Dataset;

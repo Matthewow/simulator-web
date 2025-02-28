@@ -1,5 +1,5 @@
 import { type Group, Vector3, type Object3D } from "three";
-import { isNumber, isValidNumber } from "./utils";
+import { isNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
 import {
 	createCarGroup,
@@ -24,7 +24,7 @@ export interface Transportation {
 export type VehicleType = "Taxi" | "Private Car";
 export type VehicleRoute = Map<number, VehicleSnapshot>;
 export class Vehicle implements Transportation {
-	readonly id: number;
+	readonly id: string;
 
 	readonly vtype: VehicleType;
 	readonly route: VehicleRoute;
@@ -33,7 +33,7 @@ export class Vehicle implements Transportation {
 	marker: Group;
 
 	constructor(
-		id: number,
+		id: string,
 		type: VehicleType,
 		sequence: number[],
 		marker: Group,
@@ -111,13 +111,13 @@ export type SubwaySnapshot = {
 };
 export type SubwayRoute = Map<number, SubwaySnapshot>;
 export class Subway implements Transportation {
-	readonly id: number;
+	readonly id: string;
 	readonly route: SubwayRoute;
 	readonly sequence: Array<number>;
 	readonly marker: Group;
 	readonly lineCode: string;
 
-	constructor(id: number, lineCode: string, sequence: number[], marker: Group) {
+	constructor(id: string, lineCode: string, sequence: number[], marker: Group) {
 		this.id = id;
 		this.route = new Map();
 		this.sequence = sequence;
@@ -189,7 +189,7 @@ export class Subway implements Transportation {
 }
 
 export type Dataset = {
-	idRouteMap: Map<number, Transportation>;
+	idRouteMap: Map<string, Transportation>;
 	sequence: Array<number>;
 };
 
@@ -211,13 +211,13 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 		isNumber(timeStampIndex)
 	) {
 		try {
-			const idVehicleMap = dataset.idRouteMap as Map<number, Vehicle>;
+			const idVehicleMap = dataset.idRouteMap as Map<string, Vehicle>;
 			const sequence = [] as number[];
 
 			for (const line of lines) {
 				const attributes = line.split(",");
 
-				const id = Number.parseInt(attributes?.[idIndex]);
+				const id = attributes?.[idIndex];
 				const type = attributes?.[typeIndex] as VehicleType;
 				const pos = {
 					lat: Number.parseFloat(attributes?.[posIndex?.[0]]),
@@ -227,7 +227,8 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 				const status = attributes?.[statusIndex] as VehicleStatus;
 
 				// Create vehicle or append route if id is valid
-				if (isValidNumber(id)) {
+				if (id) {
+					const id = `v_${attributes?.[idIndex]}`;
 					if (!idVehicleMap.has(id)) {
 						const group =
 							type === "Taxi" ? createTaxiGroup() : createCarGroup();
@@ -266,7 +267,7 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 
 const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 	const dataset: Dataset = {
-		idRouteMap: new Map<number, Subway>(),
+		idRouteMap: new Map<string, Subway>(),
 		sequence: [],
 	};
 
@@ -295,13 +296,13 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 		isNumber(durationIndex?.[1])
 	) {
 		try {
-			const idSubwayMap = dataset.idRouteMap as Map<number, Subway>;
+			const idSubwayMap = dataset.idRouteMap as Map<string, Subway>;
 			const sequence = [] as number[];
 
 			for (const line of lines) {
 				const attributes = line.split(",");
 
-				const id = Number.parseInt(attributes?.[idIndex]);
+				const id = attributes?.[idIndex];
 				const lineCode = attributes?.[lineCodeIndex];
 
 				const timestamp = Number.parseInt(attributes?.[timestampIndex]);
@@ -317,7 +318,8 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 				const endTime = Number.parseFloat(attributes?.[durationIndex?.[1]]);
 
 				// Create vehicle or append route if id is valid
-				if (isValidNumber(id)) {
+				if (id) {
+					const id = `s_${attributes?.[idIndex]}`;
 					if (!idSubwayMap.has(id)) {
 						idSubwayMap.set(
 							id,
@@ -343,9 +345,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 						([_, vehicle]) => Array.from(vehicle.route.keys()) as number[],
 					).flat(),
 				),
-			).sort((r: number, l: number) => {
-				return r - l;
-			}) as Array<number>;
+			).sort((r, l) => r - l) as Array<number>;
 
 			sequence.push(...shareSequence);
 
@@ -399,4 +399,21 @@ export const parseDataSet = (raw: string) => {
 	}
 
 	throw new Error("Unknown data format");
+};
+
+const mergeDataSet = (rd: Dataset, ld: Dataset): Dataset => {
+	return {
+		idRouteMap: new Map([...rd.idRouteMap, ...ld.idRouteMap]),
+		sequence: Array.from(new Set([...rd.sequence, ...ld.sequence])).sort(
+			(r, l) => r - l,
+		),
+	};
+};
+
+export const loadDataSet = async () => {
+	const res = await Promise.all([fetch("/train.csv"), fetch("/vehicle.csv")]);
+	const raws = await Promise.all(res.map((res) => res.text()));
+
+	const datasets = raws.map(parseDataSet);
+	return mergeDataSet(datasets[0], datasets[1]);
 };
