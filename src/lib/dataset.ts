@@ -1,7 +1,7 @@
-import { type Group, Vector3, type Mesh, type Object3D } from "three";
+import { type Group, Vector3, type Object3D } from "three";
 import { isNumber, isValidNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
-import { createArrowMesh, createSubwayMesh } from "./marker";
+import { createCarGroup, createSubwayGroup, createTaxiGroup } from "./marker";
 import type { GeoPosition } from "./types";
 import { MTR_STATION_MAP } from "./railway";
 
@@ -26,9 +26,14 @@ export class Vehicle implements Transportation {
 	readonly route: VehicleRoute;
 
 	sequence: Array<number>;
-	marker: Mesh;
+	marker: Group;
 
-	constructor(id: number, type: VehicleType, sequence: number[], marker: Mesh) {
+	constructor(
+		id: number,
+		type: VehicleType,
+		sequence: number[],
+		marker: Group,
+	) {
 		this.id = id;
 		this.vtype = type;
 		this.route = new Map();
@@ -73,17 +78,17 @@ export class Vehicle implements Transportation {
 
 			this.marker?.position.copy(simulatedGlPosition);
 
-			if (
-				curGeoPosition.lat !== nextGeoPosition.lat &&
-				curGeoPosition.lng !== nextGeoPosition.lng
-			) {
-				const heading = google.maps.geometry.spherical.computeHeading(
-					curGeoPosition,
-					nextGeoPosition,
-				);
+			// if (
+			// 	curGeoPosition.lat !== nextGeoPosition.lat &&
+			// 	curGeoPosition.lng !== nextGeoPosition.lng
+			// ) {
+			// 	const heading = google.maps.geometry.spherical.computeHeading(
+			// 		curGeoPosition,
+			// 		nextGeoPosition,
+			// 	);
 
-				(this.marker as Mesh).rotation.y = -(heading / 180) * Math.PI;
-			}
+			// 	(this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
+			// }
 		}
 	}
 }
@@ -161,12 +166,12 @@ export class Subway implements Transportation {
 
 			this.marker?.position.copy(simulatedGlPosition);
 
-			const heading = google.maps.geometry.spherical.computeHeading(
-				startPosition,
-				endPosition,
-			);
+			// const heading = google.maps.geometry.spherical.computeHeading(
+			// 	startPosition,
+			// 	endPosition,
+			// );
 
-			(this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
+			// (this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
 		} else if (status === "BOARDING" && endPosition) {
 			const endGlPosition = overlay.latLngAltitudeToVector3(endPosition);
 			this.marker?.position.copy(endGlPosition);
@@ -215,9 +220,11 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 				// Create vehicle or append route if id is valid
 				if (isValidNumber(id)) {
 					if (!idVehicleMap.has(id)) {
+						const group =
+							type === "Taxi" ? createTaxiGroup() : createCarGroup();
 						idVehicleMap.set(
 							id,
-							new Vehicle(id, type, sequence, createArrowMesh()),
+							new Vehicle(id, type, sequence, group as Group),
 						);
 					}
 
@@ -305,7 +312,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 					if (!idSubwayMap.has(id)) {
 						idSubwayMap.set(
 							id,
-							new Subway(id, lineCode, sequence, createSubwayMesh() as Group),
+							new Subway(id, lineCode, sequence, createSubwayGroup() as Group),
 						);
 					}
 

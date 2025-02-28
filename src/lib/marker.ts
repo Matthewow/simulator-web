@@ -10,7 +10,7 @@ import {
 	MeshBasicMaterial,
 	ShapeGeometry,
 } from "three";
-import { SVGLoader } from "three/examples/jsm/Addons.js";
+import { SVGLoader, type SVGResult } from "three/examples/jsm/Addons.js";
 
 const ARROW_GEOMETRY = (() => {
 	const vertices = new Float32Array([
@@ -59,9 +59,23 @@ export const createCircleMesh = () => {
 	return markerMesh;
 };
 
-let DEFAULT_METRO_GROUP: Group | null = null;
-const loader = new SVGLoader();
-loader.load("/subway.svg", (data) => {
+let DEFAULT_SUBWAY_GROUP: Group | null = null;
+let DEFAULT_CAR_GROUP: Group | null = null;
+let DEFAULT_TAXI_GROUP: Group | null = null;
+
+export const createSubwayGroup = () => {
+	return DEFAULT_SUBWAY_GROUP?.clone();
+};
+
+export const createTaxiGroup = () => {
+	return DEFAULT_TAXI_GROUP?.clone();
+};
+
+export const createCarGroup = () => {
+	return DEFAULT_CAR_GROUP?.clone();
+};
+
+const generateSVGGroup = (data: SVGResult) => {
 	const group = new Group();
 
 	const paths = data.paths;
@@ -89,8 +103,22 @@ loader.load("/subway.svg", (data) => {
 	}
 
 	group.scale.set(0.1, 0.1, 0.1);
-	DEFAULT_METRO_GROUP = group;
-});
-export const createSubwayMesh = () => {
-	return DEFAULT_METRO_GROUP?.clone();
+	return group;
 };
+
+const prepareSVGs = async () => {
+	const loader = new SVGLoader();
+	loader.load("/subway.svg", (data) => {
+		DEFAULT_SUBWAY_GROUP = generateSVGGroup(data);
+	});
+
+	loader.load("/car.svg", (data) => {
+		DEFAULT_CAR_GROUP = generateSVGGroup(data);
+	});
+
+	loader.load("/taxi.svg", (data) => {
+		DEFAULT_TAXI_GROUP = generateSVGGroup(data);
+	});
+};
+
+prepareSVGs();
