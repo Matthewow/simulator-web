@@ -1,8 +1,13 @@
 import { type Group, Vector3, type Object3D } from "three";
 import { isNumber, isValidNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
-import { createCarGroup, createSubwayGroup, createTaxiGroup } from "./marker";
-import type { GeoPosition } from "./types";
+import {
+	createCarGroup,
+	createSubwayGroup,
+	createTaxiGroup,
+	setGroupMaterialColorByStatus,
+} from "./marker";
+import type { GeoPosition, SubwayStatus, VehicleStatus } from "./types";
 import { MTR_STATION_MAP } from "./railway";
 
 export type VehicleSnapshot = {
@@ -17,7 +22,6 @@ export interface Transportation {
 }
 
 export type VehicleType = "Taxi" | "Private Car";
-export type VehicleStatus = "EMPTY" | "OFFLINE" | "BOARDING";
 export type VehicleRoute = Map<number, VehicleSnapshot>;
 export class Vehicle implements Transportation {
 	readonly id: number;
@@ -56,7 +60,11 @@ export class Vehicle implements Transportation {
 		);
 
 		const currentTime = this.sequence[currentTimeIndex];
-		const curGeoPosition = this.route.get(currentTime)?.pos;
+		const curSnapshot = this.route.get(currentTime);
+		const curGeoPosition = curSnapshot?.pos;
+		const curStatus = curSnapshot?.status;
+
+		curStatus && setGroupMaterialColorByStatus(this.marker, curStatus);
 
 		const nextTime = this.sequence[nextTimeIndex];
 		const nextGeoPosition = this.route.get(nextTime)?.pos;
@@ -93,7 +101,6 @@ export class Vehicle implements Transportation {
 	}
 }
 
-export type SubwayStatus = "BOARDING" | "RUNNING";
 export type SubwayRecord = { timestamp: number; status: SubwayStatus };
 export type SubwaySnapshot = {
 	startTime: number;
@@ -135,6 +142,8 @@ export class Subway implements Transportation {
 		const status = snapshot?.status;
 		const startTime = snapshot?.startTime;
 		const endTime = snapshot?.endTime;
+
+		status && setGroupMaterialColorByStatus(this.marker, status);
 
 		if (
 			status === "RUNNING" &&

@@ -1,7 +1,5 @@
 import {
 	type Box3,
-	BufferAttribute,
-	BufferGeometry,
 	CircleGeometry,
 	Color,
 	DoubleSide,
@@ -11,46 +9,9 @@ import {
 	ShapeGeometry,
 } from "three";
 import { SVGLoader, type SVGResult } from "three/examples/jsm/Addons.js";
-
-const ARROW_GEOMETRY = (() => {
-	const vertices = new Float32Array([
-		0, 0, 0.75, 1.0, 0, 1.0, 0, 0, -1.0, -1.0, 0, 1.0,
-	]);
-
-	const indices = [0, 1, 2, 0, 2, 3];
-	const geometry = new BufferGeometry();
-	geometry.setAttribute("position", new BufferAttribute(vertices, 3));
-	geometry.setIndex(indices);
-
-	return geometry;
-})();
+import type { VehicleStatus, SubwayStatus } from "./types";
 
 const DEFAULT_MATERIAL = new MeshBasicMaterial({ color: 0x000000 });
-
-export const createArrowMesh = () => {
-	const markerMesh = new Mesh(ARROW_GEOMETRY, DEFAULT_MATERIAL);
-	markerMesh.scale.set(10, 10, 10);
-
-	return markerMesh;
-};
-
-const SQUARE_GEOMETRY = (() => {
-	const vertices = new Float32Array([1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1]);
-
-	const indices = [0, 2, 1, 0, 3, 2];
-	const geometry = new BufferGeometry();
-	geometry.setAttribute("position", new BufferAttribute(vertices, 3));
-	geometry.setIndex(indices);
-
-	return geometry;
-})();
-
-export const createSquareMesh = () => {
-	const markerMesh = new Mesh(SQUARE_GEOMETRY, DEFAULT_MATERIAL);
-	markerMesh.scale.set(20, 20, 20);
-
-	return markerMesh;
-};
 
 export const createCircleMesh = () => {
 	const markerMesh = new Mesh(new CircleGeometry(20, 32), DEFAULT_MATERIAL);
@@ -59,35 +20,87 @@ export const createCircleMesh = () => {
 	return markerMesh;
 };
 
-let DEFAULT_SUBWAY_GROUP: Group | null = null;
-let DEFAULT_CAR_GROUP: Group | null = null;
-let DEFAULT_TAXI_GROUP: Group | null = null;
+export const MARKER_COLOR_MAP = {
+	BOARDING: "#000099",
+	EMPTY: "#000000",
+	OFFLINE: "999999",
+	RUNNING: "#009900",
+} as {
+	[key in VehicleStatus | SubwayStatus]: string;
+};
+
+let DEFAULT_SUBWAY_GEOMETRIRS: ShapeGeometry[] | null = null;
+let DEFAULT_CAR_GEOMETRIRS: ShapeGeometry[] | null = null;
+let DEFAULT_TAXI_GEOMETRIRS: ShapeGeometry[] | null = null;
 
 export const createSubwayGroup = () => {
-	return DEFAULT_SUBWAY_GROUP?.clone();
-};
-
-export const createTaxiGroup = () => {
-	return DEFAULT_TAXI_GROUP?.clone();
-};
-
-export const createCarGroup = () => {
-	return DEFAULT_CAR_GROUP?.clone();
-};
-
-const generateSVGGroup = (data: SVGResult) => {
 	const group = new Group();
-
-	const paths = data.paths;
 	const material = new MeshBasicMaterial({
 		color: new Color(0x000000),
 		side: DoubleSide,
 		depthWrite: false,
 	});
 
-	for (const path of paths) {
+	for (const geometry of DEFAULT_SUBWAY_GEOMETRIRS as ShapeGeometry[]) {
+		const mesh = new Mesh(geometry, material);
+		group.add(mesh);
+	}
+	return group;
+};
+
+export const createTaxiGroup = () => {
+	const group = new Group();
+	const material = new MeshBasicMaterial({
+		color: new Color(0x000000),
+		side: DoubleSide,
+		depthWrite: false,
+	});
+
+	for (const geometry of DEFAULT_TAXI_GEOMETRIRS as ShapeGeometry[]) {
+		const mesh = new Mesh(geometry, material);
+		group.add(mesh);
+	}
+	return group;
+};
+
+export const createCarGroup = () => {
+	const group = new Group();
+	const material = new MeshBasicMaterial({
+		color: new Color(0x000000),
+		side: DoubleSide,
+		depthWrite: false,
+	});
+
+	for (const geometry of DEFAULT_CAR_GEOMETRIRS as ShapeGeometry[]) {
+		const mesh = new Mesh(geometry, material);
+		group.add(mesh);
+	}
+	return group;
+};
+
+export const setGroupMaterialColorByStatus = (
+	group: Group,
+	status: VehicleStatus | SubwayStatus,
+) => {
+	const rgbStr = MARKER_COLOR_MAP[status];
+	for (const mesh of group.children) {
+		((mesh as Mesh).material as MeshBasicMaterial).color.set(rgbStr);
+	}
+};
+
+const generateSVGGroup = (data: SVGResult) => {
+	// const group = new Group();
+
+	const paths = data.paths;
+	// const material = new MeshBasicMaterial({
+	// 	color: new Color(0x000000),
+	// 	side: DoubleSide,
+	// 	depthWrite: false,
+	// });
+
+	const geometries = paths.flatMap((path) => {
 		const shapes = SVGLoader.createShapes(path);
-		for (const shape of shapes) {
+		const geometries = shapes.map((shape) => {
 			const geometry = new ShapeGeometry(shape);
 			geometry.computeBoundingBox();
 			geometry.translate(
@@ -96,28 +109,30 @@ const generateSVGGroup = (data: SVGResult) => {
 				-(geometry.boundingBox as Box3).max.z * 0.5,
 			);
 
-			const mesh = new Mesh(geometry, material);
-			mesh.rotateX(Math.PI / 2);
-			group.add(mesh);
-		}
-	}
+			geometry.rotateX(Math.PI / 2);
+			geometry.scale(0.1, 0.1, 0.1);
 
-	group.scale.set(0.1, 0.1, 0.1);
-	return group;
+			return geometry;
+		});
+
+		return geometries;
+	});
+
+	return geometries;
 };
 
 const prepareSVGs = async () => {
 	const loader = new SVGLoader();
 	loader.load("/subway.svg", (data) => {
-		DEFAULT_SUBWAY_GROUP = generateSVGGroup(data);
+		DEFAULT_SUBWAY_GEOMETRIRS = generateSVGGroup(data);
 	});
 
 	loader.load("/car.svg", (data) => {
-		DEFAULT_CAR_GROUP = generateSVGGroup(data);
+		DEFAULT_CAR_GEOMETRIRS = generateSVGGroup(data);
 	});
 
 	loader.load("/taxi.svg", (data) => {
-		DEFAULT_TAXI_GROUP = generateSVGGroup(data);
+		DEFAULT_TAXI_GEOMETRIRS = generateSVGGroup(data);
 	});
 };
 
