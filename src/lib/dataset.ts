@@ -3,6 +3,7 @@ import { isNumber, isValidNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
 import { createArrowMesh } from "./marker";
 import type { GeoPosition } from "./types";
+import { MTR_STATION_MAP } from "./railway";
 
 export type VehicleSnapshot = {
 	pos: GeoPosition;
@@ -165,8 +166,8 @@ export class Subway implements Transportation {
 
 			(this.marker as Mesh).rotation.y = -(heading / 180) * Math.PI;
 		} else if (status === "BOARDING" && endPosition) {
-			const startGlPosition = overlay.latLngAltitudeToVector3(endPosition);
-			this.marker?.position.copy(startGlPosition);
+			const endGlPosition = overlay.latLngAltitudeToVector3(endPosition);
+			this.marker?.position.copy(endGlPosition);
 		}
 	}
 }
@@ -254,14 +255,10 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 	const idIndex = definitions.get("Train ID");
 	const lineCodeIndex = definitions.get("Line Code");
 
-	const currentStationIndex = [
-		definitions.get("Current Station Lat"),
-		definitions.get("Current Station Lng"),
-	];
-	const nextStationIndex = [
-		definitions.get("Next Station Lat"),
-		definitions.get("Next Station Lng"),
-	];
+	const currentStationIndex = definitions.get("Current Station");
+
+	const nextStationIndex = definitions.get("Next Station");
+
 	const statusIndex = definitions.get("Current Status");
 	const timestampIndex = definitions.get("Timestamp");
 	const durationIndex = [
@@ -272,10 +269,8 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 	if (
 		isNumber(idIndex) &&
 		isNumber(lineCodeIndex) &&
-		isNumber(currentStationIndex?.[0]) &&
-		isNumber(currentStationIndex?.[1]) &&
-		isNumber(nextStationIndex?.[0]) &&
-		isNumber(nextStationIndex?.[1]) &&
+		isNumber(currentStationIndex) &&
+		isNumber(nextStationIndex) &&
 		isNumber(statusIndex) &&
 		isNumber(timestampIndex) &&
 		isNumber(durationIndex?.[0]) &&
@@ -294,14 +289,11 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 				const timestamp = Number.parseInt(attributes?.[timestampIndex]);
 				const status = attributes?.[statusIndex] as SubwayStatus;
 
-				const startPos = {
-					lat: Number.parseFloat(attributes?.[currentStationIndex?.[0]]),
-					lng: Number.parseFloat(attributes?.[currentStationIndex?.[1]]),
-				};
-				const endPos = {
-					lat: Number.parseFloat(attributes?.[nextStationIndex?.[0]]),
-					lng: Number.parseFloat(attributes?.[nextStationIndex?.[1]]),
-				};
+				const curStationCode = attributes?.[currentStationIndex];
+				const startPos = MTR_STATION_MAP.get(curStationCode)?.pos;
+
+				const nextStationCode = attributes?.[nextStationIndex];
+				const endPos = MTR_STATION_MAP.get(nextStationCode)?.pos;
 
 				const startTime = Number.parseFloat(attributes?.[durationIndex?.[0]]);
 				const endTime = Number.parseFloat(attributes?.[durationIndex?.[1]]);
@@ -315,7 +307,13 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 						);
 					}
 
-					const snapshot = { status, startPos, endPos, startTime, endTime };
+					const snapshot = {
+						status,
+						startPos,
+						endPos,
+						startTime,
+						endTime,
+					} as SubwaySnapshot;
 					idSubwayMap.get(id)?.appendRoute(timestamp, snapshot);
 				}
 			}
@@ -352,8 +350,6 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 					lastStatus = curStatus;
 				}
 			}
-
-			console.log(dataset);
 		} catch (e) {
 			//In case of parsing error
 			console.error(e);
@@ -361,7 +357,6 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 	} else {
 		console.warn("Missing subways' attributes, bypass following processes.");
 	}
-	console.log(dataset);
 	return dataset;
 };
 
