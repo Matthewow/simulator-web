@@ -90,9 +90,11 @@ export class Vehicle implements Transportation {
 export type SubwayStatus = "BOARDING" | "RUNNING";
 export type SubwayRecord = { timestamp: number; status: SubwayStatus };
 export type SubwaySnapshot = {
-	progress: number;
+	startTime: number;
+	endTime: number;
 	startPos: GeoPosition;
 	endPos: GeoPosition;
+	status: SubwayStatus;
 };
 export type SubwayRoute = Map<number, SubwaySnapshot>;
 export class Subway implements Transportation {
@@ -120,14 +122,20 @@ export class Subway implements Transportation {
 		);
 
 
+
+
 		const currentTime = this.sequence[currentTimeIndex];
-		const progress = this.route.get(currentTime)?.progress;
-
-		const startPosition = this.route.get(currentTime)?.startPos;
-		const endPosition = this.route.get(currentTime)?.endPos;
+		const snapshot = this.route.get(currentTime);
 
 
-		if (progress && startPosition && endPosition) {
+		const startPosition = snapshot?.startPos;
+		const endPosition = snapshot?.endPos;
+		const status = snapshot?.status;
+		const startTime = snapshot?.startTime;
+		const endTime = snapshot?.endTime;
+
+
+		if (status === "RUNNING" && startPosition && endPosition && startTime && endTime) {
 			const startGlPosition = overlay.latLngAltitudeToVector3(startPosition);
 			const endGlPosition = overlay.latLngAltitudeToVector3(endPosition);
 
@@ -135,6 +143,8 @@ export class Subway implements Transportation {
 				x: endGlPosition.x - startGlPosition.x,
 				z: endGlPosition.z - startGlPosition.z,
 			};
+
+			const progress = (timeInSecond - startTime) / (endTime + timeInSecond - startTime)
 
 			const simulatedGlPosition = new Vector3(
 				startGlPosition.x + diff.x * progress,
@@ -152,6 +162,9 @@ export class Subway implements Transportation {
 
 			(this.marker as Mesh).rotation.y = -(heading / 180) * Math.PI;
 
+		} else if (status === "BOARDING" && startPosition) {
+			const startGlPosition = overlay.latLngAltitudeToVector3(startPosition);
+			this.marker?.position.copy(startGlPosition);
 		}
 	}
 }
@@ -277,7 +290,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 				const lineCode = attributes?.[lineCodeIndex];
 
 				const timestamp = Number.parseInt(attributes?.[timestampIndex]);
-				const status = attributes?.[statusIndex] as VehicleStatus;
+				const status = attributes?.[statusIndex] as SubwayStatus;
 
 				const startPos = {
 					lat: Number.parseFloat(attributes?.[currentStationIndex?.[0]]),
@@ -288,10 +301,10 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 					lng: Number.parseFloat(attributes?.[nextStationIndex?.[1]]),
 				};
 
-				const time2Start = Number.parseFloat(attributes?.[durationIndex?.[0]]);
-				const time2Arrive = Number.parseFloat(attributes?.[durationIndex?.[1]]);
+				const startTime = Number.parseFloat(attributes?.[durationIndex?.[0]]);
+				const endTime = Number.parseFloat(attributes?.[durationIndex?.[1]]);
 
-				const progress = status === "BOARDING" ? 0 : (timestamp - time2Start) / (time2Arrive - time2Start);
+
 
 				// Create vehicle or append route if id is valid
 				if (isValidNumber(id)) {
@@ -302,7 +315,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 						);
 					}
 
-					const snapshot = { status, startPos, endPos, progress };
+					const snapshot = { status, startPos, endPos, startTime, endTime };
 					idSubwayMap.get(id)?.appendRoute(timestamp, snapshot);
 				}
 			}
