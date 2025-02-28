@@ -148,8 +148,10 @@ export class Subway implements Transportation {
 
 			const tweakedEndTime = endTime - (timeInSecond % 5);
 
-			const progress =
-				1 - tweakedEndTime / (tweakedEndTime + timeInSecond - startTime);
+			const progress = Math.max(
+				1 - tweakedEndTime / (tweakedEndTime + timeInSecond - startTime),
+				0,
+			);
 
 			const simulatedGlPosition = new Vector3(
 				startGlPosition.x + diff.x * progress,
