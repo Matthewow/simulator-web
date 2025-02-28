@@ -121,12 +121,8 @@ export class Subway implements Transportation {
 			this.sequence.length - 1,
 		);
 
-
-
-
 		const currentTime = this.sequence[currentTimeIndex];
 		const snapshot = this.route.get(currentTime);
-
 
 		const startPosition = snapshot?.startPos;
 		const endPosition = snapshot?.endPos;
@@ -134,8 +130,13 @@ export class Subway implements Transportation {
 		const startTime = snapshot?.startTime;
 		const endTime = snapshot?.endTime;
 
-
-		if (status === "RUNNING" && startPosition && endPosition && startTime && endTime) {
+		if (
+			status === "RUNNING" &&
+			startPosition &&
+			endPosition &&
+			startTime &&
+			endTime
+		) {
 			const startGlPosition = overlay.latLngAltitudeToVector3(startPosition);
 			const endGlPosition = overlay.latLngAltitudeToVector3(endPosition);
 
@@ -144,7 +145,10 @@ export class Subway implements Transportation {
 				z: endGlPosition.z - startGlPosition.z,
 			};
 
-			const progress = (timeInSecond - startTime) / (endTime + timeInSecond - startTime)
+			const tweakedEndTime = endTime - (timeInSecond % 5);
+
+			const progress =
+				1 - tweakedEndTime / (tweakedEndTime + timeInSecond - startTime);
 
 			const simulatedGlPosition = new Vector3(
 				startGlPosition.x + diff.x * progress,
@@ -154,16 +158,14 @@ export class Subway implements Transportation {
 
 			this.marker?.position.copy(simulatedGlPosition);
 
-
 			const heading = google.maps.geometry.spherical.computeHeading(
 				startPosition,
 				endPosition,
 			);
 
 			(this.marker as Mesh).rotation.y = -(heading / 180) * Math.PI;
-
-		} else if (status === "BOARDING" && startPosition) {
-			const startGlPosition = overlay.latLngAltitudeToVector3(startPosition);
+		} else if (status === "BOARDING" && endPosition) {
+			const startGlPosition = overlay.latLngAltitudeToVector3(endPosition);
 			this.marker?.position.copy(startGlPosition);
 		}
 	}
@@ -265,7 +267,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 	const durationIndex = [
 		definitions.get("Time to Departure"),
 		definitions.get("Time to Next Station"),
-	]
+	];
 
 	if (
 		isNumber(idIndex) &&
@@ -304,8 +306,6 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 				const startTime = Number.parseFloat(attributes?.[durationIndex?.[0]]);
 				const endTime = Number.parseFloat(attributes?.[durationIndex?.[1]]);
 
-
-
 				// Create vehicle or append route if id is valid
 				if (isValidNumber(id)) {
 					if (!idSubwayMap.has(id)) {
@@ -322,8 +322,9 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 
 			const shareSequence = Array.from(
 				new Set<number>(
-					Array.from(idSubwayMap, ([_, vehicle]) =>
-						Array.from(vehicle.route.keys()) as number[],
+					Array.from(
+						idSubwayMap,
+						([_, vehicle]) => Array.from(vehicle.route.keys()) as number[],
 					).flat(),
 				),
 			).sort((r: number, l: number) => {
@@ -333,6 +334,26 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 			sequence.push(...shareSequence);
 
 			dataset.sequence = sequence;
+
+			for (const [_id, subway] of idSubwayMap) {
+				let lastStatus = null;
+				let startPoint = 0;
+				for (const [timestamp, snapshot] of subway.route) {
+					const curStatus = snapshot.status;
+					if (lastStatus === null && curStatus === "RUNNING") {
+						//If the real start point is unknown, set it to zero
+						snapshot.startTime = 0;
+					} else if (lastStatus === "BOARDING" && curStatus === "RUNNING") {
+						startPoint = timestamp;
+						snapshot.startTime = startPoint;
+					} else if (curStatus === "RUNNING") {
+						snapshot.startTime = startPoint;
+					}
+					lastStatus = curStatus;
+				}
+			}
+
+			console.log(dataset);
 		} catch (e) {
 			//In case of parsing error
 			console.error(e);
