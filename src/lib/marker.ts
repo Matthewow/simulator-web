@@ -23,8 +23,9 @@ export const createCircleMesh = () => {
 export const MARKER_COLOR_MAP = {
 	BOARDING: "#000099",
 	EMPTY: "#000000",
-	OFFLINE: "999999",
+	OFFLINE: "#999999",
 	RUNNING: "#009900",
+	PICKUP: "#999900",
 } as {
 	[key in VehicleStatus | SubwayStatus]: string;
 };
