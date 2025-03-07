@@ -5,5 +5,8 @@
 				"noUselessElse": "off"
 			}
 		}
+	},
+	"files":{
+		"maxSize": 10485760
 	}
 }
