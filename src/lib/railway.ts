@@ -6,6 +6,7 @@ import STATIONS from "@/assets/station.json";
 import LINES from "@/assets/line.json";
 
 import { createCircleMesh } from "./marker";
+import { BufferGeometry, Line, LineBasicMaterial } from "three";
 
 export type Station = {
 	pos: GeoPosition;
@@ -36,6 +37,17 @@ export const appendRailwayLayer = (overlay: ThreeJSOverlayView) => {
 		const mesh = createCircleMesh();
 		mesh.position.copy(glLocation);
 		overlay.scene.add(mesh);
+	}
+
+	for (const line of LINES_GEOMETRY) {
+		const points = line.map((geoLocation) =>
+			overlay.latLngAltitudeToVector3(geoLocation),
+		);
+
+		const geometry = new BufferGeometry().setFromPoints(points);
+		const material = new LineBasicMaterial({ color: 0x0000ff, linewidth: 4 });
+		const lineMesh = new Line(geometry, material);
+		overlay.scene.add(lineMesh);
 	}
 };
 
