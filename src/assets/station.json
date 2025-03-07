@@ -1,0 +1,5227 @@
+[
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16631, 22.27862]
+		},
+		"properties": {
+			"name": "Admiralty",
+			"name_local": null,
+			"line": "East Rail/Island/South Island/Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1980,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "East Rail Line began service in 2022; Island in 1985; South Island in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17561, 22.28162]
+		},
+		"properties": {
+			"name": "Exhibition Centre",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2022,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18219, 22.30281]
+		},
+		"properties": {
+			"name": "Hung Hom",
+			"name_local": null,
+			"line": "East Rail/Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1975,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Relocated in 2022; Tuen Ma Line began service in 2004"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17259, 22.32159]
+		},
+		"properties": {
+			"name": "Mong Kok East",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1910,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Relocated in 1982"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17582, 22.33708]
+		},
+		"properties": {
+			"name": "Kowloon Tong",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17872, 22.37301]
+		},
+		"properties": {
+			"name": "Tai Wai",
+			"name_local": null,
+			"line": "East Rail/Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1983,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": "Relocated in 1986; Tuen Ma Line began service in 2004"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18762, 22.38271]
+		},
+		"properties": {
+			"name": "Sha Tin",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1910,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19806, 22.39511]
+		},
+		"properties": {
+			"name": "Fo Tan",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20295, 22.40048]
+		},
+		"properties": {
+			"name": "Racecourse",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1978,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.21006, 22.41354]
+		},
+		"properties": {
+			"name": "University",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1956,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17063, 22.4447]
+		},
+		"properties": {
+			"name": "Tai Po Market",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1983,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16124, 22.45095]
+		},
+		"properties": {
+			"name": "Tai Wo",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1989,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.94131, 22.28918]
+		},
+		"properties": {
+			"name": "Tung Chung",
+			"name_local": "東涌",
+			"line": "Tung Chung Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1998,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.02914, 22.33195]
+		},
+		"properties": {
+			"name": "Sunny Bay",
+			"name_local": null,
+			"line": "Tung Chung/Disneyland Resort Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2005,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.10719, 22.35841]
+		},
+		"properties": {
+			"name": "Tsing Yi",
+			"name_local": null,
+			"line": "Tung Chung Line/Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1998,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12582, 22.34873]
+		},
+		"properties": {
+			"name": "Lai King",
+			"name_local": null,
+			"line": "Tsuen Wan/Tung Chung Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": "Tung Chung Line began service in 1998"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15337, 22.32684]
+		},
+		"properties": {
+			"name": "Nam Cheong",
+			"name_local": null,
+			"line": "Tung Chung/Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16022, 22.31784]
+		},
+		"properties": {
+			"name": "Olympic",
+			"name_local": null,
+			"line": "Tung Chung Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1998,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16156, 22.305]
+		},
+		"properties": {
+			"name": "Kowloon",
+			"name_local": null,
+			"line": "Tung Chung Line/Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1998,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15832, 22.28508]
+		},
+		"properties": {
+			"name": "Hong Kong",
+			"name_local": null,
+			"line": "Tung Chung Line/Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1998,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16686, 22.28205]
+		},
+		"properties": {
+			"name": "Tamar",
+			"name_local": null,
+			"line": "Tung Chung Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "planned",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97323, 22.39555]
+		},
+		"properties": {
+			"name": "Tuen Mun",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97892, 22.41185]
+		},
+		"properties": {
+			"name": "Siu Hong",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.02542, 22.44767]
+		},
+		"properties": {
+			"name": "Long Ping",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.03521, 22.44608]
+		},
+		"properties": {
+			"name": "Yuen Long",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.0056, 22.44908]
+		},
+		"properties": {
+			"name": "Tin Shui Wai",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06337, 22.43486]
+		},
+		"properties": {
+			"name": "Kam Sheung Road",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.10981, 22.36851]
+		},
+		"properties": {
+			"name": "Tsuen Wan West",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13654, 22.33905]
+		},
+		"properties": {
+			"name": "Mei Foo",
+			"name_local": null,
+			"line": "Tsuen Wan/Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Tuen Ma Line began service in 2003"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16691, 22.30366]
+		},
+		"properties": {
+			"name": "Austin",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2009,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1746, 22.29528]
+		},
+		"properties": {
+			"name": "East Tsim Sha Tsui",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1826, 22.30933]
+		},
+		"properties": {
+			"name": "Ho Man Tin",
+			"name_local": null,
+			"line": "Kwun Tong/Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Tuen Ma Line began service in 2021"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18755, 22.31688]
+		},
+		"properties": {
+			"name": "To Kwa Wan",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2021,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19161, 22.32598]
+		},
+		"properties": {
+			"name": "Sung Wong Toi",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2021,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20143, 22.33985]
+		},
+		"properties": {
+			"name": "Diamond Hill",
+			"name_local": null,
+			"line": "Kwun Tong/Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Tuan Ma Line began service in 2020"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19897, 22.33002]
+		},
+		"properties": {
+			"name": "Kai Tak",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17079, 22.36381]
+		},
+		"properties": {
+			"name": "Hin Keng",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18621, 22.37473]
+		},
+		"properties": {
+			"name": "Che Kung Temple",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19493, 22.37689]
+		},
+		"properties": {
+			"name": "Sha Tin Wai",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20374, 22.38301]
+		},
+		"properties": {
+			"name": "City One",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20845, 22.38775]
+		},
+		"properties": {
+			"name": "Shek Mun",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22277, 22.40852]
+		},
+		"properties": {
+			"name": "Tai Shui Hang",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22572, 22.41758]
+		},
+		"properties": {
+			"name": "Heng On",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.23165, 22.42486]
+		},
+		"properties": {
+			"name": "Ma On Shan",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.24405, 22.4292]
+		},
+		"properties": {
+			"name": "Wu Kai Sha",
+			"name_local": null,
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.93651, 22.31609]
+		},
+		"properties": {
+			"name": "Airport",
+			"name_local": null,
+			"line": "Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1998,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.94216, 22.32203]
+		},
+		"properties": {
+			"name": "AsiaWorld–Expo",
+			"name_local": null,
+			"line": "Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2005,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.04508, 22.31554]
+		},
+		"properties": {
+			"name": "Disneyland Resort",
+			"name_local": null,
+			"line": "Disneyland Resort Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2005,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.25238, 22.30408]
+		},
+		"properties": {
+			"name": "Tiu Keng Leng",
+			"name_local": null,
+			"line": "Kwun Tong/Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2002,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.23714, 22.29783]
+		},
+		"properties": {
+			"name": "Yau Tong",
+			"name_local": null,
+			"line": "Kwun Tong/Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2002,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.23301, 22.30665]
+		},
+		"properties": {
+			"name": "Lam Tin",
+			"name_local": null,
+			"line": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1989,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22644, 22.31222]
+		},
+		"properties": {
+			"name": "Kwun Tong",
+			"name_local": null,
+			"line": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.21921, 22.31544]
+		},
+		"properties": {
+			"name": "Ngau Tau Kok",
+			"name_local": null,
+			"line": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.21409, 22.32315]
+		},
+		"properties": {
+			"name": "Kowloon Bay",
+			"name_local": null,
+			"line": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20924, 22.33489]
+		},
+		"properties": {
+			"name": "Choi Hung",
+			"name_local": null,
+			"line": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19388, 22.34165]
+		},
+		"properties": {
+			"name": "Wong Tai Sin",
+			"name_local": null,
+			"line": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18695, 22.33798]
+		},
+		"properties": {
+			"name": "Lok Fu",
+			"name_local": null,
+			"line": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17747, 22.33679]
+		},
+		"properties": {
+			"name": "Kowloon Tong",
+			"name_local": null,
+			"line": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1688, 22.33204]
+		},
+		"properties": {
+			"name": "Shek Kip Mei",
+			"name_local": null,
+			"line": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1683, 22.32459]
+		},
+		"properties": {
+			"name": "Prince Edward",
+			"name_local": null,
+			"line": "Kwun Tong/Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16939, 22.31931]
+		},
+		"properties": {
+			"name": "Mong Kok",
+			"name_local": null,
+			"line": "Kwun Tong/Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1708, 22.31234]
+		},
+		"properties": {
+			"name": "Yau Ma Tei",
+			"name_local": null,
+			"line": "Kwun Tong/Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18947, 22.30506]
+		},
+		"properties": {
+			"name": "Whampoa",
+			"name_local": null,
+			"line": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.11783, 22.37359]
+		},
+		"properties": {
+			"name": "Tsuen Wan",
+			"name_local": null,
+			"line": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12548, 22.37076]
+		},
+		"properties": {
+			"name": "Tai Wo Hau",
+			"name_local": null,
+			"line": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1312, 22.36317]
+		},
+		"properties": {
+			"name": "Kwai Hing",
+			"name_local": null,
+			"line": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12781, 22.35678]
+		},
+		"properties": {
+			"name": "Kwai Fong",
+			"name_local": null,
+			"line": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1485, 22.33738]
+		},
+		"properties": {
+			"name": "Lai Chi Kok",
+			"name_local": null,
+			"line": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15616, 22.33552]
+		},
+		"properties": {
+			"name": "Cheung Sha Wan",
+			"name_local": null,
+			"line": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16234, 22.33072]
+		},
+		"properties": {
+			"name": "Sham Shui Po",
+			"name_local": null,
+			"line": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1982,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17173, 22.30482]
+		},
+		"properties": {
+			"name": "Jordan",
+			"name_local": null,
+			"line": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15831, 22.28166]
+		},
+		"properties": {
+			"name": "Central",
+			"name_local": null,
+			"line": "Island/Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1980,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Island Line began service in 1985"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17223, 22.29742]
+		},
+		"properties": {
+			"name": "Tsim Sha Tsui",
+			"name_local": null,
+			"line": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1979,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1291, 22.2814]
+		},
+		"properties": {
+			"name": "Kennedy Town",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2014,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13547, 22.284]
+		},
+		"properties": {
+			"name": "HKU",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2014,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.14263, 22.2854]
+		},
+		"properties": {
+			"name": "Sai Ying Pun",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2015,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15095, 22.28682]
+		},
+		"properties": {
+			"name": "Sheung Wan",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1986,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17293, 22.27755]
+		},
+		"properties": {
+			"name": "Wan Chai",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18268, 22.27987]
+		},
+		"properties": {
+			"name": "Causeway Bay",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1919, 22.28214]
+		},
+		"properties": {
+			"name": "Tin Hau",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19332, 22.28769]
+		},
+		"properties": {
+			"name": "Fortress Hill",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20071, 22.29088]
+		},
+		"properties": {
+			"name": "North Point",
+			"name_local": null,
+			"line": "Island/Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Tseung Kwan O Line service began in 2001"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20903, 22.28815]
+		},
+		"properties": {
+			"name": "Quarry Bay",
+			"name_local": null,
+			"line": "Island/Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Tseung Kwan O Line service began in 1989"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.21637, 22.28454]
+		},
+		"properties": {
+			"name": "Tai Koo",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.2223, 22.2815]
+		},
+		"properties": {
+			"name": "Sai Wan Ho",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22868, 22.27911]
+		},
+		"properties": {
+			"name": "Shau Kei Wan",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.23978, 22.27661]
+		},
+		"properties": {
+			"name": "Heng Fa Chuen",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.23705, 22.26442]
+		},
+		"properties": {
+			"name": "Chai Wan",
+			"name_local": null,
+			"line": "Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1985,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.26889, 22.29562]
+		},
+		"properties": {
+			"name": "LOHAS Park",
+			"name_local": null,
+			"line": "Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2009,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.25855, 22.3218]
+		},
+		"properties": {
+			"name": "Po Lam",
+			"name_local": null,
+			"line": "Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2002,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.26465, 22.31527]
+		},
+		"properties": {
+			"name": "Hang Hau",
+			"name_local": null,
+			"line": "Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2002,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.25991, 22.30736]
+		},
+		"properties": {
+			"name": "Tseung Kwan O",
+			"name_local": null,
+			"line": "Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2002,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.14911, 22.24246]
+		},
+		"properties": {
+			"name": "South Horizons",
+			"name_local": null,
+			"line": "South Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15621, 22.24203]
+		},
+		"properties": {
+			"name": "Lei Tung",
+			"name_local": null,
+			"line": "South Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1675, 22.24784]
+		},
+		"properties": {
+			"name": "Wong Chuk Hang",
+			"name_local": null,
+			"line": "South Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17452, 22.24871]
+		},
+		"properties": {
+			"name": "Ocean Park",
+			"name_local": null,
+			"line": "South Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.91683, 22.32484]
+		},
+		"properties": {
+			"name": "Terminal T2",
+			"name_local": null,
+			"line": "Hong Kong International Airport APM",
+			"mode": "Light Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "uc",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.91807, 22.31007]
+		},
+		"properties": {
+			"name": "Midfield Concourse",
+			"name_local": "中場客運廊",
+			"line": "Hong Kong International Airport APM",
+			"mode": "Light Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2015,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.92742, 22.31301]
+		},
+		"properties": {
+			"name": "West Hall",
+			"name_local": "號客運大樓",
+			"line": "Hong Kong International Airport APM",
+			"mode": "Light Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1998,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.93376, 22.31503]
+		},
+		"properties": {
+			"name": "East Hall",
+			"name_local": "號客運大樓",
+			"line": "Hong Kong International Airport APM",
+			"mode": "Light Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1998,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.94354, 22.31823]
+		},
+		"properties": {
+			"name": "SkyPier",
+			"name_local": "海天中轉大樓",
+			"line": "Hong Kong International Airport APM",
+			"mode": "Light Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2009,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15017, 22.27111]
+		},
+		"properties": {
+			"name": "The Peak",
+			"name_local": "山頂總站",
+			"line": "Peak Tram",
+			"mode": "Cable Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1888,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15173, 22.27096]
+		},
+		"properties": {
+			"name": "Barker Road",
+			"name_local": "白加道",
+			"line": "Peak Tram",
+			"mode": "Cable Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1888,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15591, 22.2734]
+		},
+		"properties": {
+			"name": "May Road",
+			"name_local": "梅道",
+			"line": "Peak Tram",
+			"mode": "Cable Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1888,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15722, 22.27532]
+		},
+		"properties": {
+			"name": "MacDonnell Road",
+			"name_local": "麥當勞道",
+			"line": "Peak Tram",
+			"mode": "Cable Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1888,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15816, 22.27665]
+		},
+		"properties": {
+			"name": "Kennedy Road",
+			"name_local": "堅尼地道",
+			"line": "Peak Tram",
+			"mode": "Cable Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1888,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15884, 22.27752]
+		},
+		"properties": {
+			"name": "Central Terminus",
+			"name_local": "中環總站",
+			"line": "Peak Tram",
+			"mode": "Cable Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1888,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.93418, 22.28094]
+		},
+		"properties": {
+			"name": "Tung Chung West",
+			"name_local": "東涌西",
+			"line": "Tung Chung Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "uc",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.93822, 22.29036]
+		},
+		"properties": {
+			"name": "Tung Chung",
+			"name_local": "東涌",
+			"line": "Ngong Ping 360",
+			"mode": "Cable Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2006,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96581, 22.37446]
+		},
+		"properties": {
+			"name": "Tuen Mun South",
+			"name_local": "屯門南",
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "uc",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96869, 22.38441]
+		},
+		"properties": {
+			"name": "A16",
+			"name_local": "第16區",
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "uc",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96502, 22.38524]
+		},
+		"properties": {
+			"name": "Lung Mun",
+			"name_local": "龍門",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96338, 22.3818]
+		},
+		"properties": {
+			"name": "Light Rail Depot",
+			"name_local": "輕鐵車廠",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96174, 22.37816]
+		},
+		"properties": {
+			"name": "Butterfly",
+			"name_local": "蝴蝶",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96121, 22.37505]
+		},
+		"properties": {
+			"name": "Melody Garden",
+			"name_local": "美樂",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96661, 22.37257]
+		},
+		"properties": {
+			"name": "Tuen Mun Ferry Pier",
+			"name_local": "屯門碼頭",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.03495, 22.4456]
+		},
+		"properties": {
+			"name": "Yuen Long",
+			"name_local": "元朗",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.02955, 22.44448]
+		},
+		"properties": {
+			"name": "Tai Tong Road",
+			"name_local": "大棠路",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.02695, 22.44451]
+		},
+		"properties": {
+			"name": "Hong Lok Road",
+			"name_local": "康樂路",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.02388, 22.44453]
+		},
+		"properties": {
+			"name": "Fung Nin Road",
+			"name_local": "豐年路",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.02026, 22.44449]
+		},
+		"properties": {
+			"name": "Shui Pin Wai",
+			"name_local": "水邊圍",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.01202, 22.44286]
+		},
+		"properties": {
+			"name": "Ping Shan",
+			"name_local": "屏山",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00737, 22.44024]
+		},
+		"properties": {
+			"name": "Tong Fong Tsuen",
+			"name_local": "塘坊村",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.99749, 22.43367]
+		},
+		"properties": {
+			"name": "Hung Shui Kiu",
+			"name_local": "洪水橋",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.99222, 22.42968]
+		},
+		"properties": {
+			"name": "Chung Uk Tseun",
+			"name_local": "鍾屋村",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.98668, 22.42392]
+		},
+		"properties": {
+			"name": "Nai Wai",
+			"name_local": "泥圍",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.98185, 22.41869]
+		},
+		"properties": {
+			"name": "Lam Tei",
+			"name_local": "藍地",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97824, 22.41201]
+		},
+		"properties": {
+			"name": "Siu Hong",
+			"name_local": "兆康",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.9764, 22.41073]
+		},
+		"properties": {
+			"name": "Kei Lun",
+			"name_local": "麒麟",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.9726, 22.40735]
+		},
+		"properties": {
+			"name": "Ching Chung",
+			"name_local": "青松",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96922, 22.40675]
+		},
+		"properties": {
+			"name": "Kin Sang",
+			"name_local": "建生",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96656, 22.40765]
+		},
+		"properties": {
+			"name": "Tin King",
+			"name_local": "田景",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96357, 22.40665]
+		},
+		"properties": {
+			"name": "Leung King",
+			"name_local": "良景",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96441, 22.40525]
+		},
+		"properties": {
+			"name": "San Wai",
+			"name_local": "新圍",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96776, 22.40138]
+		},
+		"properties": {
+			"name": "Shek Pai",
+			"name_local": "石排",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96731, 22.39715]
+		},
+		"properties": {
+			"name": "Ming Kum",
+			"name_local": "鳴琴",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96746, 22.39439]
+		},
+		"properties": {
+			"name": "Tsing Wun",
+			"name_local": "青雲",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96711, 22.39057]
+		},
+		"properties": {
+			"name": "Tsing Shan Tsuen",
+			"name_local": "青山村",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96611, 22.39656]
+		},
+		"properties": {
+			"name": "Shan King (South)",
+			"name_local": "山景 (南)",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.9667, 22.39854]
+		},
+		"properties": {
+			"name": "Shan King (North)",
+			"name_local": "山景 (北)",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96897, 22.39516]
+		},
+		"properties": {
+			"name": "Kin On",
+			"name_local": "建安",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97305, 22.39712]
+		},
+		"properties": {
+			"name": "Ho Tin",
+			"name_local": "河田",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97434, 22.4]
+		},
+		"properties": {
+			"name": "Choy Yee Bridge",
+			"name_local": "蔡意橋",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97465, 22.4025]
+		},
+		"properties": {
+			"name": "Ngan Wai",
+			"name_local": "銀圍",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97211, 22.40273]
+		},
+		"properties": {
+			"name": "Tai Hing (South)",
+			"name_local": "大興 (南)",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97001, 22.40448]
+		},
+		"properties": {
+			"name": "Tai Hing (North)",
+			"name_local": "大興 (北)",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97713, 22.40788]
+		},
+		"properties": {
+			"name": "Tuen Mun Hospital",
+			"name_local": "屯門醫院",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97587, 22.40355]
+		},
+		"properties": {
+			"name": "Affluence",
+			"name_local": "澤豐",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97313, 22.39382]
+		},
+		"properties": {
+			"name": "Tuen Mun",
+			"name_local": "屯門",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97497, 22.39129]
+		},
+		"properties": {
+			"name": "Town Centre",
+			"name_local": "市中心",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97511, 22.3876]
+		},
+		"properties": {
+			"name": "On Ting",
+			"name_local": "安定",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97357, 22.3867]
+		},
+		"properties": {
+			"name": "Yau Oi",
+			"name_local": "友愛",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.96691, 22.37517]
+		},
+		"properties": {
+			"name": "Siu Hei",
+			"name_local": "兆禧",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1991,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97039, 22.38129]
+		},
+		"properties": {
+			"name": "Tuen Mun Swimming Pool",
+			"name_local": "屯門泳池",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1991,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97306, 22.38331]
+		},
+		"properties": {
+			"name": "Goodview Garden",
+			"name_local": "豐景園",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1991,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97505, 22.38451]
+		},
+		"properties": {
+			"name": "Siu Lun",
+			"name_local": "兆麟",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1991,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97665, 22.38233]
+		},
+		"properties": {
+			"name": "Sam Shing",
+			"name_local": "三聖",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1992,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97688, 22.39466]
+		},
+		"properties": {
+			"name": "Pui To",
+			"name_local": "杯渡",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1992,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97745, 22.3974]
+		},
+		"properties": {
+			"name": "Hoh Fuk Tong",
+			"name_local": "何福堂",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1992,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97801, 22.40025]
+		},
+		"properties": {
+			"name": "San Hui",
+			"name_local": "新墟",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1992,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97945, 22.40315]
+		},
+		"properties": {
+			"name": "Prime View",
+			"name_local": "景峰",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1992,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.97882, 22.40683]
+		},
+		"properties": {
+			"name": "Fung Tei",
+			"name_local": "鳳地",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1992,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00559, 22.4451]
+		},
+		"properties": {
+			"name": "Hang Mei Tsuen",
+			"name_local": "坑尾村",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1993,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00276, 22.45039]
+		},
+		"properties": {
+			"name": "Tin Yiu",
+			"name_local": "天耀",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1993,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.0011, 22.45308]
+		},
+		"properties": {
+			"name": "Locwood",
+			"name_local": "樂湖",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1993,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.99941, 22.45586]
+		},
+		"properties": {
+			"name": "Tin Shui",
+			"name_local": "天瑞",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1993,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00285, 22.45951]
+		},
+		"properties": {
+			"name": "Tin Wing",
+			"name_local": "天榮",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1995,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.99959, 22.45968]
+		},
+		"properties": {
+			"name": "Chestwood",
+			"name_local": "翠湖",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1995,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00497, 22.45751]
+		},
+		"properties": {
+			"name": "Ginza",
+			"name_local": "銀座",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00572, 22.45494]
+		},
+		"properties": {
+			"name": "Tin Wu",
+			"name_local": "天湖",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00608, 22.45273]
+		},
+		"properties": {
+			"name": "Tin Tsz",
+			"name_local": "天慈",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00603, 22.4494]
+		},
+		"properties": {
+			"name": "Tin Shui Wai",
+			"name_local": "天水圍",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.99699, 22.46201]
+		},
+		"properties": {
+			"name": "Chung Fu",
+			"name_local": "頌富",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.99766, 22.46453]
+		},
+		"properties": {
+			"name": "Tin Fu",
+			"name_local": "天富",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00166, 22.46291]
+		},
+		"properties": {
+			"name": "Tin Yuet",
+			"name_local": "天悅",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.23016, 22.27789]
+		},
+		"properties": {
+			"name": "Shau Kei Wan Terminus",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22913, 22.27673]
+		},
+		"properties": {
+			"name": "Chai Wan Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22632, 22.27875]
+		},
+		"properties": {
+			"name": "Nam Hong Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22584, 22.27954]
+		},
+		"properties": {
+			"name": "Sun Sing Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22583, 22.28016]
+		},
+		"properties": {
+			"name": "Sai Wan Ho Depot",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22439, 22.28042]
+		},
+		"properties": {
+			"name": "Hoi Foo Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22275, 22.28116]
+		},
+		"properties": {
+			"name": "Holy Cross Path",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22177, 22.28229]
+		},
+		"properties": {
+			"name": "Tai On Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22108, 22.28316]
+		},
+		"properties": {
+			"name": "Tai Hong Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22037, 22.28407]
+		},
+		"properties": {
+			"name": "Tai Koo Shing Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.21612, 22.28463]
+		},
+		"properties": {
+			"name": "Kornhill",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.21382, 22.28467]
+		},
+		"properties": {
+			"name": "Shipyard Lane",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.21219, 22.28484]
+		},
+		"properties": {
+			"name": "Mount Parker Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.2099, 22.28844]
+		},
+		"properties": {
+			"name": "Finnie Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20909, 22.29078]
+		},
+		"properties": {
+			"name": "Java Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20753, 22.29173]
+		},
+		"properties": {
+			"name": "Healthy Street East",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20512, 22.29209]
+		},
+		"properties": {
+			"name": "Healthy Street West",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20354, 22.29186]
+		},
+		"properties": {
+			"name": "Tin Chiu Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.20051, 22.29124]
+		},
+		"properties": {
+			"name": "Shu Kuk Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19877, 22.29107]
+		},
+		"properties": {
+			"name": "North Point Terminus",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1971, 22.29053]
+		},
+		"properties": {
+			"name": "North Point Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19677, 22.2911]
+		},
+		"properties": {
+			"name": "Chun Yeung Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19425, 22.28911]
+		},
+		"properties": {
+			"name": "Fortress Hill",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1929, 22.28644]
+		},
+		"properties": {
+			"name": "Jupiter Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19284, 22.28497]
+		},
+		"properties": {
+			"name": "Wing Hing Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19274, 22.2845]
+		},
+		"properties": {
+			"name": "Lau Li Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.19221, 22.28276]
+		},
+		"properties": {
+			"name": "Lau Sin Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1911, 22.28172]
+		},
+		"properties": {
+			"name": "Hing Fat Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18944, 22.28059]
+		},
+		"properties": {
+			"name": "Victoria Park",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18805, 22.27966]
+		},
+		"properties": {
+			"name": "Shelter Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18708, 22.27926]
+		},
+		"properties": {
+			"name": "Causeway Bay Terminus",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18652, 22.27955]
+		},
+		"properties": {
+			"name": "Pennington Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18592, 22.27974]
+		},
+		"properties": {
+			"name": "Paterson Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18294, 22.28002]
+		},
+		"properties": {
+			"name": "Percival Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18306, 22.27906]
+		},
+		"properties": {
+			"name": "Foo Ming Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18236, 22.27698]
+		},
+		"properties": {
+			"name": "Leighton Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1837, 22.27389]
+		},
+		"properties": {
+			"name": "Broadwood Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18448, 22.27225]
+		},
+		"properties": {
+			"name": "Wong Nai Chung Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18419, 22.26987]
+		},
+		"properties": {
+			"name": "Happy Valley Terminus",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17987, 22.27239]
+		},
+		"properties": {
+			"name": "Hong Kong Cemetery",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17945, 22.27439]
+		},
+		"properties": {
+			"name": "Queen's Road East",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18053, 22.27585]
+		},
+		"properties": {
+			"name": "Morrison Hill Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17965, 22.27851]
+		},
+		"properties": {
+			"name": "Tin Lok Lane",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.18104, 22.27931]
+		},
+		"properties": {
+			"name": "Canal Road West",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17759, 22.27818]
+		},
+		"properties": {
+			"name": "Tonnochy Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17597, 22.27733]
+		},
+		"properties": {
+			"name": "Burrows Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17536, 22.27698]
+		},
+		"properties": {
+			"name": "Fleming Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17333, 22.27657]
+		},
+		"properties": {
+			"name": "O'Brien Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17208, 22.27643]
+		},
+		"properties": {
+			"name": "Swatow Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17012, 22.27719]
+		},
+		"properties": {
+			"name": "Fenwick Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16829, 22.27782]
+		},
+		"properties": {
+			"name": "Arsenal Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16439, 22.27837]
+		},
+		"properties": {
+			"name": "Admiralty MTR Station",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1632, 22.27902]
+		},
+		"properties": {
+			"name": "Cotton Tree Drive",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16173, 22.27976]
+		},
+		"properties": {
+			"name": "Murray Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15989, 22.28059]
+		},
+		"properties": {
+			"name": "Bank Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15857, 22.28105]
+		},
+		"properties": {
+			"name": "Ice House Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15805, 22.2817]
+		},
+		"properties": {
+			"name": "Pedder Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15665, 22.28344]
+		},
+		"properties": {
+			"name": "Pottinger Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15569, 22.28463]
+		},
+		"properties": {
+			"name": "Jubilee Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15477, 22.28539]
+		},
+		"properties": {
+			"name": "Gilman Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.1529, 22.28635]
+		},
+		"properties": {
+			"name": "Man Wah Lane",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15188, 22.2866]
+		},
+		"properties": {
+			"name": "Hillier Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15077, 22.2869]
+		},
+		"properties": {
+			"name": "Western Market Terminus",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.14987, 22.28778]
+		},
+		"properties": {
+			"name": "Macau Ferry Terminal",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.14878, 22.28805]
+		},
+		"properties": {
+			"name": "Connaught Road West",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.14689, 22.28768]
+		},
+		"properties": {
+			"name": "Queen Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.14615, 22.28775]
+		},
+		"properties": {
+			"name": "Sutherland Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.14404, 22.28787]
+		},
+		"properties": {
+			"name": "Eastern Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.14079, 22.28796]
+		},
+		"properties": {
+			"name": "Western Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13882, 22.28744]
+		},
+		"properties": {
+			"name": "Water Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13661, 22.28683]
+		},
+		"properties": {
+			"name": "Whitty Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13505, 22.28709]
+		},
+		"properties": {
+			"name": "Shek Tong Tsui Terminus",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13495, 22.28752]
+		},
+		"properties": {
+			"name": "Whitty Street Depot",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1995,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": "Opening date is estimated"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13438, 22.28709]
+		},
+		"properties": {
+			"name": "Hill Road",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13222, 22.28646]
+		},
+		"properties": {
+			"name": "Queen's Road West",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13038, 22.28434]
+		},
+		"properties": {
+			"name": "Kennedy Town Praya",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12935, 22.28352]
+		},
+		"properties": {
+			"name": "Sands Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12875, 22.28335]
+		},
+		"properties": {
+			"name": "North Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12775, 22.28318]
+		},
+		"properties": {
+			"name": "Smithfield",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12694, 22.28304]
+		},
+		"properties": {
+			"name": "Davis Street",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12623, 22.28297]
+		},
+		"properties": {
+			"name": "Kennedy Town Terminus",
+			"name_local": null,
+			"line": "Hong Kong Trams",
+			"mode": "Tramway",
+			"region": "Hong Kong CHN",
+			"year_open": 1904,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.9899, 22.43474]
+		},
+		"properties": {
+			"name": "Hung Shui Kiu",
+			"name_local": "洪水橋",
+			"line": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "uc",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.95926, 22.29726]
+		},
+		"properties": {
+			"name": "Oyster Bay",
+			"name_local": "小蠔灣",
+			"line": "Tung Chung Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "uc",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.23931, 22.29786]
+		},
+		"properties": {
+			"name": "Yau Tong East",
+			"name_local": null,
+			"line": "Smart and Green Mass Transit System",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "planned",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.24113, 22.31728]
+		},
+		"properties": {
+			"name": "Ma Yau Tong",
+			"name_local": null,
+			"line": "Smart and Green Mass Transit System",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "planned",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.23861, 22.3181]
+		},
+		"properties": {
+			"name": "Po Tat",
+			"name_local": null,
+			"line": "Smart and Green Mass Transit System",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "planned",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.2327, 22.32064]
+		},
+		"properties": {
+			"name": "Sau Mau Ping",
+			"name_local": null,
+			"line": "Smart and Green Mass Transit System",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "planned",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22827, 22.32518]
+		},
+		"properties": {
+			"name": "Shun On",
+			"name_local": null,
+			"line": "Smart and Green Mass Transit System",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "planned",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22641, 22.33153]
+		},
+		"properties": {
+			"name": "Shun Lee",
+			"name_local": null,
+			"line": "Smart and Green Mass Transit System",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "planned",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.21619, 22.33263]
+		},
+		"properties": {
+			"name": "Choi Wan",
+			"name_local": null,
+			"line": "Smart and Green Mass Transit System",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "planned",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.21161, 22.33441]
+		},
+		"properties": {
+			"name": "Choi Hung East",
+			"name_local": null,
+			"line": "Smart and Green Mass Transit System",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "planned",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13856, 22.49216]
+		},
+		"properties": {
+			"name": "Fanling",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1910,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12804, 22.50115]
+		},
+		"properties": {
+			"name": "Sheung Shui",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1930,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.11309, 22.52821]
+		},
+		"properties": {
+			"name": "Lo Wu",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1949,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.10001, 22.50762]
+		},
+		"properties": {
+			"name": "Kwu Tung",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": null,
+			"year_clos": null,
+			"status": "uc",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06577, 22.51452]
+		},
+		"properties": {
+			"name": "Lok Ma Chau",
+			"name_local": null,
+			"line": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2007,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.99881, 22.46703]
+		},
+		"properties": {
+			"name": "Tin Yat",
+			"name_local": "天逸",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00081, 22.46978]
+		},
+		"properties": {
+			"name": "Tin Heng",
+			"name_local": "天恆",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00253, 22.46959]
+		},
+		"properties": {
+			"name": "Wetland Park",
+			"name_local": "濕地公園",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00292, 22.46547]
+		},
+		"properties": {
+			"name": "Tin Sau",
+			"name_local": "天秀",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 2003,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	}
+]
