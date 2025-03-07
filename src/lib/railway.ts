@@ -13,6 +13,7 @@ export type Station = {
 };
 
 export const MTR_STATION_MAP: Map<string, Station> = new Map();
+const LINES_GEOMETRY: GeoPosition[][] = new Array();
 
 const getNameAbbrMap = (): Map<string, string> => {
 	const nameCodeMap = new Map<string, string>();
@@ -65,7 +66,22 @@ for (const line of LINES) {
 		const [fromStationName, toStationName] = project.split("–");
 		if (nameCodeMap.has(fromStationName) && nameCodeMap.has(toStationName)) {
 			const fromStationCode = nameCodeMap.get(fromStationName) as string;
-			const toStationCode = nameCodeMap.get(toStationName);
+			const toStationCode = nameCodeMap.get(toStationName) as string;
+
+			const fromStation = MTR_STATION_MAP.get(fromStationCode);
+			const toStation = MTR_STATION_MAP.get(toStationCode);
+
+			const path = line.geometry.coordinates[0].map(([lng, lat]) => ({
+				lat,
+				lng,
+			}));
+
+			fromStation?.route.set(toStationCode, path);
+
+			const reversed_path = [...path].reverse();
+			toStation?.route.set(fromStationCode, reversed_path);
+
+			LINES_GEOMETRY.push(path);
 		}
 	}
 }
