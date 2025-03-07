@@ -3,6 +3,120 @@
 		"type": "Feature",
 		"geometry": {
 			"type": "Point",
+			"coordinates": [114.2415, 22.56477]
+		},
+		"properties": {
+			"name": "Yantian Port West",
+			"name_local": "盐田港西",
+			"line": "Shenzhen Metro Line 8",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.23406, 22.55909]
+		},
+		"properties": {
+			"name": "Haishan",
+			"name_local": "海山",
+			"line": "Shenzhen Metro Line 8",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.22195, 22.55713]
+		},
+		"properties": {
+			"name": "Shatoujiao",
+			"name_local": "沙头角",
+			"line": "Shenzhen Metro Line 8",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.17801, 22.56104]
+		},
+		"properties": {
+			"name": "Wutong Mountain South",
+			"name_local": "梧桐山南",
+			"line": "Shenzhen Metro Line 8",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16929, 22.56685]
+		},
+		"properties": {
+			"name": "Liantang",
+			"name_local": "莲塘",
+			"line": "Shenzhen Metro Line 2/8",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.16137, 22.56671]
+		},
+		"properties": {
+			"name": "Xianhu Road",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
 			"coordinates": [114.16631, 22.27862]
 		},
 		"properties": {
@@ -231,25 +345,6 @@
 		"type": "Feature",
 		"geometry": {
 			"type": "Point",
-			"coordinates": [113.94131, 22.28918]
-		},
-		"properties": {
-			"name": "Tung Chung",
-			"name_local": "東涌",
-			"line": "Tung Chung Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": 1998,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
 			"coordinates": [114.02914, 22.33195]
 		},
 		"properties": {
@@ -376,63 +471,6 @@
 			"year_clos": null,
 			"status": "existing",
 			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [114.16686, 22.28205]
-		},
-		"properties": {
-			"name": "Tamar",
-			"name_local": null,
-			"line": "Tung Chung Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "planned",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97323, 22.39555]
-		},
-		"properties": {
-			"name": "Tuen Mun",
-			"name_local": null,
-			"line": "Tuen Ma Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": 2003,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "elevated",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97892, 22.41185]
-		},
-		"properties": {
-			"name": "Siu Hong",
-			"name_local": null,
-			"line": "Tuen Ma Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": 2003,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "elevated",
 			"notes": null
 		}
 	},
@@ -848,44 +886,6 @@
 			"mode": "Metro",
 			"region": "Hong Kong CHN",
 			"year_open": 2004,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "elevated",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.93651, 22.31609]
-		},
-		"properties": {
-			"name": "Airport",
-			"name_local": null,
-			"line": "Airport Express",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": 1998,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "elevated",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.94216, 22.32203]
-		},
-		"properties": {
-			"name": "AsiaWorld–Expo",
-			"name_local": null,
-			"line": "Airport Express",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": 2005,
 			"year_clos": null,
 			"status": "existing",
 			"grade": "elevated",
@@ -1827,101 +1827,6 @@
 		"type": "Feature",
 		"geometry": {
 			"type": "Point",
-			"coordinates": [113.91683, 22.32484]
-		},
-		"properties": {
-			"name": "Terminal T2",
-			"name_local": null,
-			"line": "Hong Kong International Airport APM",
-			"mode": "Light Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "uc",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.91807, 22.31007]
-		},
-		"properties": {
-			"name": "Midfield Concourse",
-			"name_local": "中場客運廊",
-			"line": "Hong Kong International Airport APM",
-			"mode": "Light Metro",
-			"region": "Hong Kong CHN",
-			"year_open": 2015,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.92742, 22.31301]
-		},
-		"properties": {
-			"name": "West Hall",
-			"name_local": "號客運大樓",
-			"line": "Hong Kong International Airport APM",
-			"mode": "Light Metro",
-			"region": "Hong Kong CHN",
-			"year_open": 1998,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.93376, 22.31503]
-		},
-		"properties": {
-			"name": "East Hall",
-			"name_local": "號客運大樓",
-			"line": "Hong Kong International Airport APM",
-			"mode": "Light Metro",
-			"region": "Hong Kong CHN",
-			"year_open": 1998,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.94354, 22.31823]
-		},
-		"properties": {
-			"name": "SkyPier",
-			"name_local": "海天中轉大樓",
-			"line": "Hong Kong International Airport APM",
-			"mode": "Light Metro",
-			"region": "Hong Kong CHN",
-			"year_open": 2009,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
 			"coordinates": [114.15017, 22.27111]
 		},
 		"properties": {
@@ -2026,177 +1931,6 @@
 			"mode": "Cable Rail",
 			"region": "Hong Kong CHN",
 			"year_open": 1888,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.93418, 22.28094]
-		},
-		"properties": {
-			"name": "Tung Chung West",
-			"name_local": "東涌西",
-			"line": "Tung Chung Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "uc",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.93822, 22.29036]
-		},
-		"properties": {
-			"name": "Tung Chung",
-			"name_local": "東涌",
-			"line": "Ngong Ping 360",
-			"mode": "Cable Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 2006,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96581, 22.37446]
-		},
-		"properties": {
-			"name": "Tuen Mun South",
-			"name_local": "屯門南",
-			"line": "Tuen Ma Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "uc",
-			"grade": "elevated",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96869, 22.38441]
-		},
-		"properties": {
-			"name": "A16",
-			"name_local": "第16區",
-			"line": "Tuen Ma Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "uc",
-			"grade": "elevated",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96502, 22.38524]
-		},
-		"properties": {
-			"name": "Lung Mun",
-			"name_local": "龍門",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96338, 22.3818]
-		},
-		"properties": {
-			"name": "Light Rail Depot",
-			"name_local": "輕鐵車廠",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96174, 22.37816]
-		},
-		"properties": {
-			"name": "Butterfly",
-			"name_local": "蝴蝶",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96121, 22.37505]
-		},
-		"properties": {
-			"name": "Melody Garden",
-			"name_local": "美樂",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96661, 22.37257]
-		},
-		"properties": {
-			"name": "Tuen Mun Ferry Pier",
-			"name_local": "屯門碼頭",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
 			"year_clos": null,
 			"status": "existing",
 			"grade": "at grade",
@@ -2371,709 +2105,6 @@
 			"year_clos": null,
 			"status": "existing",
 			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.98668, 22.42392]
-		},
-		"properties": {
-			"name": "Nai Wai",
-			"name_local": "泥圍",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.98185, 22.41869]
-		},
-		"properties": {
-			"name": "Lam Tei",
-			"name_local": "藍地",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97824, 22.41201]
-		},
-		"properties": {
-			"name": "Siu Hong",
-			"name_local": "兆康",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.9764, 22.41073]
-		},
-		"properties": {
-			"name": "Kei Lun",
-			"name_local": "麒麟",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.9726, 22.40735]
-		},
-		"properties": {
-			"name": "Ching Chung",
-			"name_local": "青松",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96922, 22.40675]
-		},
-		"properties": {
-			"name": "Kin Sang",
-			"name_local": "建生",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96656, 22.40765]
-		},
-		"properties": {
-			"name": "Tin King",
-			"name_local": "田景",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96357, 22.40665]
-		},
-		"properties": {
-			"name": "Leung King",
-			"name_local": "良景",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96441, 22.40525]
-		},
-		"properties": {
-			"name": "San Wai",
-			"name_local": "新圍",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96776, 22.40138]
-		},
-		"properties": {
-			"name": "Shek Pai",
-			"name_local": "石排",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96731, 22.39715]
-		},
-		"properties": {
-			"name": "Ming Kum",
-			"name_local": "鳴琴",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96746, 22.39439]
-		},
-		"properties": {
-			"name": "Tsing Wun",
-			"name_local": "青雲",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96711, 22.39057]
-		},
-		"properties": {
-			"name": "Tsing Shan Tsuen",
-			"name_local": "青山村",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96611, 22.39656]
-		},
-		"properties": {
-			"name": "Shan King (South)",
-			"name_local": "山景 (南)",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.9667, 22.39854]
-		},
-		"properties": {
-			"name": "Shan King (North)",
-			"name_local": "山景 (北)",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96897, 22.39516]
-		},
-		"properties": {
-			"name": "Kin On",
-			"name_local": "建安",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97305, 22.39712]
-		},
-		"properties": {
-			"name": "Ho Tin",
-			"name_local": "河田",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97434, 22.4]
-		},
-		"properties": {
-			"name": "Choy Yee Bridge",
-			"name_local": "蔡意橋",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97465, 22.4025]
-		},
-		"properties": {
-			"name": "Ngan Wai",
-			"name_local": "銀圍",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97211, 22.40273]
-		},
-		"properties": {
-			"name": "Tai Hing (South)",
-			"name_local": "大興 (南)",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97001, 22.40448]
-		},
-		"properties": {
-			"name": "Tai Hing (North)",
-			"name_local": "大興 (北)",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97713, 22.40788]
-		},
-		"properties": {
-			"name": "Tuen Mun Hospital",
-			"name_local": "屯門醫院",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97587, 22.40355]
-		},
-		"properties": {
-			"name": "Affluence",
-			"name_local": "澤豐",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97313, 22.39382]
-		},
-		"properties": {
-			"name": "Tuen Mun",
-			"name_local": "屯門",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "elevated",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97497, 22.39129]
-		},
-		"properties": {
-			"name": "Town Centre",
-			"name_local": "市中心",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97511, 22.3876]
-		},
-		"properties": {
-			"name": "On Ting",
-			"name_local": "安定",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97357, 22.3867]
-		},
-		"properties": {
-			"name": "Yau Oi",
-			"name_local": "友愛",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.96691, 22.37517]
-		},
-		"properties": {
-			"name": "Siu Hei",
-			"name_local": "兆禧",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1991,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97039, 22.38129]
-		},
-		"properties": {
-			"name": "Tuen Mun Swimming Pool",
-			"name_local": "屯門泳池",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1991,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97306, 22.38331]
-		},
-		"properties": {
-			"name": "Goodview Garden",
-			"name_local": "豐景園",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1991,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97505, 22.38451]
-		},
-		"properties": {
-			"name": "Siu Lun",
-			"name_local": "兆麟",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1991,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97665, 22.38233]
-		},
-		"properties": {
-			"name": "Sam Shing",
-			"name_local": "三聖",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1992,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97688, 22.39466]
-		},
-		"properties": {
-			"name": "Pui To",
-			"name_local": "杯渡",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1992,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "elevated",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97745, 22.3974]
-		},
-		"properties": {
-			"name": "Hoh Fuk Tong",
-			"name_local": "何福堂",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1992,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97801, 22.40025]
-		},
-		"properties": {
-			"name": "San Hui",
-			"name_local": "新墟",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1992,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97945, 22.40315]
-		},
-		"properties": {
-			"name": "Prime View",
-			"name_local": "景峰",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1992,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.97882, 22.40683]
-		},
-		"properties": {
-			"name": "Fung Tei",
-			"name_local": "鳳地",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1992,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "elevated",
 			"notes": null
 		}
 	},
@@ -4867,196 +3898,6 @@
 		"type": "Feature",
 		"geometry": {
 			"type": "Point",
-			"coordinates": [113.9899, 22.43474]
-		},
-		"properties": {
-			"name": "Hung Shui Kiu",
-			"name_local": "洪水橋",
-			"line": "Tuen Ma Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "uc",
-			"grade": "elevated",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [113.95926, 22.29726]
-		},
-		"properties": {
-			"name": "Oyster Bay",
-			"name_local": "小蠔灣",
-			"line": "Tung Chung Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "uc",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [114.23931, 22.29786]
-		},
-		"properties": {
-			"name": "Yau Tong East",
-			"name_local": null,
-			"line": "Smart and Green Mass Transit System",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "planned",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [114.24113, 22.31728]
-		},
-		"properties": {
-			"name": "Ma Yau Tong",
-			"name_local": null,
-			"line": "Smart and Green Mass Transit System",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "planned",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [114.23861, 22.3181]
-		},
-		"properties": {
-			"name": "Po Tat",
-			"name_local": null,
-			"line": "Smart and Green Mass Transit System",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "planned",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [114.2327, 22.32064]
-		},
-		"properties": {
-			"name": "Sau Mau Ping",
-			"name_local": null,
-			"line": "Smart and Green Mass Transit System",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "planned",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [114.22827, 22.32518]
-		},
-		"properties": {
-			"name": "Shun On",
-			"name_local": null,
-			"line": "Smart and Green Mass Transit System",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "planned",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [114.22641, 22.33153]
-		},
-		"properties": {
-			"name": "Shun Lee",
-			"name_local": null,
-			"line": "Smart and Green Mass Transit System",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "planned",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [114.21619, 22.33263]
-		},
-		"properties": {
-			"name": "Choi Wan",
-			"name_local": null,
-			"line": "Smart and Green Mass Transit System",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "planned",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [114.21161, 22.33441]
-		},
-		"properties": {
-			"name": "Choi Hung East",
-			"name_local": null,
-			"line": "Smart and Green Mass Transit System",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
-			"year_clos": null,
-			"status": "planned",
-			"grade": "subway",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
 			"coordinates": [114.13856, 22.49216]
 		},
 		"properties": {
@@ -5114,17 +3955,416 @@
 		"type": "Feature",
 		"geometry": {
 			"type": "Point",
-			"coordinates": [114.10001, 22.50762]
+			"coordinates": [114.11315, 22.53337]
 		},
 		"properties": {
-			"name": "Kwu Tung",
+			"name": "Luohu",
 			"name_local": null,
-			"line": "East Rail Line",
+			"line": "Shenzhen Metro Line 1",
 			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"year_open": null,
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
 			"year_clos": null,
-			"status": "uc",
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.11386, 22.54253]
+		},
+		"properties": {
+			"name": "Guomao",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.11082, 22.54736]
+		},
+		"properties": {
+			"name": "Laojie",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1/3",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 3 service began in 2011"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.10246, 22.54404]
+		},
+		"properties": {
+			"name": "Grand Theater",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1/2/5",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 2 began service in 2011; Line 5 is under construction"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.15057, 22.55652]
+		},
+		"properties": {
+			"name": "Liantang Checkpoint",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.14407, 22.55052]
+		},
+		"properties": {
+			"name": "Xinxiu",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13111, 22.54877]
+		},
+		"properties": {
+			"name": "Huangbeiling",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2/5",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12048, 22.547]
+		},
+		"properties": {
+			"name": "Hubei",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.09942, 22.55188]
+		},
+		"properties": {
+			"name": "Hongling",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3/9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 9 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.11741, 22.55139]
+		},
+		"properties": {
+			"name": "Shaibu",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12476, 22.55892]
+		},
+		"properties": {
+			"name": "Cuizhu",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12498, 22.57001]
+		},
+		"properties": {
+			"name": "Tianbei",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3/7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 7 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.13514, 22.5588]
+		},
+		"properties": {
+			"name": "Yijing",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 5",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.09944, 22.56466]
+		},
+		"properties": {
+			"name": "Hongling North",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 7/9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.106, 22.56595]
+		},
+		"properties": {
+			"name": "Sungang",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.11731, 22.56866]
+		},
+		"properties": {
+			"name": "Honghu",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.09947, 22.5588]
+		},
+		"properties": {
+			"name": "Yuanling",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.09983, 22.54145]
+		},
+		"properties": {
+			"name": "Hongling South",
+			"name_local": "红岭南",
+			"line": "Shenzhen Metro Line 9/11",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 11 began service in 2024"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.10382, 22.53829]
+		},
+		"properties": {
+			"name": "Ludancun",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.11318, 22.5381]
+		},
+		"properties": {
+			"name": "Renmin South",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12059, 22.54257]
+		},
+		"properties": {
+			"name": "Xiangxicun",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.12594, 22.54509]
+		},
+		"properties": {
+			"name": "Wenjin",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
 			"grade": "subway",
 			"notes": null
 		}
@@ -5145,6 +4385,1051 @@
 			"year_clos": null,
 			"status": "existing",
 			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.0912, 22.54334]
+		},
+		"properties": {
+			"name": "Science Museum",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1/6",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 6 began service in 2020"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.07992, 22.54311]
+		},
+		"properties": {
+			"name": "Huaqiang Road",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06291, 22.53759]
+		},
+		"properties": {
+			"name": "Gangxia",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1/10",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 10 began service in 2020"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.05596, 22.53747]
+		},
+		"properties": {
+			"name": "Convention and Exhibition Center",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1/4",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.04792, 22.53739]
+		},
+		"properties": {
+			"name": "Shopping Park",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1/3",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 3 service began in 2011"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.03373, 22.54162]
+		},
+		"properties": {
+			"name": "Xiangmihu",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.0231, 22.5393]
+		},
+		"properties": {
+			"name": "Chegongmiao",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1/7/9/11",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 7/9/11 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00899, 22.53626]
+		},
+		"properties": {
+			"name": "Zhuzilin",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.99138, 22.53535]
+		},
+		"properties": {
+			"name": "Qiaocheng East",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 1",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.08692, 22.54717]
+		},
+		"properties": {
+			"name": "Yannan",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.08158, 22.54708]
+		},
+		"properties": {
+			"name": "Huaqiang North",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2/7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 7 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06282, 22.5431]
+		},
+		"properties": {
+			"name": "Gangxia North",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2/10/11/14",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 10 began service in 2020; Line 11/14 in 2022"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.05593, 22.5433]
+		},
+		"properties": {
+			"name": "Civic Center",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2/4",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 2 service began in 2011"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.04779, 22.54285]
+		},
+		"properties": {
+			"name": "Futian",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2/3/11",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 11 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.04491, 22.54979]
+		},
+		"properties": {
+			"name": "Lianhua West",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.03835, 22.55621]
+		},
+		"properties": {
+			"name": "Jingtian",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2/9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 9 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.02783, 22.55665]
+		},
+		"properties": {
+			"name": "Xiangmei North",
+			"name_local": "香梅北",
+			"line": "Shenzhen Metro Line 2",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 22 under construction"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.0186, 22.55575]
+		},
+		"properties": {
+			"name": "Xiangmi",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00934, 22.55246]
+		},
+		"properties": {
+			"name": "Qiaoxiang",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.00126, 22.55161]
+		},
+		"properties": {
+			"name": "Antuo Hill",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2/7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 7 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.9937, 22.54931]
+		},
+		"properties": {
+			"name": "Shenkang",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 2",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.05017, 22.51061]
+		},
+		"properties": {
+			"name": "Futian Bonded Area",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.0459, 22.51881]
+		},
+		"properties": {
+			"name": "Yitian",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.04845, 22.52577]
+		},
+		"properties": {
+			"name": "Shixia",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3/7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 7 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.05581, 22.5514]
+		},
+		"properties": {
+			"name": "Children's Palace",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3/4",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 3 service began in 2011"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06267, 22.5514]
+		},
+		"properties": {
+			"name": "Lianhuacun",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3/10",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 10 began service in 2020"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.08156, 22.5518]
+		},
+		"properties": {
+			"name": "Huaxin",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3/7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 7 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.09101, 22.55175]
+		},
+		"properties": {
+			"name": "Tongxinling",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 3/6",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 6 began service in 2020"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.05429, 22.5711]
+		},
+		"properties": {
+			"name": "Shangmeilin",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 4/9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 9 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.05431, 22.56349]
+		},
+		"properties": {
+			"name": "Lianhua North",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 4",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2011,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.05965, 22.52594]
+		},
+		"properties": {
+			"name": "Fumin",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 4/7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2004,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 7 began service in 2016"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06417, 22.51834]
+		},
+		"properties": {
+			"name": "Futian Checkpoint",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 4",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2007,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.09062, 22.55733]
+		},
+		"properties": {
+			"name": "Sports Center",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 6",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.0882, 22.56448]
+		},
+		"properties": {
+			"name": "Bagualing",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 6/7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 6 began service in 2020"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.08361, 22.57061]
+		},
+		"properties": {
+			"name": "Yinhu",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 6",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.01272, 22.54312]
+		},
+		"properties": {
+			"name": "Nonglin",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.03267, 22.52631]
+		},
+		"properties": {
+			"name": "Shangsha",
+			"name_local": "上沙",
+			"line": "Shenzhen Metro Line 7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 22 under construction"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.03752, 22.52345]
+		},
+		"properties": {
+			"name": "Shawei",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.05393, 22.52584]
+		},
+		"properties": {
+			"name": "Huanggangcun",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06924, 22.52421]
+		},
+		"properties": {
+			"name": "Huanggang Checkpoint",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.07878, 22.53451]
+		},
+		"properties": {
+			"name": "Chiwei",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 7",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.08174, 22.54069]
+		},
+		"properties": {
+			"name": "Huaqiang South",
+			"name_local": "华强南",
+			"line": "Shenzhen Metro Line 7/11",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 11 began service in 2024"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.08192, 22.5586]
+		},
+		"properties": {
+			"name": "Huangmugang",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 7/14",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 14 began service in 2022"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.01824, 22.53163]
+		},
+		"properties": {
+			"name": "Xiasha",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.03437, 22.54813]
+		},
+		"properties": {
+			"name": "Xiangmei",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.03293, 22.56359]
+		},
+		"properties": {
+			"name": "Meijing",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.03687, 22.56847]
+		},
+		"properties": {
+			"name": "Xiameilin",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.04716, 22.57118]
+		},
+		"properties": {
+			"name": "Meicun",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06158, 22.57112]
+		},
+		"properties": {
+			"name": "Maling",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9/10",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": "Line 10 began service in 2020"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.08444, 22.5714]
+		},
+		"properties": {
+			"name": "Yinhu",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.09181, 22.56996]
+		},
+		"properties": {
+			"name": "Nigang",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 9",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2016,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06245, 22.56351]
+		},
+		"properties": {
+			"name": "Donggualing",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 10",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06305, 22.5278]
+		},
+		"properties": {
+			"name": "Fumin",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 10",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.06299, 22.51816]
+		},
+		"properties": {
+			"name": "Futian Checkpoint",
+			"name_local": null,
+			"line": "Shenzhen Metro Line 10",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2020,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [114.0752, 22.54013]
+		},
+		"properties": {
+			"name": "Fuxing",
+			"name_local": "福星",
+			"line": "Shenzhen Metro Line 11",
+			"mode": "Metro",
+			"region": "Pearl River Delta CHN",
+			"year_open": 2024,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
 			"notes": null
 		}
 	},

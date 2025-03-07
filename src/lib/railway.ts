@@ -1,7 +1,10 @@
 import type { ThreeJSOverlayView } from "@googlemaps/three";
 import type { GeoPosition } from "./types";
+
 import METRO from "@/assets/metro.json";
 import STATIONS from "@/assets/station.json";
+import LINES from "@/assets/line.json";
+
 import { createCircleMesh } from "./marker";
 
 export type Station = {
@@ -48,5 +51,21 @@ for (const station of STATIONS) {
 			pos: { lat: geoLocation[1], lng: geoLocation[0] },
 			route: new Map(),
 		});
+	}
+}
+
+//Get Line Path from line.json
+for (const line of LINES) {
+	const lineName = line.properties.name;
+	let project = line.properties.project as string;
+	console.log(1, project);
+
+	project = project?.substring(lineName.length + 1);
+	if (project?.includes("–")) {
+		const [fromStationName, toStationName] = project.split("–");
+		if (nameCodeMap.has(fromStationName) && nameCodeMap.has(toStationName)) {
+			const fromStationCode = nameCodeMap.get(fromStationName) as string;
+			const toStationCode = nameCodeMap.get(toStationName);
+		}
 	}
 }
