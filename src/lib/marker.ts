@@ -30,52 +30,28 @@ export const MARKER_COLOR_MAP = {
 	[key in VehicleStatus | SubwayStatus]: string;
 };
 
-let DEFAULT_SUBWAY_GEOMETRIRS: ShapeGeometry[] | null = null;
-let DEFAULT_CAR_GEOMETRIRS: ShapeGeometry[] | null = null;
-let DEFAULT_TAXI_GEOMETRIRS: ShapeGeometry[] | null = null;
+const SVG_NAMES = ["subway", "private car", "taxi", "bus"];
+const DEFAULT_SVG_GEOMETRIES = new Map<string, ShapeGeometry[]>();
 
-export const createSubwayGroup = () => {
+export const createSVGGroup = (type: string) => {
 	const group = new Group();
+	const geometries = DEFAULT_SVG_GEOMETRIES.get(type.toLocaleLowerCase());
+
+	if (!geometries) {
+		throw new Error("Unsupported types");
+	}
+
 	const material = new MeshBasicMaterial({
 		color: new Color(0x000000),
 		side: DoubleSide,
 		depthWrite: false,
 	});
 
-	for (const geometry of DEFAULT_SUBWAY_GEOMETRIRS as ShapeGeometry[]) {
+	for (const geometry of geometries as ShapeGeometry[]) {
 		const mesh = new Mesh(geometry, material);
 		group.add(mesh);
 	}
-	return group;
-};
 
-export const createTaxiGroup = () => {
-	const group = new Group();
-	const material = new MeshBasicMaterial({
-		color: new Color(0x000000),
-		side: DoubleSide,
-		depthWrite: false,
-	});
-
-	for (const geometry of DEFAULT_TAXI_GEOMETRIRS as ShapeGeometry[]) {
-		const mesh = new Mesh(geometry, material);
-		group.add(mesh);
-	}
-	return group;
-};
-
-export const createCarGroup = () => {
-	const group = new Group();
-	const material = new MeshBasicMaterial({
-		color: new Color(0x000000),
-		side: DoubleSide,
-		depthWrite: false,
-	});
-
-	for (const geometry of DEFAULT_CAR_GEOMETRIRS as ShapeGeometry[]) {
-		const mesh = new Mesh(geometry, material);
-		group.add(mesh);
-	}
 	return group;
 };
 
@@ -90,14 +66,7 @@ export const setGroupMaterialColorByStatus = (
 };
 
 const generateSVGGroup = (data: SVGResult) => {
-	// const group = new Group();
-
 	const paths = data.paths;
-	// const material = new MeshBasicMaterial({
-	// 	color: new Color(0x000000),
-	// 	side: DoubleSide,
-	// 	depthWrite: false,
-	// });
 
 	const geometries = paths.flatMap((path) => {
 		const shapes = SVGLoader.createShapes(path);
@@ -124,15 +93,8 @@ const generateSVGGroup = (data: SVGResult) => {
 
 export const prepareSVGs = async () => {
 	const loader = new SVGLoader();
-	loader.load("/subway.svg", (data) => {
-		DEFAULT_SUBWAY_GEOMETRIRS = generateSVGGroup(data);
-	});
-
-	loader.load("/car.svg", (data) => {
-		DEFAULT_CAR_GEOMETRIRS = generateSVGGroup(data);
-	});
-
-	loader.load("/taxi.svg", (data) => {
-		DEFAULT_TAXI_GEOMETRIRS = generateSVGGroup(data);
-	});
+	for (const name of SVG_NAMES) {
+		const res = await loader.loadAsync(`/${name}.svg`);
+		DEFAULT_SVG_GEOMETRIES.set(name, generateSVGGroup(res));
+	}
 };

@@ -1,12 +1,7 @@
 import { type Group, Vector3, type Object3D } from "three";
 import { isNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
-import {
-	createCarGroup,
-	createSubwayGroup,
-	createTaxiGroup,
-	setGroupMaterialColorByStatus,
-} from "./marker";
+import { createSVGGroup, setGroupMaterialColorByStatus } from "./marker";
 import type { GeoPosition, SubwayStatus, VehicleStatus } from "./types";
 import { MTR_STATION_MAP } from "./railway";
 
@@ -23,7 +18,7 @@ export interface Transportation {
 	route: VehicleRoute | SubwayRoute;
 }
 
-export type VehicleType = "Taxi" | "Private Car";
+export type VehicleType = "Taxi" | "Private Car" | "Bus";
 export type VehicleRoute = Map<number, VehicleSnapshot>;
 export class Vehicle implements Transportation {
 	readonly id: string;
@@ -233,8 +228,7 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 				if (id) {
 					const id = `v_${attributes?.[idIndex]}`;
 					if (!idVehicleMap.has(id)) {
-						const group =
-							type === "Taxi" ? createTaxiGroup() : createCarGroup();
+						const group = createSVGGroup(type);
 						idVehicleMap.set(
 							id,
 							new Vehicle(id, type, sequence, group as Group),
@@ -326,7 +320,12 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 					if (!idSubwayMap.has(id)) {
 						idSubwayMap.set(
 							id,
-							new Subway(id, lineCode, sequence, createSubwayGroup() as Group),
+							new Subway(
+								id,
+								lineCode,
+								sequence,
+								createSVGGroup("subway") as Group,
+							),
 						);
 					}
 
