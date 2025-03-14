@@ -167,26 +167,31 @@ export class Subway implements Transportation {
 
 			const route = startStation.route.get(endStation.code);
 
-			if (!route) return;
-			const length = TURF.length(route, { units: "meters" });
+			if (route) {
+				const length = TURF.length(route, { units: "meters" });
 
-			const along = TURF.along(route, length * progress, { units: "meters" });
-			const geoLocation = {
-				lat: along.geometry.coordinates[1],
-				lng: along.geometry.coordinates[0],
-			};
+				const along = TURF.along(route, length * progress, { units: "meters" });
+				const geoLocation = {
+					lat: along.geometry.coordinates[1],
+					lng: along.geometry.coordinates[0],
+				};
 
-			//console.log(snapshot.route, progress, geoLocation);
+				console.log(snapshot.route, progress, geoLocation);
 
-			const simulatedPosition = overlay.latLngAltitudeToVector3(geoLocation);
+				const simulatedPosition = overlay.latLngAltitudeToVector3(geoLocation);
 
-			this.marker?.position.copy(simulatedPosition);
-			// const heading = google.maps.geometry.spherical.computeHeading(
-			// 	startPosition,
-			// 	endPosition,
-			// );
+				this.marker?.position.copy(simulatedPosition);
+				// const heading = google.maps.geometry.spherical.computeHeading(
+				// 	startPosition,
+				// 	endPosition,
+				// );
 
-			// (this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
+				// (this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
+			} else {
+				console.log(
+					`Missing route: from ${snapshot.route.from} to ${snapshot.route.to}, ${snapshot} `,
+				);
+			}
 		} else if (status === "BOARDING" && endPosition) {
 			const endGlPosition = overlay.latLngAltitudeToVector3(endPosition);
 			this.marker?.position.copy(endGlPosition);
