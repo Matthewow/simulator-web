@@ -15,6 +15,7 @@
 		"@googlemaps/three": "^4.0.13",
 		"@react-three/fiber": "^8.17.10",
 		"@turf/turf": "^7.2.0",
+		"@types/geojson": "^7946.0.16",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
 		"three": "^0.172.0",

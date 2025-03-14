@@ -8,10 +8,11 @@ import LINES from "@/assets/line.json";
 import { createCircleMesh } from "./marker";
 import { BufferGeometry, Line, LineBasicMaterial } from "three";
 import * as TURF from "@turf/turf";
+import type { Feature, GeoJsonProperties, LineString } from "geojson";
 
 export type Station = {
 	pos: GeoPosition;
-	route: Map<string, unknown>;
+	route: Map<string, Feature<LineString, GeoJsonProperties>>;
 	code: string;
 };
 
