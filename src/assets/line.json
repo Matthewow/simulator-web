@@ -5,11 +5,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.16143, 22.2735],
-					[114.16335, 22.27555],
-					[114.16452, 22.27671],
-					[114.16638, 22.27863],
-					[114.16752, 22.27978],
+					[114.16631, 22.27862],
 					[114.16781, 22.28002],
 					[114.16826, 22.28035],
 					[114.16871, 22.2806],
@@ -22,6 +18,34 @@
 					[114.17331, 22.28171],
 					[114.17395, 22.28173],
 					[114.17465, 22.28167],
+					[114.17561, 22.28162]
+				]
+			]
+		},
+		"properties": {
+			"name": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2022,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": null,
+			"project": "East Rail Line Admiralty–Exhibition Centre",
+			"route_km": "4.73102534949873"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.17561, 22.28162],
 					[114.17745, 22.28156],
 					[114.17844, 22.28155],
@@ -49,7 +73,8 @@
 					[114.18184, 22.29863],
 					[114.18184, 22.29917],
 					[114.18186, 22.29976],
-					[114.18203, 22.30104]
+					[114.18203, 22.30104],
+					[114.18219, 22.30281]
 				]
 			]
 		},
@@ -67,7 +92,7 @@
 			"web": null,
 			"grade": "subway",
 			"construct": null,
-			"project": "East Rail Line Hung Hom–Admiralty",
+			"project": "East Rail Line Exhibition Centre–Hung Hom",
 			"route_km": "4.73102534949873"
 		}
 	},
@@ -77,6 +102,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
+					[114.18219, 22.30281],
 					[114.18203, 22.30104],
 					[114.18225, 22.30305],
 					[114.18237, 22.30402],
@@ -107,7 +133,8 @@
 					[114.17349, 22.31866],
 					[114.17304, 22.31975],
 					[114.1729, 22.32008],
-					[114.17278, 22.32043]
+					[114.17278, 22.32043],
+					[114.17259, 22.32159]
 				]
 			]
 		},
@@ -125,7 +152,7 @@
 			"web": null,
 			"grade": "subway; at grade",
 			"construct": null,
-			"project": "East Rail Line Mong Kok East–Hung Hom",
+			"project": "East Rail Line Hung Hom–Mong Kok East",
 			"route_km": "2.44992683272261"
 		}
 	},
@@ -135,6 +162,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
+					[114.17259, 22.32159],
 					[114.17278, 22.32043],
 					[114.17266, 22.32093],
 					[114.1726, 22.32139],
@@ -157,20 +185,35 @@
 					[114.17667, 22.3315],
 					[114.17676, 22.33201],
 					[114.17681, 22.33252],
-					[114.17685, 22.33303],
-					[114.17685, 22.33342],
-					[114.17678, 22.33411],
-					[114.17671, 22.33457],
-					[114.17662, 22.33503],
-					[114.17649, 22.33549],
-					[114.17639, 22.33583],
-					[114.17625, 22.33619],
-					[114.17609, 22.33654],
-					[114.17596, 22.33682],
-					[114.17575, 22.33723],
-					[114.17548, 22.33767],
-					[114.17473, 22.33893],
-					[114.17441, 22.33949],
+					[114.17747, 22.33679]
+				]
+			]
+		},
+		"properties": {
+			"name": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1975,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway; at grade",
+			"construct": null,
+			"project": "East Rail Line Mong Kok East–Kowloon Tong",
+			"route_km": "2.44992683272261"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.17747, 22.33679],
 					[114.17409, 22.34004],
 					[114.1739, 22.34045],
 					[114.17376, 22.34083],
@@ -208,8 +251,35 @@
 					[114.17612, 22.37142],
 					[114.17711, 22.37209],
 					[114.17758, 22.37241],
-					[114.17823, 22.37288],
-					[114.17861, 22.37317],
+					[114.17872, 22.37301]
+				]
+			]
+		},
+		"properties": {
+			"name": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1975,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway; at grade",
+			"construct": null,
+			"project": "East Rail Line Kowloon Tong–Tai Wai",
+			"route_km": "2.44992683272261"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.17872, 22.37301],
 					[114.17989, 22.37408],
 					[114.18068, 22.37463],
 					[114.18142, 22.37515],
@@ -227,6 +297,34 @@
 					[114.18567, 22.37999],
 					[114.18593, 22.38042],
 					[114.18684, 22.3817],
+					[114.18762, 22.38271]
+				]
+			]
+		},
+		"properties": {
+			"name": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1975,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway; at grade",
+			"construct": null,
+			"project": "East Rail Line Tai Wai–Sha Tin",
+			"route_km": "2.44992683272261"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.18762, 22.38271],
 					[114.18882, 22.38443],
 					[114.18917, 22.38491],
@@ -246,6 +344,35 @@
 					[114.19637, 22.3925],
 					[114.19722, 22.39377],
 					[114.19775, 22.39464],
+					[114.19806, 22.39511]
+				]
+			]
+		},
+		"properties": {
+			"name": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1975,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway; at grade",
+			"construct": null,
+			"project": "East Rail Line Sha Tin–Fo Tan",
+			"route_km": "2.44992683272261"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.19806, 22.39511],
 					[114.19856, 22.39587],
 					[114.19985, 22.39792],
 					[114.20089, 22.39964],
@@ -287,6 +414,34 @@
 					[114.21001, 22.41288],
 					[114.21001, 22.41308],
 					[114.21003, 22.41331],
+					[114.21006, 22.41354]
+				]
+			]
+		},
+		"properties": {
+			"name": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1975,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway; at grade",
+			"construct": null,
+			"project": "East Rail Line Fo Tan–University",
+			"route_km": "2.44992683272261"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.21006, 22.41354],
 					[114.21012, 22.41377],
 					[114.2102, 22.41401],
@@ -392,6 +547,34 @@
 					[114.17299, 22.44465],
 					[114.17257, 22.44465],
 					[114.17178, 22.44465],
+					[114.17063, 22.4447]
+				]
+			]
+		},
+		"properties": {
+			"name": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1975,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway; at grade",
+			"construct": null,
+			"project": "East Rail Line University–Tai Po Market",
+			"route_km": "2.44992683272261"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.17063, 22.4447],
 					[114.16992, 22.44475],
 					[114.16905, 22.4448],
@@ -412,6 +595,35 @@
 					[114.1626, 22.44937],
 					[114.16204, 22.45003],
 					[114.16136, 22.45082],
+					[114.16124, 22.45095]
+				]
+			]
+		},
+		"properties": {
+			"name": "East Rail Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1975,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway; at grade",
+			"construct": null,
+			"project": "East Rail Line Tai Po Market–Tai Wo",
+			"route_km": "2.44992683272261"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.16124, 22.45095],
 					[114.16101, 22.45123],
 					[114.16065, 22.4516],
 					[114.16012, 22.45209],
@@ -509,7 +721,8 @@
 					[114.14006, 22.49089],
 					[114.13972, 22.49116],
 					[114.13877, 22.49198],
-					[114.1373, 22.49325]
+					[114.1373, 22.49325],
+					[114.13856, 22.49216]
 				]
 			]
 		},
@@ -518,7 +731,7 @@
 			"mode": "Metro",
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
-			"year_open": 1910,
+			"year_open": 1975,
 			"year_clos": null,
 			"cost_usd": null,
 			"riders": null,
@@ -527,8 +740,8 @@
 			"web": null,
 			"grade": "subway; at grade",
 			"construct": null,
-			"project": "East Rail Line Fanling–Mong Kok East",
-			"route_km": "26.1218153342524"
+			"project": "East Rail Line Tai Wo–Fanling",
+			"route_km": "2.44992683272261"
 		}
 	},
 	{
@@ -537,6 +750,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
+					[114.12804, 22.50115],
 					[114.12565, 22.50323],
 					[114.12688, 22.50215],
 					[114.12804, 22.50115],
@@ -565,7 +779,7 @@
 			"web": null,
 			"grade": "at grade",
 			"construct": null,
-			"project": "East Rail Line Fanling–Sheung Shui",
+			"project": "East Rail Line Sheung Shui–Fanling",
 			"route_km": "1.63101546341412"
 		}
 	},
@@ -575,9 +789,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.11296, 22.52943],
-					[114.11304, 22.52856],
-					[114.1131, 22.52812],
+					[114.11309, 22.52821],
 					[114.11321, 22.52753],
 					[114.1133, 22.52715],
 					[114.11343, 22.52677],
@@ -621,7 +833,8 @@
 					[114.12282, 22.50566],
 					[114.12405, 22.50462],
 					[114.12457, 22.50419],
-					[114.12565, 22.50323]
+					[114.12565, 22.50323],
+					[114.12804, 22.50115]
 				]
 			]
 		},
@@ -639,7 +852,7 @@
 			"web": null,
 			"grade": "at grade",
 			"construct": null,
-			"project": "East Rail Line Sheung Shui–Lo Wu",
+			"project": "East Rail Line Lo Wu–Sheung Shui",
 			"route_km": "3.36249800798351"
 		}
 	},
@@ -649,10 +862,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.0634, 22.51434],
 					[114.06577, 22.51452],
-					[114.06832, 22.51468],
-					[114.07008, 22.51477],
 					[114.0708, 22.51483],
 					[114.07142, 22.51479],
 					[114.072, 22.51471],
@@ -706,7 +916,8 @@
 					[114.1199, 22.50757],
 					[114.1203, 22.50746],
 					[114.12074, 22.50726],
-					[114.12202, 22.50637]
+					[114.12202, 22.50637],
+					[114.12804, 22.50115]
 				]
 			]
 		},
@@ -724,7 +935,7 @@
 			"web": null,
 			"grade": "subway; elevated",
 			"construct": null,
-			"project": "East Rail Line Sheung Shui–Lok Ma Chau",
+			"project": "East Rail Line Lok Ma Chau–Sheung Shui",
 			"route_km": "6.76165880469116"
 		}
 	},
