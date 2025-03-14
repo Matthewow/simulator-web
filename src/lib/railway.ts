@@ -7,10 +7,12 @@ import LINES from "@/assets/line.json";
 
 import { createCircleMesh } from "./marker";
 import { BufferGeometry, Line, LineBasicMaterial } from "three";
+import * as TURF from "@turf/turf";
 
 export type Station = {
 	pos: GeoPosition;
-	route: Map<string, Array<GeoPosition>>;
+	route: Map<string, unknown>;
+	code: string;
 };
 
 export const MTR_STATION_MAP: Map<string, Station> = new Map();
@@ -63,6 +65,7 @@ for (const station of STATIONS) {
 		MTR_STATION_MAP.set(abbr, {
 			pos: { lat: geoLocation[1], lng: geoLocation[0] },
 			route: new Map(),
+			code: abbr,
 		});
 	}
 }
@@ -83,17 +86,23 @@ for (const line of LINES) {
 			const fromStation = MTR_STATION_MAP.get(fromStationCode);
 			const toStation = MTR_STATION_MAP.get(toStationCode);
 
-			const path = line.geometry.coordinates[0].map(([lng, lat]) => ({
+			const path = line.geometry.coordinates[0] as Array<[number, number]>;
+
+			const geometryPath = path.map(([lng, lat]) => ({
 				lat,
 				lng,
 			}));
 
-			fromStation?.route.set(toStationCode, path);
+			const turfPath = TURF.lineString(path);
 
-			const reversed_path = [...path].reverse();
-			toStation?.route.set(fromStationCode, reversed_path);
+			fromStation?.route.set(toStationCode, turfPath);
 
-			LINES_GEOMETRY.push(path);
+			const reversedPath = [...line.geometry.coordinates[0]].reverse();
+			const reversedTurfPath = TURF.lineString(reversedPath);
+
+			toStation?.route.set(fromStationCode, reversedTurfPath);
+
+			LINES_GEOMETRY.push(geometryPath);
 		}
 	}
 }

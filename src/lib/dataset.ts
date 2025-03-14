@@ -1,6 +1,8 @@
 import { type Group, Vector3, type Object3D } from "three";
-import { isNumber } from "./utils";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
+import * as TURF from "@turf/turf";
+
+import { isNumber } from "./utils";
 import { createSVGGroup, setGroupMaterialColorByStatus } from "./marker";
 import type { GeoPosition, SubwayStatus, VehicleStatus } from "./types";
 import { MTR_STATION_MAP } from "./railway";
@@ -102,8 +104,10 @@ export type SubwayRecord = { timestamp: number; status: SubwayStatus };
 export type SubwaySnapshot = {
 	startTime: number;
 	endTime: number;
-	startPos: GeoPosition;
-	endPos: GeoPosition;
+	route: {
+		from: string;
+		to: string;
+	};
 	status: SubwayStatus;
 };
 export type SubwayRoute = Map<number, SubwaySnapshot>;
@@ -134,8 +138,12 @@ export class Subway implements Transportation {
 		const currentTime = this.sequence[currentTimeIndex];
 		const snapshot = this.route.get(currentTime);
 
-		const startPosition = snapshot?.startPos;
-		const endPosition = snapshot?.endPos;
+		if (!snapshot) return;
+
+		const startStation = MTR_STATION_MAP.get(snapshot?.route.from);
+		const startPosition = startStation?.pos;
+		const endStation = MTR_STATION_MAP.get(snapshot?.route.to);
+		const endPosition = endStation?.pos;
 		const status = snapshot?.status;
 		const startTime = snapshot?.startTime;
 		const endTime = snapshot?.endTime;
@@ -150,14 +158,6 @@ export class Subway implements Transportation {
 			startTime &&
 			endTime
 		) {
-			const startGlPosition = overlay.latLngAltitudeToVector3(startPosition);
-			const endGlPosition = overlay.latLngAltitudeToVector3(endPosition);
-
-			const diff = {
-				x: endGlPosition.x - startGlPosition.x,
-				z: endGlPosition.z - startGlPosition.z,
-			};
-
 			const tweakedEndTime = endTime - (timeInSecond % 5);
 
 			const progress = Math.max(
@@ -165,14 +165,22 @@ export class Subway implements Transportation {
 				0,
 			);
 
-			const simulatedGlPosition = new Vector3(
-				startGlPosition.x + diff.x * progress,
-				startGlPosition.y,
-				startGlPosition.z + diff.z * progress,
-			);
+			const route = startStation.route.get(endStation.code);
 
-			this.marker?.position.copy(simulatedGlPosition);
+			if (!route) return;
+			const length = TURF.length(route, { units: "meters" });
 
+			const along = TURF.along(route, length * progress, { units: "meters" });
+			const geoLocation = {
+				lat: along.geometry.coordinates[1],
+				lng: along.geometry.coordinates[0],
+			};
+
+			//console.log(snapshot.route, progress, geoLocation);
+
+			const simulatedPosition = overlay.latLngAltitudeToVector3(geoLocation);
+
+			this.marker?.position.copy(simulatedPosition);
 			// const heading = google.maps.geometry.spherical.computeHeading(
 			// 	startPosition,
 			// 	endPosition,
@@ -306,10 +314,8 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 				const status = attributes?.[statusIndex] as SubwayStatus;
 
 				const curStationCode = attributes?.[currentStationIndex];
-				const startPos = MTR_STATION_MAP.get(curStationCode)?.pos;
 
 				const nextStationCode = attributes?.[nextStationIndex];
-				const endPos = MTR_STATION_MAP.get(nextStationCode)?.pos;
 
 				const startTime = Number.parseFloat(attributes?.[durationIndex?.[0]]);
 				const endTime = Number.parseFloat(attributes?.[durationIndex?.[1]]);
@@ -331,8 +337,10 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 
 					const snapshot = {
 						status,
-						startPos,
-						endPos,
+						route: {
+							from: curStationCode,
+							to: nextStationCode,
+						},
 						startTime,
 						endTime,
 					} as SubwaySnapshot;
