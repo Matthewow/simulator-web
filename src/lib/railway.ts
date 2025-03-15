@@ -9,6 +9,11 @@ import { createCircleMesh } from "./marker";
 import { BufferGeometry, Line, LineBasicMaterial } from "three";
 import * as TURF from "@turf/turf";
 import type { Feature, GeoJsonProperties, LineString } from "geojson";
+import {
+	Line2,
+	LineGeometry,
+	LineMaterial,
+} from "three/examples/jsm/Addons.js";
 
 export type Station = {
 	pos: GeoPosition;
@@ -47,9 +52,13 @@ export const appendRailwayLayer = (overlay: ThreeJSOverlayView) => {
 			overlay.latLngAltitudeToVector3(geoLocation),
 		);
 
-		const geometry = new BufferGeometry().setFromPoints(points);
-		const material = new LineBasicMaterial({ color: 0x0000ff, linewidth: 4 });
-		const lineMesh = new Line(geometry, material);
+		const geometry = new LineGeometry();
+		geometry.setPositions(
+			points.flatMap((point) => [point.x, point.y, point.z]),
+		);
+
+		const material = new LineMaterial({ color: 0x0000ff, linewidth: 4 });
+		const lineMesh = new Line2(geometry, material);
 		overlay.scene.add(lineMesh);
 	}
 };
