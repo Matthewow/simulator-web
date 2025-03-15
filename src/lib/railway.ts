@@ -60,7 +60,8 @@ const nameCodeMap = getNameAbbrMap();
 // Get Station Geolocation from staion.json
 for (const station of STATIONS) {
 	const name = station.properties.name;
-	if (nameCodeMap.has(name)) {
+	// Filter the station except metros
+	if (nameCodeMap.has(name) && station.properties.mode === "Metro") {
 		const abbr = nameCodeMap.get(name) as string;
 		const geoLocation = station.geometry.coordinates;
 		MTR_STATION_MAP.set(abbr, {
