@@ -3248,17 +3248,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.19532, 22.28617],
-					[114.19635, 22.28776],
-					[114.19738, 22.28906],
-					[114.19784, 22.28953],
-					[114.19805, 22.28971],
-					[114.19835, 22.28988],
-					[114.19873, 22.29002],
-					[114.19923, 22.29012],
-					[114.20138, 22.29061],
-					[114.20206, 22.29072],
-					[114.2024, 22.29073],
+					[114.20071, 22.29088],
 					[114.20278, 22.29067],
 					[114.20309, 22.29058],
 					[114.20348, 22.29039],
@@ -3269,7 +3259,8 @@
 					[114.20586, 22.28833],
 					[114.20612, 22.28821],
 					[114.20635, 22.28812],
-					[114.2067, 22.28806]
+					[114.2067, 22.28806],
+					[114.20903, 22.28815]
 				]
 			]
 		},
@@ -3287,7 +3278,7 @@
 			"web": null,
 			"grade": "subway",
 			"construct": "1999-2001",
-			"project": "Tseung Kwan O Line Quarry Bay–North Point",
+			"project": "Tseung Kwan O Line North Point–Quarry Bay",
 			"route_km": "1.49584361954886"
 		}
 	},
@@ -3297,6 +3288,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
+					[114.20903, 22.28815],
 					[114.23192, 22.29961],
 					[114.23269, 22.29989],
 					[114.23301, 22.29997],
@@ -3312,7 +3304,35 @@
 					[114.23614, 22.29906],
 					[114.23638, 22.29877],
 					[114.23659, 22.29847],
-					[114.23708, 22.2978],
+					[114.23714, 22.29783]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2001,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": "Originally run by Kwun Tong Line",
+			"web": null,
+			"grade": "subway",
+			"construct": "1999-2001",
+			"project": "Tseung Kwan O Line Quarry Bay–Yau Tong",
+			"route_km": "1.49584361954886"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.23714, 22.29783],
 					[114.23822, 22.2963],
 					[114.23851, 22.29599],
 					[114.23886, 22.29568],
@@ -3341,13 +3361,67 @@
 					[114.24938, 22.30131],
 					[114.25079, 22.30258],
 					[114.25152, 22.30321],
-					[114.25245, 22.30405],
+					[114.25238, 22.30408]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2001,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": "Originally run by Kwun Tong Line",
+			"web": null,
+			"grade": "subway",
+			"construct": "1999-2001",
+			"project": "Tseung Kwan O Line Yau Tong–Tiu Keng Leng"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.25238, 22.30408],
 					[114.25323, 22.30473],
 					[114.25357, 22.30501],
 					[114.25394, 22.30525],
 					[114.25449, 22.30551],
 					[114.25513, 22.30578],
 					[114.25637, 22.30617],
+					[114.25991, 22.30736]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2001,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": "Originally run by Kwun Tong Line",
+			"web": null,
+			"grade": "subway",
+			"construct": "1999-2001",
+			"project": "Tseung Kwan O Line Tiu Keng Leng–Tseung Kwan O"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.25991, 22.30736],
 					[114.26215, 22.30811],
 					[114.26241, 22.30822],
@@ -3368,6 +3442,33 @@
 					[114.26527, 22.31408],
 					[114.26513, 22.31451],
 					[114.26494, 22.31483],
+					[114.26465, 22.31527]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tseung Kwan O Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2001,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": "Originally run by Kwun Tong Line",
+			"web": null,
+			"grade": "subway",
+			"construct": "1999-2001",
+			"project": "Tseung Kwan O Line Tseung Kwan O–Hang Hau"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.26465, 22.31527],
 					[114.26443, 22.31561],
 					[114.26387, 22.31641],
@@ -3383,9 +3484,7 @@
 					[114.26009, 22.31968],
 					[114.25984, 22.31999],
 					[114.25919, 22.32094],
-					[114.25855, 22.3218],
-					[114.25813, 22.32237],
-					[114.25687, 22.32399]
+					[114.25855, 22.3218]
 				]
 			]
 		},
@@ -3394,17 +3493,16 @@
 			"mode": "Metro",
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
-			"year_open": 2002,
+			"year_open": 2001,
 			"year_clos": null,
 			"cost_usd": null,
 			"riders": null,
 			"status": "existing",
-			"notes": null,
+			"notes": "Originally run by Kwun Tong Line",
 			"web": null,
 			"grade": "subway",
-			"construct": "1999-2002",
-			"project": "Tseung Kwan O Line Yau Tong–Po Lam",
-			"route_km": "6.12202701819195"
+			"construct": "1999-2001",
+			"project": "Tseung Kwan O Line Hang Hau–Po Lam"
 		}
 	},
 	{
@@ -3413,48 +3511,6 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.2067, 22.28806],
-					[114.20708, 22.28802],
-					[114.20791, 22.28805],
-					[114.20903, 22.28815],
-					[114.20991, 22.28824],
-					[114.21037, 22.28838],
-					[114.21114, 22.28873],
-					[114.21254, 22.28944],
-					[114.21574, 22.29113],
-					[114.2192, 22.29294],
-					[114.22239, 22.29463],
-					[114.22667, 22.29684],
-					[114.2305, 22.29887],
-					[114.23192, 22.29961]
-				]
-			]
-		},
-		"properties": {
-			"name": "Tseung Kwan O Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"agency": "Hong Kong MTR",
-			"year_open": 1989,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
-			"status": "existing",
-			"notes": "Portion originally part of Kwun Tong Line",
-			"web": null,
-			"grade": "subway",
-			"construct": "",
-			"project": "Eastern Harbour Crossing",
-			"route_km": "2.92744415338896"
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "MultiLineString",
-			"coordinates": [
-				[
-					[114.26749, 22.29456],
 					[114.26889, 22.29562],
 					[114.27014, 22.29665],
 					[114.27054, 22.29688],
@@ -3487,7 +3543,8 @@
 					[114.26404, 22.3093],
 					[114.26368, 22.30904],
 					[114.26333, 22.30876],
-					[114.26241, 22.30822]
+					[114.26241, 22.30822],
+					[114.25991, 22.30736]
 				]
 			]
 		},
@@ -3505,7 +3562,7 @@
 			"web": null,
 			"grade": "subway",
 			"construct": null,
-			"project": "Tseung Kwan O Line Tiu Keng Leng–LOHAS Park",
+			"project": "Tseung Kwan O Line LOHAS Park–Tseung Kwan O",
 			"route_km": "2.94767710830899"
 		}
 	},
