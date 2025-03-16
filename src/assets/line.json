@@ -1968,9 +1968,6 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.19216, 22.30333],
-					[114.19125, 22.30389],
-					[114.18993, 22.30475],
 					[114.18947, 22.30506],
 					[114.18782, 22.30609],
 					[114.18684, 22.30672],
@@ -1978,6 +1975,33 @@
 					[114.18407, 22.30847],
 					[114.18371, 22.30866],
 					[114.18302, 22.30907],
+					[114.1826, 22.30933]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Whampoa–Ho Man Tin"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.1826, 22.30933],
 					[114.18168, 22.30987],
 					[114.18132, 22.31006],
@@ -2014,7 +2038,8 @@
 					[114.17189, 22.3086],
 					[114.1716, 22.30902],
 					[114.1714, 22.30946],
-					[114.17124, 22.31001]
+					[114.17124, 22.31001],
+					[114.1708, 22.31234]
 				]
 			]
 		},
@@ -2032,8 +2057,7 @@
 			"web": null,
 			"grade": "subway",
 			"construct": "2011-2016",
-			"project": "Kwun Tong Line Yau Ma Tei–Whampoa",
-			"route_km": "2.69351593402901"
+			"project": "Kwun Tong Line Ho Man Tin–Yau Ma Tei"
 		}
 	},
 	{
@@ -2042,18 +2066,68 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.17124, 22.31001],
-					[114.17117, 22.31054],
-					[114.17104, 22.31132],
-					[114.1709, 22.31204],
-					[114.17083, 22.3124],
+					[114.1708, 22.31234],
 					[114.17035, 22.3148],
 					[114.1699, 22.31692],
 					[114.16954, 22.31882],
-					[114.16942, 22.31931],
+					[114.16939, 22.31931]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Yau Ma Tei–Mong Kok"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.16939, 22.31931],
 					[114.16907, 22.32097],
 					[114.16875, 22.32262],
-					[114.16835, 22.3246],
+					[114.1683, 22.32459]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Mong Kok–Prince Edward"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.1683, 22.32459],
 					[114.16805, 22.3261],
 					[114.16801, 22.32639],
 					[114.16801, 22.32672],
@@ -2063,6 +2137,34 @@
 					[114.16873, 22.33021],
 					[114.16877, 22.33086],
 					[114.16878, 22.33158],
+					[114.1688, 22.33204]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Prince Edward–Shek Kip Mei"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.1688, 22.33204],
 					[114.16882, 22.33232],
 					[114.16883, 22.33323],
 					[114.16896, 22.33405],
@@ -2077,6 +2179,34 @@
 					[114.17283, 22.33691],
 					[114.17394, 22.33689],
 					[114.17596, 22.33682],
+					[114.17747, 22.33679]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Shek Kip Mei–Kowloon Tong"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.17747, 22.33679],
 					[114.1784, 22.33677],
 					[114.18159, 22.33673],
 					[114.18255, 22.33675],
@@ -2084,6 +2214,33 @@
 					[114.1837, 22.33692],
 					[114.18437, 22.3371],
 					[114.1852, 22.33738],
+					[114.18695, 22.33798]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Kowloon Tong–Lok Fu"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.18695, 22.33798],
 					[114.18853, 22.33854],
 					[114.18891, 22.33873],
@@ -2097,6 +2254,33 @@
 					[114.19187, 22.3415],
 					[114.19225, 22.34158],
 					[114.19274, 22.34163],
+					[114.19388, 22.34165]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Lok Fu–Wong Tai Sin"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.19388, 22.34165],
 					[114.19582, 22.34166],
 					[114.19752, 22.34164],
@@ -2104,10 +2288,34 @@
 					[114.19836, 22.34153],
 					[114.19877, 22.34141],
 					[114.19953, 22.34114],
-					[114.20063, 22.34074],
-					[114.20104, 22.34054],
-					[114.20199, 22.33998],
-					[114.20287, 22.33942],
+					[114.20143, 22.33985]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Wong Tai Sin–Diamond Hill"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.20143, 22.33985],
 					[114.20346, 22.33901],
 					[114.20394, 22.33858],
 					[114.20446, 22.33822],
@@ -2115,6 +2323,33 @@
 					[114.20694, 22.33679],
 					[114.20781, 22.33599],
 					[114.20866, 22.33533],
+					[114.20924, 22.33489]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Diamond Hill–Choi Hung"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.20924, 22.33489],
 					[114.21023, 22.33405],
 					[114.21114, 22.33337],
@@ -2132,6 +2367,34 @@
 					[114.21381, 22.32552],
 					[114.21394, 22.32445],
 					[114.21405, 22.32345],
+					[114.21409, 22.32315]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Choi Hung–Kowloon Bay"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.21409, 22.32315],
 					[114.21418, 22.3224],
 					[114.21419, 22.32204],
 					[114.21416, 22.32173],
@@ -2157,6 +2420,33 @@
 					[114.2172, 22.31613],
 					[114.2179, 22.31591],
 					[114.21861, 22.31563],
+					[114.21921, 22.31544]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Kowloon Bay–Ngau Tau Kok"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.21921, 22.31544],
 					[114.22002, 22.31513],
 					[114.22034, 22.31498],
@@ -2171,13 +2461,7 @@
 					[114.22499, 22.31291],
 					[114.22542, 22.31272],
 					[114.2258, 22.31254],
-					[114.22644, 22.31222],
-					[114.22674, 22.31203],
-					[114.22714, 22.31177],
-					[114.22805, 22.31114],
-					[114.22902, 22.31052],
-					[114.23016, 22.30975],
-					[114.2304, 22.30961]
+					[114.22644, 22.31222]
 				]
 			]
 		},
@@ -2186,17 +2470,16 @@
 			"mode": "Metro",
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
-			"year_open": 1979,
+			"year_open": 2016,
 			"year_clos": null,
 			"cost_usd": null,
 			"riders": null,
 			"status": "existing",
 			"notes": null,
 			"web": null,
-			"grade": "subway; elevated",
-			"construct": "1975-1979",
-			"project": "Kwun Tong Line Yau Ma Tei–Kwun Tong",
-			"route_km": "11.3370984829934"
+			"grade": "subway",
+			"construct": "2011-2016",
+			"project": "Kwun Tong Line Ngau Tau Kok–Kwun Tong"
 		}
 	},
 	{
@@ -2205,6 +2488,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
+					[114.22644, 22.31222],
 					[114.2304, 22.30961],
 					[114.23076, 22.30937],
 					[114.23097, 22.30921],
@@ -2215,8 +2499,7 @@
 					[114.23185, 22.30814],
 					[114.23201, 22.30787],
 					[114.23236, 22.30744],
-					[114.23301, 22.30665],
-					[114.23419, 22.30525]
+					[114.23301, 22.30665]
 				]
 			]
 		},
@@ -2244,6 +2527,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
+					[114.23301, 22.30665],
 					[114.23419, 22.30525],
 					[114.23442, 22.30493],
 					[114.23456, 22.30468],
@@ -2255,6 +2539,34 @@
 					[114.23603, 22.29959],
 					[114.23636, 22.29903],
 					[114.23675, 22.29844],
+					[114.23714, 22.29783]
+				]
+			]
+		},
+		"properties": {
+			"name": "Kwun Tong Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1989,
+			"year_clos": null,
+			"cost_usd": null,
+			"riders": null,
+			"status": "existing",
+			"notes": null,
+			"web": null,
+			"grade": "subway; elevated",
+			"construct": null,
+			"project": "Kwun Tong Line Lam Tin–Yau Tong"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.23714, 22.29783],
 					[114.23759, 22.29737],
 					[114.23827, 22.29649],
 					[114.23854, 22.29616],
@@ -2281,8 +2593,7 @@
 					[114.24846, 22.30066],
 					[114.25005, 22.3021],
 					[114.25165, 22.3035],
-					[114.25306, 22.30475],
-					[114.25345, 22.30506]
+					[114.25238, 22.30408]
 				]
 			]
 		},
@@ -2291,17 +2602,16 @@
 			"mode": "Metro",
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
-			"year_open": 2002,
+			"year_open": 1989,
 			"year_clos": null,
 			"cost_usd": null,
 			"riders": null,
 			"status": "existing",
 			"notes": null,
 			"web": null,
-			"grade": "subway",
+			"grade": "subway; elevated",
 			"construct": null,
-			"project": "Kwun Tong Line Lam Tin–Tiu Keng Leng",
-			"route_km": "3.17915970754249"
+			"project": "Kwun Tong Line Yau Tong–Tiu Keng Leng"
 		}
 	},
 	{
