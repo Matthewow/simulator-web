@@ -96,7 +96,7 @@ listenNamedEvent("render_dataset", (e) => {
 listenNamedEvent("play_status_changed", (e) => {
 	switch (e?.detail as PlayStatus) {
 		case "FastForward":
-			timer.timeScale = 5;
+			timer.timeScale = 10;
 			break;
 		case "Play":
 			timer.timeScale = 1;
