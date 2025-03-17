@@ -2617,28 +2617,12 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.16908, 22.32042],
-					[114.16932, 22.31927],
+					[114.16939, 22.31931],
 					[114.16972, 22.31731],
 					[114.16999, 22.31596],
 					[114.17042, 22.31398],
 					[114.17066, 22.31274],
-					[114.17085, 22.31178],
-					[114.17103, 22.31089],
-					[114.1712, 22.30992],
-					[114.17122, 22.30957],
-					[114.17131, 22.30896],
-					[114.17143, 22.3076],
-					[114.17159, 22.30639],
-					[114.17169, 22.30528],
-					[114.17173, 22.30482],
-					[114.17181, 22.30363],
-					[114.17188, 22.30264],
-					[114.17195, 22.30153],
-					[114.17205, 22.30034],
-					[114.17213, 22.29906],
-					[114.17223, 22.29742],
-					[114.17233, 22.29592]
+					[114.1708, 22.31234]
 				]
 			]
 		},
@@ -2647,17 +2631,11 @@
 			"mode": "Metro",
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
-			"year_open": 1979,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
+			"year_open": 1982,
 			"status": "existing",
-			"notes": null,
-			"web": null,
-			"grade": "subway",
-			"construct": "1977-1979",
-			"project": "Tsuen Wan Line Tsim Sha Tsui–Mong Kok",
-			"route_km": "2.73769792318559"
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Mong Kok–Yau Ma Tei"
 		}
 	},
 	{
@@ -2666,6 +2644,66 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
+					[114.1708, 22.31234],
+					[114.17085, 22.31178],
+					[114.17103, 22.31089],
+					[114.1712, 22.30992],
+					[114.17122, 22.30957],
+					[114.17131, 22.30896],
+					[114.17143, 22.3076],
+					[114.17159, 22.30639],
+					[114.17169, 22.30528],
+					[114.17173, 22.30482]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Yau Ma Tei–Jordan"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.17173, 22.30482],
+					[114.17181, 22.30363],
+					[114.17188, 22.30264],
+					[114.17195, 22.30153],
+					[114.17205, 22.30034],
+					[114.17213, 22.29906],
+					[114.17223, 22.29742]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Jordan–Tsim Sha Tsui"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.17223, 22.29742],
 					[114.17233, 22.29592],
 					[114.17242, 22.2947],
 					[114.17253, 22.29261],
@@ -2685,12 +2723,30 @@
 					[114.16871, 22.27977],
 					[114.16837, 22.27962],
 					[114.16803, 22.27948],
-					[114.16761, 22.27939],
-					[114.16716, 22.27935],
-					[114.16708, 22.27934],
-					[114.16629, 22.27932],
-					[114.16525, 22.27937],
-					[114.16462, 22.2795],
+					[114.16631, 22.27862]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Tsim Sha Tsui–Admiralty"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.16631, 22.27862],
+					[114.16602, 22.27893],
 					[114.16403, 22.27966],
 					[114.16336, 22.27985],
 					[114.16303, 22.28002],
@@ -2702,8 +2758,7 @@
 					[114.16102, 22.28113],
 					[114.16057, 22.28128],
 					[114.16005, 22.28144],
-					[114.1585, 22.28185],
-					[114.15802, 22.28199]
+					[114.15831, 22.28166]
 				]
 			]
 		},
@@ -2712,17 +2767,11 @@
 			"mode": "Metro",
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
-			"year_open": 1980,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
+			"year_open": 1982,
 			"status": "existing",
-			"notes": "This section was originally part of Kwun Tong Line",
-			"web": null,
-			"grade": "subway",
-			"construct": "1977-1980",
-			"project": "Tsuen Wan Line Tsim Sha Tsui–Central",
-			"route_km": "3.05636350893709"
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Admiralty–Central"
 		}
 	},
 	{
@@ -2731,11 +2780,33 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
+					[114.16939, 22.31931],
 					[114.16908, 22.32042],
 					[114.16894, 22.32112],
 					[114.16863, 22.32272],
-					[114.16831, 22.3242],
-					[114.16823, 22.3246],
+					[114.1683, 22.32459]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Mong Kok–Prince Edward"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.1683, 22.32459],
 					[114.16794, 22.32592],
 					[114.16783, 22.32623],
 					[114.16771, 22.32643],
@@ -2745,10 +2816,54 @@
 					[114.16551, 22.32822],
 					[114.1648, 22.32881],
 					[114.16349, 22.32982],
+					[114.16234, 22.33072]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Prince Edward–Sham Shui Po"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.16234, 22.33072],
 					[114.16084, 22.33187],
 					[114.15932, 22.33304],
 					[114.15729, 22.33461],
+					[114.15616, 22.33552]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Sham Shui Po–Cheung Sha Wan"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.15616, 22.33552],
 					[114.15366, 22.33744],
 					[114.1528, 22.33806],
@@ -2761,6 +2876,29 @@
 					[114.14994, 22.33791],
 					[114.14914, 22.33764],
 					[114.14839, 22.33734],
+					[114.1485, 22.33738]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Cheung Sha Wan–Lai Chi Kok"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.1485, 22.33738],
 					[114.14589, 22.33651],
 					[114.14559, 22.33641],
 					[114.14529, 22.33636],
@@ -2774,6 +2912,28 @@
 					[114.14154, 22.33693],
 					[114.14089, 22.33719],
 					[114.13941, 22.33784],
+					[114.13654, 22.33905]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Lai Chi Kok–Mei Foo"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.13654, 22.33905],
 					[114.13595, 22.33938],
 					[114.1352, 22.3398],
@@ -2787,7 +2947,29 @@
 					[114.12904, 22.34494],
 					[114.12781, 22.34633],
 					[114.127, 22.34737],
-					[114.12586, 22.34885],
+					[114.12582, 22.34873]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Mei Foo–Lai King"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.12582, 22.34873],
 					[114.12501, 22.35008],
 					[114.12482, 22.35048],
 					[114.12471, 22.35085],
@@ -2802,6 +2984,29 @@
 					[114.12592, 22.35432],
 					[114.12666, 22.3553],
 					[114.12758, 22.35649],
+					[114.12781, 22.35678]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Lai King–Kwai Fong"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.12781, 22.35678],
 					[114.1286, 22.35782],
 					[114.12885, 22.35812],
 					[114.12917, 22.35842],
@@ -2816,6 +3021,28 @@
 					[114.13111, 22.36129],
 					[114.13111, 22.36156],
 					[114.13118, 22.36258],
+					[114.1312, 22.36317]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Kwai Fong–Kwai Hing"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.1312, 22.36317],
 					[114.13123, 22.3644],
 					[114.13125, 22.36498],
@@ -2838,6 +3065,28 @@
 					[114.12713, 22.37073],
 					[114.12662, 22.37077],
 					[114.12607, 22.37077],
+					[114.12548, 22.37076]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tsuen Wan Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1982,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "1979-1982",
+			"project": "Tsuen Wan Line Kwai Hing–Tai Wo Hau"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.12548, 22.37076],
 					[114.12335, 22.3707],
 					[114.12313, 22.37072],
@@ -2855,8 +3104,7 @@
 					[114.11972, 22.37277],
 					[114.11939, 22.37293],
 					[114.11874, 22.3732],
-					[114.11783, 22.37359],
-					[114.1167, 22.3741]
+					[114.11783, 22.37359]
 				]
 			]
 		},
@@ -2866,16 +3114,10 @@
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
 			"year_open": 1982,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
 			"status": "existing",
-			"notes": null,
-			"web": null,
 			"grade": "subway; elevated",
 			"construct": "1979-1982",
-			"project": "Tsuen Wan Line Mong Kok–Tsuen Wan",
-			"route_km": "10.0962801678838"
+			"project": "Tsuen Wan Line Tai Wo Hau–Tsuen Wan"
 		}
 	},
 	{
