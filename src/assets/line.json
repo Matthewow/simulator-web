@@ -3879,7 +3879,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.14895, 22.24266],
+					[114.14911, 22.24246],
 					[114.14971, 22.24162],
 					[114.15007, 22.24124],
 					[114.15037, 22.24101],
@@ -3894,6 +3894,28 @@
 					[114.15459, 22.24059],
 					[114.15488, 22.24086],
 					[114.15554, 22.24144],
+					[114.15621, 22.24203]
+				]
+			]
+		},
+		"properties": {
+			"name": "South Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "2011-2016",
+			"project": "South Island Line South Horizons–Lei Tung"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.15621, 22.24203],
 					[114.15697, 22.24273],
 					[114.15724, 22.24307],
@@ -3918,6 +3940,28 @@
 					[114.16535, 22.24739],
 					[114.1658, 22.24744],
 					[114.16653, 22.24762],
+					[114.1675, 22.24784]
+				]
+			]
+		},
+		"properties": {
+			"name": "South Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "2011-2016",
+			"project": "South Island Line Lei Tung–Wong Chuk Hang"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.1675, 22.24784],
 					[114.16949, 22.24827],
 					[114.17031, 22.24838],
@@ -3928,6 +3972,28 @@
 					[114.17343, 22.24824],
 					[114.1737, 22.24832],
 					[114.17399, 22.24847],
+					[114.17452, 22.24871]
+				]
+			]
+		},
+		"properties": {
+			"name": "South Island Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2016,
+			"status": "existing",
+			"grade": "subway; elevated",
+			"construct": "2011-2016",
+			"project": "South Island Line Wong Chuk Hang–Ocean Park"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.17452, 22.24871],
 					[114.17546, 22.24929],
 					[114.17584, 22.24961],
@@ -3968,7 +4034,7 @@
 					[114.16431, 22.27657],
 					[114.16502, 22.27734],
 					[114.1659, 22.27824],
-					[114.1669, 22.27927]
+					[114.16631, 22.27862]
 				]
 			]
 		},
@@ -3978,16 +4044,10 @@
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
 			"year_open": 2016,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
 			"status": "existing",
-			"notes": null,
-			"web": null,
 			"grade": "subway; elevated",
 			"construct": "2011-2016",
-			"project": "South Island Line Admiralty–South Horizons",
-			"route_km": "7.10194298297009"
+			"project": "South Island Line Ocean Park–Admiralty"
 		}
 	},
 	{
