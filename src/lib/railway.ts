@@ -57,7 +57,7 @@ export const appendRailwayLayer = (overlay: ThreeJSOverlayView) => {
 			points.flatMap((point) => [point.x, point.y, point.z]),
 		);
 
-		const material = new LineMaterial({ color: 0x0000ff, linewidth: 4 });
+		const material = new LineMaterial({ color: 0x888888, linewidth: 4 });
 		const lineMesh = new Line2(geometry, material);
 		overlay.scene.add(lineMesh);
 	}
