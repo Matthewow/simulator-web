@@ -85,7 +85,6 @@ for (const station of STATIONS) {
 for (const line of LINES) {
 	const lineName = line.properties.name;
 	let project = line.properties.project as string;
-	console.log(1, project);
 
 	project = project?.substring(lineName.length + 1);
 	if (project?.includes("–")) {

@@ -176,7 +176,7 @@ export class Subway implements Transportation {
 					lng: along.geometry.coordinates[0],
 				};
 
-				console.log(snapshot.route, progress, geoLocation);
+				//console.log(snapshot.route, progress, geoLocation);
 
 				const simulatedPosition = overlay.latLngAltitudeToVector3(geoLocation);
 
