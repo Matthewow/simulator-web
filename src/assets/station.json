@@ -345,6 +345,25 @@
 		"type": "Feature",
 		"geometry": {
 			"type": "Point",
+			"coordinates": [113.941, 22.2892]
+		},
+		"properties": {
+			"name": "Tung Chung",
+			"name_local": null,
+			"line": "Tung Chung Line/Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1998,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "subway",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
 			"coordinates": [114.02914, 22.33195]
 		},
 		"properties": {

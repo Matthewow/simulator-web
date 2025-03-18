@@ -991,7 +991,6 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.15953, 22.28438],
 					[114.15832, 22.28508],
 					[114.15704, 22.2859],
 					[114.15652, 22.28623],
@@ -1017,8 +1016,30 @@
 					[114.16052, 22.3026],
 					[114.16074, 22.30312],
 					[114.1612, 22.30408],
+					[114.16156, 22.305]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tung Chung Line",
+			"alt_name": "Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1998,
+			"status": "existing",
+			"grade": "subway; elevated; at grade",
+			"construct": "1994-1998",
+			"project": "Tung Chung Line Hong Kong–Kowloon"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.16156, 22.305],
-					[114.1626, 22.30718],
 					[114.16278, 22.30772],
 					[114.16289, 22.30824],
 					[114.16297, 22.30871],
@@ -1029,6 +1050,29 @@
 					[114.16233, 22.31278],
 					[114.16176, 22.31421],
 					[114.16148, 22.31491],
+					[114.16022, 22.31784]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tung Chung Line",
+			"alt_name": "Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1998,
+			"status": "existing",
+			"grade": "subway; elevated; at grade",
+			"construct": "1994-1998",
+			"project": "Tung Chung Line Kowloon–Olympic"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.16022, 22.31784],
 					[114.15949, 22.31944],
 					[114.15923, 22.31986],
@@ -1041,8 +1085,30 @@
 					[114.15525, 22.32494],
 					[114.15476, 22.32541],
 					[114.15437, 22.32577],
-					[114.15387, 22.32615],
-					[114.15325, 22.32659],
+					[114.15337, 22.32684]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tung Chung Line",
+			"alt_name": "Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1998,
+			"status": "existing",
+			"grade": "subway; elevated; at grade",
+			"construct": "1994-1998",
+			"project": "Tung Chung Line Olympic–Nam Cheong"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.15337, 22.32684],
 					[114.15189, 22.32755],
 					[114.15091, 22.32823],
 					[114.14977, 22.32889],
@@ -1066,6 +1132,30 @@
 					[114.1285, 22.34472],
 					[114.12767, 22.34596],
 					[114.12694, 22.34696],
+					[114.12582, 22.34873]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tung Chung Line",
+			"alt_name": "Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1998,
+			"status": "existing",
+			"grade": "subway; elevated; at grade",
+			"construct": "1994-1998",
+			"project": "Tung Chung Line Nam Cheong–Lai King"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.12582, 22.34873],
 					[114.12557, 22.34895],
 					[114.12472, 22.35007],
 					[114.12397, 22.35092],
@@ -1083,6 +1173,30 @@
 					[114.10885, 22.35807],
 					[114.10821, 22.35822],
 					[114.10739, 22.35837],
+					[114.10719, 22.35841]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tung Chung Line",
+			"alt_name": "Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1998,
+			"status": "existing",
+			"grade": "subway; elevated; at grade",
+			"construct": "1994-1998",
+			"project": "Tung Chung Line Lai King–Tsing Yi"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.10719, 22.35841],
 					[114.10591, 22.35867],
 					[114.10488, 22.35889],
 					[114.10339, 22.35907],
@@ -1124,6 +1238,30 @@
 					[114.03294, 22.33545],
 					[114.03178, 22.33449],
 					[114.03007, 22.33296],
+					[114.02914, 22.33195]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tung Chung Line",
+			"alt_name": "Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 1998,
+			"status": "existing",
+			"grade": "subway; elevated; at grade",
+			"construct": "1994-1998",
+			"project": "Tung Chung Line Tsing Yi–Sunny Bay"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.02914, 22.33195],
 					[114.02877, 22.33176],
 					[114.02717, 22.33004],
 					[114.02592, 22.32866],
@@ -1188,26 +1326,22 @@
 					[113.9655, 22.29859],
 					[113.96459, 22.29835],
 					[113.96399, 22.29819],
-					[113.96359, 22.29814]
+					[113.96359, 22.29814],
+					[113.941, 22.2892]
 				]
 			]
 		},
 		"properties": {
-			"name": "Tung Chung Line/Airport Express",
+			"name": "Tung Chung Line",
+			"alt_name": "Airport Express",
 			"mode": "Metro",
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
 			"year_open": 1998,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
 			"status": "existing",
-			"notes": null,
-			"web": null,
 			"grade": "subway; elevated; at grade",
 			"construct": "1994-1998",
-			"project": "Tung Chung Line Hong Kong–Tung Chung",
-			"route_km": "28.3470451332595"
+			"project": "Tung Chung Line Sunny Bay–Tung Chung"
 		}
 	},
 	{
