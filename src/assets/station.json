@@ -497,6 +497,44 @@
 		"type": "Feature",
 		"geometry": {
 			"type": "Point",
+			"coordinates": [113.94216, 22.32203]
+		},
+		"properties": {
+			"name": "AsiaWorld-Expo",
+			"name_local": null,
+			"line": "Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 2005,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.93651, 22.31609]
+		},
+		"properties": {
+			"name": "Airport",
+			"name_local": null,
+			"line": "Airport Express",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"year_open": 1998,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "elevated",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
 			"coordinates": [114.02542, 22.44767]
 		},
 		"properties": {
