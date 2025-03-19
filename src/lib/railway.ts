@@ -6,7 +6,6 @@ import STATIONS from "@/assets/station.json";
 import LINES from "@/assets/line.json";
 
 import { createCircleMesh } from "./marker";
-import { BufferGeometry, Line, LineBasicMaterial } from "three";
 import * as TURF from "@turf/turf";
 import type { Feature, GeoJsonProperties, LineString } from "geojson";
 import {
@@ -89,6 +88,7 @@ for (const line of LINES) {
 	project = project?.substring(lineName.length + 1);
 	if (project?.includes("–")) {
 		const [fromStationName, toStationName] = project.split("–");
+
 		if (nameCodeMap.has(fromStationName) && nameCodeMap.has(toStationName)) {
 			const fromStationCode = nameCodeMap.get(fromStationName) as string;
 			const toStationCode = nameCodeMap.get(toStationName) as string;
