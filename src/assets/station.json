@@ -155,6 +155,42 @@
 		"type": "Feature",
 		"geometry": {
 			"type": "Point",
+			"coordinates": [113.97313, 22.39382]
+		},
+		"properties": {
+			"name": "Tuen Mun",
+			"name_local": "屯門",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1988,
+			"status": "existing",
+			"grade": "elevated"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [113.979, 22.4118]
+		},
+		"properties": {
+			"name": "Siu Hong",
+			"name_local": "兆麟",
+			"line": "Light Rail",
+			"mode": "Light Rail",
+			"region": "Hong Kong CHN",
+			"year_open": 1991,
+			"year_clos": null,
+			"status": "existing",
+			"grade": "at grade",
+			"notes": null
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
 			"coordinates": [114.18219, 22.30281]
 		},
 		"properties": {
