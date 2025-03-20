@@ -69,7 +69,11 @@ const nameCodeMap = getNameAbbrMap();
 for (const station of STATIONS) {
 	const name = station.properties.name;
 	// Filter the station except metros
-	if (nameCodeMap.has(name) && station.properties.mode === "Metro") {
+	if (
+		nameCodeMap.has(name) &&
+		(station.properties.mode === "Metro" ||
+			station.properties.mode === "Light Rail")
+	) {
 		const abbr = nameCodeMap.get(name) as string;
 		const geoLocation = station.geometry.coordinates;
 		MTR_STATION_MAP.set(abbr, {
