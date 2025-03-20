@@ -2034,25 +2034,6 @@
 		"type": "Feature",
 		"geometry": {
 			"type": "Point",
-			"coordinates": [114.03495, 22.4456]
-		},
-		"properties": {
-			"name": "Yuen Long",
-			"name_local": "元朗",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 1988,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
 			"coordinates": [114.02955, 22.44448]
 		},
 		"properties": {
@@ -2362,25 +2343,6 @@
 		"properties": {
 			"name": "Tin Tsz",
 			"name_local": "天慈",
-			"line": "Light Rail",
-			"mode": "Light Rail",
-			"region": "Hong Kong CHN",
-			"year_open": 2003,
-			"year_clos": null,
-			"status": "existing",
-			"grade": "at grade",
-			"notes": null
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "Point",
-			"coordinates": [114.00603, 22.4494]
-		},
-		"properties": {
-			"name": "Tin Shui Wai",
-			"name_local": "天水圍",
 			"line": "Light Rail",
 			"mode": "Light Rail",
 			"region": "Hong Kong CHN",

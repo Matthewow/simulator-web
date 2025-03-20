@@ -1754,10 +1754,7 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
-					[114.15584, 22.32483],
-					[114.1551, 22.32555],
-					[114.15444, 22.32615],
-					[114.15365, 22.32681],
+					[114.15337, 22.32684],
 					[114.1524, 22.3278],
 					[114.15174, 22.3282],
 					[114.15102, 22.32862],
@@ -1778,6 +1775,28 @@
 					[114.13664, 22.33697],
 					[114.13661, 22.33804],
 					[114.13655, 22.33889],
+					[114.13654, 22.33905]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Nam Cheong–Mei Foo"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.13654, 22.33905],
 					[114.13648, 22.34011],
 					[114.13645, 22.34035],
 					[114.13636, 22.34067],
@@ -1815,6 +1834,28 @@
 					[114.11248, 22.36609],
 					[114.11095, 22.36749],
 					[114.11007, 22.36827],
+					[114.10981, 22.36851]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Mei Foo–Tsuen Wan West"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.10981, 22.36851],
 					[114.10849, 22.36979],
 					[114.10774, 22.37051],
 					[114.10594, 22.37222],
@@ -1853,6 +1894,27 @@
 					[114.06598, 22.4311],
 					[114.06553, 22.43176],
 					[114.06481, 22.4328],
+					[114.06337, 22.43486]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Tsuen Wan West–Kam Sheung Road"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.06337, 22.43486],
 					[114.06069, 22.43878],
 					[114.05951, 22.44044],
@@ -1876,6 +1938,27 @@
 					[114.04162, 22.44624],
 					[114.03953, 22.44606],
 					[114.038, 22.44602],
+					[114.03521, 22.44608]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Kam Sheung Road–Yuen Long"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.03521, 22.44608],
 					[114.03315, 22.44609],
 					[114.03266, 22.44615],
@@ -1888,6 +1971,27 @@
 					[114.02885, 22.44758],
 					[114.02819, 22.44767],
 					[114.0271, 22.4477],
+					[114.02542, 22.44767]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Yuen Long–Long Ping"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.02542, 22.44767],
 					[114.02285, 22.44768],
 					[114.02231, 22.44773],
@@ -1909,6 +2013,28 @@
 					[114.00702, 22.45036],
 					[114.00651, 22.44996],
 					[114.00601, 22.44948],
+					[114.0056, 22.44908]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Long Ping–Tin Shui Wai"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.0056, 22.44908],
 					[114.00446, 22.44798],
 					[114.00277, 22.44621],
 					[114.00188, 22.44538],
@@ -1942,6 +2068,28 @@
 					[113.97957, 22.41378],
 					[113.97931, 22.41303],
 					[113.97907, 22.4123],
+					[113.979, 22.4118]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Tin Shui Wai–Siu Hong"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[113.979, 22.4118],
 					[113.97824, 22.40961],
 					[113.9778, 22.40869],
 					[113.97753, 22.40813],
@@ -1957,8 +2105,7 @@
 					[113.97401, 22.3983],
 					[113.97381, 22.39759],
 					[113.97353, 22.39666],
-					[113.97304, 22.39486],
-					[113.97266, 22.39334]
+					[113.97313, 22.39382]
 				]
 			]
 		},
@@ -1967,17 +2114,10 @@
 			"mode": "Metro",
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
-			"year_open": 2003,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
+			"year_open": 2021,
 			"status": "existing",
-			"notes": "Originally West Rail Line",
-			"web": "",
-			"grade": "subway; elevated; at grade",
-			"construct": "1996-2003",
-			"project": "Tuen Ma Line Nam Cheong–Tuen Mun",
-			"route_km": "29.9886472962521"
+			"grade": "subway",
+			"project": "Tuen Ma Line Siu Hong–Tuen Mun"
 		}
 	},
 	{
@@ -1986,7 +2126,84 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
+					[114.15337, 22.32684],
+					[114.15584, 22.32483],
+					[114.15655, 22.3241],
+					[114.15689, 22.32365],
+					[114.15744, 22.32287],
+					[114.15901, 22.32056],
+					[114.15945, 22.31989],
+					[114.15979, 22.31936],
+					[114.16055, 22.31781],
+					[114.16116, 22.31632],
+					[114.16236, 22.31361],
+					[114.1633, 22.31162],
+					[114.16415, 22.30961],
+					[114.16522, 22.30715],
+					[114.16593, 22.30553],
+					[114.16676, 22.30394],
+					[114.16691, 22.30366]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Nam Cheong–Austin"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.16691, 22.30366],
+					[114.16772, 22.30223],
+					[114.16807, 22.30147],
+					[114.1682, 22.30107],
+					[114.16826, 22.30081],
+					[114.16827, 22.30067],
+					[114.16848, 22.29968],
+					[114.16902, 22.29706],
+					[114.16935, 22.29569],
+					[114.16947, 22.29545],
+					[114.16967, 22.29521],
+					[114.1699, 22.29497],
+					[114.17013, 22.2948],
+					[114.1703, 22.29472],
+					[114.17061, 22.29465],
+					[114.17089, 22.29463],
+					[114.17159, 22.29467],
+					[114.17291, 22.29472],
+					[114.1732, 22.29476],
 					[114.17339, 22.29482],
+					[114.1746, 22.29528]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Austin–East Tsim Sha Tsui"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.1746, 22.29528],
 					[114.17578, 22.29578],
 					[114.17637, 22.29608],
@@ -2001,10 +2218,7 @@
 					[114.18191, 22.30092],
 					[114.182, 22.30134],
 					[114.18213, 22.30266],
-					[114.18229, 22.3041],
-					[114.18229, 22.30438],
-					[114.18217, 22.30519],
-					[114.18183, 22.30696]
+					[114.18219, 22.30281]
 				]
 			]
 		},
@@ -2013,17 +2227,10 @@
 			"mode": "Metro",
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
-			"year_open": 2004,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
+			"year_open": 2021,
 			"status": "existing",
-			"notes": null,
-			"web": null,
 			"grade": "subway",
-			"construct": null,
-			"project": "Tuen Ma Line Hung Hom–East Tsim Sha Tsui",
-			"route_km": "1.80415199342253"
+			"project": "Tuen Ma Line East Tsim Sha Tsui–Hung Hom"
 		}
 	},
 	{
@@ -2032,9 +2239,263 @@
 			"type": "MultiLineString",
 			"coordinates": [
 				[
+					[114.1826, 22.30933],
+					[114.18222, 22.30858],
+					[114.18208, 22.30831],
+					[114.18199, 22.30808],
+					[114.18188, 22.30778],
+					[114.18184, 22.30758],
+					[114.18182, 22.30734],
+					[114.18181, 22.30719],
+					[114.18183, 22.30696],
+					[114.18219, 22.30281]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Ho Man Tin–Hung Hom"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.18755, 22.31688],
+					[114.18757, 22.31538],
+					[114.18757, 22.31495],
+					[114.18751, 22.31455],
+					[114.18744, 22.31434],
+					[114.18739, 22.31421],
+					[114.1873, 22.31406],
+					[114.18717, 22.31392],
+					[114.18687, 22.31366],
+					[114.18525, 22.31243],
+					[114.18444, 22.31195],
+					[114.18416, 22.31176],
+					[114.18394, 22.31152],
+					[114.18379, 22.31128],
+					[114.18347, 22.31076],
+					[114.1826, 22.30933]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line To Kwa Wan–Ho Man Tin"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.19161, 22.32598],
+					[114.19003, 22.3253],
+					[114.18962, 22.32499],
+					[114.18919, 22.32466],
+					[114.18882, 22.32434],
+					[114.18857, 22.32401],
+					[114.18821, 22.32344],
+					[114.1878, 22.32263],
+					[114.18763, 22.3222],
+					[114.18759, 22.32194],
+					[114.18759, 22.32158],
+					[114.18756, 22.31825],
+					[114.18755, 22.31688]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Sung Wong Toi–To Kwa Wan"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.19897, 22.33002],
+					[114.19813, 22.32916],
+					[114.19766, 22.32881],
+					[114.19708, 22.32851],
+					[114.19581, 22.32793],
+					[114.19315, 22.32671],
+					[114.19161, 22.32598]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Kai Tak–Sung Wong Toi"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.20143, 22.33985],
+					[114.20242, 22.33865],
+					[114.20273, 22.3383],
+					[114.20295, 22.33805],
+					[114.20315, 22.33777],
+					[114.20335, 22.33741],
+					[114.20348, 22.33706],
+					[114.20358, 22.33659],
+					[114.2037, 22.33594],
+					[114.20374, 22.33562],
+					[114.20374, 22.33531],
+					[114.20368, 22.33501],
+					[114.20362, 22.33481],
+					[114.2034, 22.33447],
+					[114.2031, 22.33407],
+					[114.20257, 22.33351],
+					[114.20126, 22.33228],
+					[114.19897, 22.33002]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Diamond Hill–Kai Tak"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.17079, 22.36381],
+					[114.17075, 22.36368],
+					[114.17042, 22.36263],
+					[114.17036, 22.36226],
+					[114.17036, 22.36199],
+					[114.17037, 22.36175],
+					[114.17042, 22.3615],
+					[114.1705, 22.36117],
+					[114.17078, 22.36056],
+					[114.1711, 22.36001],
+					[114.17137, 22.35961],
+					[114.17178, 22.35915],
+					[114.17243, 22.35857],
+					[114.17402, 22.35712],
+					[114.17577, 22.35555],
+					[114.17882, 22.35286],
+					[114.18058, 22.35129],
+					[114.18418, 22.348],
+					[114.18752, 22.34509],
+					[114.18819, 22.34452],
+					[114.18863, 22.34417],
+					[114.18905, 22.3439],
+					[114.18939, 22.34374],
+					[114.18986, 22.34357],
+					[114.19062, 22.34343],
+					[114.19119, 22.34341],
+					[114.1936, 22.34341],
+					[114.19473, 22.34336],
+					[114.19536, 22.34325],
+					[114.19594, 22.3431],
+					[114.19651, 22.34291],
+					[114.19714, 22.34265],
+					[114.19758, 22.34238],
+					[114.19836, 22.34183],
+					[114.19952, 22.34094],
+					[114.20143, 22.33985]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Hin Keng–Diamond Hill"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.17872, 22.37301],
 					[114.1758, 22.37098],
-					[114.17723, 22.37189],
-					[114.17827, 22.37247],
+					[114.17512, 22.3705],
+					[114.17468, 22.37016],
+					[114.17436, 22.3699],
+					[114.17405, 22.36962],
+					[114.17377, 22.3693],
+					[114.17354, 22.36901],
+					[114.17336, 22.36869],
+					[114.1727, 22.3676],
+					[114.17171, 22.36602],
+					[114.17133, 22.36536],
+					[114.17122, 22.3651],
+					[114.17113, 22.36484],
+					[114.17096, 22.36436],
+					[114.17079, 22.36381]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Tai Wai–Hin Keng"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.17872, 22.37301],
 					[114.17948, 22.37317],
 					[114.18, 22.37345],
 					[114.18026, 22.37355],
@@ -2051,6 +2512,28 @@
 					[114.18431, 22.37479],
 					[114.18468, 22.3748],
 					[114.18523, 22.37478],
+					[114.18621, 22.37473]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Tai Wai–Che Kung Temple"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.18621, 22.37473],
 					[114.18638, 22.37472],
 					[114.18793, 22.37464],
 					[114.18913, 22.37458],
@@ -2063,6 +2546,28 @@
 					[114.19317, 22.37578],
 					[114.19347, 22.37593],
 					[114.19387, 22.37617],
+					[114.19493, 22.37689]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Che Kung Temple–Sha Tin Wai"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.19493, 22.37689],
 					[114.19507, 22.37698],
 					[114.19713, 22.37857],
 					[114.19825, 22.37942],
@@ -2074,10 +2579,52 @@
 					[114.20139, 22.38097],
 					[114.20175, 22.38123],
 					[114.20221, 22.38161],
+					[114.20374, 22.38301]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Sha Tin Wai–City One"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.20374, 22.38301],
 					[114.20554, 22.3847],
 					[114.20641, 22.38559],
 					[114.20725, 22.38656],
+					[114.20845, 22.38775]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line City One–Shek Mun"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.20845, 22.38775],
 					[114.20944, 22.38879],
 					[114.20959, 22.389],
@@ -2121,6 +2668,28 @@
 					[114.22198, 22.4072],
 					[114.22228, 22.40766],
 					[114.22273, 22.40844],
+					[114.22277, 22.40852]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Shek Mun–Tai Shui Hang"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.22277, 22.40852],
 					[114.22349, 22.40994],
 					[114.22365, 22.41036],
 					[114.22369, 22.41064],
@@ -2133,6 +2702,28 @@
 					[114.22415, 22.41358],
 					[114.22471, 22.41494],
 					[114.22524, 22.41631],
+					[114.22572, 22.41758]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Tai Shui Hang–Heng On"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
+					[114.22572, 22.41758],
 					[114.22579, 22.41777],
 					[114.22644, 22.4195],
 					[114.2268, 22.42044],
@@ -2145,6 +2736,27 @@
 					[114.22902, 22.42398],
 					[114.22939, 22.42418],
 					[114.2297, 22.4243],
+					[114.23165, 22.42486]
+				]
+			]
+		},
+		"properties": {
+			"name": "Tuen Ma Line",
+			"mode": "Metro",
+			"region": "Hong Kong CHN",
+			"agency": "Hong Kong MTR",
+			"year_open": 2021,
+			"status": "existing",
+			"grade": "subway",
+			"project": "Tuen Ma Line Heng On–Ma On Shan"
+		}
+	},
+	{
+		"type": "Feature",
+		"geometry": {
+			"type": "MultiLineString",
+			"coordinates": [
+				[
 					[114.23165, 22.42486],
 					[114.23351, 22.42538],
 					[114.23407, 22.42551],
@@ -2165,231 +2777,7 @@
 					[114.24247, 22.42891],
 					[114.24278, 22.429],
 					[114.24328, 22.42905],
-					[114.2442, 22.42923],
-					[114.24561, 22.42954]
-				]
-			]
-		},
-		"properties": {
-			"name": "Tuen Ma Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"agency": "Hong Kong MTR",
-			"year_open": 2004,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
-			"status": "existing",
-			"notes": "Originally Ma On Shan Line",
-			"web": null,
-			"grade": "subway; elevated",
-			"construct": null,
-			"project": "Tuen Ma Line Tai Wai–Wu Kai Sha",
-			"route_km": "10.6284852409786"
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "MultiLineString",
-			"coordinates": [
-				[
-					[114.15584, 22.32483],
-					[114.15655, 22.3241],
-					[114.15689, 22.32365],
-					[114.15744, 22.32287],
-					[114.15901, 22.32056],
-					[114.15945, 22.31989],
-					[114.15979, 22.31936],
-					[114.16055, 22.31781],
-					[114.16116, 22.31632],
-					[114.16236, 22.31361],
-					[114.1633, 22.31162],
-					[114.16415, 22.30961],
-					[114.16522, 22.30715],
-					[114.16593, 22.30553],
-					[114.16676, 22.30394],
-					[114.16772, 22.30223],
-					[114.16807, 22.30147],
-					[114.1682, 22.30107],
-					[114.16826, 22.30081],
-					[114.16827, 22.30067],
-					[114.16848, 22.29968],
-					[114.16902, 22.29706],
-					[114.16935, 22.29569],
-					[114.16947, 22.29545],
-					[114.16967, 22.29521],
-					[114.1699, 22.29497],
-					[114.17013, 22.2948],
-					[114.1703, 22.29472],
-					[114.17061, 22.29465],
-					[114.17089, 22.29463],
-					[114.17159, 22.29467],
-					[114.17291, 22.29472],
-					[114.1732, 22.29476],
-					[114.17339, 22.29482]
-				]
-			]
-		},
-		"properties": {
-			"name": "Tuen Ma Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"agency": "Hong Kong MTR",
-			"year_open": 2009,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
-			"status": "existing",
-			"notes": null,
-			"web": null,
-			"grade": "subway",
-			"construct": null,
-			"project": "Tuen Ma Line East Tsim Sha Tsui–Nam Cheong",
-			"route_km": "4.01298278110586"
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "MultiLineString",
-			"coordinates": [
-				[
-					[114.1758, 22.37098],
-					[114.17512, 22.3705],
-					[114.17468, 22.37016],
-					[114.17436, 22.3699],
-					[114.17405, 22.36962],
-					[114.17377, 22.3693],
-					[114.17354, 22.36901],
-					[114.17336, 22.36869],
-					[114.1727, 22.3676],
-					[114.17171, 22.36602],
-					[114.17133, 22.36536],
-					[114.17122, 22.3651],
-					[114.17113, 22.36484],
-					[114.17096, 22.36436],
-					[114.17075, 22.36368],
-					[114.17042, 22.36263],
-					[114.17036, 22.36226],
-					[114.17036, 22.36199],
-					[114.17037, 22.36175],
-					[114.17042, 22.3615],
-					[114.1705, 22.36117],
-					[114.17078, 22.36056],
-					[114.1711, 22.36001],
-					[114.17137, 22.35961],
-					[114.17178, 22.35915],
-					[114.17243, 22.35857],
-					[114.17402, 22.35712],
-					[114.17577, 22.35555],
-					[114.17882, 22.35286],
-					[114.18058, 22.35129],
-					[114.18418, 22.348],
-					[114.18752, 22.34509],
-					[114.18819, 22.34452],
-					[114.18863, 22.34417],
-					[114.18905, 22.3439],
-					[114.18939, 22.34374],
-					[114.18986, 22.34357],
-					[114.19062, 22.34343],
-					[114.19119, 22.34341],
-					[114.1936, 22.34341],
-					[114.19473, 22.34336],
-					[114.19536, 22.34325],
-					[114.19594, 22.3431],
-					[114.19651, 22.34291],
-					[114.19714, 22.34265],
-					[114.19758, 22.34238],
-					[114.19836, 22.34183],
-					[114.19952, 22.34094],
-					[114.2012, 22.3396],
-					[114.20242, 22.33865],
-					[114.20273, 22.3383],
-					[114.20295, 22.33805],
-					[114.20315, 22.33777],
-					[114.20335, 22.33741],
-					[114.20348, 22.33706],
-					[114.20358, 22.33659],
-					[114.2037, 22.33594],
-					[114.20374, 22.33562],
-					[114.20374, 22.33531],
-					[114.20368, 22.33501],
-					[114.20362, 22.33481],
-					[114.2034, 22.33447],
-					[114.2031, 22.33407],
-					[114.20257, 22.33351],
-					[114.20126, 22.33228],
-					[114.19897, 22.33002],
-					[114.19813, 22.32916]
-				]
-			]
-		},
-		"properties": {
-			"name": "Tuen Ma Line",
-			"mode": "Metro",
-			"region": "Hong Kong CHN",
-			"agency": "Hong Kong MTR",
-			"year_open": 2020,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
-			"status": "existing",
-			"notes": null,
-			"web": null,
-			"grade": "subway; at grade",
-			"construct": null,
-			"project": "Tuen Ma Line Tai Wai–Kai Tak",
-			"route_km": "6.84413144296199"
-		}
-	},
-	{
-		"type": "Feature",
-		"geometry": {
-			"type": "MultiLineString",
-			"coordinates": [
-				[
-					[114.19813, 22.32916],
-					[114.19766, 22.32881],
-					[114.19708, 22.32851],
-					[114.19581, 22.32793],
-					[114.19315, 22.32671],
-					[114.19161, 22.32598],
-					[114.19003, 22.3253],
-					[114.18962, 22.32499],
-					[114.18919, 22.32466],
-					[114.18882, 22.32434],
-					[114.18857, 22.32401],
-					[114.18821, 22.32344],
-					[114.1878, 22.32263],
-					[114.18763, 22.3222],
-					[114.18759, 22.32194],
-					[114.18759, 22.32158],
-					[114.18756, 22.31825],
-					[114.18755, 22.31688],
-					[114.18757, 22.31538],
-					[114.18757, 22.31495],
-					[114.18751, 22.31455],
-					[114.18744, 22.31434],
-					[114.18739, 22.31421],
-					[114.1873, 22.31406],
-					[114.18717, 22.31392],
-					[114.18687, 22.31366],
-					[114.18525, 22.31243],
-					[114.18444, 22.31195],
-					[114.18416, 22.31176],
-					[114.18394, 22.31152],
-					[114.18379, 22.31128],
-					[114.18347, 22.31076],
-					[114.1826, 22.30933],
-					[114.18222, 22.30858],
-					[114.18208, 22.30831],
-					[114.18199, 22.30808],
-					[114.18188, 22.30778],
-					[114.18184, 22.30758],
-					[114.18182, 22.30734],
-					[114.18181, 22.30719],
-					[114.18183, 22.30696]
+					[114.24405, 22.4292]
 				]
 			]
 		},
@@ -2399,16 +2787,9 @@
 			"region": "Hong Kong CHN",
 			"agency": "Hong Kong MTR",
 			"year_open": 2021,
-			"year_clos": null,
-			"cost_usd": null,
-			"riders": null,
 			"status": "existing",
-			"notes": null,
-			"web": null,
 			"grade": "subway",
-			"construct": null,
-			"project": "Tuen Ma Line Kai Tak–Hung Hom",
-			"route_km": "3.28285800201071"
+			"project": "Tuen Ma Line Ma On Shan–Wu Kai Sha"
 		}
 	},
 	{
