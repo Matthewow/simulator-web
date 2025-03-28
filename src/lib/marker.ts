@@ -8,7 +8,11 @@ import {
 	MeshBasicMaterial,
 	ShapeGeometry,
 } from "three";
-import { SVGLoader, type SVGResult } from "three/examples/jsm/Addons.js";
+import {
+	GLTFLoader,
+	SVGLoader,
+	type SVGResult,
+} from "three/examples/jsm/Addons.js";
 import type { VehicleStatus, SubwayStatus } from "./types";
 
 const DEFAULT_MATERIAL = new MeshBasicMaterial({ color: 0x000000 });
@@ -32,6 +36,7 @@ export const MARKER_COLOR_MAP = {
 
 const SVG_NAMES = ["subway", "private car", "taxi", "bus"];
 const DEFAULT_SVG_GEOMETRIES = new Map<string, ShapeGeometry[]>();
+const DEFAULT_MODEL_MAP = new Map<string, Group>();
 
 export const createSVGGroup = (type: string) => {
 	const group = new Group();
@@ -55,13 +60,17 @@ export const createSVGGroup = (type: string) => {
 	return group;
 };
 
+export const createModelGroup = (type: string) => {
+	return DEFAULT_MODEL_MAP.get(type.toLocaleLowerCase())?.clone();
+};
+
 export const setGroupMaterialColorByStatus = (
 	group: Group,
 	status: VehicleStatus | SubwayStatus,
 ) => {
 	const rgbStr = MARKER_COLOR_MAP[status];
 	for (const mesh of group.children) {
-		((mesh as Mesh).material as MeshBasicMaterial).color.set(rgbStr);
+		((mesh as Mesh).material as MeshBasicMaterial)?.color.set(rgbStr);
 	}
 };
 
@@ -96,5 +105,29 @@ export const prepareSVGs = async () => {
 	for (const name of SVG_NAMES) {
 		const res = await loader.loadAsync(`/${name}.svg`);
 		DEFAULT_SVG_GEOMETRIES.set(name, generateSVGGroup(res));
+	}
+};
+
+export const prepareGLBs = async () => {
+	const loader = new GLTFLoader();
+
+	for (const name of ["taxi", "private car", "bus"]) {
+		const res = await loader.loadAsync(`/${name}.glb`);
+		switch (name) {
+			case "taxi": {
+				res.scene.scale.setScalar(5);
+				break;
+			}
+			case "private car": {
+				res.scene.scale.setScalar(10);
+				break;
+			}
+			case "bus": {
+				res.scene.scale.setScalar(15);
+				break;
+			}
+		}
+
+		DEFAULT_MODEL_MAP.set(name, res.scene);
 	}
 };

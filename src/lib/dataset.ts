@@ -3,7 +3,11 @@ import type { ThreeJSOverlayView } from "@googlemaps/three";
 import * as TURF from "@turf/turf";
 
 import { isNumber } from "./utils";
-import { createSVGGroup, setGroupMaterialColorByStatus } from "./marker";
+import {
+	createModelGroup,
+	createSVGGroup,
+	setGroupMaterialColorByStatus,
+} from "./marker";
 import type { GeoPosition, SubwayStatus, VehicleStatus } from "./types";
 import { MTR_STATION_MAP } from "./railway";
 
@@ -85,17 +89,17 @@ export class Vehicle implements Transportation {
 
 			this.marker?.position.copy(simulatedGlPosition);
 
-			// if (
-			// 	curGeoPosition.lat !== nextGeoPosition.lat &&
-			// 	curGeoPosition.lng !== nextGeoPosition.lng
-			// ) {
-			// 	const heading = google.maps.geometry.spherical.computeHeading(
-			// 		curGeoPosition,
-			// 		nextGeoPosition,
-			// 	);
+			if (
+				curGeoPosition.lat !== nextGeoPosition.lat &&
+				curGeoPosition.lng !== nextGeoPosition.lng
+			) {
+				const heading = google.maps.geometry.spherical.computeHeading(
+					curGeoPosition,
+					nextGeoPosition,
+				);
 
-			// 	(this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
-			// }
+				(this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
+			}
 		}
 	}
 }
@@ -241,7 +245,10 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 				if (id) {
 					const id = `v_${attributes?.[idIndex]}`;
 					if (!idVehicleMap.has(id)) {
-						const group = createSVGGroup(type);
+						const group =
+							type === "Taxi" || type === "Private Car" || type === "Bus"
+								? createModelGroup(type)
+								: createSVGGroup(type); 
 						idVehicleMap.set(
 							id,
 							new Vehicle(id, type, sequence, group as Group),

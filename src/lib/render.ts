@@ -2,7 +2,7 @@ import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
 
 import SECRET from "@/assets/secret.json";
-import { Mesh, Scene } from "three";
+import { AmbientLight, Mesh, Scene } from "three";
 import type { Dataset } from "./dataset";
 import TimelineTimer from "./timer";
 import { listenNamedEvent } from "./event";
@@ -64,6 +64,8 @@ listenNamedEvent("render_dataset", (e) => {
 
 	const overlay = mapOverlay as ThreeJSOverlayView;
 	const scene = overlay.scene as Scene;
+
+	scene.add(new AmbientLight(0xffffff, 5));
 
 	const meshes = scene.children.filter((child) => child instanceof Mesh);
 	for (const mesh of meshes) {
