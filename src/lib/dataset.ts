@@ -68,6 +68,8 @@ export class Vehicle implements Transportation {
 		const nextTime = this.sequence[nextTimeIndex];
 		const nextGeoPosition = this.route.get(nextTime)?.pos;
 
+		this.marker.visible = !!curGeoPosition;
+
 		if (curGeoPosition && nextGeoPosition) {
 			const curGlPosition = overlay.latLngAltitudeToVector3(curGeoPosition);
 			const nextGlPosition = overlay.latLngAltitudeToVector3(nextGeoPosition);
@@ -143,7 +145,10 @@ export class Subway implements Transportation {
 		const currentTime = this.sequence[currentTimeIndex];
 		const snapshot = this.route.get(currentTime);
 
-		if (!snapshot) return;
+		this.marker.visible = !!snapshot;
+		if (!snapshot) {
+			return;
+		}
 
 		const startStation = MTR_STATION_MAP.get(snapshot?.route.from);
 		const startPosition = startStation?.pos;
