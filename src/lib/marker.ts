@@ -126,4 +126,20 @@ export const preparePLYs = async () => {
 		res.scale(5, 5, 5);
 		DEFAULT_PLY_GEOMETRIES.set(name, res);
 	}
+
+	for (const name of ["taxi", "private car"]) {
+		const res = await loader.loadAsync(`/${name}.ply`);
+		switch (name) {
+			case "taxi": {
+				res.scale(5, 5, 5);
+				break;
+			}
+			case "private car": {
+				res.scale(10, 10, 10);
+				break;
+			}
+		}
+
+		DEFAULT_PLY_GEOMETRIES.set(name, res);
+	}
 };
