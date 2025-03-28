@@ -8,7 +8,6 @@ import {
 	Mesh,
 	MeshBasicMaterial,
 	MeshMatcapMaterial,
-	MeshNormalMaterial,
 	type Object3D,
 	ShapeGeometry,
 } from "three";
@@ -71,7 +70,7 @@ export const createPLYGroup = (type: string) => {
 		throw new Error("Unsupported types");
 	}
 
-	const material = new MeshMatcapMaterial();
+	const material = new MeshMatcapMaterial({});
 
 	return new Mesh(geometry, material);
 };
@@ -123,7 +122,7 @@ export const preparePLYs = async () => {
 	const loader = new PLYLoader();
 	for (const name of SVG_NAMES) {
 		const res = await loader.loadAsync("/taxi.ply");
-		res.computeVertexNormals();
+
 		res.scale(5, 5, 5);
 		DEFAULT_PLY_GEOMETRIES.set(name, res);
 	}
