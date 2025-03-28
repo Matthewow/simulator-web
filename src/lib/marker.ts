@@ -43,7 +43,7 @@ export const createPLYGroup = (type: string) => {
 	}
 
 	const material = new MeshMatcapMaterial({
-		matcap: MATCAP_TEXTURE as Texture,
+		// matcap: MATCAP_TEXTURE as Texture,
 	});
 
 	return new Mesh(geometry, material);
