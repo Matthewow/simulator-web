@@ -8,6 +8,7 @@ import TimelineTimer from "./timer";
 import { listenNamedEvent } from "./event";
 import type { PlayStatus } from "@/store";
 import { appendRailwayLayer } from "./railway";
+import Stats from "stats.js";
 
 const MAP_CONFIG = {
 	center: {
@@ -82,12 +83,18 @@ listenNamedEvent("render_dataset", (e) => {
 		scene.add(vehicle.marker);
 	}
 
+	const stats = new Stats();
+	stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+	document.body.appendChild(stats.dom);
+
 	const animate = () => {
 		const requestedTime = timer.getElapsedTime();
+		stats.begin();
 
 		for (const [_id, vehicle] of dataset.idRouteMap) {
 			vehicle.updateMarker(requestedTime, overlay);
 		}
+		stats.end();
 
 		requestAnimationFrame(animate);
 	};
