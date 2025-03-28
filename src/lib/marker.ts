@@ -120,14 +120,8 @@ export const prepareSVGs = async () => {
 
 export const preparePLYs = async () => {
 	const loader = new PLYLoader();
+
 	for (const name of SVG_NAMES) {
-		const res = await loader.loadAsync("/taxi.ply");
-
-		res.scale(5, 5, 5);
-		DEFAULT_PLY_GEOMETRIES.set(name, res);
-	}
-
-	for (const name of ["taxi", "private car", "bus"]) {
 		const res = await loader.loadAsync(`/${name}.ply`);
 		switch (name) {
 			case "taxi": {
@@ -140,6 +134,10 @@ export const preparePLYs = async () => {
 			}
 			case "bus": {
 				res.scale(15, 15, 15);
+				break;
+			}
+			case "subway": {
+				res.scale(2, 2, 2);
 				break;
 			}
 		}
