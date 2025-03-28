@@ -181,17 +181,30 @@ export class Subway implements Transportation {
 					lng: along.geometry.coordinates[0],
 				};
 
+				const nextAlong = TURF.along(
+					route,
+					length * Math.min(progress + 0.01, 1),
+					{
+						units: "meters",
+					},
+				);
+
+				const nextGeoLocation = {
+					lat: nextAlong.geometry.coordinates[1],
+					lng: nextAlong.geometry.coordinates[0],
+				};
+
 				//console.log(snapshot.route, progress, geoLocation);
 
 				const simulatedPosition = overlay.latLngAltitudeToVector3(geoLocation);
 
 				this.marker?.position.copy(simulatedPosition);
-				// const heading = google.maps.geometry.spherical.computeHeading(
-				// 	startPosition,
-				// 	endPosition,
-				// );
+				const heading = google.maps.geometry.spherical.computeHeading(
+					geoLocation,
+					nextGeoLocation,
+				);
 
-				// (this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
+				this.marker.rotation.y = -(heading / 180) * Math.PI;
 			} else {
 				console.log(
 					`Missing route: from ${snapshot.route.from} to ${snapshot.route.to}, ${snapshot} `,
