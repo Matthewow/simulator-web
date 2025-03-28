@@ -1,9 +1,9 @@
-import { type Group, Vector3, type Object3D } from "three";
+import { Vector3, type Object3D } from "three";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
 import * as TURF from "@turf/turf";
 
 import { isNumber } from "./utils";
-import { createSVGGroup, setGroupMaterialColorByStatus } from "./marker";
+import { createPLYGroup, setGroupMaterialColorByStatus } from "./marker";
 import type { GeoPosition, SubwayStatus, VehicleStatus } from "./types";
 import { MTR_STATION_MAP } from "./railway";
 
@@ -29,13 +29,13 @@ export class Vehicle implements Transportation {
 	readonly route: VehicleRoute;
 
 	sequence: Array<number>;
-	marker: Group;
+	marker: Object3D;
 
 	constructor(
 		id: string,
 		type: VehicleType,
 		sequence: number[],
-		marker: Group,
+		marker: Object3D,
 	) {
 		this.id = id;
 		this.vtype = type;
@@ -85,17 +85,17 @@ export class Vehicle implements Transportation {
 
 			this.marker?.position.copy(simulatedGlPosition);
 
-			// if (
-			// 	curGeoPosition.lat !== nextGeoPosition.lat &&
-			// 	curGeoPosition.lng !== nextGeoPosition.lng
-			// ) {
-			// 	const heading = google.maps.geometry.spherical.computeHeading(
-			// 		curGeoPosition,
-			// 		nextGeoPosition,
-			// 	);
+			if (
+				curGeoPosition.lat !== nextGeoPosition.lat &&
+				curGeoPosition.lng !== nextGeoPosition.lng
+			) {
+				const heading = google.maps.geometry.spherical.computeHeading(
+					curGeoPosition,
+					nextGeoPosition,
+				);
 
-			// 	(this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
-			// }
+				this.marker.rotation.y = -(heading / 180) * Math.PI;
+			}
 		}
 	}
 }
@@ -115,10 +115,15 @@ export class Subway implements Transportation {
 	readonly id: string;
 	readonly route: SubwayRoute;
 	readonly sequence: Array<number>;
-	readonly marker: Group;
+	readonly marker: Object3D;
 	readonly lineCode: string;
 
-	constructor(id: string, lineCode: string, sequence: number[], marker: Group) {
+	constructor(
+		id: string,
+		lineCode: string,
+		sequence: number[],
+		marker: Object3D,
+	) {
 		this.id = id;
 		this.route = new Map();
 		this.sequence = sequence;
@@ -176,17 +181,30 @@ export class Subway implements Transportation {
 					lng: along.geometry.coordinates[0],
 				};
 
+				const nextAlong = TURF.along(
+					route,
+					length * Math.min(progress + 0.01, 1),
+					{
+						units: "meters",
+					},
+				);
+
+				const nextGeoLocation = {
+					lat: nextAlong.geometry.coordinates[1],
+					lng: nextAlong.geometry.coordinates[0],
+				};
+
 				//console.log(snapshot.route, progress, geoLocation);
 
 				const simulatedPosition = overlay.latLngAltitudeToVector3(geoLocation);
 
 				this.marker?.position.copy(simulatedPosition);
-				// const heading = google.maps.geometry.spherical.computeHeading(
-				// 	startPosition,
-				// 	endPosition,
-				// );
+				const heading = google.maps.geometry.spherical.computeHeading(
+					geoLocation,
+					nextGeoLocation,
+				);
 
-				// (this.marker as Group).rotation.y = -(heading / 180) * Math.PI;
+				this.marker.rotation.y = -(heading / 180) * Math.PI;
 			} else {
 				console.log(
 					`Missing route: from ${snapshot.route.from} to ${snapshot.route.to}, ${snapshot} `,
@@ -241,11 +259,8 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 				if (id) {
 					const id = `v_${attributes?.[idIndex]}`;
 					if (!idVehicleMap.has(id)) {
-						const group = createSVGGroup(type);
-						idVehicleMap.set(
-							id,
-							new Vehicle(id, type, sequence, group as Group),
-						);
+						const group = createPLYGroup(type);
+						idVehicleMap.set(id, new Vehicle(id, type, sequence, group));
 					}
 
 					const snapshot = { pos, status };
@@ -331,12 +346,7 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 					if (!idSubwayMap.has(id)) {
 						idSubwayMap.set(
 							id,
-							new Subway(
-								id,
-								lineCode,
-								sequence,
-								createSVGGroup("subway") as Group,
-							),
+							new Subway(id, lineCode, sequence, createPLYGroup("subway")),
 						);
 					}
 

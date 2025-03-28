@@ -1,14 +1,21 @@
 import {
 	type Box3,
+	type BufferGeometry,
 	CircleGeometry,
 	Color,
 	DoubleSide,
 	Group,
 	Mesh,
 	MeshBasicMaterial,
+	MeshMatcapMaterial,
+	type Object3D,
 	ShapeGeometry,
 } from "three";
-import { SVGLoader, type SVGResult } from "three/examples/jsm/Addons.js";
+import {
+	PLYLoader,
+	SVGLoader,
+	type SVGResult,
+} from "three/examples/jsm/Addons.js";
 import type { VehicleStatus, SubwayStatus } from "./types";
 
 const DEFAULT_MATERIAL = new MeshBasicMaterial({ color: 0x000000 });
@@ -21,17 +28,18 @@ export const createCircleMesh = () => {
 };
 
 export const MARKER_COLOR_MAP = {
-	BOARDING: "#000099",
-	EMPTY: "#000000",
+	BOARDING: "#333399",
+	EMPTY: "#333333",
 	OFFLINE: "#999999",
-	RUNNING: "#009900",
-	PICKUP: "#ffff00",
+	RUNNING: "#339933",
+	PICKUP: "#ffff33",
 } as {
 	[key in VehicleStatus | SubwayStatus]: string;
 };
 
 const SVG_NAMES = ["subway", "private car", "taxi", "bus"];
 const DEFAULT_SVG_GEOMETRIES = new Map<string, ShapeGeometry[]>();
+const DEFAULT_PLY_GEOMETRIES = new Map<string, BufferGeometry>();
 
 export const createSVGGroup = (type: string) => {
 	const group = new Group();
@@ -55,14 +63,25 @@ export const createSVGGroup = (type: string) => {
 	return group;
 };
 
+export const createPLYGroup = (type: string) => {
+	const geometry = DEFAULT_PLY_GEOMETRIES.get(type.toLocaleLowerCase());
+
+	if (!geometry) {
+		throw new Error("Unsupported types");
+	}
+
+	const material = new MeshMatcapMaterial({});
+
+	return new Mesh(geometry, material);
+};
+
 export const setGroupMaterialColorByStatus = (
-	group: Group,
+	object: Object3D,
 	status: VehicleStatus | SubwayStatus,
 ) => {
 	const rgbStr = MARKER_COLOR_MAP[status];
-	for (const mesh of group.children) {
-		((mesh as Mesh).material as MeshBasicMaterial).color.set(rgbStr);
-	}
+
+	((object as Mesh).material as MeshBasicMaterial).color.set(rgbStr);
 };
 
 const generateSVGGroup = (data: SVGResult) => {
@@ -96,5 +115,33 @@ export const prepareSVGs = async () => {
 	for (const name of SVG_NAMES) {
 		const res = await loader.loadAsync(`/${name}.svg`);
 		DEFAULT_SVG_GEOMETRIES.set(name, generateSVGGroup(res));
+	}
+};
+
+export const preparePLYs = async () => {
+	const loader = new PLYLoader();
+
+	for (const name of SVG_NAMES) {
+		const res = await loader.loadAsync(`/${name}.ply`);
+		switch (name) {
+			case "taxi": {
+				res.scale(5, 5, 5);
+				break;
+			}
+			case "private car": {
+				res.scale(10, 10, 10);
+				break;
+			}
+			case "bus": {
+				res.scale(15, 15, 15);
+				break;
+			}
+			case "subway": {
+				res.scale(2, 2, 2);
+				break;
+			}
+		}
+
+		DEFAULT_PLY_GEOMETRIES.set(name, res);
 	}
 };
