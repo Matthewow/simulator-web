@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { initGoogleMap } from "@/lib/render";
-import { prepareSVGs } from "@/lib/marker";
+import { preparePLYs, prepareSVGs } from "@/lib/marker";
 import { loadDataSet } from "@/lib/dataset";
 import { useAppstore } from "@/store";
 
@@ -10,7 +10,7 @@ const MapProvider = () => {
 	useEffect(() => {
 		(async () => {
 			setDataStatus("Loading");
-			await Promise.all([initGoogleMap(), prepareSVGs()]);
+			await Promise.all([initGoogleMap(), prepareSVGs(), preparePLYs()]);
 			const dataset = await loadDataSet();
 			setDataset(dataset);
 		})();
