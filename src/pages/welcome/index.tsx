@@ -12,7 +12,7 @@ const WelcomePage = () => {
 	const setPage = useAppstore((state) => state.setPage);
 	return (
 		<div className="h-100vh flex justify-center items-center bg-[url(/background.jpg)] bg-cover bg-no-repeat bg-center">
-			<div className="bg-[#3d3d3d] shadow-lg w-[30vw] h-[20vw] rounded-md flex flex-row p-4">
+			<div className="bg-[#3d3d3d] shadow-md shadow-black w-[30vw] h-[20vw] rounded-md flex flex-row p-4">
 				<div className="flex-grow-1.2 flex items-center justify-center p-5">
 					<Button
 						size="large"
