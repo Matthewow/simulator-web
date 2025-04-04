@@ -1,6 +1,7 @@
 import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
 import { UnoCSSRspackPlugin } from "@unocss/webpack/rspack";
+import { presetUno } from "unocss";
 
 export default defineConfig({
 	dev: {
@@ -13,7 +14,11 @@ export default defineConfig({
 	html: { template: "./static/template.html" },
 	tools: {
 		rspack: {
-			plugins: [UnoCSSRspackPlugin()],
+			plugins: [
+				UnoCSSRspackPlugin({
+					presets: [presetUno()],
+				}),
+			],
 		},
 	},
 	resolve: {
