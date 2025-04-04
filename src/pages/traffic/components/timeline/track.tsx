@@ -1,5 +1,5 @@
 import { useAppstore } from "@/store";
-import { timer } from "@lib/render";
+import { timer } from "@/lib/render";
 import { memo, useEffect, useRef, useState } from "react";
 
 const _formatTime = (seconds: number) => {

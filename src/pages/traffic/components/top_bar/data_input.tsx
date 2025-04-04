@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import { readFileAsync } from "./utils";
 import { useAppstore } from "@/store";
-import { parseDataSet } from "@lib/dataset";
+import { parseDataSet } from "@/lib/dataset";
 
 export type DataInputHandle = {
 	triggerUploadDialog: () => void;
