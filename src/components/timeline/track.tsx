@@ -164,10 +164,30 @@ const Pointer = () => {
 		};
 		document.onmousedown = mouseDownHandler;
 
+		const containerNode = document.getElementById(
+			"time-track",
+		) as HTMLDivElement;
+
+		const containerMouseClickHandler = (e: MouseEvent) => {
+			if (isDraggedRef.current) {
+				(pointerEleRef.current as HTMLDivElement).style.left =
+					`${getProgressByMousePositionX(e.clientX)}%`;
+			}
+
+			timer.setTime(
+				(sequence[sequence.length - 1] *
+					getProgressByMousePositionX(e.clientX)) /
+					100,
+			);
+		};
+
+		containerNode.onclick = containerMouseClickHandler;
+
 		return () => {
 			document.removeEventListener("mousemove", mouseMoveHandler);
 			document.removeEventListener("mousedown", mouseDownHandler);
 			document.removeEventListener("mouseup", mouseUpHandler);
+			containerNode.removeEventListener("click", containerMouseClickHandler);
 		};
 	}, [sequence]);
 
