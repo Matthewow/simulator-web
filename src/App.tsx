@@ -1,9 +1,10 @@
 import TrafficPage from "./pages/traffic";
+import WelcomePage from "./pages/welcome";
 
 const App = () => {
 	
 	return (
-		<TrafficPage />
+		<WelcomePage />
 	);
 };
 
