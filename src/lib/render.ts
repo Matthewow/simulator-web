@@ -2,12 +2,13 @@ import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
 
 import SECRET from "@/assets/secret.json";
-import { Mesh, Scene } from "three";
+import { Scene } from "three";
 import type { Dataset } from "./dataset";
 import TimelineTimer from "./timer";
 import { listenNamedEvent } from "./event";
 import type { PlayStatus } from "@/store";
-import { appendRailwayLayer } from "./railway";
+import { calcRailwayLayer } from "./railway";
+import ViewLayer from "./view_layer";
 
 const MAP_CONFIG = {
 	center: {
@@ -65,20 +66,14 @@ listenNamedEvent("render_dataset", (e) => {
 	const overlay = mapOverlay as ThreeJSOverlayView;
 	const scene = overlay.scene as Scene;
 
-	const meshes = scene.children.filter((child) => child instanceof Mesh);
-	for (const mesh of meshes) {
-		scene.remove(mesh);
-		mesh.material.dispose();
-		mesh.geometry.dispose();
-	}
+	calcRailwayLayer(overlay);
 
-	timer.reset();
-
-	appendRailwayLayer(overlay);
-
-	for (const [_id, vehicle] of dataset.idRouteMap) {
-		scene.add(vehicle.marker);
-	}
+	scene.add(ViewLayer.instance.privateCars);
+	scene.add(ViewLayer.instance.buses);
+	scene.add(ViewLayer.instance.taxis);
+	scene.add(ViewLayer.instance.subway);
+	scene.add(ViewLayer.instance.paths);
+	scene.add(ViewLayer.instance.stations);
 
 	const animate = () => {
 		const requestedTime = timer.getElapsedTime();

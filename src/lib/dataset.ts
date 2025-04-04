@@ -1,4 +1,4 @@
-import { Vector3, type Object3D } from "three";
+import { type Object3D, Vector3 } from "three";
 import type { ThreeJSOverlayView } from "@googlemaps/three";
 import * as TURF from "@turf/turf";
 
@@ -6,6 +6,7 @@ import { isNumber } from "./utils";
 import { createPLYGroup, setGroupMaterialColorByStatus } from "./marker";
 import type { GeoPosition, SubwayStatus, VehicleStatus } from "./types";
 import { MTR_STATION_MAP } from "./railway";
+import ViewLayer from "./view_layer";
 
 export type VehicleSnapshot = {
 	pos: GeoPosition;
@@ -266,6 +267,24 @@ const parseVehicles = (lines: string[], definitions: Map<string, number>) => {
 					if (!idVehicleMap.has(id)) {
 						const group = createPLYGroup(type);
 						idVehicleMap.set(id, new Vehicle(id, type, sequence, group));
+
+						switch (type) {
+							case "Taxi": {
+								ViewLayer.instance?.taxis.add(group);
+								break;
+							}
+							case "Private Car": {
+								ViewLayer.instance?.privateCars.add(group);
+								break;
+							}
+
+							case "Bus": {
+								ViewLayer.instance?.buses.add(group);
+								break;
+							}
+							default:
+								throw new Error("Unsupported vehicle type");
+						}
 					}
 
 					const snapshot = { pos, status };
@@ -349,10 +368,10 @@ const parseSubways = (lines: string[], definitions: Map<string, number>) => {
 				if (id) {
 					const id = `s_${attributes?.[idIndex]}`;
 					if (!idSubwayMap.has(id)) {
-						idSubwayMap.set(
-							id,
-							new Subway(id, lineCode, sequence, createPLYGroup("subway")),
-						);
+						const group = createPLYGroup("subway");
+						idSubwayMap.set(id, new Subway(id, lineCode, sequence, group));
+
+						ViewLayer.instance.subway.add(group);
 					}
 
 					const snapshot = {
@@ -443,6 +462,8 @@ const mergeDataSet = (rd: Dataset, ld: Dataset): Dataset => {
 export const loadDataSet = async () => {
 	const res = await Promise.all([fetch("/train.csv"), fetch("/vehicle.csv")]);
 	const raws = await Promise.all(res.map((res) => res.text()));
+
+	
 
 	const datasets = raws.map(parseDataSet);
 	for (const dataset of datasets) {

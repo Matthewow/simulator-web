@@ -10,7 +10,7 @@ const MapProvider = () => {
 	useEffect(() => {
 		(async () => {
 			setDataStatus("Loading");
-			await Promise.all([initGoogleMap(),  preparePLYs(), prepareTexture()]);
+			await Promise.all([initGoogleMap(), preparePLYs(), prepareTexture()]);
 			const dataset = await loadDataSet();
 			setDataset(dataset);
 		})();

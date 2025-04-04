@@ -3,6 +3,9 @@
 		"rules": {
 			"style": {
 				"noUselessElse": "off"
+			},
+			"correctness":{
+				"noConstructorReturn": "off"
 			}
 		}
 	},

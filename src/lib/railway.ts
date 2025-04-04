@@ -13,6 +13,7 @@ import {
 	LineGeometry,
 	LineMaterial,
 } from "three/examples/jsm/Addons.js";
+import ViewLayer from "./view_layer";
 
 export type Station = {
 	pos: GeoPosition;
@@ -37,13 +38,13 @@ const getNameAbbrMap = (): Map<string, string> => {
 	return nameCodeMap;
 };
 
-export const appendRailwayLayer = (overlay: ThreeJSOverlayView) => {
+export const calcRailwayLayer = (overlay: ThreeJSOverlayView) => {
 	for (const [_, station] of MTR_STATION_MAP) {
 		const geoLocation = station.pos;
 		const glLocation = overlay.latLngAltitudeToVector3(geoLocation);
 		const mesh = createCircleMesh();
 		mesh.position.copy(glLocation);
-		overlay.scene.add(mesh);
+		ViewLayer.instance.stations.add(mesh);
 	}
 
 	for (const line of LINES_GEOMETRY) {
@@ -58,7 +59,7 @@ export const appendRailwayLayer = (overlay: ThreeJSOverlayView) => {
 
 		const material = new LineMaterial({ color: 0x888888, linewidth: 4 });
 		const lineMesh = new Line2(geometry, material);
-		overlay.scene.add(lineMesh);
+		ViewLayer.instance.paths.add(lineMesh);
 	}
 };
 

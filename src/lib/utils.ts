@@ -1,4 +1,4 @@
-import type { GeoPosition } from "./dataset";
+import type { GeoPosition } from "./types";
 
 export const isNumber = (value: unknown) => {
 	return typeof value === "number";
