@@ -13,6 +13,9 @@ type AppState = {
 
 	playStatus: PlayStatus;
 	setPlayStatus: (status: PlayStatus) => void;
+
+	page: string;
+	setPage: (page: string) => void;
 };
 
 export const useAppstore = create<AppState>()((set) => ({
@@ -28,5 +31,10 @@ export const useAppstore = create<AppState>()((set) => ({
 	setPlayStatus: (playStatus) => {
 		dispatchNamedEvent("play_status_changed", playStatus);
 		set({ playStatus });
+	},
+
+	page: "welcome",
+	setPage: (page) => {
+		set({ page });
 	},
 }));
