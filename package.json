@@ -2,11 +2,12 @@
 	"name": "simulator-web",
 	"private": true,
 	"version": "1.0.0",
+	"main": "app/index.js",
 	"scripts": {
 		"dev": "npx gulp && rsbuild dev --open",
 		"build": "npx gulp && rsbuild build",
 		"preview": "npx gulp && rsbuild preview",
-		"deploy": "npx vercel --prod"
+		"start": "electron ."
 	},
 	"dependencies": {
 		"@fluentui/react-components": "^9.57.0",
@@ -30,6 +31,7 @@
 		"@types/react-dom": "^18.0.0",
 		"@types/three": "^0.171.0",
 		"@unocss/webpack": "^65.4.3",
+		"electron": "^35.1.5",
 		"gulp": "^5.0.0",
 		"gulp-rename": "^2.0.0",
 		"typescript": "^5.7.2",
