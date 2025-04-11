@@ -16,7 +16,7 @@ const createWindow = () => {
 	const ipc = new IPCController();
 	ipc.initEventListeners();
 
-	win.maximize();
+	//win.maximize();
 	win.show();
 
 	win.webContents.openDevTools();

@@ -25,9 +25,22 @@ const WelcomePage = () => {
 
 	return (
 		<div className="h-100vh flex justify-center items-center bg-[url(/background.jpg)] bg-cover bg-no-repeat bg-center">
-			<div className="bg-[#3d3d3d] shadow-md shadow-black w-[40vw] h-[30vw] rounded-md flex flex-row p-4">
-				<div className="flex-grow-1.2 flex items-center justify-center p-5">
+			<div className="bg-[#3d3d3d] shadow-md shadow-black w-[50vw] h-[30vw] rounded-md flex flex-row p-4">
+				<div className="flex-grow-1.2 flex flex-col items-center justify-center p-5">
+					<div className="mb-4">
+						<Button
+							className="w-[8rem]"
+							size="large"
+							onClick={() => {
+								setPage("traffic");
+							}}
+						>
+							Demo
+						</Button>
+					</div>
+
 					<Button
+						className="w-[8rem]"
 						size="large"
 						onClick={() => {
 							setPage("traffic");
