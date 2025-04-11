@@ -150,17 +150,18 @@ const Pointer = () => {
 		document.onmouseup = mouseUpHandler;
 
 		const mouseDownHandler = (e: MouseEvent) => {
-			const rect = (
-				pointerEleRef.current as HTMLDivElement
-			).getBoundingClientRect();
+			const rect = pointerEleRef.current?.getBoundingClientRect();
 
-			const isInside =
+			if (rect) {
+				const isInside =
 				e.clientX >= rect.left - 10 &&
 				e.clientX <= rect.right + 10 &&
 				e.clientY >= rect.top &&
 				e.clientY <= rect.bottom;
 
 			if (isInside) isDraggedRef.current = true;
+			}
+			
 		};
 		document.onmousedown = mouseDownHandler;
 
