@@ -1,14 +1,18 @@
 import { useMemo, useState } from "react";
 import Welcome from "./components/welcome";
-import { DialogContext } from "./context";
+import { DialogContext, type DialogEnum } from "./context";
+import ProjectName from "./components/project-name";
 
 const WelcomePage = () => {
-	const [dialogEnum, setDialogEnum] = useState<"welcome">("welcome");
+	const [dialogEnum, setDialogEnum] = useState<DialogEnum>("welcome");
 
 	const DialogComponent = useMemo(() => {
 		switch (dialogEnum) {
 			case "welcome": {
 				return Welcome;
+			}
+			case "project-name": {
+				return ProjectName;
 			}
 		}
 	}, [dialogEnum]);

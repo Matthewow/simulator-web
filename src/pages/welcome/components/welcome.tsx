@@ -1,5 +1,5 @@
 import { useAppstore } from "@/store";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import type { HistroyEntry } from "../types";
 import {
 	Button,
@@ -9,9 +9,13 @@ import {
 	Subtitle1,
 	Text,
 } from "@fluentui/react-components";
+import { DialogContext } from "../context";
 
 const Welcome = () => {
 	const setPage = useAppstore((state) => state.setPage);
+
+	const { setDialog } = useContext(DialogContext);
+
 	const [history, setHistory] = useState<HistroyEntry[]>([]);
 
 	useEffect(() => {
@@ -41,7 +45,7 @@ const Welcome = () => {
 					className="w-[8rem]"
 					size="large"
 					onClick={() => {
-						setPage("traffic");
+						setDialog("project-name");
 					}}
 				>
 					Create New
