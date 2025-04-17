@@ -4,7 +4,7 @@ import { DialogContext, type DialogEnum } from "./context";
 import ProjectName from "./components/project-name";
 
 const WelcomePage = () => {
-	const [dialogEnum, setDialogEnum] = useState<DialogEnum>("welcome");
+	const [dialogEnum, setDialogEnum] = useState<DialogEnum>("project-name");
 
 	const DialogComponent = useMemo(() => {
 		switch (dialogEnum) {
@@ -27,7 +27,9 @@ const WelcomePage = () => {
 					},
 				}}
 			>
-				<DialogComponent />
+				<div className="bg-[#3d3d3d] shadow-md shadow-black w-[50vw] h-[30vw] rounded-md flex flex-row p-4">
+					<DialogComponent />
+				</div>
 			</DialogContext.Provider>
 		</div>
 	);

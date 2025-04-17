@@ -27,7 +27,7 @@ const Welcome = () => {
 	}, []);
 
 	return (
-		<div className="bg-[#3d3d3d] shadow-md shadow-black w-[50vw] h-[30vw] rounded-md flex flex-row p-4">
+		<>
 			<div className="flex-grow-1.2 flex flex-col items-center justify-center p-5">
 				<div className="mb-4">
 					<Button
@@ -65,7 +65,7 @@ const Welcome = () => {
 					</Card>
 				))}
 			</div>
-		</div>
+		</>
 	);
 };
 
