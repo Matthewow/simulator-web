@@ -38,7 +38,14 @@ const ProjectName = () => {
 						generated project's folder name.
 					</Text>
 				</div>
-				<Button className="w-[12rem]">Continue</Button>
+				<Button
+					className="w-[12rem]"
+					onClick={() => {
+						setDialog("loading");
+					}}
+				>
+					Continue
+				</Button>
 			</div>
 		</div>
 	);

@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import Welcome from "./components/welcome";
 import { DialogContext, type DialogEnum } from "./context";
 import ProjectName from "./components/project-name";
+import Loading from "./components/loading";
 
 const WelcomePage = () => {
 	const [dialogEnum, setDialogEnum] = useState<DialogEnum>("project-name");
@@ -13,6 +14,9 @@ const WelcomePage = () => {
 			}
 			case "project-name": {
 				return ProjectName;
+			}
+			case "loading": {
+				return Loading;
 			}
 		}
 	}, [dialogEnum]);
