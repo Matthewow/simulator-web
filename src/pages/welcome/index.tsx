@@ -3,9 +3,10 @@ import Welcome from "./components/welcome";
 import { DialogContext, type DialogEnum } from "./context";
 import ProjectName from "./components/project-name";
 import Loading from "./components/loading";
+import ProjectConfig from "./components/project-config";
 
 const WelcomePage = () => {
-	const [dialogEnum, setDialogEnum] = useState<DialogEnum>("project-name");
+	const [dialogEnum, setDialogEnum] = useState<DialogEnum>("project-config");
 
 	const DialogComponent = useMemo(() => {
 		switch (dialogEnum) {
@@ -17,6 +18,9 @@ const WelcomePage = () => {
 			}
 			case "loading": {
 				return Loading;
+			}
+			case "project-config": {
+				return ProjectConfig;
 			}
 		}
 	}, [dialogEnum]);
@@ -31,7 +35,7 @@ const WelcomePage = () => {
 					},
 				}}
 			>
-				<div className="bg-[#3d3d3d] shadow-md shadow-black w-[50vw] h-[30vw] rounded-md flex flex-row p-4">
+				<div className="bg-[#3d3d3d] shadow-md shadow-black w-[40vw] min-w-[32rem] min-h-[30vw] rounded-md p-4 flex flex-row">
 					<DialogComponent />
 				</div>
 			</DialogContext.Provider>

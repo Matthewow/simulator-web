@@ -1,33 +1,25 @@
-import {
-	Button,
-	Input,
-	Label,
-	Subtitle1,
-	Text,
-} from "@fluentui/react-components";
-import { ArrowCircleLeftRegular } from "@fluentui/react-icons";
-import { useContext } from "react";
+import { Button, Input, Label, Text } from "@fluentui/react-components";
+import { useContext, useState } from "react";
 import { DialogContext } from "../context";
+import Title from "./title";
 
 const ProjectName = () => {
 	const { setDialog } = useContext(DialogContext);
+	const [projectName, setProjectName] = useState<string>("");
 
 	return (
-		<div className="w-full h-full flex flex-col">
-			<div className="flex flex-row items-center">
-				<ArrowCircleLeftRegular
-					fontSize={24}
-					className="mr-2"
-					onClick={() => {
-						setDialog("welcome");
-					}}
-				/>
-				<Subtitle1>Create Project</Subtitle1>
-			</div>
+		<div className="flex-1 flex flex-col">
+			<Title />
 			<div className="flex flex-1 flex-col mt-6 mx-6 justify-between items-center">
 				<div className="flex flex-col w-full">
 					<Label size="large">Project Name</Label>
-					<Input className="mt-[8px]" />
+					<Input
+						className="mt-[8px]"
+						value={projectName}
+						onChange={(e) => {
+							setProjectName(e.target.value);
+						}}
+					/>
 					<Text
 						size={200}
 						weight="regular"
@@ -42,7 +34,11 @@ const ProjectName = () => {
 					className="w-[12rem]"
 					onClick={() => {
 						setDialog("loading");
+						setTimeout(() => {
+							setDialog("project-config");
+						}, 1500);
 					}}
+					disabled={!projectName && projectName.length === 0}
 				>
 					Continue
 				</Button>

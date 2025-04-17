@@ -1,6 +1,10 @@
 import { createContext } from "react";
 
-export type DialogEnum = "welcome" | "project-name" | "loading";
+export type DialogEnum =
+	| "welcome"
+	| "project-name"
+	| "loading"
+	| "project-config";
 export type DialogContextValue = {
 	dialog: DialogEnum;
 	setDialog: (dialog: DialogEnum) => void;

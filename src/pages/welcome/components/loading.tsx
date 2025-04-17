@@ -2,7 +2,7 @@ import { Spinner } from "@fluentui/react-components";
 
 const Loading = () => {
 	return (
-		<div className="w-full h-full flex justify-center items-center">
+		<div className="flex-1 flex justify-center items-center">
 			<Spinner size="large" />
 		</div>
 	);
