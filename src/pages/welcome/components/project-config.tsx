@@ -1,7 +1,13 @@
-import { Input, Label, Text, Button } from "@fluentui/react-components";
+import { Input, Label, Button } from "@fluentui/react-components";
 import Title from "./title";
+import { useAppstore } from "@/store";
+import { useContext } from "react";
+import { DialogContext } from "../context";
 
 const ProjectConfig = () => {
+	const setPage = useAppstore((state) => state.setPage);
+
+	const { setDialog } = useContext(DialogContext);
 	return (
 		<div className="flex-1 flex flex-col">
 			<Title />
@@ -35,7 +41,15 @@ const ProjectConfig = () => {
 						<Input size="small" />
 					</div>
 				</div>
-				<Button className="w-[12rem]" onClick={() => {}}>
+				<Button
+					className="w-[12rem]"
+					onClick={() => {
+						setDialog("loading");
+						setTimeout(() => {
+							setPage("traffic");
+						}, 1500);
+					}}
+				>
 					Continue
 				</Button>
 			</div>
