@@ -4,9 +4,10 @@ import { DialogContext, type DialogEnum } from "./context";
 import ProjectName from "./components/project-name";
 import Loading from "./components/loading";
 import ProjectConfig from "./components/project-config";
+import Notification from "./components/notification";
 
 const WelcomePage = () => {
-	const [dialogEnum, setDialogEnum] = useState<DialogEnum>("project-config");
+	const [dialogEnum, setDialogEnum] = useState<DialogEnum>("welcome");
 
 	const DialogComponent = useMemo(() => {
 		switch (dialogEnum) {
@@ -21,6 +22,9 @@ const WelcomePage = () => {
 			}
 			case "project-config": {
 				return ProjectConfig;
+			}
+			case "notification": {
+				return Notification;
 			}
 		}
 	}, [dialogEnum]);

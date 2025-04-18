@@ -1,33 +1,33 @@
-import { Button, Input, Label, Text } from "@fluentui/react-components";
 import { useContext, useState } from "react";
-import { DialogContext } from "../context";
 import Title from "./title";
+import { DialogContext } from "../context";
+import { Button, Label, Text } from "@fluentui/react-components";
 
-const ProjectName = () => {
+const Notification = () => {
 	const { setDialog } = useContext(DialogContext);
-	const [projectName, setProjectName] = useState<string>("");
 
 	return (
 		<div className="flex-1 flex flex-col">
 			<Title />
 			<div className="flex flex-1 flex-col mt-6 mx-6 justify-between items-center">
 				<div className="flex flex-col w-full">
-					<Label size="large">Project Name</Label>
-					<Input
-						className="mt-[8px]"
-						value={projectName}
-						onChange={(e) => {
-							setProjectName(e.target.value);
-						}}
-					/>
+					<Label size="large">Project Folder Generated</Label>
 					<Text
 						size={200}
 						weight="regular"
 						italic
 						className="text-gray-300 mt-[4px]"
 					>
-						Please notice that the entered project name will affect the
-						generated project's folder name.
+						Generated folder is located at {"{given path}"}
+					</Text>
+					<Text
+						size={200}
+						weight="regular"
+						italic
+						className="text-gray-300 mt-[4px]"
+					>
+						Please make sure the default config file is well placed at the
+						generated folder.
 					</Text>
 				</div>
 				<Button
@@ -35,10 +35,9 @@ const ProjectName = () => {
 					onClick={() => {
 						setDialog("loading");
 						setTimeout(() => {
-							setDialog("notification");
+							setDialog("project-config");
 						}, 1500);
 					}}
-					disabled={!projectName && projectName.length === 0}
 				>
 					Continue
 				</Button>
@@ -47,4 +46,4 @@ const ProjectName = () => {
 	);
 };
 
-export default ProjectName;
+export default Notification;

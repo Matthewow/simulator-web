@@ -4,7 +4,8 @@ export type DialogEnum =
 	| "welcome"
 	| "project-name"
 	| "loading"
-	| "project-config";
+	| "project-config"
+	| "notification";
 export type DialogContextValue = {
 	dialog: DialogEnum;
 	setDialog: (dialog: DialogEnum) => void;
