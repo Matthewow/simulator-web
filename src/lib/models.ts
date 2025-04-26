@@ -428,3 +428,207 @@ export const createPrivateCatGroup = () => {
 
 	return carGroup;
 };
+
+const bogieMaterial = new MeshMatcapMaterial({ color: 0x333333 }); // Dark gray for bogies/wheels
+const doorMaterial = new MeshMatcapMaterial({ color: 0xaaaaaa }); // Slightly different gray for doors
+
+const roofMaterial = new MeshMatcapMaterial({ color: 0xaaaaaa }); // Slightly darker roof (kept in case needed elsewhere)
+
+export const createSubwayGroup = () => {
+	const trainGroup = new Group(); // Group to hold all parts of the train car
+
+	// --- Materials ---
+	const bodyMaterial = new MeshMatcapMaterial({
+		color: 0xc0c0c0,
+	}); // Silver/Gray body with slight metallic look
+
+	// --- Dimensions ---
+	const bodyWidth = 2.8;
+	const bodyBaseHeight = 2.2; // Height of the main rectangular part
+	const bodyDepth = 15.0; // Long train car
+	const bogieHeight = 0.5;
+	const baseLevelY = bogieHeight / 2; // Bottom of bogies at y=0
+
+	// --- Geometries ---
+
+	// Main Train Car Body (Lower rectangular part)
+	const bodyGeo = new BoxGeometry(bodyWidth, bodyBaseHeight, bodyDepth);
+	const body = new Mesh(bodyGeo, bodyMaterial);
+	// Position body so its bottom is above the bogies
+	const bodyCenterY = baseLevelY + bogieHeight / 2 + bodyBaseHeight / 2;
+	body.position.y = bodyCenterY;
+	// ADD BODY FIRST
+	trainGroup.add(body);
+
+	// --- Windows & Doors (No Overlap) ---
+	const windowHeight = 1.0;
+	const windowY = bodyCenterY + bodyBaseHeight * 0.1; // Y position for windows relative to body center
+	const windowInset = 0.05; // How much windows are inset
+	const sideWindowWidth = 0.1; // Thickness of side window panes
+
+	const doorHeight = bodyBaseHeight * 0.9; // Doors are taller
+	const doorWidth = 0.1;
+	const doorLength = 1.5;
+	const doorY = baseLevelY + bogieHeight / 2 + doorHeight / 2; // Position doors lower
+	const doorInset = 0.06; // Slightly more inset than windows
+	const doorPositionsZ = [-bodyDepth * 0.35, bodyDepth * 0.35]; // Center Z positions for two doors
+
+	// Calculate window segments based on door positions
+	const halfBodyDepth = bodyDepth / 2;
+	const halfDoorLength = doorLength / 2;
+	const windowSegments = [
+		{
+			startZ: -halfBodyDepth + 0.1,
+			endZ: doorPositionsZ[0] - halfDoorLength - 0.1,
+		}, // Front section
+		{
+			startZ: doorPositionsZ[0] + halfDoorLength + 0.1,
+			endZ: doorPositionsZ[1] - halfDoorLength - 0.1,
+		}, // Middle section
+		{
+			startZ: doorPositionsZ[1] + halfDoorLength + 0.1,
+			endZ: halfBodyDepth - 0.1,
+		}, // Rear section
+	];
+
+	// Create Side Windows
+	for (let i = 0; i < windowSegments.length; i++) {
+		const seg = windowSegments[i]; // Get current segment
+		const length = seg.endZ - seg.startZ;
+		const centerZ = seg.startZ + length / 2;
+		if (length > 0.1) {
+			// Only create if segment is long enough
+			const sideWindowGeo = new BoxGeometry(
+				sideWindowWidth,
+				windowHeight,
+				length,
+			);
+			// Left Side
+			const leftWindow = new Mesh(sideWindowGeo, windowMaterial);
+			leftWindow.position.set(bodyWidth / 2 + windowInset, windowY, centerZ);
+			trainGroup.add(leftWindow);
+			// Right Side
+			const rightWindow = new Mesh(sideWindowGeo, windowMaterial);
+			rightWindow.position.set(-bodyWidth / 2 - windowInset, windowY, centerZ);
+			trainGroup.add(rightWindow);
+		}
+	}
+
+	// Create Doors
+	const doorGeo = new BoxGeometry(doorWidth, doorHeight, doorLength);
+	for (let i = 0; i < doorPositionsZ.length; i++) {
+		const zPos = doorPositionsZ[i]; // Get current Z position using index
+		// Left Side Doors
+		const leftDoor = new Mesh(doorGeo, doorMaterial);
+		leftDoor.position.set(bodyWidth / 2 + doorInset, doorY, zPos);
+		trainGroup.add(leftDoor);
+		// Right Side Doors
+		const rightDoor = new Mesh(doorGeo, doorMaterial);
+		rightDoor.position.set(-bodyWidth / 2 - doorInset, doorY, zPos);
+		trainGroup.add(rightDoor);
+	}
+
+	// Front Window (Faces negative Z)
+	const frontWindowGeo = new BoxGeometry(
+		bodyWidth * 0.8,
+		windowHeight * 0.8,
+		0.1,
+	);
+	const frontWindow = new Mesh(frontWindowGeo, windowMaterial);
+	// Position relative to main body center Y + offset
+	frontWindow.position.set(
+		0,
+		bodyCenterY + bodyBaseHeight * 0.1,
+		-bodyDepth / 2 - 0.05,
+	);
+	trainGroup.add(frontWindow);
+	// Add a small "lip" or frame below front window
+	const frontLipGeo = new BoxGeometry(bodyWidth * 0.85, 0.1, 0.1);
+	const frontLip = new Mesh(frontLipGeo, roofMaterial); // Use roof color
+	frontLip.position.set(
+		0,
+		frontWindow.position.y - windowHeight * 0.4 - 0.05,
+		frontWindow.position.z,
+	);
+	trainGroup.add(frontLip);
+
+	// --- Bogies/Wheels (Same as before) ---
+	const bogieWidth = bodyWidth * 0.8;
+	// const bogieHeight = 0.5; // Defined above
+	const bogieDepth = 2.5;
+	const bogieY = baseLevelY + bogieHeight / 2; // Center Y for bogies
+	const bogieOffsetZ = bodyDepth * 0.35; // Distance from center
+
+	const bogieGeo = new BoxGeometry(bogieWidth, bogieHeight, bogieDepth);
+
+	// Front Bogie (-Z direction)
+	const frontBogie = new Mesh(bogieGeo, bogieMaterial);
+	frontBogie.position.set(0, bogieY, -bogieOffsetZ);
+	trainGroup.add(frontBogie);
+
+	// Rear Bogie (+Z direction)
+	const rearBogie = new Mesh(bogieGeo, bogieMaterial);
+	rearBogie.position.set(0, bogieY, bogieOffsetZ);
+	trainGroup.add(rearBogie);
+
+	// Simplified Wheels on Bogies
+	const wheelRadius = 0.3;
+	const wheelThickness = 0.2;
+	const wheelGeo = new CylinderGeometry(
+		wheelRadius,
+		wheelRadius,
+		wheelThickness,
+		8,
+	);
+	wheelGeo.rotateZ(Math.PI / 2);
+
+	const wheelY = bogieY; // Align with bogie center vertically
+	const wheelXOffset = bogieWidth / 2 + wheelThickness / 2;
+	const wheelZOffset = bogieDepth / 2 - wheelRadius * 1.5;
+
+	const bogieWheelPositions = [
+		{ bogieZ: -bogieOffsetZ, wheelZ: -wheelZOffset },
+		{ bogieZ: -bogieOffsetZ, wheelZ: wheelZOffset },
+		{ bogieZ: bogieOffsetZ, wheelZ: -wheelZOffset },
+		{ bogieZ: bogieOffsetZ, wheelZ: wheelZOffset },
+	];
+
+	for (const bwPos of bogieWheelPositions) {
+		const leftWheel = new Mesh(wheelGeo, bogieMaterial);
+		leftWheel.position.set(wheelXOffset, wheelY, bwPos.bogieZ + bwPos.wheelZ);
+		trainGroup.add(leftWheel);
+		const rightWheel = new Mesh(wheelGeo, bogieMaterial);
+		rightWheel.position.set(-wheelXOffset, wheelY, bwPos.bogieZ + bwPos.wheelZ);
+		trainGroup.add(rightWheel);
+	}
+
+	// --- Lights ---
+	const lightSize = 0.2;
+	const lightGeo = new BoxGeometry(lightSize, lightSize, lightSize);
+
+	// Headlights (Front - negative Z)
+	const headlightY = bodyCenterY - bodyBaseHeight * 0.3; // Lower position relative to body center
+	const headlightX = bodyWidth / 2 - 0.5;
+	const headlightZ = -bodyDepth / 2 - lightSize / 2;
+
+	const headlightL = new Mesh(lightGeo, headlightMaterial);
+	headlightL.position.set(headlightX, headlightY, headlightZ);
+	trainGroup.add(headlightL);
+	const headlightR = new Mesh(lightGeo, headlightMaterial);
+	headlightR.position.set(-headlightX, headlightY, headlightZ);
+	trainGroup.add(headlightR);
+
+	// Taillights (Back - positive Z)
+	const taillightY = bodyCenterY - bodyBaseHeight * 0.3; // Lower position relative to body center
+	const taillightX = bodyWidth / 2 - 0.5;
+	const taillightZ = bodyDepth / 2 + lightSize / 2;
+
+	const taillightL = new Mesh(lightGeo, lightMaterial);
+	taillightL.position.set(taillightX, taillightY, taillightZ);
+	trainGroup.add(taillightL);
+	const taillightR = new Mesh(lightGeo, lightMaterial);
+	taillightR.position.set(-taillightX, taillightY, taillightZ);
+	trainGroup.add(taillightR);
+	trainGroup.scale.set(6, 6, 6);
+	return trainGroup;
+};

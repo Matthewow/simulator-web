@@ -15,6 +15,7 @@ import type { VehicleStatus, SubwayStatus } from "./types";
 import {
 	createBusGroup,
 	createPrivateCatGroup,
+	createSubwayGroup,
 	createTaxiGroup,
 } from "./models";
 
@@ -48,6 +49,8 @@ export const createPLYGroup = (type: string) => {
 		return createBusGroup();
 	} else if (type === "Private Car") {
 		return createPrivateCatGroup();
+	} else if (type === "subway") {
+		return createSubwayGroup();
 	} else {
 		const geometry = DEFAULT_PLY_GEOMETRIES.get(type.toLocaleLowerCase());
 
