@@ -217,11 +217,11 @@ export const createBusGroup = () => {
 		{ x: -wheelXOffset, y: wheelY, z: rearAxleZ }, // Rear left
 	];
 
-	wheelPositions.forEach((pos) => {
+	for (const postion of wheelPositions) {
 		const wheel = new Mesh(wheelGeo, wheelMaterial);
-		wheel.position.set(pos.x, pos.y, pos.z);
+		wheel.position.set(postion.x, postion.y, postion.z);
 		busGroup.add(wheel);
-	});
+	}
 
 	// --- Bumpers ---
 	const bumperHeight = 0.3;
