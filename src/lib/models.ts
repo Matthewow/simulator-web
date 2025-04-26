@@ -1,4 +1,10 @@
-import { BoxGeometry, Group, Mesh, MeshMatcapMaterial } from "three";
+import {
+	BoxGeometry,
+	CylinderGeometry,
+	Group,
+	Mesh,
+	MeshMatcapMaterial,
+} from "three";
 
 const windowMaterial = new MeshMatcapMaterial({
 	color: 0x87ceeb,
@@ -108,4 +114,164 @@ export const createTaxiGroup = () => {
 	taxiGroup.scale.set(8, 8, 8);
 
 	return taxiGroup;
+};
+
+const bumperMaterial = new MeshMatcapMaterial({ color: 0x555555 }); // Dark gray for bumpers
+
+export const createBusGroup = () => {
+	const busGroup = new Group(); // Group to hold all parts of the bus
+
+	// --- Materials ---
+	const bodyMaterial = new MeshMatcapMaterial({ color: 0xdc143c }); // Crimson red for body
+
+	// --- Geometries (Using BoxGeometry for low vertex count) ---
+
+	// Main Bus Body
+	// BoxGeometry(width, height, depth) -> width is along X, depth is along Z
+	const bodyWidth = 2.5;
+	const bodyHeight = 2.2;
+	const bodyDepth = 8.0; // Bus is long along Z
+	const bodyGeo = new BoxGeometry(bodyWidth, bodyHeight, bodyDepth);
+	const body = new Mesh(bodyGeo, bodyMaterial);
+	body.position.y = bodyHeight / 2; // Position it so the bottom is at y=0
+	// ADD BODY FIRST as requested
+	busGroup.add(body);
+
+	// --- Windows ---
+	const windowHeight = 1.0;
+	const windowInset = 0.05; // How much windows are inset from the body surface
+
+	// Front Window (Faces negative Z - the front)
+	const frontWindowGeo = new BoxGeometry(bodyWidth - 0.4, windowHeight, 0.1); // Slightly narrower than body
+	const frontWindow = new Mesh(frontWindowGeo, windowMaterial);
+	// Position at the front face of the body
+	frontWindow.position.set(0, bodyHeight * 0.65, -bodyDepth / 2 - windowInset); // Y position higher up
+	busGroup.add(frontWindow);
+
+	// Back Window (Faces positive Z - the back)
+	const backWindowGeo = new BoxGeometry(bodyWidth - 0.4, windowHeight, 0.1);
+	const backWindow = new Mesh(backWindowGeo, windowMaterial);
+	// Position at the back face of the body
+	backWindow.position.set(0, bodyHeight * 0.65, bodyDepth / 2 + windowInset);
+	busGroup.add(backWindow);
+
+	// Side Windows (Multiple smaller windows along the sides)
+	const sideWindowWidth = 0.1;
+	const numSideWindows = 5;
+	const sideWindowLength = (bodyDepth * 0.8) / numSideWindows; // Leave some space at front/back
+	const sideWindowSpacing = sideWindowLength * 0.15; // Small gap between windows
+	const sideWindowEffectiveLength = sideWindowLength - sideWindowSpacing;
+	const sideWindowStartY = bodyHeight * 0.65; // Match front/back window height center
+	const sideWindowStartZ =
+		-bodyDepth / 2 + sideWindowLength / 2 + bodyDepth * 0.05; // Start near the front
+
+	for (let i = 0; i < numSideWindows; i++) {
+		const sideWindowGeo = new BoxGeometry(
+			sideWindowWidth,
+			windowHeight,
+			sideWindowEffectiveLength,
+		);
+
+		// Left Side (Positive X)
+		const leftWindow = new Mesh(sideWindowGeo, windowMaterial);
+		leftWindow.position.set(
+			bodyWidth / 2 + windowInset,
+			sideWindowStartY,
+			sideWindowStartZ + i * sideWindowLength,
+		);
+		busGroup.add(leftWindow);
+
+		// Right Side (Negative X)
+		const rightWindow = new Mesh(sideWindowGeo, windowMaterial);
+		rightWindow.position.set(
+			-bodyWidth / 2 - windowInset,
+			sideWindowStartY,
+			sideWindowStartZ + i * sideWindowLength,
+		);
+		busGroup.add(rightWindow);
+	}
+
+	// --- Wheels (Using CylinderGeometry for slightly better look, still low-poly) ---
+	// *** MODIFIED: Made wheels smaller ***
+	const wheelRadius = 0.4; // Reduced from 0.6
+	const wheelThickness = 0.3; // Reduced from 0.4
+	// Switched to Cylinder for a rounder look, Box can be used for fewer vertices
+	const wheelGeo = new CylinderGeometry(
+		wheelRadius,
+		wheelRadius,
+		wheelThickness,
+		12,
+	); // RadiusTop, RadiusBottom, Height, RadialSegments
+	wheelGeo.rotateZ(Math.PI / 2); // Rotate cylinder to align with axle
+
+	// *** MODIFIED: Adjusted wheel Y position based on new radius ***
+	const wheelY = wheelRadius; // Position wheels so bottom touches y=0
+	const wheelXOffset = bodyWidth / 2 - wheelThickness / 2 + 0.1; // Position wheels slightly outside the main body width
+	const frontAxleZ = -bodyDepth / 2 + 1.0; // Position front axle near the front
+	const rearAxleZ = bodyDepth / 2 - 1.5; // Position rear axle near the back
+
+	const wheelPositions = [
+		{ x: wheelXOffset, y: wheelY, z: frontAxleZ }, // Front right
+		{ x: -wheelXOffset, y: wheelY, z: frontAxleZ }, // Front left
+		{ x: wheelXOffset, y: wheelY, z: rearAxleZ }, // Rear right
+		{ x: -wheelXOffset, y: wheelY, z: rearAxleZ }, // Rear left
+	];
+
+	wheelPositions.forEach((pos) => {
+		const wheel = new Mesh(wheelGeo, wheelMaterial);
+		wheel.position.set(pos.x, pos.y, pos.z);
+		busGroup.add(wheel);
+	});
+
+	// --- Bumpers ---
+	const bumperHeight = 0.3;
+	const bumperDepth = 0.15;
+	const bumperGeo = new BoxGeometry(bodyWidth + 0.1, bumperHeight, bumperDepth); // Slightly wider than body
+
+	// Front Bumper
+	const frontBumper = new Mesh(bumperGeo, bumperMaterial);
+	frontBumper.position.set(
+		0,
+		bumperHeight / 2,
+		-bodyDepth / 2 - bumperDepth / 2,
+	);
+	busGroup.add(frontBumper);
+
+	// Rear Bumper
+	const rearBumper = new Mesh(bumperGeo, bumperMaterial);
+	rearBumper.position.set(0, bumperHeight / 2, bodyDepth / 2 + bumperDepth / 2);
+	busGroup.add(rearBumper);
+
+	// --- Lights (Small boxes) ---
+	const lightSize = 0.2;
+	const lightGeo = new BoxGeometry(lightSize, lightSize, lightSize);
+
+	// Headlights (Front - negative Z)
+	// *** MODIFIED: Adjusted light Y position slightly due to smaller wheels/lower bumpers ***
+	const headlightY = bumperHeight + lightSize * 0.6; // Lowered slightly
+	const headlightX = bodyWidth / 2 - 0.4;
+	const headlightZ = -bodyDepth / 2 - lightSize / 2;
+
+	const headlightL = new Mesh(lightGeo, lightMaterial);
+	headlightL.position.set(headlightX, headlightY, headlightZ);
+	busGroup.add(headlightL);
+	const headlightR = new Mesh(lightGeo, lightMaterial);
+	headlightR.position.set(-headlightX, headlightY, headlightZ);
+	busGroup.add(headlightR);
+
+	// Taillights (Back - positive Z) - Often red, using same material for simplicity
+	// *** MODIFIED: Adjusted light Y position slightly due to smaller wheels/lower bumpers ***
+	const taillightY = bumperHeight + lightSize * 0.6; // Lowered slightly
+	const taillightX = bodyWidth / 2 - 0.4;
+	const taillightZ = bodyDepth / 2 + lightSize / 2;
+
+	const taillightL = new Mesh(lightGeo, lightMaterial);
+	taillightL.position.set(taillightX, taillightY, taillightZ);
+	busGroup.add(taillightL);
+	const taillightR = new Mesh(lightGeo, lightMaterial);
+	taillightR.position.set(-taillightX, taillightY, taillightZ);
+	busGroup.add(taillightR);
+	busGroup.scale.set(6, 6, 6);
+
+	return busGroup;
 };
