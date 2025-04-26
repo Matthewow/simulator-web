@@ -391,11 +391,11 @@ export const createPrivateCatGroup = () => {
 		{ x: -wheelXOffset, y: wheelY, z: axleOffsetZ }, // Rear left (+Z direction)
 	];
 
-	wheelPositions.forEach((pos) => {
+	for (const postion of wheelPositions) {
 		const wheel = new Mesh(wheelGeo, wheelMaterial);
-		wheel.position.set(pos.x, pos.y, pos.z);
+		wheel.position.set(postion.x, postion.y, postion.z);
 		carGroup.add(wheel);
-	});
+	}
 
 	// --- Lights ---
 	const lightSize = 0.15;
