@@ -275,3 +275,156 @@ export const createBusGroup = () => {
 
 	return busGroup;
 };
+
+const headlightMaterial = new MeshMatcapMaterial({ color: 0xffffff }); // White/Yellowish for headlights
+
+export const createPrivateCatGroup = () => {
+	const carGroup = new Group(); // Group to hold all parts of the car
+
+	// --- Materials ---
+	const bodyMaterial = new MeshMatcapMaterial({ color: 0x0077cc }); // Blue color for car body
+
+	// --- Geometries (Using BoxGeometry for low vertex count) ---
+
+	// Main Car Body (Lower part)
+	// BoxGeometry(width, height, depth) -> width is along X, depth is along Z
+	const bodyWidth = 2.0;
+	const bodyHeight = 0.8;
+	const bodyDepth = 4.5; // Length of the car along Z
+	const lowerBodyGeo = new BoxGeometry(bodyWidth, bodyHeight, bodyDepth);
+	const lowerBody = new Mesh(lowerBodyGeo, bodyMaterial);
+	lowerBody.position.y = bodyHeight / 2; // Position base at y=0
+	// ADD BODY FIRST
+	carGroup.add(lowerBody);
+
+	// Cabin/Roof (Upper part) - Slightly shorter and narrower
+	const cabinWidth = bodyWidth * 0.9;
+	const cabinHeight = 0.7;
+	const cabinDepth = bodyDepth * 0.6; // Cabin is shorter than the base
+	const cabinGeo = new BoxGeometry(cabinWidth, cabinHeight, cabinDepth);
+	const cabin = new Mesh(cabinGeo, bodyMaterial);
+	// Position cabin on top of the lower body, slightly towards the center/rear
+	cabin.position.y = bodyHeight + cabinHeight / 2;
+	cabin.position.z = bodyDepth * 0.1; // Shift cabin slightly back (positive Z)
+	carGroup.add(cabin);
+
+	// --- Windows ---
+	const windowHeight = cabinHeight * 0.7;
+	const windowInset = 0.05; // How much windows are inset
+
+	// Front Windshield (Faces negative Z - the front) - Slanted look approximation
+	const windshieldDepth = 0.1;
+	const windshieldGeo = new BoxGeometry(
+		cabinWidth - 0.2,
+		windowHeight,
+		windshieldDepth,
+	);
+	const windshield = new Mesh(windshieldGeo, windowMaterial);
+	// Position at the front of the cabin
+	const cabinFrontZ = cabin.position.z - cabinDepth / 2;
+	windshield.position.set(0, cabin.position.y, cabinFrontZ - windowInset);
+	// Simple slant approximation by rotating slightly around X
+	// windshield.rotation.x = -Math.PI / 12; // Optional: slight tilt
+	carGroup.add(windshield);
+
+	// Back Window (Faces positive Z - the back)
+	const backWindowGeo = new BoxGeometry(
+		cabinWidth - 0.2,
+		windowHeight,
+		windshieldDepth,
+	);
+	const backWindow = new Mesh(backWindowGeo, windowMaterial);
+	// Position at the back of the cabin
+	const cabinBackZ = cabin.position.z + cabinDepth / 2;
+	backWindow.position.set(0, cabin.position.y, cabinBackZ + windowInset);
+	// Simple slant approximation
+	// backWindow.rotation.x = Math.PI / 16; // Optional: slight tilt
+	carGroup.add(backWindow);
+
+	// Side Windows (Left & Right)
+	const sideWindowWidth = 0.1;
+	const sideWindowLength = cabinDepth * 0.9; // Almost full length of cabin
+	const sideWindowGeo = new BoxGeometry(
+		sideWindowWidth,
+		windowHeight,
+		sideWindowLength,
+	);
+
+	// Left Side (Positive X)
+	const leftWindow = new Mesh(sideWindowGeo, windowMaterial);
+	leftWindow.position.set(
+		cabinWidth / 2 + windowInset,
+		cabin.position.y,
+		cabin.position.z,
+	);
+	carGroup.add(leftWindow);
+
+	// Right Side (Negative X)
+	const rightWindow = new Mesh(sideWindowGeo, windowMaterial);
+	rightWindow.position.set(
+		-cabinWidth / 2 - windowInset,
+		cabin.position.y,
+		cabin.position.z,
+	);
+	carGroup.add(rightWindow);
+
+	// --- Wheels (Using CylinderGeometry) ---
+	const wheelRadius = 0.4;
+	const wheelThickness = 0.25;
+	const wheelGeo = new CylinderGeometry(
+		wheelRadius,
+		wheelRadius,
+		wheelThickness,
+		12,
+	);
+	wheelGeo.rotateZ(Math.PI / 2); // Align with axle
+
+	// *** MODIFIED: Lowered the wheels slightly ***
+	const wheelY = wheelRadius - 0.1; // Position bottom of wheel slightly below y=0
+	const wheelXOffset = bodyWidth / 2 - wheelThickness / 2 + 0.05; // Position wheels slightly outside body
+	const axleOffsetZ = bodyDepth * 0.35; // Distance of axles from center
+
+	const wheelPositions = [
+		{ x: wheelXOffset, y: wheelY, z: -axleOffsetZ }, // Front right (-Z direction)
+		{ x: -wheelXOffset, y: wheelY, z: -axleOffsetZ }, // Front left (-Z direction)
+		{ x: wheelXOffset, y: wheelY, z: axleOffsetZ }, // Rear right (+Z direction)
+		{ x: -wheelXOffset, y: wheelY, z: axleOffsetZ }, // Rear left (+Z direction)
+	];
+
+	wheelPositions.forEach((pos) => {
+		const wheel = new Mesh(wheelGeo, wheelMaterial);
+		wheel.position.set(pos.x, pos.y, pos.z);
+		carGroup.add(wheel);
+	});
+
+	// --- Lights ---
+	const lightSize = 0.15;
+	const lightGeo = new BoxGeometry(lightSize, lightSize * 0.8, lightSize);
+
+	// Headlights (Front - negative Z)
+	const headlightY = bodyHeight * 0.6;
+	const headlightX = bodyWidth / 2 - 0.3;
+	const headlightZ = -bodyDepth / 2 - lightSize / 2;
+
+	const headlightL = new Mesh(lightGeo, headlightMaterial); // Use white material
+	headlightL.position.set(headlightX, headlightY, headlightZ);
+	carGroup.add(headlightL);
+	const headlightR = new Mesh(lightGeo, headlightMaterial); // Use white material
+	headlightR.position.set(-headlightX, headlightY, headlightZ);
+	carGroup.add(headlightR);
+
+	// Taillights (Back - positive Z)
+	const taillightY = bodyHeight * 0.6;
+	const taillightX = bodyWidth / 2 - 0.3;
+	const taillightZ = bodyDepth / 2 + lightSize / 2;
+
+	const taillightL = new Mesh(lightGeo, lightMaterial); // Use red/orange material
+	taillightL.position.set(taillightX, taillightY, taillightZ);
+	carGroup.add(taillightL);
+	const taillightR = new Mesh(lightGeo, lightMaterial); // Use red/orange material
+	taillightR.position.set(-taillightX, taillightY, taillightZ);
+	carGroup.add(taillightR);
+	carGroup.scale.set(8, 8, 8);
+
+	return carGroup;
+};

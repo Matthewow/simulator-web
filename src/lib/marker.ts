@@ -12,7 +12,11 @@ import {
 } from "three";
 import { PLYLoader } from "three/examples/jsm/Addons.js";
 import type { VehicleStatus, SubwayStatus } from "./types";
-import { createBusGroup, createTaxiGroup } from "./models";
+import {
+	createBusGroup,
+	createPrivateCatGroup,
+	createTaxiGroup,
+} from "./models";
 
 const DEFAULT_MATERIAL = new MeshBasicMaterial({ color: 0x000000 });
 
@@ -42,6 +46,8 @@ export const createPLYGroup = (type: string) => {
 		return createTaxiGroup();
 	} else if (type === "Bus") {
 		return createBusGroup();
+	} else if (type === "Private Car") {
+		return createPrivateCatGroup();
 	} else {
 		const geometry = DEFAULT_PLY_GEOMETRIES.get(type.toLocaleLowerCase());
 
