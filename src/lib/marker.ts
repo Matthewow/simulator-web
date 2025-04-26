@@ -8,9 +8,11 @@ import {
 	SRGBColorSpace,
 	type Texture,
 	TextureLoader,
+	Group,
 } from "three";
 import { PLYLoader } from "three/examples/jsm/Addons.js";
 import type { VehicleStatus, SubwayStatus } from "./types";
+import { createTaxiGroup } from "./models";
 
 const DEFAULT_MATERIAL = new MeshBasicMaterial({ color: 0x000000 });
 
@@ -36,17 +38,21 @@ const DEFAULT_PLY_GEOMETRIES = new Map<string, BufferGeometry>();
 let MATCAP_TEXTURE: Texture | null = null;
 
 export const createPLYGroup = (type: string) => {
-	const geometry = DEFAULT_PLY_GEOMETRIES.get(type.toLocaleLowerCase());
+	if (type === "Taxi") {
+		return createTaxiGroup();
+	} else {
+		const geometry = DEFAULT_PLY_GEOMETRIES.get(type.toLocaleLowerCase());
 
-	if (!geometry) {
-		throw new Error("Unsupported types");
+		if (!geometry) {
+			throw new Error("Unsupported types");
+		}
+
+		const material = new MeshMatcapMaterial({
+			// matcap: MATCAP_TEXTURE as Texture,
+		});
+
+		return new Mesh(geometry, material);
 	}
-
-	const material = new MeshMatcapMaterial({
-		// matcap: MATCAP_TEXTURE as Texture,
-	});
-
-	return new Mesh(geometry, material);
 };
 
 export const setGroupMaterialColorByStatus = (
@@ -54,8 +60,13 @@ export const setGroupMaterialColorByStatus = (
 	status: VehicleStatus | SubwayStatus,
 ) => {
 	const rgbStr = MARKER_COLOR_MAP[status];
-
-	((object as Mesh).material as MeshBasicMaterial).color.set(rgbStr);
+	if (object instanceof Mesh) {
+		((object as Mesh).material as MeshBasicMaterial).color.set(rgbStr);
+	} else if (object instanceof Group) {
+		((object.children[0] as Mesh).material as MeshBasicMaterial).color.set(
+			rgbStr,
+		);
+	}
 };
 
 export const prepareTexture = async () => {
