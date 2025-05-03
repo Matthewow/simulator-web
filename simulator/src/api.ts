@@ -1,6 +1,6 @@
 const defaultBaseUrl = "http://localhost:5001";
 
-async function setProject(projectDir: string, baseUrl = defaultBaseUrl) {
+export async function setProject(projectDir: string, baseUrl = defaultBaseUrl) {
 	const response = await fetch(`${baseUrl}/project`, {
 		method: "POST",
 		headers: {
@@ -14,7 +14,7 @@ async function setProject(projectDir: string, baseUrl = defaultBaseUrl) {
 	return response.json();
 }
 
-async function getSimulationStatus(baseUrl = defaultBaseUrl) {
+export async function getSimulationStatus(baseUrl = defaultBaseUrl) {
 	const response = await fetch(`${baseUrl}/simulation/status`, {
 		method: "GET",
 	});
@@ -33,7 +33,7 @@ type ConfigParams = {
 	"simulation.privateCarsSamplePercentage": 500000;
 };
 
-async function setConfig(params: ConfigParams, baseUrl = defaultBaseUrl) {
+export async function setConfig(params: ConfigParams, baseUrl = defaultBaseUrl) {
 	const response = await fetch(`${baseUrl}/config`, {
 		method: "POST",
 		headers: {
@@ -47,7 +47,7 @@ async function setConfig(params: ConfigParams, baseUrl = defaultBaseUrl) {
 	return response.json();
 }
 
-async function startSimulation(baseUrl = defaultBaseUrl) {
+export async function startSimulation(baseUrl = defaultBaseUrl) {
 	const response = await fetch(`${baseUrl}/simulation/start`, {
 		method: "POST",
 	});
@@ -57,7 +57,7 @@ async function startSimulation(baseUrl = defaultBaseUrl) {
 	return response.json();
 }
 
-async function stopSimulation(baseUrl = defaultBaseUrl) {
+export async function stopSimulation(baseUrl = defaultBaseUrl) {
 	const response = await fetch(`${baseUrl}/simulation/stop`, {
 		method: "POST",
 	});
@@ -67,7 +67,7 @@ async function stopSimulation(baseUrl = defaultBaseUrl) {
 	return response.json();
 }
 
-async function getSimulationStatistics(baseUrl = defaultBaseUrl) {
+export async function getSimulationStatistics(baseUrl = defaultBaseUrl) {
 	const response = await fetch(`${baseUrl}/simulation/statistics`, {
 		method: "GET",
 	});

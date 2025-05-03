@@ -1,11 +1,20 @@
 import { Button, Input, Label, Text } from "@fluentui/react-components";
 import { useContext, useState } from "react";
+
 import { DialogContext } from "../context";
 import Title from "./title";
+import { setProject } from "@/api";
 
 const ProjectName = () => {
 	const { setDialog } = useContext(DialogContext);
 	const [projectName, setProjectName] = useState<string>("");
+
+	const handleOnClick = async () => {
+		setDialog("loading");
+		const res = await setProject(projectName);
+		console.log(res);
+		setDialog("notification");
+	};
 
 	return (
 		<div className="flex-1 flex flex-col">
@@ -32,12 +41,7 @@ const ProjectName = () => {
 				</div>
 				<Button
 					className="w-[12rem]"
-					onClick={() => {
-						setDialog("loading");
-						setTimeout(() => {
-							setDialog("notification");
-						}, 1500);
-					}}
+					onClick={handleOnClick}
 					disabled={!projectName && projectName.length === 0}
 				>
 					Continue
