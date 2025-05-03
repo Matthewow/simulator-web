@@ -19,3 +19,4 @@ env/*
 dataset/*
 
 .vercel
+simulator/env/secret.local.json

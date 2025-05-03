@@ -3,7 +3,7 @@ import { FluentProvider, webDarkTheme } from "@fluentui/react-components";
 
 import "uno.css";
 
-import App from "./App";
+import App from "./app";
 
 const rootEl = document.getElementById("root");
 

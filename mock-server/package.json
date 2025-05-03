@@ -1,0 +1,17 @@
+{
+	"name": "mock-server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"mock": "node main.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.9.0",
+	"dependencies": {
+		"body-parser": "^2.2.0",
+		"express": "^5.1.0"
+	}
+}

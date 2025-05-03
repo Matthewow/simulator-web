@@ -1,0 +1,9 @@
+packages:
+  - simulator
+  - mock-server
+
+onlyBuiltDependencies:
+  - '@biomejs/biome'
+  - core-js
+  - electron
+  - esbuild
