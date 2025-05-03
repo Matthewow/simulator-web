@@ -1,7 +1,6 @@
 const path = require("node:path");
 const { app, BrowserWindow, ipcMain } = require("electron");
 
-const setupCSP = require("./csp");
 const IPCController = require("./ipc");
 
 const createWindow = () => {
@@ -26,5 +25,4 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
 	createWindow();
-	setupCSP();
 });
