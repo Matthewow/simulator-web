@@ -3,11 +3,44 @@ import Title from "./title";
 import { useAppstore } from "@/store";
 import { useContext } from "react";
 import { DialogContext } from "../context";
+import {
+	getSimulationStatistics,
+	getSimulationStatus,
+	setConfig,
+	startSimulation,
+} from "@/api";
 
 const ProjectConfig = () => {
 	const setPage = useAppstore((state) => state.setPage);
 
 	const { setDialog } = useContext(DialogContext);
+
+	const onClick = async () => {
+		setDialog("loading");
+		await setConfig({
+			"simulation.tInitial": 0,
+			"simulation.tEnd": 100,
+			"simulation.simulateIterations": 100,
+			"simulation.taxiDriverSamplePercentage": 0.1,
+			"simulation.taxiOrderSamplePercentage": 0,
+			"simulation.privateCarsSamplePercentage": 500000,
+		});
+		await startSimulation();
+
+		let status = "RUNNING";
+		while (status === "RUNNING") {
+			const res = await getSimulationStatus();
+			status = res.status;
+			if (status !== "RUNNING") {
+				break;
+			}
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+		}
+
+		const data = await getSimulationStatistics();
+
+		setPage("traffic");
+	};
 	return (
 		<div className="flex-1 flex flex-col">
 			<Title />
@@ -41,15 +74,7 @@ const ProjectConfig = () => {
 						<Input size="small" />
 					</div>
 				</div>
-				<Button
-					className="w-[12rem]"
-					onClick={() => {
-						setDialog("loading");
-						setTimeout(() => {
-							setPage("traffic");
-						}, 1500);
-					}}
-				>
+				<Button className="w-[12rem]" onClick={onClick}>
 					Continue
 				</Button>
 			</div>
