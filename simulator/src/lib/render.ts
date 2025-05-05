@@ -75,7 +75,6 @@ export const initVehicleSampleLayer = async () => {
 	const renderer = new WebGLRenderer({
 		canvas,
 		alpha: true,
-		antialias: true,
 	});
 	renderer.setSize(width, height, false);
 
