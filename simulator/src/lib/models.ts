@@ -75,9 +75,9 @@ export const createTaxiGroup = () => {
 		{ x: -1, y: 0.4, z: 1.5 }, // Back left (-X, +Z) - New Back
 	];
 
-	for (const postion of wheelPositions) {
+	for (const position of wheelPositions) {
 		const wheel = new Mesh(wheelGeo, wheelMaterial);
-		wheel.position.set(postion.x, postion.y, postion.z);
+		wheel.position.set(position.x, position.y, position.z);
 		taxiGroup.add(wheel);
 	}
 
@@ -217,9 +217,9 @@ export const createBusGroup = () => {
 		{ x: -wheelXOffset, y: wheelY, z: rearAxleZ }, // Rear left
 	];
 
-	for (const postion of wheelPositions) {
+	for (const position of wheelPositions) {
 		const wheel = new Mesh(wheelGeo, wheelMaterial);
-		wheel.position.set(postion.x, postion.y, postion.z);
+		wheel.position.set(position.x, position.y, position.z);
 		busGroup.add(wheel);
 	}
 
@@ -391,9 +391,9 @@ export const createPrivateCatGroup = () => {
 		{ x: -wheelXOffset, y: wheelY, z: axleOffsetZ }, // Rear left (+Z direction)
 	];
 
-	for (const postion of wheelPositions) {
+	for (const position of wheelPositions) {
 		const wheel = new Mesh(wheelGeo, wheelMaterial);
-		wheel.position.set(postion.x, postion.y, postion.z);
+		wheel.position.set(position.x, position.y, position.z);
 		carGroup.add(wheel);
 	}
 

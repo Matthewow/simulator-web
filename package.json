@@ -8,6 +8,9 @@
 		"run-app-shell": "cd ./simulator && pnpm run start",
 		"run-server": "cd ./mock-server && pnpm run mock"
 	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4"
+	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",

@@ -2,13 +2,26 @@ import { ThreeJSOverlayView } from "@googlemaps/three";
 import { Loader } from "@googlemaps/js-api-loader";
 
 import SECRET from "@/assets/secret.json";
-import { Scene } from "three";
+import {
+	type Group,
+	type Object3DEventMap,
+	OrthographicCamera,
+	Scene,
+	WebGLRenderer,
+} from "three";
 import type { Dataset } from "./dataset";
 import TimelineTimer from "./timer";
 import { listenNamedEvent } from "./event";
 import type { PlayStatus } from "@/store";
 import { calcRailwayLayer } from "./railway";
 import ViewLayer from "./view_layer";
+import {
+	createBusGroup,
+	createPrivateCatGroup,
+	createSubwayGroup,
+	createTaxiGroup,
+} from "./models";
+import { MARKER_COLOR_MAP, setGroupMaterialColorByStatus } from "./marker";
 
 const MAP_CONFIG = {
 	center: {
@@ -52,6 +65,144 @@ export const initGoogleMap = async () => {
 	});
 
 	mapOverlay = overlay;
+};
+
+export const initVehicleSampleLayer = async () => {
+	const canvas = document.getElementById("ui") as HTMLCanvasElement;
+	const width = canvas.clientWidth;
+	const height = canvas.clientHeight;
+
+	const renderer = new WebGLRenderer({
+		canvas,
+		alpha: true,
+		antialias: true,
+	});
+	renderer.setSize(width, height, false);
+
+	renderer.autoClear = false;
+
+	const scene = new Scene();
+	const camera = new OrthographicCamera(
+		-width / 2,
+		width / 2,
+		height / 2,
+		-height / 2,
+		-1000,
+		1000,
+	);
+	camera.position.z = 10;
+	camera.lookAt(0, 0, 0);
+
+	const taxis: Group<Object3DEventMap>[] = [];
+	const buses: Group<Object3DEventMap>[] = [];
+	const privateCars: Group<Object3DEventMap>[] = [];
+	const subways: Group<Object3DEventMap>[] = [];
+
+	// biome-ignore lint/complexity/noForEach: <explanation>
+	Object.keys(MARKER_COLOR_MAP).forEach((name) => {
+		const taxi = createTaxiGroup();
+		taxi.name = name;
+		setGroupMaterialColorByStatus(taxi, name as never);
+		scene.add(taxi);
+		taxis.push(taxi);
+
+		const bus = createBusGroup();
+		bus.name = name;
+		setGroupMaterialColorByStatus(bus, name as never);
+		scene.add(bus);
+		buses.push(bus);
+
+		const privateCar = createPrivateCatGroup();
+		privateCar.name = name;
+		setGroupMaterialColorByStatus(privateCar, name as never);
+		scene.add(privateCar);
+		privateCars.push(privateCar);
+
+		const subway = createSubwayGroup();
+		subway.name = name;
+		setGroupMaterialColorByStatus(subway, name as never);
+		scene.add(subway);
+		subways.push(subway);
+	});
+
+	const lineHeight = 25;
+	const lineStart = 36;
+	const updateSamplesPosition = (width: number, height: number) => {
+		subways.forEach((subway, index) => {
+			subway.position.set(
+				width / 2 - index * 100 - 45,
+				height / 2 - lineHeight - lineStart,
+				0,
+			);
+		});
+
+		buses.forEach((bus, index) => {
+			bus.position.set(
+				width / 2 - index * 60 - 45,
+				height / 2 - 2 * lineHeight - lineStart,
+				0,
+			);
+		});
+
+		taxis.forEach((taxi, index) => {
+			taxi.position.set(
+				width / 2 - (index + 1) * 45,
+				height / 2 - 3 * lineHeight - lineStart,
+				0,
+			);
+		});
+
+		privateCars.forEach((privateCar, index) => {
+			privateCar.position.set(
+				width / 2 - index * 50 - 45,
+				height / 2 - 4 * lineHeight - lineStart,
+				0,
+			);
+		});
+	};
+
+	updateSamplesPosition(width, height);
+
+	const rotateSamples = (time: number) => {
+		const speed = 0.5;
+		for (const taxi of taxis) {
+			taxi.rotation.y = (time * speed) % (Math.PI * 2);
+		}
+		for (const bus of buses) {
+			bus.rotation.y = (time * speed) % (Math.PI * 2);
+		}
+		for (const privateCar of privateCars) {
+			privateCar.rotation.y = (time * speed) % (Math.PI * 2);
+		}
+		for (const subway of subways) {
+			subway.rotation.y = (time * speed) % (Math.PI * 2);
+		}
+	};
+
+	window.addEventListener("resize", () => {
+		const width = canvas.clientWidth;
+		const height = canvas.clientHeight;
+
+		renderer.setSize(width, height, false);
+
+		updateSamplesPosition(width, height);
+
+		camera.left = -width / 2;
+		camera.right = width / 2;
+		camera.top = height / 2;
+		camera.bottom = -height / 2;
+		camera.updateProjectionMatrix();
+	});
+
+	function animate() {
+		requestAnimationFrame(animate);
+
+		rotateSamples(timer.getElapsedTime());
+
+		renderer.render(scene, camera);
+	}
+
+	animate();
 };
 
 listenNamedEvent("render_dataset", (e) => {
