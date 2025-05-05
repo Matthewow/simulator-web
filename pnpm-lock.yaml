@@ -43,6 +43,9 @@ importers:
       '@types/geojson':
         specifier: ^7946.0.16
         version: 7946.0.16
+      electron:
+        specifier: ^36.1.0
+        version: 36.1.0
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -80,9 +83,6 @@ importers:
       '@unocss/webpack':
         specifier: 66.1.0-beta.11
         version: 66.1.0-beta.11(webpack@5.99.7)
-      electron:
-        specifier: ^35.1.5
-        version: 35.2.2
       gulp:
         specifier: ^5.0.0
         version: 5.0.0
@@ -2034,8 +2034,8 @@ packages:
   electron-to-chromium@1.5.149:
     resolution: {integrity: sha512-UyiO82eb9dVOx8YO3ajDf9jz2kKyt98DEITRdeLPstOEuTlLzDA4Gyq5K9he71TQziU5jUVu2OAu5N48HmQiyQ==}
 
-  electron@35.2.2:
-    resolution: {integrity: sha512-jZnCOtIgrt28esWP5z/PKndj/vPQ/Zt+cvNRlb/qOGnK/AjW1mASwPMtQ099NlSodf69RR3JrhnZCYbTWeDR4g==}
+  electron@36.1.0:
+    resolution: {integrity: sha512-gnp3BnbKdGsVc7cm1qlEaZc8pJsR08mIs8H/yTo8gHEtFkGGJbDTVZOYNAfbQlL0aXh+ozv+CnyiNeDNkT1Upg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -6686,7 +6686,7 @@ snapshots:
 
   electron-to-chromium@1.5.149: {}
 
-  electron@35.2.2:
+  electron@36.1.0:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 22.15.3
