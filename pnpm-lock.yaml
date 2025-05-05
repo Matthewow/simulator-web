@@ -44,8 +44,8 @@ importers:
         specifier: ^7946.0.16
         version: 7946.0.16
       electron:
-        specifier: ^36.1.0
-        version: 36.1.0
+        specifier: 35.1.5
+        version: 35.1.5
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -2034,8 +2034,8 @@ packages:
   electron-to-chromium@1.5.149:
     resolution: {integrity: sha512-UyiO82eb9dVOx8YO3ajDf9jz2kKyt98DEITRdeLPstOEuTlLzDA4Gyq5K9he71TQziU5jUVu2OAu5N48HmQiyQ==}
 
-  electron@36.1.0:
-    resolution: {integrity: sha512-gnp3BnbKdGsVc7cm1qlEaZc8pJsR08mIs8H/yTo8gHEtFkGGJbDTVZOYNAfbQlL0aXh+ozv+CnyiNeDNkT1Upg==}
+  electron@35.1.5:
+    resolution: {integrity: sha512-LolvbKKQUSCGvEwbEQNt1cxD1t+YYClDNwBIjn4d28KM8FSqUn9zJuf6AbqNA7tVs9OFl/EQpmg/m4lZV1hH8g==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -6686,7 +6686,7 @@ snapshots:
 
   electron-to-chromium@1.5.149: {}
 
-  electron@36.1.0:
+  electron@35.1.5:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 22.15.3
