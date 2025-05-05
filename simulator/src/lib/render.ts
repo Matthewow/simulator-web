@@ -102,24 +102,32 @@ export const initVehicleSampleLayer = async () => {
 	Object.keys(MARKER_COLOR_MAP).forEach((name) => {
 		const taxi = createTaxiGroup();
 		taxi.name = name;
+		taxi.rotateX(Math.PI / 4);
+		taxi.rotateY(Math.PI / 2);
 		setGroupMaterialColorByStatus(taxi, name as never);
 		scene.add(taxi);
 		taxis.push(taxi);
 
 		const bus = createBusGroup();
 		bus.name = name;
+		bus.rotateX(Math.PI / 4);
+		bus.rotateY(Math.PI / 2);
 		setGroupMaterialColorByStatus(bus, name as never);
 		scene.add(bus);
 		buses.push(bus);
 
 		const privateCar = createPrivateCatGroup();
 		privateCar.name = name;
+		privateCar.rotateX(Math.PI / 4);
+		privateCar.rotateY(Math.PI / 2);
 		setGroupMaterialColorByStatus(privateCar, name as never);
 		scene.add(privateCar);
 		privateCars.push(privateCar);
 
 		const subway = createSubwayGroup();
 		subway.name = name;
+		subway.rotateX(Math.PI / 4);
+		subway.rotateY(Math.PI / 2);
 		setGroupMaterialColorByStatus(subway, name as never);
 		scene.add(subway);
 		subways.push(subway);
@@ -163,22 +171,6 @@ export const initVehicleSampleLayer = async () => {
 
 	updateSamplesPosition(width, height);
 
-	const rotateSamples = (time: number) => {
-		const speed = 0.5;
-		for (const taxi of taxis) {
-			taxi.rotation.y = (time * speed) % (Math.PI * 2);
-		}
-		for (const bus of buses) {
-			bus.rotation.y = (time * speed) % (Math.PI * 2);
-		}
-		for (const privateCar of privateCars) {
-			privateCar.rotation.y = (time * speed) % (Math.PI * 2);
-		}
-		for (const subway of subways) {
-			subway.rotation.y = (time * speed) % (Math.PI * 2);
-		}
-	};
-
 	window.addEventListener("resize", () => {
 		const width = canvas.clientWidth;
 		const height = canvas.clientHeight;
@@ -196,8 +188,6 @@ export const initVehicleSampleLayer = async () => {
 
 	function animate() {
 		requestAnimationFrame(animate);
-
-		rotateSamples(timer.getElapsedTime());
 
 		renderer.render(scene, camera);
 	}
