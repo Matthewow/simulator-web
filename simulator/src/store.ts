@@ -16,6 +16,11 @@ type AppState = {
 
 	page: string;
 	setPage: (page: string) => void;
+
+	statistic: Record<string, Record<string, Record<string, number>>>;
+	setStatistic: (
+		statistic: Record<string, Record<string, Record<string, number>>>,
+	) => void;
 };
 
 export const useAppstore = create<AppState>()((set) => ({
@@ -33,8 +38,11 @@ export const useAppstore = create<AppState>()((set) => ({
 		set({ playStatus });
 	},
 
-	page: "welcome",
+	page: "traffic",
 	setPage: (page) => {
 		set({ page });
 	},
+
+	statistic: {},
+	setStatistic: (statistic) => set({ statistic }),
 }));

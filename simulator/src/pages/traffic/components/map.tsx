@@ -4,18 +4,25 @@ import { initGoogleMap, initVehicleSampleLayer } from "@/lib/render";
 import { MARKER_COLOR_MAP, preparePLYs, prepareTexture } from "@/lib/marker";
 import { loadDataSet } from "@/lib/dataset";
 import { useAppstore } from "@/store";
+import loadStatistic from "@/lib/statistic";
 
 const MapProvider = () => {
-	const { setDataStatus, setDataset } = useAppstore((state) => state);
+	const { setDataStatus, setDataset, setStatistic } = useAppstore(
+		(state) => state,
+	);
 	useEffect(() => {
 		(async () => {
 			setDataStatus("Loading");
 			await Promise.all([initGoogleMap(), preparePLYs(), prepareTexture()]);
 			initVehicleSampleLayer();
+
+			const statistic = await loadStatistic();
+			setStatistic(statistic);
+
 			const dataset = await loadDataSet();
 			setDataset(dataset);
 		})();
-	}, [setDataStatus, setDataset]);
+	}, [setDataStatus, setDataset, setStatistic]);
 
 	return (
 		<>
