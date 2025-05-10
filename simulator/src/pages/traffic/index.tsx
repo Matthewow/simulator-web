@@ -14,7 +14,7 @@ const TrafficPage = () => {
 				<TopBar />
 			</div>
 			<div className="flex-1 min-h-0 relative flex-row flex">
-				<div className="flex-basis-[36rem] flex-grow-0 flex-shrink-0 border-solid border border-black py-[2rem] flex flex-col">
+				<div className="flex-basis-[42rem] flex-grow-0 flex-shrink-0 border-solid border border-black py-[2rem] flex flex-col">
 					{Object.entries(statistic).map(([key, value]) => {
 						return (
 							<div
