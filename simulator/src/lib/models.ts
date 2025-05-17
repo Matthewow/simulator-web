@@ -3,22 +3,22 @@ import {
 	CylinderGeometry,
 	Group,
 	Mesh,
-	MeshMatcapMaterial,
+	MeshBasicMaterial,
 } from "three";
 
-const windowMaterial = new MeshMatcapMaterial({
+const windowMaterial = new MeshBasicMaterial({
 	color: 0x87ceeb,
 	transparent: true,
 	opacity: 0.7,
 }); // Light blue for windows
-const wheelMaterial = new MeshMatcapMaterial({ color: 0x333333 }); // Dark gray for wheels
-const lightMaterial = new MeshMatcapMaterial({ color: 0xff4500 }); // Orange/Red for lights
-const signMaterial = new MeshMatcapMaterial({ color: 0xffffff }); // White for sign base
+const wheelMaterial = new MeshBasicMaterial({ color: 0x333333 }); // Dark gray for wheels
+const lightMaterial = new MeshBasicMaterial({ color: 0xff4500 }); // Orange/Red for lights
+const signMaterial = new MeshBasicMaterial({ color: 0xffffff }); // White for sign base
 
 export const createTaxiGroup = () => {
 	const taxiGroup = new Group(); // Group to hold all parts of the taxi
 
-	const bodyMaterial = new MeshMatcapMaterial({ color: 0xffd700 }); // Yellow for body
+	const bodyMaterial = new MeshBasicMaterial({ color: 0xffd700 }); // Yellow for body
 
 	// --- Geometries (Dimensions remain same, positions adjusted for -Z orientation) ---
 
@@ -116,13 +116,13 @@ export const createTaxiGroup = () => {
 	return taxiGroup;
 };
 
-const bumperMaterial = new MeshMatcapMaterial({ color: 0x555555 }); // Dark gray for bumpers
+const bumperMaterial = new MeshBasicMaterial({ color: 0x555555 }); // Dark gray for bumpers
 
 export const createBusGroup = () => {
 	const busGroup = new Group(); // Group to hold all parts of the bus
 
 	// --- Materials ---
-	const bodyMaterial = new MeshMatcapMaterial({ color: 0xdc143c }); // Crimson red for body
+	const bodyMaterial = new MeshBasicMaterial({ color: 0xdc143c }); // Crimson red for body
 
 	// --- Geometries (Using BoxGeometry for low vertex count) ---
 
@@ -276,13 +276,13 @@ export const createBusGroup = () => {
 	return busGroup;
 };
 
-const headlightMaterial = new MeshMatcapMaterial({ color: 0xffffff }); // White/Yellowish for headlights
+const headlightMaterial = new MeshBasicMaterial({ color: 0xffffff }); // White/Yellowish for headlights
 
 export const createPrivateCatGroup = () => {
 	const carGroup = new Group(); // Group to hold all parts of the car
 
 	// --- Materials ---
-	const bodyMaterial = new MeshMatcapMaterial({ color: 0x0077cc }); // Blue color for car body
+	const bodyMaterial = new MeshBasicMaterial({ color: 0x0077cc }); // Blue color for car body
 
 	// --- Geometries (Using BoxGeometry for low vertex count) ---
 
@@ -429,16 +429,16 @@ export const createPrivateCatGroup = () => {
 	return carGroup;
 };
 
-const bogieMaterial = new MeshMatcapMaterial({ color: 0x333333 }); // Dark gray for bogies/wheels
-const doorMaterial = new MeshMatcapMaterial({ color: 0xaaaaaa }); // Slightly different gray for doors
+const bogieMaterial = new MeshBasicMaterial({ color: 0x333333 }); // Dark gray for bogies/wheels
+const doorMaterial = new MeshBasicMaterial({ color: 0xaaaaaa }); // Slightly different gray for doors
 
-const roofMaterial = new MeshMatcapMaterial({ color: 0xaaaaaa }); // Slightly darker roof (kept in case needed elsewhere)
+const roofMaterial = new MeshBasicMaterial({ color: 0xaaaaaa }); // Slightly darker roof (kept in case needed elsewhere)
 
 export const createSubwayGroup = () => {
 	const trainGroup = new Group(); // Group to hold all parts of the train car
 
 	// --- Materials ---
-	const bodyMaterial = new MeshMatcapMaterial({
+	const bodyMaterial = new MeshBasicMaterial({
 		color: 0xc0c0c0,
 	}); // Silver/Gray body with slight metallic look
 
