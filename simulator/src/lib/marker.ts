@@ -9,6 +9,8 @@ import {
 	type Texture,
 	TextureLoader,
 	Group,
+	Plane,
+	PlaneGeometry,
 } from "three";
 import { PLYLoader } from "three/examples/jsm/Addons.js";
 import type { VehicleStatus, SubwayStatus } from "./types";
@@ -19,13 +21,50 @@ import {
 	createTaxiGroup,
 } from "./models";
 
-const DEFAULT_MATERIAL = new MeshBasicMaterial({ color: 0x000000 });
+const DEFAULT_MATERIAL = new MeshBasicMaterial({ color: 0xee0000 });
 
 export const createCircleMesh = () => {
-	const markerMesh = new Mesh(new CircleGeometry(20, 32), DEFAULT_MATERIAL);
-	markerMesh.rotation.x = -Math.PI / 2;
+	const downwardsCircle = new Group();
+	const downwardsLCircle = new Mesh(
+		new CircleGeometry(10, 32, 0, Math.PI),
+		new MeshBasicMaterial({
+			color: 0xffffff,
+		}),
+	);
+	//upwardsLCircle.position.y = 10;
+	const downwardsSCircle = new Mesh(
+		new CircleGeometry(6, 32, 0, Math.PI),
+		DEFAULT_MATERIAL,
+	);
+	//upwardsSCircle.position.y = 10;
+	downwardsSCircle.position.z = 0.003;
+	downwardsCircle.add(downwardsLCircle);
+	downwardsCircle.add(downwardsSCircle);
+	downwardsCircle.position.z = 0.003;
+	downwardsCircle.position.y = -11;
 
-	return markerMesh;
+	const upwardsCircle = downwardsCircle.clone();
+	upwardsCircle.rotation.z = Math.PI;
+	upwardsCircle.position.y = 11;
+
+	const plane = new Mesh(
+		new PlaneGeometry(4, 22),
+		new MeshBasicMaterial({
+			color: 0xffffff,
+		}),
+	);
+	plane.position.z = 0.008;
+
+	const group = new Group();
+	const markerMesh = new Mesh(new CircleGeometry(18, 32), DEFAULT_MATERIAL);
+	markerMesh.position.z = 0.002;
+	group.add(markerMesh);
+	group.add(downwardsCircle);
+	group.add(upwardsCircle);
+	group.add(plane);
+	group.rotation.x = -Math.PI / 2;
+
+	return group;
 };
 
 export const MARKER_COLOR_MAP = {
