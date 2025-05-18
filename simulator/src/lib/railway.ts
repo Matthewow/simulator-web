@@ -44,6 +44,7 @@ export const calcRailwayLayer = (overlay: ThreeJSOverlayView) => {
 		const glLocation = overlay.latLngAltitudeToVector3(geoLocation);
 		const mesh = createCircleMesh();
 		mesh.position.copy(glLocation);
+		mesh.position.y = 1;
 		ViewLayer.instance.stations.add(mesh);
 	}
 
@@ -59,6 +60,7 @@ export const calcRailwayLayer = (overlay: ThreeJSOverlayView) => {
 
 		const material = new LineMaterial({ color: 0x888888, linewidth: 4 });
 		const lineMesh = new Line2(geometry, material);
+
 		ViewLayer.instance.paths.add(lineMesh);
 	}
 };

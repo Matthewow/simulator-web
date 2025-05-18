@@ -74,8 +74,8 @@ export const MARKER_COLOR_MAP = {
 	RUNNING: "#559955",
 	PICKUP: "#ffff55",
 } as {
-	[key in VehicleStatus | SubwayStatus]: string;
-};
+		[key in VehicleStatus | SubwayStatus]: string;
+	};
 
 const SVG_NAMES = ["subway", "private car", "taxi", "bus"];
 const DEFAULT_PLY_GEOMETRIES = new Map<string, BufferGeometry>();
