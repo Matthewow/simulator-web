@@ -20,3 +20,5 @@ dataset/*
 
 .vercel
 simulator/env/secret.local.json
+
+mock-server/static/
