@@ -33,10 +33,7 @@ const Notification = () => {
 				<Button
 					className="w-[12rem]"
 					onClick={() => {
-						setDialog("loading");
-						setTimeout(() => {
-							setDialog("project-config");
-						}, 1500);
+						setDialog("project-config");
 					}}
 				>
 					Continue

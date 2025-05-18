@@ -11,8 +11,7 @@ const ProjectName = () => {
 
 	const handleOnClick = async () => {
 		setDialog("loading");
-		const res = await setProject(projectName);
-		console.log(res);
+		await setProject(projectName);
 		setDialog("notification");
 	};
 

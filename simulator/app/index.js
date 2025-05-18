@@ -8,6 +8,7 @@ const createWindow = () => {
 		show: false,
 		autoHideMenuBar: true,
 		webPreferences: {
+			webSecurity: false,
 			preload: path.join(__dirname, "preload.js"),
 		},
 	});

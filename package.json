@@ -6,7 +6,7 @@
 	"scripts": {
 		"run-ui": "cd ./simulator && pnpm run dev",
 		"run-app-shell": "cd ./simulator && pnpm run start",
-		"run-server": "cd ./mock-server/static && java -jar ./CoreModule-1.0.0-release.jar"
+		"run-server": "cd ./mock-server/static && java -jar ./CoreModule-1.0.1-release.jar"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4"

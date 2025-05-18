@@ -38,7 +38,7 @@ export const useAppstore = create<AppState>()((set) => ({
 		set({ playStatus });
 	},
 
-	page: "traffic",
+	page: "welcome",
 	setPage: (page) => {
 		set({ page });
 	},

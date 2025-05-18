@@ -1,7 +1,7 @@
 import { Input, Label, Button } from "@fluentui/react-components";
 import Title from "./title";
 import { useAppstore } from "@/store";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DialogContext } from "../context";
 import {
 	getSimulationStatistics,
@@ -15,15 +15,16 @@ const ProjectConfig = () => {
 
 	const { setDialog } = useContext(DialogContext);
 
+	const [inputs, setInputs] = useState({
+		tInitial: 21600,
+		tEnd: 25200,
+	});
+
 	const onClick = async () => {
 		setDialog("loading");
 		await setConfig({
-			"simulation.tInitial": 0,
-			"simulation.tEnd": 100,
-			"simulation.simulateIterations": 100,
-			"simulation.taxiDriverSamplePercentage": 0.1,
-			"simulation.taxiOrderSamplePercentage": 0,
-			"simulation.privateCarsSamplePercentage": 500000,
+			"simulation.tInitial": inputs.tInitial,
+			"simulation.tEnd": inputs.tEnd,
 		});
 		await startSimulation();
 
@@ -37,8 +38,6 @@ const ProjectConfig = () => {
 			await new Promise((resolve) => setTimeout(resolve, 1000));
 		}
 
-		const data = await getSimulationStatistics();
-
 		setPage("traffic");
 	};
 	return (
@@ -48,12 +47,44 @@ const ProjectConfig = () => {
 			<div className="flex flex-1 flex-col  justify-between items-center">
 				<div className="flex flex-col flex-1 min-w-[28rem] justify-center my-4 gap-y-2">
 					<div className="flex flex-row justify-between w-full">
-						<Label weight="semibold">tInitial</Label> <Input size="small" />
+						<Label weight="semibold">tInitial</Label>
+						<Input
+							size="small"
+							value={inputs.tInitial.toString()}
+							type="number"
+							onChange={(e) => {
+								const number = Number.parseInt(e.target.value);
+								if (Number.isNaN(number)) {
+									return;
+								}
+
+								setInputs({
+									...inputs,
+									tInitial: number,
+								});
+							}}
+						/>
 					</div>
 					<div className="flex flex-row justify-between w-full">
-						<Label weight="semibold">tEnd</Label> <Input size="small" />
+						<Label weight="semibold">tEnd</Label>
+						<Input
+							size="small"
+							value={inputs.tEnd.toString()}
+							type="number"
+							onChange={(e) => {
+								const number = Number.parseInt(e.target.value);
+								if (Number.isNaN(number)) {
+									return;
+								}
+
+								setInputs({
+									...inputs,
+									tEnd: number,
+								});
+							}}
+						/>
 					</div>
-					<div className="flex flex-row justify-between w-full">
+					{/* <div className="flex flex-row justify-between w-full">
 						<Label weight="semibold">simulateIterations</Label>{" "}
 						<Input size="small" />
 					</div>
@@ -72,7 +103,7 @@ const ProjectConfig = () => {
 					<div className="flex flex-row justify-between w-full">
 						<Label weight="semibold">multimodal.transit</Label>{" "}
 						<Input size="small" />
-					</div>
+					</div> */}
 				</div>
 				<Button className="w-[12rem]" onClick={onClick}>
 					Continue

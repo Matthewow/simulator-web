@@ -1,4 +1,4 @@
-const defaultBaseUrl = "http://localhost:5001";
+const defaultBaseUrl = "http://localhost:8080";
 
 export async function setProject(projectDir: string, baseUrl = defaultBaseUrl) {
 	const response = await fetch(`${baseUrl}/project`, {
@@ -11,7 +11,7 @@ export async function setProject(projectDir: string, baseUrl = defaultBaseUrl) {
 	if (!response.ok) {
 		console.error("Failed to set project:", response.status);
 	}
-	return response.json();
+
 }
 
 export async function getSimulationStatus(baseUrl = defaultBaseUrl) {
@@ -25,12 +25,12 @@ export async function getSimulationStatus(baseUrl = defaultBaseUrl) {
 }
 
 type ConfigParams = {
-	"simulation.tInitial": number;
-	"simulation.tEnd": number;
-	"simulation.simulateIterations": number;
-	"simulation.taxiDriverSamplePercentage": number;
-	"simulation.taxiOrderSamplePercentage": 0;
-	"simulation.privateCarsSamplePercentage": 500000;
+	"simulation.tInitial"?: number;
+	"simulation.tEnd"?: number;
+	"simulation.simulateIterations"?: number;
+	"simulation.taxiDriverSamplePercentage"?: number;
+	"simulation.taxiOrderSamplePercentage"?: 0;
+	"simulation.privateCarsSamplePercentage"?: 500000;
 };
 
 export async function setConfig(params: ConfigParams, baseUrl = defaultBaseUrl) {
@@ -44,7 +44,6 @@ export async function setConfig(params: ConfigParams, baseUrl = defaultBaseUrl) 
 	if (!response.ok) {
 		console.error("Failed to set config:", response.status);
 	}
-	return response.json();
 }
 
 export async function startSimulation(baseUrl = defaultBaseUrl) {
@@ -54,7 +53,6 @@ export async function startSimulation(baseUrl = defaultBaseUrl) {
 	if (!response.ok) {
 		console.error("Failed to start simulation:", response.status);
 	}
-	return response.json();
 }
 
 export async function stopSimulation(baseUrl = defaultBaseUrl) {
