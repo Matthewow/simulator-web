@@ -282,7 +282,7 @@ export const createPrivateCatGroup = () => {
 	const carGroup = new Group(); // Group to hold all parts of the car
 
 	// --- Materials ---
-	const bodyMaterial = new MeshBasicMaterial({ color: 0x0077cc }); // Blue color for car body
+	const bodyMaterial = new MeshBasicMaterial({ color: 0xffffff }); // Blue color for car body
 
 	// --- Geometries (Using BoxGeometry for low vertex count) ---
 

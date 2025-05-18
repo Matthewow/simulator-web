@@ -73,6 +73,7 @@ export const MARKER_COLOR_MAP = {
 	OFFLINE: "#999999",
 	RUNNING: "#559955",
 	PICKUP: "#ffff55",
+	DELIVERY: "#4422ff",
 } as {
 		[key in VehicleStatus | SubwayStatus]: string;
 	};
@@ -84,25 +85,20 @@ let MATCAP_TEXTURE: Texture | null = null;
 export const createPLYGroup = (type: string) => {
 	if (type === "Taxi") {
 		return createTaxiGroup();
-	} else if (type === "Bus") {
-		return createBusGroup();
-	} else if (type === "Private Car") {
-		return createPrivateCatGroup();
-	} else if (type === "subway") {
-		return createSubwayGroup();
-	} else {
-		const geometry = DEFAULT_PLY_GEOMETRIES.get(type.toLocaleLowerCase());
-
-		if (!geometry) {
-			throw new Error("Unsupported types");
-		}
-
-		const material = new MeshMatcapMaterial({
-			// matcap: MATCAP_TEXTURE as Texture,
-		});
-
-		return new Mesh(geometry, material);
 	}
+	if (type === "Bus") {
+		return createBusGroup();
+	}
+	if (type === "Private Car") {
+		return createPrivateCatGroup();
+	}
+	if (type === "subway") {
+		return createSubwayGroup();
+	}
+
+	throw new Error("Unsupported types");
+
+
 };
 
 export const setGroupMaterialColorByStatus = (
@@ -110,13 +106,13 @@ export const setGroupMaterialColorByStatus = (
 	status: VehicleStatus | SubwayStatus,
 ) => {
 	const rgbStr = MARKER_COLOR_MAP[status];
-	if (object instanceof Mesh) {
-		((object as Mesh).material as MeshBasicMaterial).color.set(rgbStr);
-	} else if (object instanceof Group) {
-		((object.children[0] as Mesh).material as MeshBasicMaterial).color.set(
-			rgbStr,
-		);
-	}
+
+
+	((object.children[0] as Mesh).material as MeshBasicMaterial).color.set(
+		rgbStr,
+	);
+
+
 };
 
 export const prepareTexture = async () => {
