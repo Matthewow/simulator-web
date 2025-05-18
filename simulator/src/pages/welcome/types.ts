@@ -1,4 +1,4 @@
-export type HistroyEntry = {
+export type HistoryEntry = {
 	fileName: string;
 	path: string;
 };

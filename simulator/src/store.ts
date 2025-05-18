@@ -14,6 +14,9 @@ type AppState = {
 	playStatus: PlayStatus;
 	setPlayStatus: (status: PlayStatus) => void;
 
+	projectPath: string | null;
+	setProjectPath: (projectPath: string) => void;
+
 	page: string;
 	setPage: (page: string) => void;
 
@@ -36,6 +39,11 @@ export const useAppstore = create<AppState>()((set) => ({
 	setPlayStatus: (playStatus) => {
 		dispatchNamedEvent("play_status_changed", playStatus);
 		set({ playStatus });
+	},
+
+	projectPath: null,
+	setProjectPath: (projectPath: string) => {
+		set({ projectPath });
 	},
 
 	page: "welcome",

@@ -7,7 +7,7 @@ import { useAppstore } from "@/store";
 import loadStatistic from "@/lib/statistic";
 
 const MapProvider = () => {
-	const { setDataStatus, setDataset, setStatistic } = useAppstore(
+	const { setDataStatus, setDataset, setStatistic, projectPath } = useAppstore(
 		(state) => state,
 	);
 	useEffect(() => {
@@ -19,10 +19,10 @@ const MapProvider = () => {
 			const statistic = await loadStatistic();
 			setStatistic(statistic);
 
-			const dataset = await loadDataSet();
+			const dataset = await loadDataSet(projectPath ?? undefined);
 			setDataset(dataset);
 		})();
-	}, [setDataStatus, setDataset, setStatistic]);
+	}, [setDataStatus, setDataset, setStatistic, projectPath]);
 
 	return (
 		<>

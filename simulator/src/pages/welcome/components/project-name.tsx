@@ -1,17 +1,18 @@
 import { Button, Input, Label, Text } from "@fluentui/react-components";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import { DialogContext } from "../context";
 import Title from "./title";
 import { setProject } from "@/api";
+import { useAppstore } from "@/store";
 
 const ProjectName = () => {
 	const { setDialog } = useContext(DialogContext);
-	const [projectName, setProjectName] = useState<string>("");
+	const { projectPath, setProjectPath } = useAppstore((state) => state);
 
 	const handleOnClick = async () => {
 		setDialog("loading");
-		await setProject(projectName);
+		await setProject(projectPath ?? "");
 		setDialog("notification");
 	};
 
@@ -20,12 +21,12 @@ const ProjectName = () => {
 			<Title />
 			<div className="flex flex-1 flex-col mt-6 mx-6 justify-between items-center">
 				<div className="flex flex-col w-full">
-					<Label size="large">Project Name</Label>
+					<Label size="large">Project Path</Label>
 					<Input
 						className="mt-[8px]"
-						value={projectName}
+						value={projectPath ?? ""}
 						onChange={(e) => {
-							setProjectName(e.target.value);
+							setProjectPath(e.target.value);
 						}}
 					/>
 					<Text
@@ -41,7 +42,7 @@ const ProjectName = () => {
 				<Button
 					className="w-[12rem]"
 					onClick={handleOnClick}
-					disabled={!projectName && projectName.length === 0}
+					disabled={!projectPath && projectPath?.length === 0}
 				>
 					Continue
 				</Button>

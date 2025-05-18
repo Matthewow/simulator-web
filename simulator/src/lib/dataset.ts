@@ -443,7 +443,8 @@ export const parseDataSet = (raw: string) => {
 
 	if (isNumber(typeIndex)) {
 		return parseVehicles(lines, definitions);
-	} else if (isNumber(trainIdIndex)) {
+	}
+	if (isNumber(trainIdIndex)) {
 		return parseSubways(lines, definitions);
 	}
 
@@ -459,13 +460,19 @@ const mergeDataSet = (rd: Dataset, ld: Dataset): Dataset => {
 	};
 };
 
-export const loadDataSet = async () => {
-	const res = await Promise.all([fetch("/train.csv"), fetch("/vehicle.csv")]);
-	const raws = await Promise.all(res.map((res) => res.text()));
+export const loadDataSet = async (projectPath?: string) => {
 
-	
+	let files: string[];
+	if (!projectPath) {
+		const res = await Promise.all([fetch("/train.csv"), fetch("/vehicle.csv")]);
+		files = await Promise.all(res.map((res) => res.text()));
+	} else {
+		files = (await window.electronAPI.readFiles(`${projectPath}/Output`)).files.map((file) => file.content)
+	}
 
-	const datasets = raws.map(parseDataSet);
+
+
+	const datasets = files.map(parseDataSet);
 	for (const dataset of datasets) {
 		const sequence = dataset.sequence;
 		const startPoint = sequence[0];
@@ -483,5 +490,10 @@ export const loadDataSet = async () => {
 			instance.route = alignedMap;
 		}
 	}
+
+	if (datasets.length === 1)
+		return datasets[0];
+
 	return mergeDataSet(datasets[0], datasets[1]);
+
 };
