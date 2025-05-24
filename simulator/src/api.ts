@@ -29,8 +29,9 @@ type ConfigParams = {
 	"simulation.tEnd"?: number;
 	"simulation.simulateIterations"?: number;
 	"simulation.taxiDriverSamplePercentage"?: number;
-	"simulation.taxiOrderSamplePercentage"?: 0;
-	"simulation.privateCarsSamplePercentage"?: 500000;
+	"simulation.taxiOrderSamplePercentage"?: number;
+	"simulation.privateCarsSamplePercentage"?: number;
+	"simulation.multimodal.transit"?: string;
 };
 
 export async function setConfig(params: ConfigParams, baseUrl = defaultBaseUrl) {

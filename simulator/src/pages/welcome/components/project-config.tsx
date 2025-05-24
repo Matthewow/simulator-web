@@ -1,14 +1,9 @@
-import { Input, Label, Button } from "@fluentui/react-components";
+import { Input, Label, Button, Switch } from "@fluentui/react-components";
 import Title from "./title";
 import { useAppstore } from "@/store";
 import { useContext, useState } from "react";
 import { DialogContext } from "../context";
-import {
-	getSimulationStatistics,
-	getSimulationStatus,
-	setConfig,
-	startSimulation,
-} from "@/api";
+import { getSimulationStatus, setConfig, startSimulation } from "@/api";
 
 const ProjectConfig = () => {
 	const setPage = useAppstore((state) => state.setPage);
@@ -18,6 +13,10 @@ const ProjectConfig = () => {
 	const [inputs, setInputs] = useState({
 		tInitial: 21600,
 		tEnd: 25200,
+		taxiDriverSamplePercentage: 0,
+		taxiOrderSamplePercentage: 0,
+		privateCarsSamplePercentage: 500000,
+		multimodelTransit: false,
 	});
 
 	const onClick = async () => {
@@ -25,6 +24,12 @@ const ProjectConfig = () => {
 		await setConfig({
 			"simulation.tInitial": inputs.tInitial,
 			"simulation.tEnd": inputs.tEnd,
+			"simulation.taxiDriverSamplePercentage":
+				inputs.taxiDriverSamplePercentage,
+			"simulation.taxiOrderSamplePercentage": inputs.taxiOrderSamplePercentage,
+			"simulation.privateCarsSamplePercentage":
+				inputs.privateCarsSamplePercentage,
+			"simulation.multimodal.transit": inputs.multimodelTransit ? "on" : "off",
 		});
 		await startSimulation();
 
@@ -84,14 +89,80 @@ const ProjectConfig = () => {
 							}}
 						/>
 					</div>
+					<div className="flex flex-row justify-between w-full">
+						<Label weight="semibold">taxiDriverSamplePercentage</Label>{" "}
+						<Input
+							size="small"
+							type="number"
+							value={inputs.taxiDriverSamplePercentage.toString()}
+							onChange={(e) => {
+								const number = Number.parseInt(e.target.value);
+								if (Number.isNaN(number)) {
+									return;
+								}
+
+								setInputs({
+									...inputs,
+									taxiDriverSamplePercentage: number,
+								});
+							}}
+						/>
+					</div>
+					<div className="flex flex-row justify-between w-full">
+						<Label weight="semibold">taxiOrderSamplePercentage</Label>{" "}
+						<Input
+							size="small"
+							value={inputs.taxiOrderSamplePercentage.toString()}
+							type="number"
+							onChange={(e) => {
+								const number = Number.parseInt(e.target.value);
+								if (Number.isNaN(number)) {
+									return;
+								}
+
+								setInputs({
+									...inputs,
+									taxiOrderSamplePercentage: number,
+								});
+							}}
+						/>
+					</div>
+					<div className="flex flex-row justify-between w-full">
+						<Label weight="semibold">privateCarsSamplePercentage</Label>{" "}
+						<Input
+							size="small"
+							value={inputs.privateCarsSamplePercentage.toString()}
+							onChange={(e) => {
+								const number = Number.parseInt(e.target.value);
+								if (Number.isNaN(number)) {
+									return;
+								}
+								setInputs({
+									...inputs,
+									privateCarsSamplePercentage: number,
+								});
+							}}
+							type="number"
+						/>
+					</div>
+					<div className="flex flex-row justify-between w-full">
+						<Label weight="semibold">multimodal.transit</Label>{" "}
+						<Switch
+							checked={inputs.multimodelTransit}
+							onChange={(e) => {
+								setInputs({
+									...inputs,
+									multimodelTransit: e.target.checked,
+								});
+							}}
+						/>
+					</div>
+
 					{/* <div className="flex flex-row justify-between w-full">
 						<Label weight="semibold">simulateIterations</Label>{" "}
 						<Input size="small" />
 					</div>
-					<div className="flex flex-row justify-between w-full">
-						<Label weight="semibold">taxiDriverSamplePercentage</Label>{" "}
-						<Input size="small" />
-					</div>
+					
 					<div className="flex flex-row justify-between w-full">
 						<Label weight="semibold">privateCarsSamplePercentage</Label>{" "}
 						<Input size="small" />
