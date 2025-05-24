@@ -102,47 +102,53 @@ export const initVehicleSampleLayer = async () => {
 	const subways: Group<Object3DEventMap>[] = [];
 
 	const rotateX = (-Math.PI * 1) / 4;
-	// biome-ignore lint/complexity/noForEach: <explanation>
-	Object.keys(MARKER_COLOR_MAP).forEach((name) => {
+
+
+	// set up taxi example
+	for (const status of ["DELIVERY", "PICKUP", "EMPTY", "CRUISING"] as const) {
 		const taxi = createTaxiGroup();
-		taxi.name = name;
 		taxi.rotateX(rotateX);
 		taxi.rotateY(Math.PI / 2);
-		setGroupMaterialColorByStatus(taxi, name as never);
+		setGroupMaterialColorByStatus(taxi, status);
 		scene.add(taxi);
 		taxis.push(taxi);
 
+	}
+
+	for (const status of ["RUNNING", "BOARDING"] as const) {
 		const bus = createBusGroup();
-		bus.name = name;
 		bus.rotateX(rotateX);
 		bus.rotateY(Math.PI / 2);
-		setGroupMaterialColorByStatus(bus, name as never);
+		setGroupMaterialColorByStatus(bus, status);
 		scene.add(bus);
 		buses.push(bus);
+	}
 
+	for (const status of ["DELIVERY"] as const) {
 		const privateCar = createPrivateCatGroup();
-		privateCar.name = name;
 		privateCar.rotateX(rotateX);
 		privateCar.rotateY(Math.PI / 2);
-		setGroupMaterialColorByStatus(privateCar, name as never);
+		setGroupMaterialColorByStatus(privateCar, status);
 		scene.add(privateCar);
 		privateCars.push(privateCar);
+	}
 
+	for (const status of ["BOARDING", "RUNNING"] as const) {
 		const subway = createSubwayGroup();
-		subway.name = name;
 		subway.rotateX(rotateX);
 		subway.rotateY(Math.PI / 2);
-		setGroupMaterialColorByStatus(subway, name as never);
+		setGroupMaterialColorByStatus(subway, status);
 		scene.add(subway);
 		subways.push(subway);
-	});
+	}
+
 
 	const lineHeight = 25;
 	const lineStart = 36;
 	const updateSamplesPosition = (width: number, height: number) => {
 		subways.forEach((subway, index) => {
 			subway.position.set(
-				width / 2 - index * 100 - 45,
+				width / 2 - 150 + index * 100,
 
 				0,
 				-height / 2 + lineHeight + lineStart,
@@ -151,7 +157,7 @@ export const initVehicleSampleLayer = async () => {
 
 		buses.forEach((bus, index) => {
 			bus.position.set(
-				width / 2 - index * 60 - 45,
+				width / 2 - 170 + index * 60,
 
 				0,
 				-height / 2 + 2 * lineHeight + lineStart,
@@ -160,7 +166,7 @@ export const initVehicleSampleLayer = async () => {
 
 		taxis.forEach((taxi, index) => {
 			taxi.position.set(
-				width / 2 - (index + 1) * 45,
+				width / 2 - 180 + index * 45,
 
 				0,
 				-height / 2 + 3 * lineHeight + lineStart,
@@ -169,7 +175,7 @@ export const initVehicleSampleLayer = async () => {
 
 		privateCars.forEach((privateCar, index) => {
 			privateCar.position.set(
-				width / 2 - index * 50 - 45,
+				width / 2 - 180 + index * 50,
 				0,
 				-height / 2 + 4 * lineHeight + lineStart,
 			);

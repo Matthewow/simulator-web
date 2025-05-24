@@ -42,6 +42,18 @@ const MapProvider = () => {
 					</div>
 				))}
 			</div>
+			<div className="absolute h-[2rem] top-[45px] right-[210px] flex flex-row-reverse gap-2 text-black">
+				<span>Metro</span>
+			</div>
+			<div className="absolute h-[2rem] top-[70px] right-[210px] flex flex-row-reverse gap-2 text-black">
+				<span>Bus</span>
+			</div>
+			<div className="absolute h-[2rem] top-[100px] right-[210px] flex flex-row-reverse gap-2 text-black">
+				<span>Taxi</span>
+			</div>
+			<div className="absolute h-[2rem] top-[125px] right-[210px] flex flex-row-reverse gap-2 text-black">
+				<span>Private Car</span>
+			</div>
 		</>
 	);
 };
