@@ -1,3 +1,4 @@
+import { memo } from "react";
 import {
 	LineChart,
 	Line,
@@ -53,4 +54,4 @@ const Chart = (props: ChartProps) => {
 	);
 };
 
-export default Chart;
+export default memo(Chart);
