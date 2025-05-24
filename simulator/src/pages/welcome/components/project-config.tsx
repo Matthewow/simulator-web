@@ -13,9 +13,9 @@ const ProjectConfig = () => {
 	const [inputs, setInputs] = useState({
 		tInitial: 21600,
 		tEnd: 25200,
-		taxiDriverSamplePercentage: 0,
-		taxiOrderSamplePercentage: 0,
-		privateCarsSamplePercentage: 500000,
+		taxiDriverSamplePercentage: 10,
+		taxiOrderSamplePercentage: 20,
+		privateCarsSamplePercentage: 30,
 		multimodelTransit: false,
 	});
 
