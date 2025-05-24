@@ -58,7 +58,7 @@ export const calcRailwayLayer = (overlay: ThreeJSOverlayView) => {
 			points.flatMap((point) => [point.x, point.y, point.z]),
 		);
 
-		const material = new LineMaterial({ color: 0x888888, linewidth: 4 });
+		const material = new LineMaterial({ color: 0x888888, linewidth: 4, worldUnits: false });
 		const lineMesh = new Line2(geometry, material);
 
 		ViewLayer.instance.paths.add(lineMesh);
