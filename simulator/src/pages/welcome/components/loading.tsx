@@ -1,9 +1,16 @@
-import { Spinner } from "@fluentui/react-components";
+import { useAppstore } from "@/store";
+import { Spinner, ProgressBar } from "@fluentui/react-components";
 
 const Loading = () => {
+	const progress = useAppstore((state) => state.progress);
+
 	return (
 		<div className="flex-1 flex justify-center items-center">
-			<Spinner size="large" />
+			{progress !== -1 ? (
+				<ProgressBar value={progress / 100} thickness="large" shape="rounded" />
+			) : (
+				<Spinner size="large" />
+			)}
 		</div>
 	);
 };

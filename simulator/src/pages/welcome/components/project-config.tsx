@@ -6,7 +6,7 @@ import { DialogContext } from "../context";
 import { getSimulationStatus, setConfig, startSimulation } from "@/api";
 
 const ProjectConfig = () => {
-	const setPage = useAppstore((state) => state.setPage);
+	const { setPage, setProgress, clearProgress } = useAppstore((state) => state);
 
 	const { setDialog } = useContext(DialogContext);
 
@@ -37,12 +37,14 @@ const ProjectConfig = () => {
 		while (status === "RUNNING") {
 			const res = await getSimulationStatus();
 			status = res.status;
+			setProgress(res.progress);
 			if (status !== "RUNNING") {
 				break;
 			}
 			await new Promise((resolve) => setTimeout(resolve, 1000));
 		}
 
+		clearProgress();
 		setPage("traffic");
 	};
 	return (

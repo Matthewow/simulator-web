@@ -24,6 +24,10 @@ type AppState = {
 	setStatistic: (
 		statistic: Record<string, Record<string, Record<string, number>>>,
 	) => void;
+
+	progress: number;
+	setProgress: (progress: number) => void;
+	clearProgress: () => void
 };
 
 export const useAppstore = create<AppState>()((set) => ({
@@ -53,4 +57,8 @@ export const useAppstore = create<AppState>()((set) => ({
 
 	statistic: {},
 	setStatistic: (statistic) => set({ statistic }),
+
+	progress: -1,
+	setProgress: (progress) => set({ progress }),
+	clearProgress: () => set({ progress: -1 })
 }));
