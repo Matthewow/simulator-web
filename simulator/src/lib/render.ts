@@ -108,7 +108,7 @@ export const initVehicleSampleLayer = async () => {
 	for (const status of ["DELIVERY", "PICKUP", "EMPTY", "CRUISING"] as const) {
 		const taxi = createTaxiGroup();
 		taxi.rotateX(rotateX);
-		taxi.rotateY(Math.PI / 2);
+		taxi.rotateY(Math.PI / 2.5);
 		setGroupMaterialColorByStatus(taxi, status);
 		scene.add(taxi);
 		taxis.push(taxi);
@@ -118,7 +118,7 @@ export const initVehicleSampleLayer = async () => {
 	for (const status of ["RUNNING", "BOARDING"] as const) {
 		const bus = createBusGroup();
 		bus.rotateX(rotateX);
-		bus.rotateY(Math.PI / 2);
+		bus.rotateY(Math.PI / 2.5);
 		setGroupMaterialColorByStatus(bus, status);
 		scene.add(bus);
 		buses.push(bus);
@@ -127,24 +127,24 @@ export const initVehicleSampleLayer = async () => {
 	for (const status of ["DELIVERY"] as const) {
 		const privateCar = createPrivateCatGroup();
 		privateCar.rotateX(rotateX);
-		privateCar.rotateY(Math.PI / 2);
+		privateCar.rotateY(Math.PI / 2.5);
 		setGroupMaterialColorByStatus(privateCar, status);
 		scene.add(privateCar);
 		privateCars.push(privateCar);
 	}
 
-	for (const status of ["BOARDING", "RUNNING"] as const) {
+	for (const status of ["RUNNING", "BOARDING"] as const) {
 		const subway = createSubwayGroup();
 		subway.rotateX(rotateX);
-		subway.rotateY(Math.PI / 2);
+		subway.rotateY(Math.PI / 2.5);
 		setGroupMaterialColorByStatus(subway, status);
 		scene.add(subway);
 		subways.push(subway);
 	}
 
 
-	const lineHeight = 25;
-	const lineStart = 36;
+	const lineHeight = 50;
+	const lineStart = 0;
 	const updateSamplesPosition = (width: number, height: number) => {
 		subways.forEach((subway, index) => {
 			subway.position.set(
