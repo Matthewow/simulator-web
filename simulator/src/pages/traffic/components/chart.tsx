@@ -4,7 +4,6 @@ import {
 	Line,
 	XAxis,
 	YAxis,
-	Tooltip,
 	Legend,
 	ResponsiveContainer,
 } from "recharts";
