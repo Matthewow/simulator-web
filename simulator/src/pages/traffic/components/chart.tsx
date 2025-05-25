@@ -42,7 +42,9 @@ const Chart = (props: ChartProps) => {
 				{lineNames.map((lineName) => (
 					<Line
 						key={lineName}
-						type="monotone"
+						dot={false}
+						isAnimationActive={false}
+						// type="monotone"
 						dataKey={lineName}
 						name={lineName}
 						stroke={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
