@@ -2,9 +2,11 @@ import { useContext, useState } from "react";
 import Title from "./title";
 import { DialogContext } from "../context";
 import { Button, Label, Text } from "@fluentui/react-components";
+import { useAppstore } from "@/store";
 
 const Notification = () => {
 	const { setDialog } = useContext(DialogContext);
+	const { projectPath } = useAppstore();
 
 	return (
 		<div className="flex-1 flex flex-col">
@@ -18,7 +20,7 @@ const Notification = () => {
 						italic
 						className="text-gray-300 mt-[4px]"
 					>
-						Generated folder is located at {"{given path}"}
+						Generated folder is located at {projectPath}
 					</Text>
 					<Text
 						size={200}
