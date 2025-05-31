@@ -6,7 +6,8 @@ import { DialogContext } from "../context";
 import { getSimulationStatus, setConfig, startSimulation } from "@/api";
 
 const ProjectConfig = () => {
-	const { setPage, setProgress, clearProgress } = useAppstore((state) => state);
+	const { setPage, setProgress, clearProgress, setSimulationConfig } =
+		useAppstore((state) => state);
 
 	const { setDialog } = useContext(DialogContext);
 
@@ -21,7 +22,8 @@ const ProjectConfig = () => {
 
 	const onClick = async () => {
 		setDialog("loading");
-		await setConfig({
+
+		const requestParams = {
 			"simulation.tInitial": inputs.tInitial,
 			"simulation.tEnd": inputs.tEnd,
 			"simulation.taxiDriverSamplePercentage":
@@ -30,7 +32,9 @@ const ProjectConfig = () => {
 			"simulation.privateCarsSamplePercentage":
 				inputs.privateCarsSamplePercentage,
 			"simulation.multimodal.transit": inputs.multimodelTransit ? "on" : "off",
-		});
+		};
+
+		await setConfig(requestParams);
 		await startSimulation();
 
 		let status = "RUNNING";
@@ -45,6 +49,7 @@ const ProjectConfig = () => {
 		}
 
 		clearProgress();
+		setSimulationConfig(requestParams);
 		setPage("traffic");
 	};
 	return (

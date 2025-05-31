@@ -1,3 +1,4 @@
+import { useAppstore } from "@/store";
 import { memo } from "react";
 import {
 	LineChart,
@@ -12,6 +13,8 @@ interface ChartProps {
 	data: Record<string, Record<string, number>>;
 }
 const Chart = (props: ChartProps) => {
+	const simulation = useAppstore((state) => state.simulation);
+
 	const { data } = props;
 
 	const lineNames = Object.keys(data);
@@ -25,6 +28,26 @@ const Chart = (props: ChartProps) => {
 		const node: Record<string, string | number> = {
 			x: key,
 		};
+
+		if (
+			simulation["simulation.tInitial"] != null &&
+			simulation["simulation.tEnd"] != null
+		) {
+			//remap i from [1, xMaxIndex] to [tinital, tEnd]
+			const xValue =
+				simulation["simulation.tInitial"] +
+				((i - 1) *
+					(simulation["simulation.tEnd"] - simulation["simulation.tInitial"])) /
+					(xMaxIndex - 1);
+			// convert time in seconds to pretty format
+			const hours = Math.floor(xValue / 3600);
+			const minutes = Math.floor((xValue % 3600) / 60);
+			//const seconds = Math.floor(xValue % 60);
+			node.x = `${hours.toString().padStart(2, "0")}:${minutes
+				.toString()
+				.padStart(2, "0")}`;
+			//:${seconds.toString().padStart(2, "0")}`;
+		}
 
 		lineNames.forEach((lineName, index) => {
 			node[lineName] = lines[index][key];

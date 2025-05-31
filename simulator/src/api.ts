@@ -24,7 +24,7 @@ export async function getSimulationStatus(baseUrl = defaultBaseUrl) {
 	return response.json();
 }
 
-type ConfigParams = {
+export type ConfigParams = {
 	"simulation.tInitial"?: number;
 	"simulation.tEnd"?: number;
 	"simulation.simulateIterations"?: number;

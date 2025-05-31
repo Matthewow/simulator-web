@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import type { Dataset } from "./lib/dataset";
 import { dispatchNamedEvent } from "./lib/event";
+import type { ConfigParams } from "./api";
 
 type DataStatus = "Idle" | "Loading" | "Ready";
 export type PlayStatus = "Pause" | "Play" | "FastForward" | null;
@@ -28,6 +29,9 @@ type AppState = {
 	progress: number;
 	setProgress: (progress: number) => void;
 	clearProgress: () => void
+
+	simulation: ConfigParams
+	setSimulationConfig: (config: ConfigParams) => void;
 };
 
 export const useAppstore = create<AppState>()((set) => ({
@@ -60,5 +64,8 @@ export const useAppstore = create<AppState>()((set) => ({
 
 	progress: -1,
 	setProgress: (progress) => set({ progress }),
-	clearProgress: () => set({ progress: -1 })
+	clearProgress: () => set({ progress: -1 }),
+
+	simulation: {},
+	setSimulationConfig: (config) => set({ simulation: config })
 }));
