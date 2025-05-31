@@ -27,7 +27,7 @@ const TrafficPage = () => {
 					{showSide ? "<" : ">"}
 				</div>
 				<div
-					className={`${showSide ? "" : "translate-x-[-39rem]"} shadow-md absolute left-2 top-2 bottom-2 rounded-xl w-[38rem] border-solid border border-black py-[2rem] flex flex-col overflow-hidden z-10 bg-black`}
+					className={`${showSide ? "" : "translate-x-[-39rem]"} shadow-md absolute left-2 top-2 bottom-2 rounded-xl w-[38rem] border-solid border border-black py-[2rem] flex flex-col overflow-hidden z-10 bg-[#212121] `}
 				>
 					{[
 						"multimodal_occupancy",
