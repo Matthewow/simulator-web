@@ -4,9 +4,12 @@ import TopBar from "./components/top_bar";
 import MapProvider from "./components/map";
 import Timeline from "./components/timeline";
 import Chart from "./components/chart";
+import { useState } from "react";
 
 const TrafficPage = () => {
 	const { dataStatus, statistic } = useAppstore((state) => state);
+	const [showSide, setShowSide] = useState(true);
+
 	const emissions = statistic.emissions;
 
 	return (
@@ -15,8 +18,17 @@ const TrafficPage = () => {
 			<div className="flex flex-basis-[3rem] flex-grow-0 flex-shrink-0 items-center z-2">
 				<TopBar />
 			</div>
-			<div className="flex-1 min-h-0 relative flex-row flex">
-				<div className="flex-basis-[42rem] flex-grow-0 flex-shrink-0 border-solid border border-black py-[2rem] flex flex-col overflow-hidden">
+			<div className="flex-1 min-h-0 relative">
+				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+				<div
+					className={`absolute shadow-md ${showSide ? "left-[36rem]" : "left-[0.2rem]"} top-4 w-[2rem] h-[2rem] bg-[#212121] z-12 flex justify-center items-center rounded border-gray-500 border-1 border-solid`}
+					onClick={() => setShowSide(!showSide)}
+				>
+					{showSide ? "<" : ">"}
+				</div>
+				<div
+					className={`${showSide ? "" : "translate-x-[-39rem]"} shadow-md absolute left-2 top-2 bottom-2 rounded-xl w-[38rem] border-solid border border-black py-[2rem] flex flex-col overflow-hidden z-10 bg-black`}
+				>
 					{[
 						"multimodal_occupancy",
 						"passenger_mode_choice",
@@ -57,9 +69,8 @@ const TrafficPage = () => {
 							})}
 					</div>
 				</div>
-				<div className="flex-1 min-h-0 relative ">
-					<MapProvider />
-				</div>
+
+				<MapProvider />
 			</div>
 
 			<div className="flex-basis-[12rem] flex-grow-0 flex-shrink-0">
