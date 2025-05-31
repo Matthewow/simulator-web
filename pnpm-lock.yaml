@@ -39,8 +39,8 @@ importers:
         specifier: ^1.16.8
         version: 1.16.8
       '@googlemaps/three':
-        specifier: ^4.0.13
-        version: 4.0.13(three@0.175.0)
+        specifier: git+https://github.com/googlemaps/js-three.git
+        version: https://codeload.github.com/googlemaps/js-three/tar.gz/19874f82388ddb9ef344904ef2a9459a936cc16a(three@0.175.0)
       '@react-three/fiber':
         specifier: ^9.1.2
         version: 9.1.2(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(three@0.175.0)
@@ -878,8 +878,9 @@ packages:
   '@googlemaps/js-api-loader@1.16.8':
     resolution: {integrity: sha512-CROqqwfKotdO6EBjZO/gQGVTbeDps5V7Mt9+8+5Q+jTg5CRMi3Ii/L9PmV3USROrt2uWxtGzJHORmByxyo9pSQ==}
 
-  '@googlemaps/three@4.0.13':
-    resolution: {integrity: sha512-JrwsIYZKlSgKTb6YQjOpJUd8JiB9rt3bKxHhHQTDvLDRtOBcw31KeUW602bJj3v6XqaHghfaKSXbKkRrv9yDMw==}
+  '@googlemaps/three@https://codeload.github.com/googlemaps/js-three/tar.gz/19874f82388ddb9ef344904ef2a9459a936cc16a':
+    resolution: {tarball: https://codeload.github.com/googlemaps/js-three/tar.gz/19874f82388ddb9ef344904ef2a9459a936cc16a}
+    version: 4.0.18
     peerDependencies:
       three: '*'
 
@@ -5164,7 +5165,7 @@ snapshots:
 
   '@googlemaps/js-api-loader@1.16.8': {}
 
-  '@googlemaps/three@4.0.13(three@0.175.0)':
+  '@googlemaps/three@https://codeload.github.com/googlemaps/js-three/tar.gz/19874f82388ddb9ef344904ef2a9459a936cc16a(three@0.175.0)':
     dependencies:
       three: 0.175.0
 

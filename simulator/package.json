@@ -13,7 +13,7 @@
 		"@fluentui/react-components": "^9.62.0",
 		"@fluentui/react-icons": "^2.0.297",
 		"@googlemaps/js-api-loader": "^1.16.8",
-		"@googlemaps/three": "^4.0.13",
+		"@googlemaps/three": "git+https://github.com/googlemaps/js-three.git",
 		"@react-three/fiber": "^9.1.2",
 		"@turf/turf": "^7.2.0",
 		"@types/geojson": "^7946.0.16",

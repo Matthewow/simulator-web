@@ -4,6 +4,7 @@ import { Loader } from "@googlemaps/js-api-loader";
 import SECRET from "@/assets/secret.json";
 import {
 	type Group,
+	Mesh,
 	type Object3DEventMap,
 	OrthographicCamera,
 	Scene,
@@ -197,6 +198,12 @@ export const initVehicleSampleLayer = async () => {
 		camera.top = height / 2;
 		camera.bottom = -height / 2;
 		camera.updateProjectionMatrix();
+
+		ViewLayer.instance.paths.traverse((child) => {
+			if (child instanceof Mesh) {
+				child.material.uniforms.resolution.value.set(width, height);
+			}
+		})
 	});
 
 	function animate() {
