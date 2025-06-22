@@ -18,16 +18,10 @@ const TrafficPage = () => {
 			<div className="flex flex-basis-[3rem] flex-grow-0 flex-shrink-0 items-center z-2">
 				<TopBar />
 			</div>
-			<div className="flex-1 min-h-0 relative">
-				{/* <div
-					className={`absolute shadow-md ${showSide ? "left-[36rem]" : "left-[0.2rem]"} top-4 w-[2rem] h-[2rem] bg-[#212121] z-12 flex justify-center items-center rounded border-gray-500 border-1 border-solid`}
-					onClick={() => setShowSide(!showSide)}
-				>
-					{showSide ? "<" : ">"}
-				</div> */}
+			<div className="flex-1 min-h-0 relative flex flex-row">
 				<div
 					className={
-						"shadow-md absolute left-0 top-0 bottom-0 w-[15%] border-solid border border-black py-[2rem] flex flex-col overflow-hidden z-10 bg-[#212121] "
+						"shadow-md  w-[20%] border-solid border border-black py-[2rem] flex flex-col overflow-hidden z-10 bg-[#212121] "
 					}
 				>
 					{[
@@ -49,12 +43,9 @@ const TrafficPage = () => {
 						);
 					})}
 				</div>
+				<MapProvider />
 
-				<div
-					className={
-						"absolute right-0 top-0 bottom-0  w-[30%] bg-[#212121] z-10 grid grid-cols-2"
-					}
-				>
+				<div className={"  w-[38%] bg-[#212121] z-10 grid grid-cols-2"}>
 					{emissions &&
 						["NO2", "NOx", "CO2", "PM2.5", "VOC", "CO"].map((name) => {
 							const data = emissions[name] as unknown as Record<
@@ -74,8 +65,6 @@ const TrafficPage = () => {
 							);
 						})}
 				</div>
-
-				<MapProvider />
 			</div>
 
 			<div className="flex-basis-[12rem] flex-grow-0 flex-shrink-0">

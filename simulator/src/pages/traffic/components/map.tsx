@@ -25,48 +25,38 @@ const MapProvider = () => {
 	}, [setDataStatus, setDataset, setStatistic, projectPath]);
 
 	return (
-		<>
+		<div className="flex-1 relative">
 			<div id="map" className="w-full h-full" />
 			<canvas
 				id="ui"
 				className="absolute w-full h-full top-0 left-0 pointer-events-none"
 			/>
-			{/* <div className="absolute h-[2rem] top-0 right-[45px] flex flex-row-reverse gap-2 text-black">
-				{Object.entries(MARKER_COLOR_MAP).map(([key, value]) => (
-					<div key={key} className="flex flex-row items-center gap-2">
-						<div
-							className="w-4 h-4 rounded-full"
-							style={{ backgroundColor: value }}
-						/>
-						<span>{key}</span>
-					</div>
-				))}
-			</div> */}
+
 			<div className="absolute h-[2rem] top-[25px] right-[210px] flex flex-row-reverse gap-2 text-black">
 				<span>Metro</span>
 			</div>
 			<div className="absolute h-[2rem] top-[60px] right-[30px] flex flex-row-reverse gap-2 text-black">
-				<span >Running &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Boarding</span>
+				<span>Running &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Boarding</span>
 			</div>
 			<div className="absolute h-[2rem] top-[80px] right-[210px] flex flex-row-reverse gap-2 text-black">
 				<span>Bus</span>
 			</div>
 			<div className="absolute h-[2rem] top-[105px] right-[65px] flex flex-row-reverse gap-2 text-black">
-				<span >Running &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Boarding</span>
+				<span>Running &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Boarding</span>
 			</div>
 			<div className="absolute h-[2rem] top-[135px] right-[210px] flex flex-row-reverse gap-2 text-black">
 				<span>Taxi</span>
 			</div>
 			<div className="absolute h-[rem] top-[160px] right-[0px] flex flex-row-reverse gap-2 text-black">
-				<span >Delivery Picking up Empty Cruising</span>
+				<span>Delivery Picking up Empty Cruising</span>
 			</div>
 			<div className="absolute h-[2rem] top-[185px] right-[210px] flex flex-row-reverse gap-2 text-black">
 				<span>Private Car</span>
 			</div>
 			<div className="absolute h-[rem] top-[210px] right-[160px] flex flex-row-reverse gap-2 text-black">
-				<span >Delivery</span>
+				<span>Delivery</span>
 			</div>
-		</>
+		</div>
 	);
 };
 
