@@ -19,15 +19,16 @@ const TrafficPage = () => {
 				<TopBar />
 			</div>
 			<div className="flex-1 min-h-0 relative">
-				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-				<div
+				{/* <div
 					className={`absolute shadow-md ${showSide ? "left-[36rem]" : "left-[0.2rem]"} top-4 w-[2rem] h-[2rem] bg-[#212121] z-12 flex justify-center items-center rounded border-gray-500 border-1 border-solid`}
 					onClick={() => setShowSide(!showSide)}
 				>
 					{showSide ? "<" : ">"}
-				</div>
+				</div> */}
 				<div
-					className={`${showSide ? "" : "translate-x-[-39rem]"} shadow-md absolute left-2 top-2 bottom-2 rounded-xl w-[38rem] border-solid border border-black py-[2rem] flex flex-col overflow-hidden z-10 bg-[#212121] `}
+					className={
+						"shadow-md absolute left-0 top-0 bottom-0 w-[24rem] border-solid border border-black py-[2rem] flex flex-col overflow-hidden z-10 bg-[#212121] "
+					}
 				>
 					{[
 						"multimodal_occupancy",
@@ -47,27 +48,31 @@ const TrafficPage = () => {
 							)
 						);
 					})}
+				</div>
 
-					<div className=" flex flex-row justify-between items-center flex-1 overflow-x-auto overflow-y-hidden">
-						{emissions &&
-							["NO2", "NOx", "CO2", "PM2.5", "VOC", "CO"].map((name) => {
-								const data = emissions[name] as unknown as Record<
-									string,
-									Record<string, number>
-								>;
-								return (
-									data && (
-										<div
-											key={name}
-											className="min-w-full h-full flex justify-center items-center pr-[2rem] flex flex-col box-border"
-										>
-											<h3>{name}</h3>
-											<Chart data={data} />
-										</div>
-									)
-								);
-							})}
-					</div>
+				<div
+					className={
+						"absolute right-0 top-0 bottom-0  w-[38rem] bg-[#212121] z-10 grid grid-cols-2"
+					}
+				>
+					{emissions &&
+						["NO2", "NOx", "CO2", "PM2.5", "VOC", "CO"].map((name) => {
+							const data = emissions[name] as unknown as Record<
+								string,
+								Record<string, number>
+							>;
+							return (
+								data && (
+									<div
+										key={name}
+										className="flex-1 flex justify-center items-center  flex-col box-border"
+									>
+										<h4>{name}</h4>
+										<Chart data={data} />
+									</div>
+								)
+							);
+						})}
 				</div>
 
 				<MapProvider />
