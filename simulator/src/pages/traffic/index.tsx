@@ -27,7 +27,7 @@ const TrafficPage = () => {
 				</div> */}
 				<div
 					className={
-						"shadow-md absolute left-0 top-0 bottom-0 w-[24rem] border-solid border border-black py-[2rem] flex flex-col overflow-hidden z-10 bg-[#212121] "
+						"shadow-md absolute left-0 top-0 bottom-0 w-[15%] border-solid border border-black py-[2rem] flex flex-col overflow-hidden z-10 bg-[#212121] "
 					}
 				>
 					{[
@@ -52,7 +52,7 @@ const TrafficPage = () => {
 
 				<div
 					className={
-						"absolute right-0 top-0 bottom-0  w-[38rem] bg-[#212121] z-10 grid grid-cols-2"
+						"absolute right-0 top-0 bottom-0  w-[30%] bg-[#212121] z-10 grid grid-cols-2"
 					}
 				>
 					{emissions &&

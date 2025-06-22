@@ -1,5 +1,5 @@
 import { useAppstore } from "@/store";
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import {
 	LineChart,
 	Line,
@@ -56,11 +56,24 @@ const Chart = (props: ChartProps) => {
 		mappedData.push(node);
 	}
 
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	const tickFormatter = useCallback((value: any, index: number) => {
+		if (value >= 1000000) {
+			return `${(value / 1000000).toFixed(1)}M`;
+		}
+
+		if (value >= 1000) {
+			return `${(value / 1000).toFixed(1)}K`;
+		}
+
+		return value;
+	}, []);
+
 	return (
 		<ResponsiveContainer>
 			<LineChart data={mappedData}>
 				<XAxis dataKey="x" />
-				<YAxis />
+				<YAxis tickFormatter={tickFormatter} />
 				<Legend />
 				{lineNames.map((lineName) => (
 					<Line
